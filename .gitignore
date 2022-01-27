@@ -1,0 +1,11 @@
+# Ignore site
+site/*
+
+# Temporary files
+*~*
+*#*
+*.DS_Store
+
+# Remove env variable
+venv/*
+env/*

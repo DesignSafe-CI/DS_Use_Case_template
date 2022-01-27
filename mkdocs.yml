@@ -12,13 +12,31 @@ extra_css:
 
 markdown_extensions:
  - toc:
+    permalink: "#" 
  - tables:
+ - codehilite:
+ - markdown_katex:
+    no_inline_svg: True
+    insert_fonts_css: True
 
 ####
 #### Do NOT edit above this line
 
 nav:
-  - Use Case Title : index.md
+  - Use Cases : index.md
+  - Example : example/usecase.md
+  - Use Case 1 - Arduino: arduino/usecase.md
+  - Use Case 2 - Brandenberg: brandenberg/usecase.md
+  - Use Case 3 - Dawson: dawson/usecase.md
+  - Use Case 4 - Haan: haan/usecase.md
+  - Use Case 5 - Kareen: kareen/usecase.md
+  - Use Case 6 - Kumar: kumar/usecase.md
+  - Use Case 7 - Lowes: lowes/usecase.md
+  - Use Case 8 - Mosqueda: mosqueda/usecase.md
+  - Use Case 9 - Padgett: padgett/usecase.md
+  - Use Case 10 - Pinelli: pinelli/usecase.md
+  - Use Case 11 - Rathje: rathje/usecase.md
+ 
   
-#### Above, change "Use Case Title" to be specific to your use case.  
-#### This title should be consitent with the top level heading in the index.md file
+#### DO NOT MAKE ANY CHANGES TO THE EXAMPLE FOLDER
+#### Find the folder with your name and edit usecase.md
