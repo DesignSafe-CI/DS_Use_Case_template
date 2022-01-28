@@ -20,7 +20,7 @@ critical infrastructure projects.
 The NGL database is populated through a web GUI at www.nextgenerationliquefaction.org/. The web interface 
 provides limited capabilities for users to interact with data. Users are able to view and download data, 
 but they cannot use the GUI to develop an end-to-end workflow to make scientific inferences and draw conclusions 
-from the data. To facilitate end-to-end workflows, the NGL database is replicated daily to [DesignSafe] (https://www.designsafe-ci.org), where 
+from the data. To facilitate end-to-end workflows, the NGL database is replicated daily to [DesignSafe](https://www.designsafe-ci.org), where 
 users can interact with it using Jupyter notebooks.
 
 ## Background 
