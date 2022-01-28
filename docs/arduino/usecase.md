@@ -1,10 +1,10 @@
-# From constitutive model parameter calibration to site response analysis
+# From constitutive parameter calibration to site response analysis
 
 **Authors, Affiliations**  
 
 Pedro Arduino, University of Washington
 
-Introductory Text.  High-level overview of product. A condimentum vitae sapien pellentesque habitant morbi tristique.
+A collection of educational notebooks to introduce model paraleter calibration and site response analysis using OpenSees
 
 ## Background 
 
@@ -18,19 +18,19 @@ Introductory Text.  High-level overview of product. A condimentum vitae sapien p
 
 ### Description 
 
-Site response analysis for liquefiable soils is fundamental in the estimation of demands on civil infrastructure including buildings and lifelines. Current state of the art numerical methods requires the use of advance constitutive models and fully couple nonlinear finite element (FEM) tools. Advanced constitutive models require the calibration of material parameters based on experimental test. These parameters include uncertainties that in turn propagate to uncertenties in the estimation of demands. These use-case products provide simple examples showing how to achieve this using SimCenter tools and the DesignSafe cyber infrastructure. 
+Site response analysis for liquefiable soils is fundamental in the estimation of demands on civil infrastructure including buildings and lifelines. Current state of the art numerical methods require the use of advance constitutive models and fully couple nonlinear finite element (FEM) tools. Advanced constitutive models require the calibration of material parameters based on experimental tests. These parameters include uncertainties that in turn propagate to uncertenties in the estimation of demands. These use-case products provide simple examples showing how to achieve this using SimCenter tools and the DesignSafe cyber infrastructure. 
 
 [Link Example - this goes to Google](https://www.google.com)
 
 ## Header 2
 
-### 2.1 - Notebooks published in DesignSafe)
+### 2.1 - Notebooks published in DesignSafe
 A suite of Jupyter Notebooks published in DesignSafe navigates the process of  constitutive model parameter calibration and site response analysis for a simple liquefaction case. Both notebooks leverage existing SimCenter backend functionality (e.g. Dakota, OpenSees, etc) implemented in quoFEM and run locally and in TACC through DesignSafe.
  
-### 2.2 - Understanding the OpenSees simulation schema)
-Understanding single element using OpenSees. 
-Understanding multiple single element analysis using OpenSeesMP.
-Understanding site response analysis using TAPIS OpenSees API in DesignSafe
+### 2.2 - Understanding the OpenSees simulation schema
+* Understanding single element using OpenSees. 
+* Understanding multiple single element analysis using OpenSeesMP.
+* Understanding site response analysis using TAPIS OpenSees API in DesignSafe
 
 *Add images to the folder img and use relative path to specify the location of the image.*   
 
