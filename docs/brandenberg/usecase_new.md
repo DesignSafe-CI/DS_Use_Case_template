@@ -11,7 +11,7 @@ substantially larger, more consistent, and more reliable source of liquefaction 
 Based on this database, we will create probabilistic models that provide hazard- and risk-consistent bases 
 for assessing liquefaction susceptibility, the potential for liquefaction to be triggered in susceptible soils, 
 and the likely consequences. NGL is committed to an open and objective evaluation and integration of data, 
-models and methods, as recommended in a 2016 National Academies `report <https://www.nap.edu/catalog/23474/state-of-the-art-and-practice-in-the-assessment-of-earthquake-induced-soil-liquefaction-and-its-consequences>`_. 
+models and methods, as recommended in a 2016 National Academies [https://www.nap.edu/catalog/23474/state-of-the-art-and-practice-in-the-assessment-of-earthquake-induced-soil-liquefaction-and-its-consequences] (report). 
 The evaluation and integration of the data into new models and methods will be clear and transparent. Following these principles will ensure 
 that the resulting liquefaction susceptibility, triggering, and consequence models are reliable, robust and 
 vetted by the scientific community, providing a solid foundation for designing, constructing and overseeing 
