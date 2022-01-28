@@ -1,7 +1,8 @@
-# TITLE for Use Case Documentation Page
+# Oct 2021 DesignSafe Webinar
 
-**Authors, Affiliations**  
+**Brandenberg, S.J., UCLA, Ulmer, K.J., Southwest Research Institute, and Zimmaro, P., University of Calabria**  
 
+The DesignSafe_Webinar_Oct2021 notebook was created during a webinar/workshop hosted by DesignSafe and the Pacific Earthquake Engineering Research (PEER) center.
 Introductory Text.  High-level overview of product. A condimentum vitae sapien pellentesque habitant morbi tristique.
 
 ## Background 
