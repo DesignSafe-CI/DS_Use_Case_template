@@ -1,6 +1,6 @@
-# Seismic Response of Base Isolated Buildings Considering Pounding to Moat Walls
+# Viewing and Analyzing NEES data in DataDepot - Base Isolated Steel Moment Frame Building with Pounding to Moat Walls - 
 
-**Gilberto Mosqueda, University of California, San Diego**  
+**Enrique, Wendy, Zane, Gilberto Mosqueda, University of California, San Diego**  
 
 Summary about Jupiter Notebook goal. Introduction about test. System identification part. Obtained results.
 
