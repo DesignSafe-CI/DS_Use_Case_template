@@ -4,6 +4,8 @@
 
 The Florida Tech (FIT) hurricane team deploys wireless sensor networks on residential houses and full scale models during high impact wind events and wind tunnel testing. The team deploys pressure, temperature and humidity sensors alongside anemometers and Lidar over periods of time. Three Jupyter notebooks process and visualize the instruments’ data for correlation and further analyses. The notebooks provide a user friendly and interactive environment that can adapt to different datasets. For this project, the notebooks perform quasi static real-time analyses, assess sensor performance, study pressure variations for different wind conditions and data correlation. The user interactivity of these notebooks enables little to no-change in code as it adapts easily to different datasets.
 
+![flow process](img/Picture1.png)
+
 ## Background 
 
 ### Citation and Licensing
