@@ -50,6 +50,15 @@ o	The first notebook is a user interactive guide to input important raw data inf
 •	Subheading 2.1 - Analysis Notebooks and Examples
 o	Florida Tech team’s project goal is to measure pressure variation on non-structural components during strong wind events using their wireless sensor networks. The analysis notebooks on DesignSafe are user interactive with markdowns describing the test and also act as a guide to help the user look at the data they desire. An example of this is the analysis notebook for Isaias (tropical storm on August 1-3, 2020). The markdowns have important information and pictures from the deployment, and instructions for the user to easily access data.
 
+And a menu allows user to select from options and look at specific time windows or test conditions.
+
+### Header2 Subheading
+
+•	Subheading 2.2 - Using Plotly for Data Driven Animation Frames
+o	The project objective is to study high impact wind events on non-structural components of residential houses. After the deployment, Jupyter notebooks process and visualize the important data that could be compared to ASCE 7 standards. A small part of that is assessing sensor performance with respect to wind conditions. Plotly is beneficial in creating animation frames to look at a snapshot of data from all sensors in different test conditions or even at different timestamps.  A single line of code enabled with the right dataframe can help in quickly looking at the trends and troubleshooting any system errors. The figure below shows an application of plotly for one of the wall of wind tests for glass sliding doors. The test model was a mock-up box with flat roof, and full scale glass sliding doors at 105 mph were tested at different wind directions. At uniform velocity, data for each wind direction was collected for 3 minutes and the program computed pressure coefficient Cp values averaged over that time window. A 2D scatter plot was created with x and z dimensions with each point representing a sensor whose color corresponded to a Cp value on the color scale. Important information is pieced together easily in a single line to enable the animation frame:
+px.scatter(dataframe, x=x column, y=y column, color=scatter point values, text=text to be displayed for each point, range_color=color scale range, animation_frame=variable for each animation frame, title = plot title)
+To add more clarity, additional lines of code describing indentations, dimensions and trace lines can be added.
+
 
 Numbered list 
 
@@ -59,7 +68,13 @@ Numbered list
 
 ### Header3 subheading
 
-Ac feugiat sed lectus vestibulum mattis ullamcorper. Et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut. Scelerisque eu ultrices vitae auctor eu augue ut lectus arcu.  Imperdiet proin fermentum leo vel orci porta non pulvinar. Dictumst quisque sagittis purus sit amet. Aliquam purus sit amet luctus. Aliquet bibendum enim facilisis gravida neque convallis a cras. Orci porta non pulvinar neque laoreet suspendisse. Urna neque viverra justo nec ultrices dui.
+As an example to using this plotly feature, an exercise has been described below:
+Requirements:
+Jupyter Notebook and if you don’t have it, get it here to have it on local system (Anaconda Navigator) or here on cloud (link to google collab)!
+Once you have your notebook open and you don’t have plotly dash installed, go ahead and use: !pip install dash==1.14.0 –user
+Building the Dataframe:
+Consider a box of spheres that change their numbers ranging from 1 to 10 every hour. You want to look at how the number changes for 12 hours.
+
 
 **Example Table**
 
