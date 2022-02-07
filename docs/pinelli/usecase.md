@@ -36,7 +36,7 @@ o	The user needs DesignSafe-CI (DS) account. During deployment, data is uploaded
 •	Subheading 1.2 - Using Jupyter Notebooks
 o	Project objectives were separated into three different notebooks to save time and memory. The first notebook is a user-interactive guide to enter important raw file definitions such as formats, column numbers and sensor information. This enables flexibility in code to adapt to any improvements made to the raw data. The second notebook calibrates raw data and organizes them to csv and pickled files. The third and final notebook is also user interactive and helps user analyze and visualize data. The notebooks need not be executed in sequence every time analysis is done and depends on the type of user and stage of analysis as illustrated in the figure below.
 
-![user inputs](img/picture3.png)
+![user inputs](img/Picture3.png)
 
 ### Header2 Subheading
 
