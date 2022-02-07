@@ -1,8 +1,8 @@
-# TITLE for Use Case Documentation Page
+# Wind Data Analysis Tools
 
 **Authors, Affiliations**  
 
-Introductory Text.  High-level overview of product. A condimentum vitae sapien pellentesque habitant morbi tristique.
+The Florida Tech (FIT) hurricane team deploys wireless sensor networks on residential houses and full scale models during high impact wind events and wind tunnel testing. The team deploys pressure, temperature and humidity sensors alongside anemometers and Lidar over periods of time. Three Jupyter notebooks process and visualize the instruments’ data for correlation and further analyses. The notebooks provide a user friendly and interactive environment that can adapt to different datasets. For this project, the notebooks perform quasi static real-time analyses, assess sensor performance, study pressure variations for different wind conditions and data correlation. The user interactivity of these notebooks enables little to no-change in code as it adapts easily to different datasets.
 
 ## Background 
 
@@ -16,17 +16,28 @@ Introductory Text.  High-level overview of product. A condimentum vitae sapien p
 
 ### Description 
 
-Enim ut sem viverra aliquet.  Nisi scelerisque eu ultrices vitae auctor. Scelerisque viverra mauris in aliquam.  Ut morbi tincidunt augue interdum velit euismod in pellentesque massa. Sagittis purus sit amet volutpat consequat mauris nunc congue nisi. Sed adipiscing diam donec adipiscing tristique.  In pellentesque massa placerat duis. Tortor condimentum lacinia quis vel eros donec ac. Sed velit dignissim sodales ut eu sem. Adipiscing elit duis tristique sollicitudin nibh sit amet commodo. Quis risus sed vulputate odio ut.
+•	Subheading 1.1 - Using Tapis for Quasi-real time data 
+o	The user needs DesignSafe-CI (DS) account. During deployment, data is uploaded to DS in user defined time interval. Tapis CLI and Python 3 enable this feature and must be installed on the local system. The user initiates Tapis before every deployment through Windows PowerShell and Tapis creates a token as described below:
+1.	Turn on Windows Power Shell and enter the command tapis auth init –interactive.  
+2.	For the tenant name, enter designsafe. 
+3.	Enter the DesignSafe username and password of the authorized user. 
+4.	You can choose to set up Container registry access and Git server access, or skip this step by the return key if you if you do not wish to do so. 
+5.	Create a token using the command tapis auth tokens create. At the end, the following respond will be shown on the cmd line. 
+
 
 [Link Example - this goes to Google](https://www.google.com)
 
 ## Header 2
 
-Euismod nisi porta lorem mollis aliquam ut. Tincidunt ornare massa eget egestas purus viverra accumsan in. Varius quam quisque id diam vel. Fermentum odio eu feugiat pretium nibh ipsum consequat nisl. Placerat duis ultricies lacus sed turpis tincidunt id aliquet risus. Condimentum vitae sapien pellentesque habitant morbi tristique senectus et netus. Egestas sed sed risus pretium quam vulputate. Posuere morbi leo urna molestie at elementum. Eget magna fermentum iaculis eu non diam. Nisl tincidunt eget nullam non nisi. Sit amet risus nullam eget felis eget nunc lobortis mattis.
+•	Subheading 1.2 - Using Jupyter Notebooks
+o	Project objectives were separated into three different notebooks to save time and memory. The first notebook is a user-interactive guide to enter important raw file definitions such as formats, column numbers and sensor information. This enables flexibility in code to adapt to any improvements made to the raw data. The second notebook calibrates raw data and organizes them to csv and pickled files. The third and final notebook is also user interactive and helps user analyze and visualize data. The notebooks need not be executed in sequence every time analysis is done and depends on the type of user and stage of analysis as illustrated in the figure below.
+
 
 ### Header2 Subheading
 
-In aliquam sem fringilla ut morbi. Interdum varius sit amet mattis vulputate enim nulla aliquet. Sit amet mattis vulputate enim nulla.  In egestas erat imperdiet sed euismod nisi porta lorem. Eget nulla facilisi etiam dignissim diam.  Facilisi cras fermentum odio eu feugiat. Velit aliquet sagittis id consectetur. Vel quam elementum pulvinar etiam.  Ut diam quam nulla porttitor massa id neque aliquam. Sodales ut etiam sit amet nisl.  Scelerisque varius morbi enim nunc faucibus a. Sit amet volutpat consequat mauris nunc. Et leo duis ut diam.
+•	Subheading 1.3 - Adapting to Different Datasets
+o	The first notebook is a user interactive guide to input important raw data information. This notebook saves time as the user does not have to read, understand and edit the code to change information regarding sensors, columns and data formats. WSNS deployment during the tropical storm Isaias (8/2/2020) used an old and a new wsns system. Both had significant differences in how data was stored, and the first notebook was used to document them. This helps in faster data processing as there is no change required in code and the file generated by the notebook acts as a metadata for the second notebook responsible for data processing. The figure below are snapshots of the output file created by the first notebook describing raw data information from two different systems.
+
 
 *Add images to the folder img and use relative path to specify the location of the image.*   
 
@@ -34,9 +45,11 @@ In aliquam sem fringilla ut morbi. Interdum varius sit amet mattis vulputate eni
 > Use case template design
 
 
-## Header3
+## Jupyter Notebook
 
-Morbi tristique senectus et netus et. Tristique senectus et netus et malesuada fames.  Eu mi bibendum neque egestas congue quisque. Id consectetur purus ut faucibus pulvinar elementum integer enim. Nunc consequat interdum varius sit amet mattis vulputate enim nulla.  Porta nibh venenatis cras sed felis eget. Dui id ornare arcu odio ut sem nulla pharetra diam. Pellentesque habitant morbi tristique senectus et netus et. Commodo nulla facilisi nullam vehicula ipsum a arcu. Nisi porta lorem mollis aliquam ut porttitor leo.
+•	Subheading 2.1 - Analysis Notebooks and Examples
+o	Florida Tech team’s project goal is to measure pressure variation on non-structural components during strong wind events using their wireless sensor networks. The analysis notebooks on DesignSafe are user interactive with markdowns describing the test and also act as a guide to help the user look at the data they desire. An example of this is the analysis notebook for Isaias (tropical storm on August 1-3, 2020). The markdowns have important information and pictures from the deployment, and instructions for the user to easily access data.
+
 
 Numbered list 
 
@@ -73,11 +86,67 @@ f(x) = \int_{-\infty}^\infty
 
 ### Code
 
+#Importing libraries
+import random
+import pandas as pd
+
+#Define necessary columns
+spheres=[1,2,3,4,5]
+x=[6,14,10,6,14]
+y=[6,6,10,14,14]
+rad=[]
+for i in range (0,5): #generates 5 random numbers ranging from 1 to 10
+    n = random.randint(1,10)
+    rad.append(n)
+hour=1
+Label = ['1','2','3','4','5']
+
+df=pd.DataFrame(spheres,columns=['Sphere']) #dataframe for first hour
+df['x']=x
+df['y']=y
+df['number']=rad
+df['hour']=hour
+df['label']=Label
+for i in range (0,11): #for loop to repeat for the next 11 hours
+    hour=hour+1
+    temp=pd.DataFrame(spheres,columns=['Sphere'])
+    temp['x']=x
+    temp['y']=y
+    rad=[]
+    for i in range (0,5):
+        n = random.randint(1,10)
+        rad.append(n)
+    temp['number']=rad
+    temp['hour']=hour
+    temp['label']=Label
+    df=df.append(temp)  
+    
+print(df)
+
+
 ``` python
 import tensorflow as tf
 ```
 
-Highlight specific lines of the code
+Highlight specific lines of the code (plotting)
+Matching the right columns to suit the syntax will result in an animation frame and a slider!
+import plotly.express as px
+import plotly.graph_objects as go
+
+fig = px.scatter(df, x='x',y='y', color='number',text="label", animation_frame='hour',title='Magic Box') #animation frame
+fig.update_traces(textposition='top center',mode='markers', marker_line_width=2, marker_size=40)                      
+trace1 = go.Scatter(x=[2, 2], y=[2, 18],line=dict(color='black', width=4),showlegend=False) #Tracelines to create the box
+trace2 = go.Scatter(x=[2, 18], y=[18, 18],line=dict(color='black', width=4),showlegend=False)
+trace3 = go.Scatter(x=[18, 18], y=[18, 2],line=dict(color='black', width=4),showlegend=False)
+trace4 = go.Scatter(x=[18, 2], y=[2, 2],line=dict(color='black', width=4),showlegend=False)
+fig.add_trace(trace1)
+fig.add_trace(trace2)
+fig.add_trace(trace3)
+fig.add_trace(trace4)
+fig.update_layout(autosize=False,width=500,height=500,showlegend=True)
+fig.show() 
+
+
 
 ``` python hl_lines="3 4"
 """ Bubble sort """
