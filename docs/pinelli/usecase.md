@@ -120,7 +120,7 @@ import random
 import pandas as pd
 
 #Define necessary columns
-spheres=[1,2,3,4,5]
+```spheres=[1,2,3,4,5]
 x=[6,14,10,6,14]
 y=[6,6,10,14,14]
 rad=[]
@@ -150,7 +150,7 @@ for i in range (0,11): #for loop to repeat for the next 11 hours
     temp['label']=Label
     df=df.append(temp)  
     
-print(df)
+print(df)```
 
 
 ``` python
@@ -162,7 +162,7 @@ Matching the right columns to suit the syntax will result in an animation frame 
 import plotly.express as px
 import plotly.graph_objects as go
 
-fig = px.scatter(df, x='x',y='y', color='number',text="label", animation_frame='hour',title='Magic Box') #animation frame
+``` fig = px.scatter(df, x='x',y='y', color='number',text="label", animation_frame='hour',title='Magic Box') #animation frame
 fig.update_traces(textposition='top center',mode='markers', marker_line_width=2, marker_size=40)                      
 trace1 = go.Scatter(x=[2, 2], y=[2, 18],line=dict(color='black', width=4),showlegend=False) #Tracelines to create the box
 trace2 = go.Scatter(x=[2, 18], y=[18, 18],line=dict(color='black', width=4),showlegend=False)
@@ -173,7 +173,7 @@ fig.add_trace(trace2)
 fig.add_trace(trace3)
 fig.add_trace(trace4)
 fig.update_layout(autosize=False,width=500,height=500,showlegend=True)
-fig.show() 
+fig.show() ```
 
 ![Magic box](img/Picture10.gif)
 
