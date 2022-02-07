@@ -71,7 +71,8 @@ o	The project objective is to study high impact wind events on non-structural co
 px.scatter(dataframe, x=x column, y=y column, color=scatter point values, text=text to be displayed for each point, range_color=color scale range, animation_frame=variable for each animation frame, title = plot title)
 To add more clarity, additional lines of code describing indentations, dimensions and trace lines can be added.
 
-
+![Experimental setting](img/Picture8.png)
+![Plot 1](img/Picure9.gif)
 Numbered list 
 
 1. [numbered linked item](https://maps.google.com)
