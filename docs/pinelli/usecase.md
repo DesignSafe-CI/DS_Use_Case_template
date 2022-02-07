@@ -72,7 +72,7 @@ px.scatter(dataframe, x=x column, y=y column, color=scatter point values, text=t
 To add more clarity, additional lines of code describing indentations, dimensions and trace lines can be added.
 
 ![Experimental setting](img/Picture8.png)
-![Plot 1](img/Picure9.gif)
+![Plot 1](img/Picture9.gif)
 
 Numbered list 
 
