@@ -26,7 +26,7 @@ o	The user needs DesignSafe-CI (DS) account. During deployment, data is uploaded
 4.	You can choose to set up Container registry access and Git server access, or skip this step by the return key if you if you do not wish to do so. 
 5.	Create a token using the command tapis auth tokens create. At the end, the following respond will be shown on the cmd line. 
 
-[tapis](img/Picture2.png)
+[command line](img/Picture2.png)
 
 
 [Link Example - this goes to Google](https://www.google.com)
