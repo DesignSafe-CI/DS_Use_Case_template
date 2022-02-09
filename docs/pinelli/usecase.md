@@ -26,18 +26,14 @@ o	The user needs DesignSafe-CI (DS) account. During deployment, data is uploaded
 4.	You can choose to set up Container registry access and Git server access, or skip this step by the return key if you if you do not wish to do so. 
 5.	Create a token using the command tapis auth tokens create. At the end, the following respond will be shown on the cmd line. 
 
-![command line](img/Picture2.png)
-
 <img src="img/Picture2.png" alt="Flow Process" width="600">
-
-[Link Example - this goes to Google](https://www.google.com)
 
 ## Header 2
 
 •	Subheading 1.2 - Using Jupyter Notebooks
 o	Project objectives were separated into three different notebooks to save time and memory. The first notebook is a user-interactive guide to enter important raw file definitions such as formats, column numbers and sensor information. This enables flexibility in code to adapt to any improvements made to the raw data. The second notebook calibrates raw data and organizes them to csv and pickled files. The third and final notebook is also user interactive and helps user analyze and visualize data. The notebooks need not be executed in sequence every time analysis is done and depends on the type of user and stage of analysis as illustrated in the figure below.
 
-![user inputs](img/Picture3.png)
+<img src="img/Picture3.png" alt="Flow Process" width="600">
 
 ### Header2 Subheading
 
