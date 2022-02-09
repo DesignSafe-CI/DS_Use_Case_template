@@ -52,7 +52,7 @@ o	Florida Tech team’s project goal is to measure pressure variation on non-str
 
 And a menu allows user to select from options and look at specific time windows or test conditions.
 
-<img src="img/Picture8.png" alt="Flow Process" width="600">
+<img src="img/Picture7.png" alt="Flow Process" width="600">
 
 ### Header2 Subheading
 
@@ -61,14 +61,8 @@ o	The project objective is to study high impact wind events on non-structural co
 px.scatter(dataframe, x=x column, y=y column, color=scatter point values, text=text to be displayed for each point, range_color=color scale range, animation_frame=variable for each animation frame, title = plot title)
 To add more clarity, additional lines of code describing indentations, dimensions and trace lines can be added.
 
-![Experimental setting](img/Picture8.png)
-![Plot 1](img/Picture9.gif)
-
-Numbered list 
-
-1. [numbered linked item](https://maps.google.com)
-2. second item
-3. third item
+<img src="img/Picture8.png" alt="Flow Process" width="600">
+<img src="img/Picture9.gif" alt="Flow Process" width="600">
 
 ### Header3 subheading
 
@@ -78,17 +72,6 @@ Jupyter Notebook and if you don’t have it, get it here to have it on local sys
 Once you have your notebook open and you don’t have plotly dash installed, go ahead and use: !pip install dash==1.14.0 –user
 Building the Dataframe:
 Consider a box of spheres that change their numbers ranging from 1 to 10 every hour. You want to look at how the number changes for 12 hours.
-
-
-**Example Table**
-
-| Column 1 | Column 2 | Column 3 |
-|----------|----------|----------|
-| Stampede2| CPU      | 2017     |     
-| Frontera | CPU & GPU| 2019     |     
-
-Or use markdown table generator: [https://www.tablesgenerator.com/markdown_tables](https://www.tablesgenerator.com/markdown_tables)
-
 
 ### Math
 
