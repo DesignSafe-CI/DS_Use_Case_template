@@ -52,7 +52,7 @@ o	Florida Tech team’s project goal is to measure pressure variation on non-str
 
 And a menu allows user to select from options and look at specific time windows or test conditions.
 
-![Options](Picture7.png)
+<img src="img/Picture8.png" alt="Flow Process" width="600">
 
 ### Header2 Subheading
 
