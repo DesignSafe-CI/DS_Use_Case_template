@@ -150,8 +150,7 @@ fig.update_layout(autosize=False,width=500,height=500,showlegend=True)
 fig.show()
 ```
 
-![Magic box](img/Picture10.gif)
-
+<img src="img/Picture10.gif" alt="Flow Process" width="600">
 
 ``` python hl_lines="3 4"
 """ Bubble sort """
