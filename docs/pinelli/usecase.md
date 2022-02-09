@@ -28,6 +28,7 @@ o	The user needs DesignSafe-CI (DS) account. During deployment, data is uploaded
 
 ![command line](img/Picture2.png)
 
+<img src="img/Picture2.png" alt="Flow Process" width="600">
 
 [Link Example - this goes to Google](https://www.google.com)
 
