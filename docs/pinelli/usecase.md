@@ -46,13 +46,6 @@ o	The first notebook is a user interactive guide to input important raw data inf
 ![Old SNS](img/Picture4.png)
 ![New SNS](img/Picture5.png)
 
-
-*Add images to the folder img and use relative path to specify the location of the image.*   
-
-![caption](img/mkdocs-template.png)
-> Use case template design
-
-
 ## Jupyter Notebook
 
 •	Subheading 2.1 - Analysis Notebooks and Examples
