@@ -73,19 +73,6 @@ Once you have your notebook open and you don’t have plotly dash installed, go 
 Building the Dataframe:
 Consider a box of spheres that change their numbers ranging from 1 to 10 every hour. You want to look at how the number changes for 12 hours.
 
-### Math
-
-To generate math equations in markdown.
-
-For inline mode formulas: $`a^2+b^2=c^2`$.
-
-For display mode formulas which appear on a separate line
-```math
-f(x) = \int_{-\infty}^\infty
-\hat f(\xi)\,e^{2 \pi i \xi x}
-\,d\xi
-```
-
 ### Code
 
 #Importing libraries
@@ -126,12 +113,6 @@ for i in range (0,11): #for loop to repeat for the next 11 hours
 print(df)
 ```
 
-
-``` python
-import tensorflow as tf
-```
-
-Highlight specific lines of the code (plotting)
 Matching the right columns to suit the syntax will result in an animation frame and a slider!
 import plotly.express as px
 import plotly.graph_objects as go
@@ -152,11 +133,5 @@ fig.show()
 
 <img src="img/Picture10.gif" alt="Flow Process" width="600">
 
-``` python hl_lines="3 4"
-""" Bubble sort """
-def bubble_sort(items):
-    for i in range(len(items)):
-        for j in range(len(items) - 1 - i):
-            if items[j] > items[j + 1]:
-                items[j], items[j + 1] = items[j + 1], items[j]
-```
+•	Published Datasets and Notebooks
+o	Wang, M. Splitt, H. Besing, S. Sridhar. (2021), in Hurricane ISAIAS Data from Wireless Pressure Sensor Network and LIDAR. DesignSafe-CI. https://doi.org/10.17603/ds2-6qnj-tv17
