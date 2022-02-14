@@ -18,17 +18,24 @@ Introductory Text.  High-level overview of product. A condimentum vitae sapien p
 
 ### Description 
 
-Enim ut sem viverra aliquet.  Nisi scelerisque eu ultrices vitae auctor. Scelerisque viverra mauris in aliquam.  Ut morbi tincidunt augue interdum velit euismod in pellentesque massa. Sagittis purus sit amet volutpat consequat mauris nunc congue nisi. Sed adipiscing diam donec adipiscing tristique.  In pellentesque massa placerat duis. Tortor condimentum lacinia quis vel eros donec ac. Sed velit dignissim sodales ut eu sem. Adipiscing elit duis tristique sollicitudin nibh sit amet commodo. Quis risus sed vulputate odio ut.
+The main objective of the present Jupiter Notebook is to develop an interactive computing platform able to perform system identification procedures of a three degree of freedom system based on real test results, as well as offer all the potential users a tool to start learning system identification on a simple structure.
 
 [Link Example - this goes to Google](https://www.google.com)
 
 ## Header 2
 
-Euismod nisi porta lorem mollis aliquam ut. Tincidunt ornare massa eget egestas purus viverra accumsan in. Varius quam quisque id diam vel. Fermentum odio eu feugiat pretium nibh ipsum consequat nisl. Placerat duis ultricies lacus sed turpis tincidunt id aliquet risus. Condimentum vitae sapien pellentesque habitant morbi tristique senectus et netus. Egestas sed sed risus pretium quam vulputate. Posuere morbi leo urna molestie at elementum. Eget magna fermentum iaculis eu non diam. Nisl tincidunt eget nullam non nisi. Sit amet risus nullam eget felis eget nunc lobortis mattis.
+The system identification of the structure is carried out for three analysis cases:
+1.	White noise signal
+2.	Dynamic elastic/inelastic response of the structure
+3.	Impact loads coming from for base isolated building pounding a moat wall-the superstructure response.
+
 
 ### Header2 Subheading
 
-In aliquam sem fringilla ut morbi. Interdum varius sit amet mattis vulputate enim nulla aliquet. Sit amet mattis vulputate enim nulla.  In egestas erat imperdiet sed euismod nisi porta lorem. Eget nulla facilisi etiam dignissim diam.  Facilisi cras fermentum odio eu feugiat. Velit aliquet sagittis id consectetur. Vel quam elementum pulvinar etiam.  Ut diam quam nulla porttitor massa id neque aliquam. Sodales ut etiam sit amet nisl.  Scelerisque varius morbi enim nunc faucibus a. Sit amet volutpat consequat mauris nunc. Et leo duis ut diam.
+In all these cases system identification analysis is implemented based on the estimation of the cross power spectral density of the structural response. However, one of the goals that is pursued with the implementation of this notebook is the application of Machine Learning as a tool to obtained important dynamic characteristic of the structures, estimate the uncertainty of common applied procedures as well as to show a “new” alternative solution based on both computational mechanics and deep learning algorithms.
+The system identification analysis is performed on experimental data published in the Technical Report MCEER-13-0003. This report describes both the analytical and experimental procedures to assess the dynamic response of a base isolated structure when it is subject to impact force. This data is subsequently used to validate the numerical models of structural pounding. In addition to generating unique data on structural pounding, the behavior of a base isolated building impacting different types of moat wall installed at different gap distance was also of investigated.
+The abstract of the Jupiter notebook describes the experimental program designed to capture the structural response of base isolated building when it impacts against a surrounding moat wall under extreme ground motions.
+
 
 *Add images to the folder img and use relative path to specify the location of the image.*   
 
@@ -38,8 +45,8 @@ In aliquam sem fringilla ut morbi. Interdum varius sit amet mattis vulputate eni
 
 ## Header3
 
-Morbi tristique senectus et netus et. Tristique senectus et netus et malesuada fames.  Eu mi bibendum neque egestas congue quisque. Id consectetur purus ut faucibus pulvinar elementum integer enim. Nunc consequat interdum varius sit amet mattis vulputate enim nulla.  Porta nibh venenatis cras sed felis eget. Dui id ornare arcu odio ut sem nulla pharetra diam. Pellentesque habitant morbi tristique senectus et netus et. Commodo nulla facilisi nullam vehicula ipsum a arcu. Nisi porta lorem mollis aliquam ut porttitor leo.
-
+The results that are used in the system identification analysis are obtained from a test program consisting of shake table testing of a quarter-scale model representative of the three-story IMRF at the Structural Engineering and Earthquake Simulation Laboratory (SEESL) at the University at Buffalo.
+The base isolated IMRF model was selected for the experimental program due to availability of scaled members and simplicity in fabrication. However, both base isolated buildings including the IMRF and OCBF are used in numerical simulations presented latter in this report. The principal objective of these experiments was to generate experimental data for base isolated building pounding a moat wall, specifically the impact force and the superstructure response. This data is subsequently used to validate the numerical models of structural pounding. In addition to generating unique data on structural pounding, the behavior of a base isolated building impacting different types of moat wall installed at different gap distance was also of investigated. [extract from Technical Report MCEER-13-0003.]
 Numbered list 
 
 1. [numbered linked item](https://maps.google.com)
