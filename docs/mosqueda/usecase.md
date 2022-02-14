@@ -2,7 +2,7 @@
 
 **Enrique, Wendy, Zane, Gilberto Mosqueda, University of California, San Diego**  
 
-Summary about Jupiter Notebook goal. Introduction about test. System identification part. Obtained results.
+Summary about Jupiter Notebook goal. Introduction about test. System identification part. Obtained results. See Use Case 11 - Rathje for example and depth of content
 
 Introductory Text.  High-level overview of product. A condimentum vitae sapien pellentesque habitant morbi tristique.
 
