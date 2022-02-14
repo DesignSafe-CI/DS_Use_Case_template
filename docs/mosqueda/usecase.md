@@ -1,4 +1,4 @@
-# Viewing and Analyzing NEES data in DataDepot - Base Isolated Steel Moment Frame Building with Pounding to Moat Walls - 
+# Viewing and Analyzing NEES data in DataDepot - Base Isolated Steel Moment Frame Building with Pounding to Moat Walls
 
 **Enrique, Wendy, Zane, Gilberto Mosqueda, University of California, San Diego**  
 
