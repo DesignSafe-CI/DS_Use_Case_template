@@ -22,7 +22,7 @@ The main objective of the present Jupiter Notebook is to develop an interactive 
 
 [Link Example - this goes to Google](https://www.google.com)
 
-## Header 2
+## Analysis Cases
 
 The system identification of the structure is carried out for three analysis cases:
 1.	White noise signal
@@ -30,7 +30,7 @@ The system identification of the structure is carried out for three analysis cas
 3.	Impact loads coming from for base isolated building pounding a moat wall-the superstructure response.
 
 
-### Header2 Subheading
+### System Identification
 
 In all these cases system identification analysis is implemented based on the estimation of the cross power spectral density of the structural response. However, one of the goals that is pursued with the implementation of this notebook is the application of Machine Learning as a tool to obtained important dynamic characteristic of the structures, estimate the uncertainty of common applied procedures as well as to show a “new” alternative solution based on both computational mechanics and deep learning algorithms.
 The system identification analysis is performed on experimental data published in the Technical Report MCEER-13-0003. This report describes both the analytical and experimental procedures to assess the dynamic response of a base isolated structure when it is subject to impact force. This data is subsequently used to validate the numerical models of structural pounding. In addition to generating unique data on structural pounding, the behavior of a base isolated building impacting different types of moat wall installed at different gap distance was also of investigated.
@@ -43,7 +43,7 @@ The abstract of the Jupiter notebook describes the experimental program designed
 > Use case template design
 
 
-## Header3
+## About Technical Report MCEER-13-0003
 
 The results that are used in the system identification analysis are obtained from a test program consisting of shake table testing of a quarter-scale model representative of the three-story IMRF at the Structural Engineering and Earthquake Simulation Laboratory (SEESL) at the University at Buffalo.
 The base isolated IMRF model was selected for the experimental program due to availability of scaled members and simplicity in fabrication. However, both base isolated buildings including the IMRF and OCBF are used in numerical simulations presented latter in this report. The principal objective of these experiments was to generate experimental data for base isolated building pounding a moat wall, specifically the impact force and the superstructure response. This data is subsequently used to validate the numerical models of structural pounding. In addition to generating unique data on structural pounding, the behavior of a base isolated building impacting different types of moat wall installed at different gap distance was also of investigated. [extract from Technical Report MCEER-13-0003.]
