@@ -39,7 +39,7 @@ The abstract of the Jupiter notebook describes the experimental program designed
 
 *Add images to the folder img and use relative path to specify the location of the image.*   
 
-![caption](img/mkdocs-template.png)
+![caption](img/MCEER-13-0003.jpg)
 > Use case template design
 
 
