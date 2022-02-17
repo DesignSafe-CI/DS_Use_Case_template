@@ -60,8 +60,8 @@ The project objective is to study high impact wind events on non-structural comp
 px.scatter(dataframe, x=x column, y=y column, color=scatter point values, text=text to be displayed for each point, range_color=color scale range, animation_frame=variable for each animation frame, title = plot title)
 To add more clarity, additional lines of code describing indentations, dimensions and trace lines can be added.
 
-<img src="img/Picture8.png" alt="Flow Process" width="600">
-<img src="img/Picture9.gif" alt="Flow Process" width="600">
+<img src="img/Picture8.png" alt="Flow Process" width="500">
+<img src="img/Picture9.gif" alt="Flow Process" width="500">
 
 As an example to using this plotly feature, an exercise has been described below:
 Requirements:
@@ -128,7 +128,7 @@ fig.update_layout(autosize=False,width=500,height=500,showlegend=True)
 fig.show()
 ```
 
-<img src="img/Picture10.gif" alt="Flow Process" width="600">
+<img src="img/Picture10.gif" alt="Flow Process" width="450">
 
 •	Published Datasets and Notebooks
 o	Wang, M. Splitt, H. Besing, S. Sridhar. (2021), in Hurricane ISAIAS Data from Wireless Pressure Sensor Network and LIDAR. DesignSafe-CI. https://doi.org/10.17603/ds2-6qnj-tv17
