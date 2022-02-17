@@ -42,7 +42,7 @@ The first notebook is a user interactive guide to input important raw data infor
 
 <p align="center">    
 <img src="img/Picture4.png" alt="Flow Process" width="400">
-<img src="img/Picture5.png" alt="Flow Process" width="435">
+<img src="img/Picture5.png" alt="Flow Process" width="450">
 
 ## Jupyter Notebook
 
