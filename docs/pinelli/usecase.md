@@ -46,11 +46,11 @@ Analysis Notebooks and Examples
 
 Florida Tech team’s project goal is to measure pressure variation on non-structural components during strong wind events using their network of wireless sensors. The analysis notebooks on DesignSafe are user interactive with markdowns describing the test and also act as a guide to help the user look at the data they desire. An example of this is the analysis notebook for Isaias (tropical storm on August 1-3, 2020). The markdowns have important information and pictures from the deployment, and instructions for the user to easily access data.
 
-<img src="img/Picture6.png" alt="Flow Process" width="600">
+<img src="img/Picture6.png" alt="Flow Process" width="475">
 
 And a menu allows user to select from options and look at specific time windows or test conditions.
 
-<img src="img/Picture7.png" alt="Flow Process" width="600">
+<img src="img/Picture7.png" alt="Flow Process" width="475">
 
 Using Plotly for Data Driven Animation Frames
 
