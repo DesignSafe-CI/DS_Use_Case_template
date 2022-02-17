@@ -31,7 +31,7 @@ Using Jupyter Notebooks
 
 To save time and memory, three different notebooks address the project objectives. The figure below illustrates the resulting workflow and the sections below describe the notebooks in detail.The first notebook is a user-interactive guide to enter important raw file definitions such as formats, column numbers and sensor information, and is used only once(REPHRASE). This notebook gathers the information necessary to transform datasets with a variety of formats into a standard format. The second notebook calibrates raw data and organizes them into csv and pickled files. The third and final notebook is also user interactive, and helps users analyze and visualize the data.  [For any given field deployment or wind tunnel experiment, the first notebook inputs metadata for the dataset.and second notebooks are typically used once for any given dataset. The third notebook is the frequently used notebook and run everytime need not be executed in sequence every time analysis is done and depends on the type of user and stage of analysis as illustrated in the figure below. ]integrate...
 
-<img src="img/Picture3.png" alt="Flow Process" width="600">
+<img src="img/Picture3.png" alt="Flow Process" width="450">
 
 Adapting to Different Datasets
 
