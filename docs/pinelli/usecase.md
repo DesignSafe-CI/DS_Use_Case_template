@@ -56,7 +56,7 @@ Florida Tech team’s project goal is to measure pressure variation on non-struc
 And a menu allows user to select from options and look at specific time windows or test conditions.
 
 <p align="center">    
-<img src="img/Picture7.png" alt="Flow Process" width="475">
+<img src="img/Picture7.png" alt="Flow Process" width="435">
 
 Using Plotly for Data Driven Animation Frames
 
