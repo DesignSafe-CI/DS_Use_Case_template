@@ -46,11 +46,11 @@ Analysis Notebooks and Examples
 
 Florida Tech team’s project goal is to measure pressure variation on non-structural components during strong wind events using their network of wireless sensors. The analysis notebooks on DesignSafe are user interactive with markdowns describing the test and also act as a guide to help the user look at the data they desire. An example of this is the analysis notebook for Isaias (tropical storm on August 1-3, 2020). The markdowns have important information and pictures from the deployment, and instructions for the user to easily access data.
 
-<img src="img/Picture6.png" alt="Flow Process" width="425">
+<img src="img/Picture6.png" alt="Flow Process" width="475">
 
 And a menu allows user to select from options and look at specific time windows or test conditions.
 
-<img src="img/Picture7.png" alt="Flow Process" width="425">
+<img src="img/Picture7.png" alt="Flow Process" width="475">
 
 Using Plotly for Data Driven Animation Frames
 
@@ -58,8 +58,8 @@ The project objective is to study high impact wind events on non-structural comp
 px.scatter(dataframe, x=x column, y=y column, color=scatter point values, text=text to be displayed for each point, range_color=color scale range, animation_frame=variable for each animation frame, title = plot title)
 To add more clarity, additional lines of code describing indentations, dimensions and trace lines can be added.
 
-<img src="img/Picture8.png" alt="Flow Process" width="450">
-<img src="img/Picture9.gif" alt="Flow Process" width="450">
+<img src="img/Picture8.png" alt="Flow Process" width="425">
+<img src="img/Picture9.gif" alt="Flow Process" width="425">
 
 As an example to using this plotly feature, an exercise has been described below:
 Requirements:
