@@ -16,8 +16,6 @@ The Florida Tech (FIT) hurricane team deploys networks of wireless sensors on re
 
 * This software is distributed under the GNU General Public License (https://www.gnu.org/licenses/gpl-3.0.html).  
 
-### Description 
-
 Using Tapis for Data Uploads in Quasi-real time
 
 The user needs a DesignSafe-CI (DS) account. During deployment, data is uploaded to DS in user defined time interval. Tapis CLI(full form? AND insert links to download them) and Python 3 enable this feature and must be installed on the local system. The user initiates Tapis before every deployment through Windows PowerShell and Tapis creates a token as described below:
