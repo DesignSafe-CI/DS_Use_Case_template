@@ -13,6 +13,7 @@ Post processing scripts are also avaliable and able to run through designsafe, a
 ### Citation and Licensing
 
 * Please cite Alex Shegay ... (link) to acknowledge the use of any data from this use case.
+* Please cite ....Mitc4 docu.... to acknowledge the use of any data from this use case.
 
 * Please cite [AUTHORS et al. (20xx) - example of published project](https://doi.org/10.17603/ds2-3zdj-493) to acknowledge the use of any resources from this use case.
 
@@ -24,7 +25,7 @@ Post processing scripts are also avaliable and able to run through designsafe, a
 
 RW1 is modeled  from the (ALEX MATLAB LINK) database to produce a tcl file that represents the geometry, material, and simulation history of the wall. The wall is y high, x long, and z thick. It consists of x amount of nodes, y amount of continuum shell elements, and z amount of steel truss elements. MITC4 shell elements are used to smear the concrete and transverse steel into the thickness while the vertical reinforce bars are modeled as truss elements. More information on RW1 and its expermintal results can be found in (RW1 LINK)
 
-(SHELL ELEMENT PIC)
+![SchematicView](img/ShellEle.JPG)
 (RW1 MODEL PIC)
 
 The use case workflow involves the following steps:
