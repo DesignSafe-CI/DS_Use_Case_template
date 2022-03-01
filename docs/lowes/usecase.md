@@ -60,11 +60,11 @@ The jupyter notebook that creates the OpenSees input file can be found here: (LI
 
 (text here)
 
-### Stress and Strain Profile Movies
+### Cross Sectional Analysis of Concrete and Steel
 
 (text here)
 
-### Cross Sectional Analysis of Concrete and Steel
+### Stress and Strain Profile Movies
 
 (text here)
 
