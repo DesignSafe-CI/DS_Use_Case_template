@@ -1,12 +1,18 @@
-# TITLE for Use Case Documentation Page
+# Modeling Reinforced Concrete Walls with Continuum Elements to Simulate Through Opensees and Using Jupyter to Post Process Results
 
-**Authors, Affiliations**  
+**Josh Stokley and Laura Lowes, University of Washington**  
 
-Introductory Text.  High-level overview of product. A condimentum vitae sapien pellentesque habitant morbi tristique.
+This use case example demonstrates how to use Jupyter notebook on design safe to model out multiple reinforced concrete walls and run them through (openseesMP??). 
+Post processing scripts are also avaliable and able to run through designsafe, allowing for a steady flow and less steps for the user.  The example makes use of the following DesignSafe resources:
+
+(jupyter notebook)
+(opensees)
 
 ## Background 
 
 ### Citation and Licensing
+
+* Please cite Alex Shegay ... (link) to acknowledge the use of any data from this use case.
 
 * Please cite [AUTHORS et al. (20xx) - example of published project](https://doi.org/10.17603/ds2-3zdj-493) to acknowledge the use of any resources from this use case.
 
@@ -16,27 +22,63 @@ Introductory Text.  High-level overview of product. A condimentum vitae sapien p
 
 ### Description 
 
-Enim ut sem viverra aliquet.  Nisi scelerisque eu ultrices vitae auctor. Scelerisque viverra mauris in aliquam.  Ut morbi tincidunt augue interdum velit euismod in pellentesque massa. Sagittis purus sit amet volutpat consequat mauris nunc congue nisi. Sed adipiscing diam donec adipiscing tristique.  In pellentesque massa placerat duis. Tortor condimentum lacinia quis vel eros donec ac. Sed velit dignissim sodales ut eu sem. Adipiscing elit duis tristique sollicitudin nibh sit amet commodo. Quis risus sed vulputate odio ut.
+RW1 is modeled  from the (ALEX MATLAB LINK) database to produce a tcl file that represents the geometry, material, and simulation history of the wall. The wall is y high, x long, and z thick. It consists of x amount of nodes, y amount of continuum shell elements, and z amount of steel truss elements. MITC4 shell elements are used to smear the concrete and transverse steel into the thickness while the vertical reinforce bars are modeled as truss elements. More information on RW1 and its expermintal results can be found in (RW1 LINK)
+
+(SHELL ELEMENT PIC)
+(RW1 MODEL PIC)
+
+The use case workflow involves the following steps:
+
+* Using Jupyter notebook modeling script to create input file for OpenSees
+* Running input file through HPC on TACC
+* Using Jupyter notebook post processing scripts to evaulate model
+
+
+## Create Input File using Modeling Script
+
+The jupyter notebook that creates the OpenSees input file can be found here: (LINK TO FILE).
+
+### Reinforced Concrete Wall Database
+
+(text here)
+
+### Modeling Script 
+
+(text here)
+
+
+## Running Opensees File through HPC
+
+(text here)
+
+
+## Post Processing
+
+(text here)
+
+### Displacment Graph
+
+(text here)
+
+### Stress and Strain Profile Movies
+
+(text here)
+
+### Cross Sectional Analysis of Concrete and Steel
+
+(text here)
+
+### Crack Angle of Quadrature Points
+
+(text here)
+
+
+
+
+
+
 
 [Link Example - this goes to Google](https://www.google.com)
-
-## Header 2
-
-Euismod nisi porta lorem mollis aliquam ut. Tincidunt ornare massa eget egestas purus viverra accumsan in. Varius quam quisque id diam vel. Fermentum odio eu feugiat pretium nibh ipsum consequat nisl. Placerat duis ultricies lacus sed turpis tincidunt id aliquet risus. Condimentum vitae sapien pellentesque habitant morbi tristique senectus et netus. Egestas sed sed risus pretium quam vulputate. Posuere morbi leo urna molestie at elementum. Eget magna fermentum iaculis eu non diam. Nisl tincidunt eget nullam non nisi. Sit amet risus nullam eget felis eget nunc lobortis mattis.
-
-### Header2 Subheading
-
-In aliquam sem fringilla ut morbi. Interdum varius sit amet mattis vulputate enim nulla aliquet. Sit amet mattis vulputate enim nulla.  In egestas erat imperdiet sed euismod nisi porta lorem. Eget nulla facilisi etiam dignissim diam.  Facilisi cras fermentum odio eu feugiat. Velit aliquet sagittis id consectetur. Vel quam elementum pulvinar etiam.  Ut diam quam nulla porttitor massa id neque aliquam. Sodales ut etiam sit amet nisl.  Scelerisque varius morbi enim nunc faucibus a. Sit amet volutpat consequat mauris nunc. Et leo duis ut diam.
-
-*Add images to the folder img and use relative path to specify the location of the image.*   
-
-![caption](img/mkdocs-template.png)
-> Use case template design
-
-
-## Header3
-
-Morbi tristique senectus et netus et. Tristique senectus et netus et malesuada fames.  Eu mi bibendum neque egestas congue quisque. Id consectetur purus ut faucibus pulvinar elementum integer enim. Nunc consequat interdum varius sit amet mattis vulputate enim nulla.  Porta nibh venenatis cras sed felis eget. Dui id ornare arcu odio ut sem nulla pharetra diam. Pellentesque habitant morbi tristique senectus et netus et. Commodo nulla facilisi nullam vehicula ipsum a arcu. Nisi porta lorem mollis aliquam ut porttitor leo.
 
 Numbered list 
 
