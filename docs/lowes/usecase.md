@@ -2,7 +2,7 @@
 
 **Josh Stokley and Laura Lowes, University of Washington**  
 
-This use case example demonstrates how to use Jupyter notebook on design safe to model out reinforced concrete walls and run them through OpenSeesMP on DesignSafe. 
+This use case example demonstrates how to use Jupyter notebook to model reinforced concrete walls and run them through OpenSeesMP on DesignSafe. 
 Post processing scripts are also avaliable and able to run through designsafe, allowing for a steady flow and less steps for the user.  The purpose of this use case is to be able to model, simulate, and post process multiple walls at once.  This documentation will provide an example of one wall so the user may understand the steps in the workflow.  This use case makes use of the following DesignSafe resources:
 
 (jupyter notebook link)  
@@ -54,13 +54,25 @@ The jupyter notebook that creates the OpenSees input file can be found here: (LI
 
 The walls that are modeled are defined in a database provided by Alex Shegay.  His work can be found here: (ALEX MATLAB LINK)  
 
-The database is a MATLAB variable of type 'structure'. The tree-like structure of the variable consists of several levels. Each level consists of several varaiables, each being a 1x142 dimension array. Each entry within the array corresponds to a separate wall specimen. The order of these entries is consistent throughout the database and reflects the order of walls as appearing in the 'UniqueID' array.
+The database is a MATLAB variable of type 'structure'. The tree-like structure of the variable consists of several levels. Each level consists of several varaiables, each being a 1x142 dimension array. Each entry within the array corresponds to a separate wall specimen. The order of these entries is consistent throughout the database and reflects the order of walls as appearing in the 'UniqueID' array.  
+
+RW1 is wall 33 in the database and that number will be the single input to the modeling script.
 
 
 
 ### Modeling Script 
 
-The modeling script imports the variables from the database necassary to build a continuum model for a wall. The first section of the script initializes the model. The degrees of fredom are defined and the variables that carry uncertainty are also defined.  The second section determines locations of the nodes.
+The modeling script imports the variables from the database necassary to build a continuum model for a wall.  
+* Section 1: Initializion of the model. The degrees of fredom are defined and the variables that carry uncertainty are also defined.  
+<!--- for each section I will have a side by side comaparison of code to RW1 tcl file---> 
+* Section 2: Defines nodal Locations.
+* Section 3: Defines material models and their variables.
+* Section 4: Defines the continuum shell model and the thicknesses of transverse steel and concrete.
+* Section 5: Defines the eleemnts acrosss the width and height. Also adds vertical truss bars up the height.
+* Section 6: Defines constraints
+* Section 7: Defines recorders
+* Section 8: Defines and applies the gravity load of the wall.
+* Section 9: Defines the cyclic anaylsis of the wall.
 
 
 ## Running Opensees File through HPC
@@ -70,23 +82,27 @@ The modeling script imports the variables from the database necassary to build a
 
 ## Post Processing
 
-(text here)
+After the script is finished running through OpenSees, there are multiple post-processing scripts that can be used to analyize the simulation and compare it to the experimental numbers.
 
-### Displacment Graph
+### Load-Displacment Graph
 
-(text here)
+The Load-Displacement script compares the experimental cyclic load history to the simulated cyclic load output. This Script can be found here:  
+(insert RW1 load-displacement graph here)
 
 ### Cross Sectional Analysis of Concrete and Steel
 
-(text here)
+The cross sectional script shows stress and strain output across the cross section of the first level for the concrete and steel at various points on the displacement history. This script can be found here:  
+(insert RW1 anaylsis graphs here)
 
 ### Stress and Strain Profile Movies
 
-(text here)
+The Stress/Strain profile movie script utilizes plotly to create an interactive animation of stresses and strains on the wall throughout the load history. The stress animations are vertical stress, shear stress, and maximum and minimum principal stress. The strain animations are vertical strain, shear strain, and maximum and minimum principal strain. This script can be found here:
+(Insert snapshots of RW1 here)
 
 ### Crack Angle of Quadrature Points
 
-(text here)
+The crack angle script will show at what angle each quadrature point cracks. This script can be found here:  
+(insert crack graph)
 
 
 
