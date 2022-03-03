@@ -2,18 +2,27 @@
 
 **Josh Stokley and Laura Lowes, University of Washington**  
 
-This use case example demonstrates how to use Jupyter notebook on design safe to model out multiple reinforced concrete walls and run them through (openseesMP??). 
-Post processing scripts are also avaliable and able to run through designsafe, allowing for a steady flow and less steps for the user.  The example makes use of the following DesignSafe resources:
+This use case example demonstrates how to use Jupyter notebook on design safe to model out reinforced concrete walls and run them through OpenSeesMP on DesignSafe. 
+Post processing scripts are also avaliable and able to run through designsafe, allowing for a steady flow and less steps for the user.  The purpose of this use case is to be able to model, simulate, and post process multiple walls at once.  This documentation will provide an example of one wall so the user may understand the steps in the workflow.  This use case makes use of the following DesignSafe resources:
 
-(jupyter notebook)
-(opensees)
+(jupyter notebook link)  
+(opensees link)  
+
+<!--- this is a comment --->  
+<!--- this is a comment --->  
+<!--- this is a comment --->  
+<!--- this is a comment --->  
+<!--- this is a comment --->  
+
+
 
 ## Background 
 
 ### Citation and Licensing
 
 * Please cite Alex Shegay ... (link) to acknowledge the use of any data from this use case.
-* Please cite ....Mitc4 docu.... to acknowledge the use of any data from this use case.
+
+* Please cite ....Mitc4 docu.... to acknowledge the use of the modeling strategy from this use case.
 
 * Please cite [AUTHORS et al. (20xx) - example of published project](https://doi.org/10.17603/ds2-3zdj-493) to acknowledge the use of any resources from this use case.
 
@@ -23,10 +32,12 @@ Post processing scripts are also avaliable and able to run through designsafe, a
 
 ### Description 
 
-RW1 is modeled  from the (ALEX MATLAB LINK) database to produce a tcl file that represents the geometry, material, and simulation history of the wall. The wall is y high, x long, and z thick. It consists of x amount of nodes, y amount of continuum shell elements, and z amount of steel truss elements. MITC4 shell elements are used to smear the concrete and transverse steel into the thickness while the vertical reinforce bars are modeled as truss elements. More information on RW1 and its expermintal results can be found in (RW1 LINK)
+RW1 is modeled  from the database to produce a tcl file that represents the geometry, material, and simulation history of the wall. The wall is y high, x long, and z thick. It consists of x amount of nodes, y amount of continuum shell elements, and z amount of steel truss elements. MITC4 shell elements are used to smear the concrete and transverse steel into the thickness while the vertical reinforce bars are modeled as truss elements. RW1 had a compression buckling failure mode in the lab. The variables that carry uncertainty will be the shear retention factor and the ratio of unconfined crushing energy to confined crushing energy. More information on RW1 and its expirmental results can be found in (RW1 LINK)
 
-![SchematicView](img/ShellEle.JPG)
-(RW1 MODEL PIC)
+![SchematicView](img/ShellEle.JPG)  
+Smeared shell element representation  
+
+(Model picture of RW1 goes here)  
 
 The use case workflow involves the following steps:
 
@@ -41,16 +52,20 @@ The jupyter notebook that creates the OpenSees input file can be found here: (LI
 
 ### Reinforced Concrete Wall Database
 
-(text here)
+The walls that are modeled are defined in a database provided by Alex Shegay.  His work can be found here: (ALEX MATLAB LINK)  
+
+The database is a MATLAB variable of type 'structure'. The tree-like structure of the variable consists of several levels. Each level consists of several varaiables, each being a 1x142 dimension array. Each entry within the array corresponds to a separate wall specimen. The order of these entries is consistent throughout the database and reflects the order of walls as appearing in the 'UniqueID' array.
+
+
 
 ### Modeling Script 
 
-(text here)
+The modeling script imports the variables from the database necassary to build a continuum model for a wall. The first section of the script initializes the model. The degrees of fredom are defined and the variables that carry uncertainty are also defined.  The second section determines locations of the nodes.
 
 
 ## Running Opensees File through HPC
 
-(text here)
+(Script needs to be established on design safe. I have a working notebook, just need to connect it with modeling script)
 
 
 ## Post Processing
@@ -78,6 +93,8 @@ The jupyter notebook that creates the OpenSees input file can be found here: (LI
 
 
 
+
+## Example Markdown Notation  
 
 [Link Example - this goes to Google](https://www.google.com)
 
