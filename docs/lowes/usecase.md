@@ -3,8 +3,8 @@
 **Josh Stokley and Laura Lowes, University of Washington**  
 
 The purpose of this use case is to be able to model, simulate, and post process multiple reinforced concrete walls at once. This use case uses jupyter notebooks to model these walls with shell elements and uses OpenSeesMP on DesignSafe to simulate the models. The documentation of this use case will use a single wall, RW1, as an example to understand the workflow and objectives of this use case. The following DesignSafe resources are used:  
-(jupyter notebook link)  
-(opensees link) 
+[Jupyter Notebook on DesignSafe](https://www.designsafe-ci.org/rw/workspace/#!/Jupyter::Analysis)  
+[Opensees on DesignSafe](https://www.designsafe-ci.org/rw/workspace/#!/OpenSees::Simulation)  
 
 
 <!--- this is a comment --->    
@@ -28,7 +28,6 @@ The purpose of this use case is to be able to model, simulate, and post process 
 ### Data  
 
 The walls that are modeled are defined in a database provided by Alex Shegay. The database is a MATLAB variable of type 'structure'. The tree-like structure of the variable consists of several levels. Each level consists of several varaiables, each being a 1x142 dimension array. Each entry within the array corresponds to a separate wall specimen. The order of these entries is consistent throughout the database and reflects the order of walls as appearing in the 'UniqueID' array.  
-His work can be found here: (ALEX MATLAB LINK) 
 
 ### Modeling
 
@@ -37,13 +36,13 @@ The modeling of these walls make use of the MITC4 shell element. This element sm
 
 * PlaneStressUserMaterial- Utilizes damage mechanisms and smeared crack model to defin a multi-dimensional concrete model  
     * Variables include: compressive strength, tensile strength, crushing strength, strain at maximum and crushing strengths, ultimate tensile strain, and shear retention factor
-    * Model can be found following the previous link under Lu XZs work
+    * Model can be found in Lu XZs citation  
  
 * Steel02- Uniaxial steel material model with isotropic strain hardening
     * Variables include: yield strength, initial elastic tangent, and strain hardening ratio  
     * Model can be found here: [Steel02 OpenSees](https://opensees.berkeley.edu/wiki/index.php/Steel02_Material_--_Giuffr%C3%A9-Menegotto-Pinto_Model_with_Isotropic_Strain_Hardening)  
 
-![SchematicView](img/ShellEle.JPG)  
+<img src="img/ShellEle.JPG" width="500" height="250" />
 Figure 1: Smeared shell element representation  
 
 ## Example Description 
@@ -65,15 +64,15 @@ The jupyter notebook that creates the OpenSees input file can be found here: (LI
 
 ### Reinforced Concrete Wall Database   
 
+Each wall in the database has a number corrosponding to its unique ID. This number will be the single input to the modeling script to create the script. The use case will loop through multiple numbers to create multiple files at once and run them through opensees. Variables are seperated in the database by sections. For example, under the section 'Geometry', one can find the heights of the walls, the thickness of walls, the aspect ratios, and so on. By parsing through these sections, the necassary information can found and imported into the modeling script to build out the wall.
 
-
-RW1 is wall 33 in the database and that number will be the single input to the modeling script.
+RW1 is wall 34 in the database and using that single number, the modeling script can grab everything that defines RW1.  
 
 
 
 ### Modeling Script 
 
-The modeling script imports the variables from the database necassary to build a continuum model for a wall.  
+The sections of the modeling script are:
 * Section 1: Initializion of the model. The degrees of fredom are defined and the variables that carry uncertainty are also defined.  
 <!--- for each section I will have a side by side comaparison of code to RW1 tcl file---> 
 * Section 2: Defines nodal Locations.
@@ -83,7 +82,9 @@ The modeling script imports the variables from the database necassary to build a
 * Section 6: Defines constraints
 * Section 7: Defines recorders
 * Section 8: Defines and applies the gravity load of the wall.
-* Section 9: Defines the cyclic anaylsis of the wall.
+* Section 9: Defines the cyclic anaylsis of the wall.  
+
+The last function of the script is to then run the wall through opensees (This feature can be disabled if the user would like to look at the script before running OpenSees)  
 
 
 ## Running Opensees File through HPC
@@ -114,63 +115,3 @@ The Stress/Strain profile movie script utilizes plotly to create an interactive 
 
 The crack angle script will show at what angle each quadrature point cracks. This script can be found here:  
 (insert crack graph)
-
-
-
-
-
-
-
-## Example Markdown Notation  
-
-[Link Example - this goes to Google](https://www.google.com)
-
-Numbered list 
-
-1. [numbered linked item](https://maps.google.com)
-2. second item
-3. third item
-
-### Header3 subheading
-
-Ac feugiat sed lectus vestibulum mattis ullamcorper. Et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut. Scelerisque eu ultrices vitae auctor eu augue ut lectus arcu.  Imperdiet proin fermentum leo vel orci porta non pulvinar. Dictumst quisque sagittis purus sit amet. Aliquam purus sit amet luctus. Aliquet bibendum enim facilisis gravida neque convallis a cras. Orci porta non pulvinar neque laoreet suspendisse. Urna neque viverra justo nec ultrices dui.
-
-**Example Table**
-
-| Column 1 | Column 2 | Column 3 |
-|----------|----------|----------|
-| Stampede2| CPU      | 2017     |     
-| Frontera | CPU & GPU| 2019     |     
-
-Or use markdown table generator: [https://www.tablesgenerator.com/markdown_tables](https://www.tablesgenerator.com/markdown_tables)
-
-
-### Math
-
-To generate math equations in markdown.
-
-For inline mode formulas: $`a^2+b^2=c^2`$.
-
-For display mode formulas which appear on a separate line
-```math
-f(x) = \int_{-\infty}^\infty
-\hat f(\xi)\,e^{2 \pi i \xi x}
-\,d\xi
-```
-
-### Code
-
-``` python
-import tensorflow as tf
-```
-
-Highlight specific lines of the code
-
-``` python hl_lines="3 4"
-""" Bubble sort """
-def bubble_sort(items):
-    for i in range(len(items)):
-        for j in range(len(items) - 1 - i):
-            if items[j] > items[j + 1]:
-                items[j], items[j + 1] = items[j + 1], items[j]
-```
