@@ -1,12 +1,11 @@
-# Modeling Reinforced Concrete Walls with Continuum Elements to Simulate Through Opensees and Using Jupyter to Post Process Results
+# Modeling Reinforced Concrete Walls with Shell Elements to Simulate Through Opensees and Using Jupyter to Post Process Results
 
 **Josh Stokley and Laura Lowes, University of Washington**  
 
-This use case example demonstrates how to use Jupyter notebook to model reinforced concrete walls and run them through OpenSeesMP on DesignSafe. 
-Post processing scripts are also avaliable and able to run through designsafe, allowing for a steady flow and less steps for the user.  The purpose of this use case is to be able to model, simulate, and post process multiple walls at once.  This documentation will provide an example of one wall so the user may understand the steps in the workflow.  This use case makes use of the following DesignSafe resources:
-
+The purpose of this use case is to be able to model, simulate, and post process multiple reinforced concrete walls at once. This use case uses jupyter notebooks to model these walls with shell elements and uses OpenSeesMP on DesignSafe to simulate the models. The documentation of this use case will use a single wall, RW1, as an example to understand the workflow and objectives of this use case. The following DesignSafe resources are used:  
 (jupyter notebook link)  
-(opensees link)  
+(opensees link) 
+
 
 <!--- this is a comment --->    
 <!--- this is a comment --->  
@@ -14,35 +13,49 @@ Post processing scripts are also avaliable and able to run through designsafe, a
 <!--- this is a comment --->  
 <!--- this is a comment --->  
 
-
-
-## Background 
-
 ### Citation and Licensing
 
-* Please cite Alex Shegay ... (link) to acknowledge the use of any data from this use case.
+* Please cite [Shegay et al. (2021)](https://doi.org/10.17603/ds2-r12q-t415) to acknowledge the use of any data from this use case.
 
-* Please cite ....Mitc4 docu.... to acknowledge the use of the modeling strategy from this use case.
-
-* Please cite [AUTHORS et al. (20xx) - example of published project](https://doi.org/10.17603/ds2-3zdj-493) to acknowledge the use of any resources from this use case.
+* Please cite [Lu XZ et al. (2015)](http://www.luxinzheng.net/download/OpenSEES/En_THUShell_OpenSEES.htm ) to acknowledge the use of the modeling strategy from this use case.
 
 * Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246) to acknowledge the use of DesignSafe resources.  
 
 * This software is distributed under the GNU General Public License (https://www.gnu.org/licenses/gpl-3.0.html).  
 
-### Description 
+## Background  
 
-RW1 is modeled  from the database to produce a tcl file that represents the geometry, material, and simulation history of the wall. The wall is y high, x long, and z thick. It consists of x amount of nodes, y amount of continuum shell elements, and z amount of steel truss elements. MITC4 shell elements are used to smear the concrete and transverse steel into the thickness while the vertical reinforce bars are modeled as truss elements. RW1 had a compression buckling failure mode in the lab. The variables that carry uncertainty will be the shear retention factor and the ratio of unconfined crushing energy to confined crushing energy. More information on RW1 and its expirmental results can be found in (RW1 LINK)
+### Data  
+
+The walls that are modeled are defined in a database provided by Alex Shegay. The database is a MATLAB variable of type 'structure'. The tree-like structure of the variable consists of several levels. Each level consists of several varaiables, each being a 1x142 dimension array. Each entry within the array corresponds to a separate wall specimen. The order of these entries is consistent throughout the database and reflects the order of walls as appearing in the 'UniqueID' array.  
+His work can be found here: (ALEX MATLAB LINK) 
+
+### Modeling
+
+The modeling techniques are inspired by the work of Lu XZ.
+The modeling of these walls make use of the MITC4 shell element. This element smears concrete and steel in multiple layers through the thickness of the element. Figure 1 demonstrates this.  Within the shell element, only the transverse steel is smeared with the concrete. The shell elements are modeled to be square or close to square for best accuracy, an assumption that follows this is that cover concrete on the ends of the wall are not taken into account as it would produce skinny elements that would cause the wall to fail prematurely. The vertical steel bars are modeled as trusses up the wall to better simulate the stress of those bars.  The opensees material models that are used are:  
+
+* PlaneStressUserMaterial- Utilizes damage mechanisms and smeared crack model to defin a multi-dimensional concrete model  
+    * Variables include: compressive strength, tensile strength, crushing strength, strain at maximum and crushing strengths, ultimate tensile strain, and shear retention factor
+    * Model can be found following the previous link under Lu XZs work
+ 
+* Steel02- Uniaxial steel material model with isotropic strain hardening
+    * Variables include: yield strength, initial elastic tangent, and strain hardening ratio  
+    * Model can be found here: [Steel02 OpenSees](https://opensees.berkeley.edu/wiki/index.php/Steel02_Material_--_Giuffr%C3%A9-Menegotto-Pinto_Model_with_Isotropic_Strain_Hardening)  
 
 ![SchematicView](img/ShellEle.JPG)  
-Smeared shell element representation  
+Figure 1: Smeared shell element representation  
 
+## Example Description 
+
+RW1 is modeled from the database to produce a tcl file that represents the geometry, material, and simulation history of the wall. The wall is 144 inches high, 47.25 inches long, and 4 inches thick. It consists of 1241 amount of nodes, 1152 amount of shell elements, and 863 amount of steel truss elements. MITC4 shell elements are used to smear the concrete and transverse steel into the thickness while the vertical reinforce bars are modeled as truss elements. RW1 had a compression buckling failure mode in the lab. More information on RW1 and its experimental results can be found here: (RW1 LINK)  
+ 
 (Model picture of RW1 goes here)  
 
 The use case workflow involves the following steps:
 
 * Using Jupyter notebook modeling script to create input file for OpenSees
-* Running input file through HPC on TACC
+* Running input file through HPC on DesignSafe
 * Using Jupyter notebook post processing scripts to evaulate model
 
 
@@ -50,11 +63,9 @@ The use case workflow involves the following steps:
 
 The jupyter notebook that creates the OpenSees input file can be found here: (LINK TO FILE).
 
-### Reinforced Concrete Wall Database
+### Reinforced Concrete Wall Database   
 
-The walls that are modeled are defined in a database provided by Alex Shegay.  His work can be found here: (ALEX MATLAB LINK)  
 
-The database is a MATLAB variable of type 'structure'. The tree-like structure of the variable consists of several levels. Each level consists of several varaiables, each being a 1x142 dimension array. Each entry within the array corresponds to a separate wall specimen. The order of these entries is consistent throughout the database and reflects the order of walls as appearing in the 'UniqueID' array.  
 
 RW1 is wall 33 in the database and that number will be the single input to the modeling script.
 
