@@ -87,7 +87,7 @@ The sections of the modeling script are:
 The last function of the script is to then run the wall through opensees (This feature can be disabled if the user would like to look at the script before running OpenSees)  
 
 
-## Running Opensees File through HPC
+## Running Opensees through HPC
 
 (Script needs to be established on design safe. I have a working notebook, just need to connect it with modeling script)
 
@@ -99,19 +99,21 @@ After the script is finished running through OpenSees, there are multiple post-p
 ### Load-Displacment Graph
 
 The Load-Displacement script compares the experimental cyclic load history to the simulated cyclic load output. This Script can be found here:  
-(insert RW1 load-displacement graph here)
+
+<img src="img/disp.JPG"  width="900" height="750" />
 
 ### Cross Sectional Analysis of Concrete and Steel
 
 The cross sectional script shows stress and strain output across the cross section of the first level for the concrete and steel at various points on the displacement history. This script can be found here:  
-(insert RW1 anaylsis graphs here)
+<img src="img/cs1.JPG"  />  
+<img src="img/cs1.JPG"  />
 
 ### Stress and Strain Profile Movies
 
 The Stress/Strain profile movie script utilizes plotly to create an interactive animation of stresses and strains on the wall throughout the load history. The stress animations are vertical stress, shear stress, and maximum and minimum principal stress. The strain animations are vertical strain, shear strain, and maximum and minimum principal strain. This script can be found here:
-(Insert snapshots of RW1 here)
+<img src="img/movies.JPG" />
 
 ### Crack Angle of Quadrature Points
 
 The crack angle script will show at what angle each quadrature point cracks. This script can be found here:  
-(insert crack graph)
+<img src="img/cracked.JPG" />
