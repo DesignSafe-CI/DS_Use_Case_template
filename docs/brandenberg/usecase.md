@@ -1,8 +1,7 @@
-# Oct 2021 DesignSafe Webinar
+# Next Generation Liuqefaction (NGL) Database Jupyter Notebooks
 
 **Brandenberg, S.J., UCLA, Ulmer, K.J., Southwest Research Institute, and Zimmaro, P., University of Calabria**  
 
-ngl_tools is a collection of Jupyter notebooks developed to interact with the NGL database in DesignSafe. 
 The Next Generation Liquefaction (NGL) Project is advancing the state of the art in liquefaction research 
 and working toward providing end users with a consensus approach to assess liquefaction potential within 
 a probabilistic and risk-informed framework. Specifically, NGL’s goal is to first collect and organize 
@@ -12,6 +11,7 @@ Based on this database, we will create probabilistic models that provide hazard-
 for assessing liquefaction susceptibility, the potential for liquefaction to be triggered in susceptible soils, 
 and the likely consequences. NGL is committed to an open and objective evaluation and integration of data, 
 models and methods, as recommended in a 2016 National Academies [report](https://www.nap.edu/catalog/23474/state-of-the-art-and-practice-in-the-assessment-of-earthquake-induced-soil-liquefaction-and-its-consequences). 
+
 The evaluation and integration of the data into new models and methods will be clear and transparent. Following these principles will ensure 
 that the resulting liquefaction susceptibility, triggering, and consequence models are reliable, robust and 
 vetted by the scientific community, providing a solid foundation for designing, constructing and overseeing 
@@ -23,28 +23,35 @@ but they cannot use the GUI to develop an end-to-end workflow to make scientific
 from the data. To facilitate end-to-end workflows, the NGL database is replicated daily to [DesignSafe](https://www.designsafe-ci.org), where 
 users can interact with it using Jupyter notebooks.
 
-## Background 
+## Citation and Licensing
 
-The DesignSafe_Webinar_Oct2021 notebook was created during a webinar/workshop hosted by DesignSafe and the Pacific Earthquake Engineering Research (PEER) center.
-Introductory Text.
-
-### Citation and Licensing
-
-* Please cite [AUTHORS et al. (20xx) - example of published project](https://doi.org/10.17603/ds2-3zdj-493) to acknowledge the use of any resources from this use case.
+* Please cite [Zimmaro, P., et al. (2019)](https://doi.org/10.21222/C2J040) to acknowledge the use of the NGL Database. Data in the NGL database has been gathered from [these](https://nextgenerationliquefaction.org/citations.php) published sources. If you use specific data in the database, please cite the original source.
 
 * Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246) to acknowledge the use of DesignSafe resources.  
 
 * This software is distributed under the GNU General Public License (https://www.gnu.org/licenses/gpl-3.0.html).  
 
-### Description 
 
-Enim ut sem viverra aliquet.  Nisi scelerisque eu ultrices vitae auctor. Scelerisque viverra mauris in aliquam.  Ut morbi tincidunt augue interdum velit euismod in pellentesque massa. Sagittis purus sit amet volutpat consequat mauris nunc congue nisi. Sed adipiscing diam donec adipiscing tristique.  In pellentesque massa placerat duis. Tortor condimentum lacinia quis vel eros donec ac. Sed velit dignissim sodales ut eu sem. Adipiscing elit duis tristique sollicitudin nibh sit amet commodo. Quis risus sed vulputate odio ut.
+## Installing Database Connection Script
 
-[Link Example - this goes to Google](https://www.google.com)
+Connecting to a relational database requires credentials, like username, password, database name, and hostname. 
+Rather than requiring users to know these credentials, we have created a Python package that allows users to 
+connect to the database. To install the Python package, you should first execute this code:
 
-## Header 2
+```python
+!pip install ngl_db
+```
 
-Euismod nisi porta lorem mollis aliquam ut. Tincidunt ornare massa eget egestas purus viverra accumsan in. Varius quam quisque id diam vel. Fermentum odio eu feugiat pretium nibh ipsum consequat nisl. Placerat duis ultricies lacus sed turpis tincidunt id aliquet risus. Condimentum vitae sapien pellentesque habitant morbi tristique senectus et netus. Egestas sed sed risus pretium quam vulputate. Posuere morbi leo urna molestie at elementum. Eget magna fermentum iaculis eu non diam. Nisl tincidunt eget nullam non nisi. Sit amet risus nullam eget felis eget nunc lobortis mattis.
+## Querying the Database
+
+The lines of code below first imports the ngl_db Python package, and then creates a 
+connection object to the database called cnx.
+
+```python
+import ngl_db as ngl
+sql = "SELECT * FROM SITE"
+df = ngl.read_sql(
+```
 
 ### Header2 Subheading
 
