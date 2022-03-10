@@ -204,13 +204,13 @@ The cone penetration test viewer demonstrates the following:
 
 Cone penetration test data plotted in the notebook include tip resistance, sleeve friction, and pore pressure. In some cases, sleeve friction and pore pressure are not measured, in which case the plots are empty.
 
-## Jupyter notebook
+### Jupyter notebook
 [Jupyter notebook on DesignSafe](https://jupyter.designsafe-ci.org/user/name/tree/CommunityData/NGL/CPT_viewer.ipynb)
 
-## Tables
+### Tables
 Tables queried in this notebook, and the fields within those tables are described in the tables below.
 
-### List of Tables
+#### List of Tables
 
 | Table | Description |
 | ----- | ----------- |
@@ -219,14 +219,14 @@ Tables queried in this notebook, and the fields within those tables are describe
 | SCPG  | Table containing metadata about CPT test |
 | SCPT  | Table containing CPT test data |
 
-### SITE Table
+#### SITE Table
 
 | Field   | Description |
 | -----   | ----------- |
 | SITE_ID | Primary key for the site table |
 | SITE_NAME | Site name (appears in site_widget dropdown) |
 
-### TEST Table
+#### TEST Table
 
 | Field   | Description |
 | -----   | ----------- |
@@ -234,7 +234,7 @@ Tables queried in this notebook, and the fields within those tables are describe
 | SITE_ID |  Foreign key from SITE table associating a test with a site |
 | TEST_NAME | Test name (appears in test_widget dropdown) |
 
-### SCPG Table
+#### SCPG Table
 
 | Field   | Description |
 | -----   | ----------- |
@@ -249,7 +249,7 @@ Tables queried in this notebook, and the fields within those tables are describe
 | SCPG_PWP  | Position of pore pressure measurement on cone |
 | SCPG_REM  | Remarks |
 
-### SCPT Table
+#### SCPT Table
 
 | Field   | Description |
 | -----   | ----------- |
@@ -260,11 +260,11 @@ Tables queried in this notebook, and the fields within those tables are describe
 | SCPT_FRES | Sleeve friction resistance (fs) in MPa | 
 | SCPT_PWP  | Pore-water pressure in MPa |
 
-## Code
+### Code
 
 This section describes the [Jupyter notebook](https://jupyter.designsafe-ci.org/user/name/notebooks/CommunityData/NGL/CPT_viewer.ipynb) available via DesignSafe. The code is broken into chunks with explanations of each section of code.
 
-### Import packages
+#### Import packages
 
 In this case, we need to import ipywidgets, matplotlib, numpy, ngl_db, and pandas. The "%matplotlib notebook" magic renders an interactive plot in the notebook.
 
@@ -277,7 +277,7 @@ import designsafe_db.ngl_db as ngl
 import pandas as pd
 ```
 
-### Query distinct SITE_ID and SITE_NAME for sites that have CPT data
+#### Query distinct SITE_ID and SITE_NAME for sites that have CPT data
 The query below finds distinct SITE_ID and SITE_NAME fields that contain CPT data for the purpose of populating the site dropdown widget. 
 INNER JOIN commands are required between SITE, TEST, and SCPG to find sites containing CPT data.
 A site might contain more than one CPT test, but we do not want replicated fields in the site dropdown widget. Therefore we use the "DISTINCT" command.
@@ -287,7 +287,7 @@ sql = 'SELECT DISTINCT SITE.SITE_ID, SITE.SITE_NAME FROM SITE INNER JOIN TEST ON
 site_df = ngl.read_sql_query(sql)
 ```
 
-### Create key, value pairs for SITE_NAME and SITE_ID, and create site_widget
+#### Create key, value pairs for SITE_NAME and SITE_ID, and create site_widget
 Dropdown widgets accept key-value pairs for the "options" field. This is desireable here because the SITE_ID can be set to the key, and subsequently utilized in queries when a user selects a site. The code below converts queried site data into name, value pairs.
 
 ```python
@@ -299,7 +299,7 @@ for key, value in site_df['SITE_NAME'].to_dict().items():
 site_widget = widgets.Dropdown(options=site_options, description='Site')
 ``` 
 
-### Create empty test_widget. This widget will get populated when a site is selected
+#### Create empty test_widget. This widget will get populated when a site is selected
 
 ```python
 test_options = [('Select a test', -1)]
@@ -308,7 +308,7 @@ widget_box= widgets.VBox([site_widget, test_widget])
 display(widget_box)
 ```
 
-### Create plot objects and initialize empty plots
+#### Create plot objects and initialize empty plots
 
 ```python
 fig, ax = plt.subplots(1, 3, figsize=(6,4), sharey='row')
@@ -332,14 +332,14 @@ ax[2].invert_yaxis()
 fig.tight_layout()
 ```
 
-### Create empty metadata_widget. This widget will get populated when a CPT test is selected
+#### Create empty metadata_widget. This widget will get populated when a CPT test is selected
 
 ```python
 metadata_widget = widgets.HTML(value='')
 display(metadata_widget)
 ```
 
-### Define function for populating test_widget when a user selects a site from the site_widget dropdown
+#### Define function for populating test_widget when a user selects a site from the site_widget dropdown
 
 This code sets data for the plots to be empty, and sets the metadata widget to be empty as well. If the top-level field is selected (i.e., 'Select a Test'), then the test_widget is disabled.
 If a site is selected, a SQL query is made on all of the CPT tests for that site, and the test dropdown is populated.
@@ -368,7 +368,7 @@ def on_site_widget_change(change):
        test_widget.disabled = False
 ```
 
-### Define function for querying CPT data and metadata when a user selects a CPT test
+#### Define function for querying CPT data and metadata when a user selects a CPT test
 ```python
 def on_test_widget_change(change):
    if(change['new']!=-1):
@@ -407,7 +407,7 @@ def on_test_widget_change(change):
        metadata_widget.value=''
 ```
 
-### Use the ipywidgets 'observe' command to link widgets to appropriate functions on change
+#### Use the ipywidgets 'observe' command to link widgets to appropriate functions on change
 ```python
 site_widget.observe(on_site_widget_change, names='value')
 test_widget.observe(on_test_widget_change, names='value')
@@ -425,13 +425,13 @@ The V<sub>s</sub> (Invasive) Test Viewer demonstrates the following:
 6. Plotting data from the selected invasive geophysical test using matplotlib
 
 
-## Jupyter notebook
+### Jupyter notebook
 [Jupyter notebook on DesignSafe](https://jupyter.designsafe-ci.org/user/name/tree/CommunityData/NGL/VS_Invasive_viewer.ipynb)
 
-## Tables
+### Tables
 Tables queried in this notebook, and the fields within those tables are described in the tables below.
 
-### List of Tables
+#### List of Tables
 
 | Table | Description |
 | ----- | ----------- |
@@ -440,14 +440,14 @@ Tables queried in this notebook, and the fields within those tables are describe
 | GINV  |  Table containing metadata about invasive geophysical test |
 | GIND  |  Table containing invasive geophysical test data |
 
-### SITE Table
+#### SITE Table
 
 | Field | Description |
 | ----- | ----------- |
 | SITE_ID   |  Primary key for the site table |
 | SITE_NAME  | Site name (appears in site_widget dropdown) |
 
-### TEST Table
+#### TEST Table
 
 | Field | Description |
 | ----- | ----------- |
@@ -455,7 +455,7 @@ Tables queried in this notebook, and the fields within those tables are describe
 | SITE_ID  |   Foreign key from SITE table associating a test with a site |
 | TEST_NAME  | Test name (appears in test_widget dropdown) |
 
-### GINV Table
+#### GINV Table
 
 | Field | Description |
 | ----- | ----------- |
@@ -467,7 +467,7 @@ Tables queried in this notebook, and the fields within those tables are describe
 | GINV_STAR |  Start date of test |
 | GINV_ENDD |  End date of test |
 
-### GIND Table
+#### GIND Table
 
 | Field | Description |
 | ----- | ----------- |
@@ -477,11 +477,11 @@ Tables queried in this notebook, and the fields within those tables are describe
 | GIND_VS  |   Shear-wave velocity in m/s |
 | GIND_VP  |   P-wave velocity in m/s |
 
-## Code
+### Code
 
 This section describes the [Jupyter notebook](https://jupyter.designsafe-ci.org/user/sjbrande/notebooks/CommunityData//NGL/VS_Invasive_viewer.ipynb) available via DesignSafe. The code is broken into chunks with explanations of each section of code.
 
-### Import packages
+#### Import packages
 
 In this case, we need to import ipywidgets, matplotlib, numpy, ngl_db, and pandas. The "%matplotlib notebook" magic renders an interactive plot in the notebook.
 
@@ -494,7 +494,7 @@ import designsafe_db.ngl_db as ngl
 import pandas as pd
 ```
 
-### Query distinct SITE_ID and SITE_NAME for sites that have invasive geophysical tests
+#### Query distinct SITE_ID and SITE_NAME for sites that have invasive geophysical tests
 The query below finds distinct SITE_ID and SITE_NAME fields that contain invasive geophysical test data for the purpose of populating the site dropdown widget. 
 INNER JOIN commands are required between SITE, TEST, and GINV to find sites containing invasive geophysical testdata.
 A site might contain more than one CPT test, but we do not want replicated fields in the site dropdown widget. Therefore we use the "DISTINCT" command.
@@ -505,7 +505,7 @@ sql += 'INNER JOIN TEST ON SITE.SITE_ID = TEST.SITE_ID INNER Join GINV ON GINV.T
 site_df = ngl.read_sql_query(sql)
 ```    
 
-### Create key, value pairs for SITE_NAME and SITE_ID, and create site_widget
+#### Create key, value pairs for SITE_NAME and SITE_ID, and create site_widget
 
 Dropdown widgets accept key-value pairs for the "options" field. This is desireable here because the SITE_ID can be set to the key, and subsequently utilized in queries when a user selects a site. The code below converts queried site data into name, value pairs.
 
@@ -518,7 +518,7 @@ for key, value in site_df['SITE_NAME'].to_dict().items():
 site_widget = widgets.Dropdown(options=site_options, description='Site')
 ```
 
-### Create empty test_widget. This widget will get populated when a site is selected
+#### Create empty test_widget. This widget will get populated when a site is selected
 
 ```python
 test_options = [('Select a test', -1)]
@@ -527,7 +527,7 @@ widget_box= widgets.VBox([site_widget, test_widget])
 display(widget_box)
 ```
 
-### Create plot objects and initialize empty plots
+#### Create plot objects and initialize empty plots
 
 ```python
 fig, ax = plt.subplots(1, 3, figsize=(6,4), sharey='row')
@@ -545,14 +545,14 @@ ax[1].grid(True)
 fig.tight_layout()
 ```
 
-### Create empty metadata_widget. This widget will get populated when an invasive geophysical test is selected
+#### Create empty metadata_widget. This widget will get populated when an invasive geophysical test is selected
 
 ```python
 metadata_widget = widgets.HTML(value='')
 display(metadata_widget)
 ```
 
-### Define function for populating test_widget when a user selects a site from the site_widget dropdown
+#### Define function for populating test_widget when a user selects a site from the site_widget dropdown
 
 This code sets data for the plots to be empty, and sets the metadata widget to be empty as well. If the top-level field is selected (i.e., 'Select a Test'), then the test_widget is disabled.
 If a site is selected, a SQL query is made on all of the invasive geophysical tests for that site, and the test dropdown is populated.
@@ -580,7 +580,7 @@ def on_site_widget_change(change):
         test_widget.disabled = False
 ```
 
-### Define function for querying geophysical data and metadata when a user selects an invasive geophysical test
+#### Define function for querying geophysical data and metadata when a user selects an invasive geophysical test
 
 ```python
 def on_test_widget_change(change):
@@ -614,7 +614,7 @@ def on_test_widget_change(change):
         metadata_widget.value=''
 ```
 
-### Use the ipywidgets 'observe' command to link widgets to appropriate functions on change
+#### Use the ipywidgets 'observe' command to link widgets to appropriate functions on change
 ```python
 site_widget.observe(on_site_widget_change, names='value')
 test_widget.observe(on_test_widget_change, names='value')
@@ -633,27 +633,27 @@ The notebook demonstrates the following:
 Cone penetration test data plotted in the notebook include tip resistance, sleeve friction, and pore pressure. In some cases, sleeve friction and pore pressure are not measured, in which case the plots are empty.
 
 
-Related Links
-----------------
+### Related Links
+-----------------
 
 [DesignSafe Webinar Recording](https://youtu.be/TNOPOU4lx5w)
 
 [DesignSafe Workshop Recording](https://youtu.be/_nKpSqa1rso)
 
 
-Jupyter notebook
+### Jupyter notebook
 ----------------
 
 [Jupyter notebook on DesignSafe](https://jupyter.designsafe-ci.org/user/name/tree/CommunityData/NGL/DesignSafe_Webinar_Oct2021.ipynb)
 
 
-Tables
+### Tables
 ------
 
 Tables queried in this notebook, and the fields within those tables are described in the tables below.
 
 
-### List of Tables
+#### List of Tables
 
 |Table | Description|
 |--- |---|
@@ -664,7 +664,7 @@ Tables queried in this notebook, and the fields within those tables are describe
 |WATR | Table containing ground water table information |
 
 
-### SITE Table
+#### SITE Table
 
 |Field  | Description|
 | --- | --- |
@@ -672,7 +672,7 @@ Tables queried in this notebook, and the fields within those tables are describe
 |SITE_NAME |Site name|
 
 
-### TEST Table
+#### TEST Table
 
 |Field | Description|
 | --- | --- |
@@ -681,7 +681,7 @@ Tables queried in this notebook, and the fields within those tables are describe
 |TEST_NAME| Test name|
 
 
-### SCPG Table
+#### SCPG Table
 
 |Field |    Description|
 | --- | --- |
@@ -689,7 +689,7 @@ Tables queried in this notebook, and the fields within those tables are describe
 |TEST_ID |  Foreign key from TEST table associating the SCPG with a TEST|
 
 
-### SCPT Table
+#### SCPT Table
 
 |Field |    Description|
 | --- | --- |
@@ -701,7 +701,7 @@ Tables queried in this notebook, and the fields within those tables are describe
 |SCPT_PWP  |Porewater pressure in MPa|
 
 
-### WATR Table
+#### WATR Table
 
 |Field|     Description|
 | --- | --- |
@@ -710,13 +710,12 @@ Tables queried in this notebook, and the fields within those tables are describe
 |WATR_DPTH |Depth of measurement in m |
 
 
-Code
-----
+### Code
 
 This section describes the [Jupyter notebook](https://jupyter.designsafe-ci.org/user/name/notebooks/CommunityData/NGL/DesignSafe_Webinar_Oct2021.ipynb) available via DesignSafe. The code is broken into chunks with explanations of each section of code.
 
 
-### Connect to NGL Database
+#### Connect to NGL Database
 1) import the ngl_db package and 
 2) create a connection object to ngl_db called cnx
 
@@ -725,7 +724,7 @@ This section describes the [Jupyter notebook](https://jupyter.designsafe-ci.org/
 import designsafe_db.ngl_db as ngl
 ```
 
-### Query SITE Table Using Pandas
+#### Query SITE Table Using Pandas
 An easy way to query the database is to use the Pandas read_sql command, which queries data and returns a Pandas dataframe.
 
 1) import the Pandas package, 
@@ -742,7 +741,7 @@ df
 ```
 
 
-### Query all TESTs for a given SITE
+#### Query all TESTs for a given SITE
 This cell queries the TEST table looking for all TESTs with the same SITE_ID
 
 
@@ -754,7 +753,7 @@ TESTdf
 ```
 
 
-### Query CPT Metadata (SCPG) for a given TEST
+#### Query CPT Metadata (SCPG) for a given TEST
 This cell queries the SCPG table for a single CPT test
 
 
@@ -766,7 +765,7 @@ SCPGdf
 ```
 
 
-### Plot CPT Data (SCPT) for a given TEST
+#### Plot CPT Data (SCPT) for a given TEST
 This cell uses matplotlib to plot CPT data located in the SCPT table
 
 
@@ -795,7 +794,7 @@ plt.tight_layout()
 ```
 
 
-### Get WATR information for given TEST_ID
+#### Get WATR information for given TEST_ID
 This cell extracts the depth to groundwater from the WATR table for the same TEST_ID specified earlier
 
 
@@ -808,7 +807,7 @@ waterdf
 ```
 
 
-### Put it all together!
+#### Put it all together!
 This cell puts everything together in one cell, and adds horizontal lines representing the groundwater table to the plot.
 
 
@@ -855,7 +854,7 @@ plt.tight_layout()
 ```
 
 
-### Query all SITE and TEST fields that have both SCPG and WATR
+#### Query all SITE and TEST fields that have both SCPG and WATR
 If you want to find another SITE_ID/TEST_ID/SCPG_ID combination to try with this notebook, you can use a JOIN statement to combine the SITE, TEST, SCPG, and WATR tables to find tests where there is CPT information and groundwater table information
 
 
