@@ -103,7 +103,7 @@ sql += 'INNER JOIN EVNT ON EVNT.EVNT_ID = FLDO.EVNT_ID '
 sql += 'INNER JOIN SITE ON FLDO.SITE_ID = SITE.SITE_ID '
 sql += 'WHERE SITE_NAME = "Wildlife Array"'
 
-df = ngl.read_sql_query(sql)
+df = ngl.read_sql(sql)
 pd.set_option('display.max_colwidth', 100)
 df
 ```
@@ -113,66 +113,73 @@ df
 
 **Figure 2.** Screenshot of result of query of Wildlife liquefaction array query of event information and field observations.
 
-### Header2 Subheading
+## Query Wildlife liquefaction CPT data
 
-In aliquam sem fringilla ut morbi. Interdum varius sit amet mattis vulputate enim nulla aliquet. Sit amet mattis vulputate enim nulla.  In egestas erat imperdiet sed euismod nisi porta lorem. Eget nulla facilisi etiam dignissim diam.  Facilisi cras fermentum odio eu feugiat. Velit aliquet sagittis id consectetur. Vel quam elementum pulvinar etiam.  Ut diam quam nulla porttitor massa id neque aliquam. Sodales ut etiam sit amet nisl.  Scelerisque varius morbi enim nunc faucibus a. Sit amet volutpat consequat mauris nunc. Et leo duis ut diam.
+This query retrieves all cone penetration test data from the Wildlife liquefaction array. INNER JOIN statements are needed to link SCPT to SCPG (using SCPG_ID), SCPG to TEST (using TEST_ID), and TEST to SITE (using SITE_ID). This query demonstrates propagation of primary and foreign keys through the schema heirarchy.
 
-*Add images to the folder img and use relative path to specify the location of the image.*   
+```python  
+import pandas as pd
+import designsafe_db.ngl_db as ngl
 
-![caption](img/mkdocs-template.png)
-> Use case template design
+command = 'SELECT TEST.TEST_ID, TEST.TEST_NAME, SCPT. SCPT_DPTH, SCPT.SCPT_RES, SCPT.SCPT_FRES FROM SCPT '
+command += 'INNER JOIN SCPG ON SCPT.SCPG_ID = SCPG.SCPG_ID '
+command += 'INNER JOIN TEST ON TEST.TEST_ID = SCPG.TEST_ID '
+command += 'INNER JOIN SITE ON SITE.SITE_ID = TEST.SITE_ID '
+command += 'WHERE SITE.SITE_NAME = "Wildlife Array"'
 
-
-## Header3
-
-Morbi tristique senectus et netus et. Tristique senectus et netus et malesuada fames.  Eu mi bibendum neque egestas congue quisque. Id consectetur purus ut faucibus pulvinar elementum integer enim. Nunc consequat interdum varius sit amet mattis vulputate enim nulla.  Porta nibh venenatis cras sed felis eget. Dui id ornare arcu odio ut sem nulla pharetra diam. Pellentesque habitant morbi tristique senectus et netus et. Commodo nulla facilisi nullam vehicula ipsum a arcu. Nisi porta lorem mollis aliquam ut porttitor leo.
-
-Numbered list 
-
-1. [numbered linked item](https://maps.google.com)
-2. second item
-3. third item
-
-### Header3 subheading
-
-Ac feugiat sed lectus vestibulum mattis ullamcorper. Et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut. Scelerisque eu ultrices vitae auctor eu augue ut lectus arcu.  Imperdiet proin fermentum leo vel orci porta non pulvinar. Dictumst quisque sagittis purus sit amet. Aliquam purus sit amet luctus. Aliquet bibendum enim facilisis gravida neque convallis a cras. Orci porta non pulvinar neque laoreet suspendisse. Urna neque viverra justo nec ultrices dui.
-
-**Example Table**
-
-| Column 1 | Column 2 | Column 3 |
-|----------|----------|----------|
-| Stampede2| CPU      | 2017     |     
-| Frontera | CPU & GPU| 2019     |     
-
-Or use markdown table generator: [https://www.tablesgenerator.com/markdown_tables](https://www.tablesgenerator.com/markdown_tables)
-
-
-### Math
-
-To generate math equations in markdown.
-
-For inline mode formulas: $`a^2+b^2=c^2`$.
-
-For display mode formulas which appear on a separate line
-```math
-f(x) = \int_{-\infty}^\infty
-\hat f(\xi)\,e^{2 \pi i \xi x}
-\,d\xi
+df = ngl.read_sql(command)
+pd.set_option('display.max_rows', 10)
+df
 ```
 
-### Code
+![Screenshot of result of query of Wildlife liquefaction array query of cone penetration test data.](img/WildlifeQuery2.png)
 
-``` python
-import tensorflow as tf
+**Figure 3.** Screenshot of result of query of Wildlife liquefaction array query of cone penetration test data.
+
+## Query list of table names
+
+The cell below queries the names of all of the tables in the NGL database into a Pandas dataframe. By default, Pandas truncates dataframes for compact viewing. The cell below illustrates how to use the "set_option" command to set the number of rows to a custom value, in this case the length of the Pandas dataframe.
+
+```python
+import pandas as pd
+import designsafe_dg.ngl_db as ngl
+
+sql = 'show tables'
+table_names = ngl.read_sql(sql)
+pd.set_option('display.max_rows', len(table_names))
+table_names
+```
+![Screenshot of list of tables in NGL database.](img/Tables.png)
+
+**Figure 4.** Screenshot of list of tables in NGL database.
+    
+## Query schema for BORH table
+
+The BORH table is the first in the alphebetical list of tables. A description of the headings returned by the DESCRIBE command is in the table below.
+
+**Table 3.** List of headings describing fields in table returned by SQL DESCRIBE command.
+
+| Column  |  Description |
+| ------  |  ----------- |
+| Field  |     Name of table entry |
+| Type |       Datatype of entry |
+| Null  |      YES = null fields are allowed, NO = null fields are not allowed |
+| Key   |      PRI = Primary key, MUL = Foreign key |
+| Default  |   Default value |
+| Extra   |    auto_increment = value is automatically assigned incrementally |
+
+The cell below uses the SHOW FULL COLUMNS command to display the fields in the BORH table. This includes a "Comment" that defines each field.
+
+```python
+import pandas as pd
+import designsafe_db.ngl_db as ngl
+
+sql = 'SHOW FULL COLUMNS FROM BORH'
+bohr_desc = ngl.read_sql(sql, cnx)
+pd.set_option('display.max_rows', len(bohr_desc))
+bohr_desc
 ```
 
-Highlight specific lines of the code
+![Screenshot of fields contained in BORH table.](img/borh_fields.png)
 
-``` python hl_lines="3 4"
-""" Bubble sort """
-def bubble_sort(items):
-    for i in range(len(items)):
-        for j in range(len(items) - 1 - i):
-            if items[j] > items[j + 1]:
-                items[j], items[j + 1] = items[j + 1], items[j]
-```
+**Figure 8.** Screenshot of fields contained in BORH table. 
