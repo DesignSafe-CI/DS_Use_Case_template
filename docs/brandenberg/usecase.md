@@ -182,4 +182,4 @@ bohr_desc
 
 ![Screenshot of fields contained in BORH table.](img/borh_fields.png)
 
-**Figure 8.** Screenshot of fields contained in BORH table. 
+**Figure 5.** Screenshot of fields contained in BORH table. 
