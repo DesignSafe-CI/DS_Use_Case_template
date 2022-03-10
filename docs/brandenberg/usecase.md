@@ -59,12 +59,60 @@ df = ngl.read_sql(sql)
 The output from the command is illustrated in the figure below. When this query was written, there were a total of 333 sites in 
 the NGL database. The SITE_ID field is not contiguous because sites are sometimes deleted from the database, and the 
 SITE_ID field is never re-used. The Pandas dataframe is broken between SITE_ID 151 and 677 for ease of displaying 
-information in the output window. Many rows of data are not displayed in Figure 2 as a result.
+information in the output window. Many rows of data are not displayed in Figure 1 as a result.
 
 ![Screenshot of result of query of SITE table data.](img/SiteTableQuery.png)
 
-**Figure 2.** Results of query of SITE table data.
+**Figure 1.** Results of query of SITE table data.
+
+### Query Wildlife liquefaction array data
+
+This cell queries event information from the EVNT table and surface evidence of liquefaction information from the FLDM table at the Wildlife Array site. The definition of each table and site is below. The query utilizes an INNER JOIN statement to combine tables based on shared keys, and will return all values that have matching keys in both tables. For more details, see <https://www.w3schools.com/sql/sql_join_inner.asp>
+
+**Table 1.** List of tables utilized in Wildlife liquefaction array queries.
+
+| Table	| Description |
+| ----- | ----------- |
+| EVNT	| 	Earthquake event information |
+| FLDM	| 	Field evidence of liquefaction information at a point within a site |
+| FLDO	| 	Field evidence of liquefaction information at a site |
+| SITE	| 	A site is the highest level organizational structure for information in the database |
+
+**Table 2.** List of fields utilized in Wildlife liquefaction array queries.
+
+| Field	| Description |
+| ----- | ----------- |
+| EVNT_MAG | 	Earthquake magnitude |
+| EVNT_NM | 	  Event name |
+| EVNT_YR | 	  Event year |
+| FLDM_LAT | 	Latitude of manifestation observation |
+| FLDM_LON | 	Longitude of manifestation observation |
+| FLDM_SFEV | 	Indication of whether surface manifestation occurred (0 = no, 1 = yes) |
+| FLDM_DESC | 	Description of liquefaction manifestation |
+| FLDO_ID |    Primary key in FLDO table, and foreign key in FLDM table |
+| EVNT_ID |    Primary key in EVNT table, and foreign key in FLDO table |
+| SITE_ID |    Primary key in SITE table, and foreign key in FLDO table |
+| SITE_NAME |  Site name |
+
+```python
+import designsafe_db.ngl_db as ngl
+
+sql = 'SELECT EVNT.EVNT_MAG, EVNT.EVNT_NM, EVNT.EVNT_YR, FLDM.FLDM_LAT, FLDM.FLDM_LON, FLDM.FLDM_SFEV, FLDM.FLDM_DESC '
+sql += 'FROM FLDO INNER JOIN FLDM on FLDO.FLDO_ID = FLDM.FLDO_ID '
+sql += 'INNER JOIN EVNT ON EVNT.EVNT_ID = FLDO.EVNT_ID '
+sql += 'INNER JOIN SITE ON FLDO.SITE_ID = SITE.SITE_ID '
+sql += 'WHERE SITE_NAME = "Wildlife Array"'
+
+df = ngl.read_sql_query(sql)
+pd.set_option('display.max_colwidth', 100)
+df
+```
+
+![Screenshot of result of query of Wildlife liquefaction array query of event information and field observations.](img/WildlifeQuery1.png)
   
+
+**Figure 2.** Screenshot of result of query of Wildlife liquefaction array query of event information and field observations.
+
 ### Header2 Subheading
 
 In aliquam sem fringilla ut morbi. Interdum varius sit amet mattis vulputate enim nulla aliquet. Sit amet mattis vulputate enim nulla.  In egestas erat imperdiet sed euismod nisi porta lorem. Eget nulla facilisi etiam dignissim diam.  Facilisi cras fermentum odio eu feugiat. Velit aliquet sagittis id consectetur. Vel quam elementum pulvinar etiam.  Ut diam quam nulla porttitor massa id neque aliquam. Sodales ut etiam sit amet nisl.  Scelerisque varius morbi enim nunc faucibus a. Sit amet volutpat consequat mauris nunc. Et leo duis ut diam.
