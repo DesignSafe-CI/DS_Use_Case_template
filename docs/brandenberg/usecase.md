@@ -1,4 +1,4 @@
-# Next Generation Liuqefaction (NGL) Database Jupyter Notebooks
+# Next Generation Liquefaction (NGL) Database Jupyter Notebooks
 
 **Brandenberg, S.J., UCLA, Ulmer, K.J., Southwest Research Institute, and Zimmaro, P., University of Calabria**  
 
