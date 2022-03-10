@@ -36,21 +36,20 @@ users can interact with it using Jupyter notebooks.
 
 Connecting to a relational database requires credentials, like username, password, database name, and hostname. 
 Rather than requiring users to know these credentials, we have created a Python package that allows users to 
-connect to the database. To install the Python package, you should first execute this code:
+connect to the database. This code installs the package containing the database connection script for NGL:
 
 ```python
-!pip install ngl_db
+!pip install designsafe_db
 ```
 
 ## Querying the Database
 
-The lines of code below first imports the ngl_db Python package, and then creates a 
-connection object to the database called cnx.
+The lines of code below first imports the ngl_db Python package, then creates a query to read all data from the SITE table, then creates a Pandas dataframe by executing the read_sql command that is part of the designsafe_db.ngl_db package.
 
 ```python
-import ngl_db as ngl
+import designsafe_db.ngl_db as ngl
 sql = "SELECT * FROM SITE"
-df = ngl.read_sql(
+df = ngl.read_sql(sql)
 ```
 
 ### Header2 Subheading
