@@ -33,7 +33,7 @@ users can interact with it using Jupyter notebooks.
 
 
 ## Installing Database Connection Script
-
+ 
 Connecting to a relational database requires credentials, like username, password, database name, and hostname. 
 Rather than requiring users to know these credentials, we have created a Python package that allows users to 
 connect to the database. This code installs the package containing the database connection script for NGL:
@@ -44,6 +44,10 @@ connect to the database. This code installs the package containing the database 
 
 ## Querying the Database
 
+This section illustrates how to query the NGL database, and the example queries are contained in a [Jupyter Notebook on DesignSafe](https://jupyter.designsafe-ci.org/user/name/tree/CommunityData/NGL/ExampleQueries.ipynb).
+
+### Query contents of SITE table
+
 The lines of code below first imports the ngl_db Python package, then creates a query to read all data from the SITE table, then creates a Pandas dataframe by executing the read_sql command that is part of the designsafe_db.ngl_db package.
 
 ```python
@@ -52,6 +56,14 @@ sql = "SELECT * FROM SITE"
 df = ngl.read_sql(sql)
 ```
 
+The output from the command is illustrated in the figure below. When this query was written, there were a total of 333 sites in 
+the NGL database. The SITE_ID field is not contiguous because sites are sometimes deleted from the database, and the 
+SITE_ID field is never re-used. The Pandas dataframe is broken between SITE_ID 151 and 677 for ease of displaying 
+information in the output window. Many rows of data are not displayed in Figure 2 as a result.
+
+![Screenshot of result of query of SITE table data.](images/SiteTableQuery.png)
+  **Figure 2.** Results of query of SITE table data.
+  
 ### Header2 Subheading
 
 In aliquam sem fringilla ut morbi. Interdum varius sit amet mattis vulputate enim nulla aliquet. Sit amet mattis vulputate enim nulla.  In egestas erat imperdiet sed euismod nisi porta lorem. Eget nulla facilisi etiam dignissim diam.  Facilisi cras fermentum odio eu feugiat. Velit aliquet sagittis id consectetur. Vel quam elementum pulvinar etiam.  Ut diam quam nulla porttitor massa id neque aliquam. Sodales ut etiam sit amet nisl.  Scelerisque varius morbi enim nunc faucibus a. Sit amet volutpat consequat mauris nunc. Et leo duis ut diam.
