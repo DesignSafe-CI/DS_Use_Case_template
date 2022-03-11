@@ -1,5 +1,6 @@
 # CFD Simulations using the Jupyter Notebooks
-**Fei Ding and Ahsan Kareem - University of Notre Dame**
+**Fei Ding, Ahsan Kareem, Dae Kun Kwon, and Yan Fang**<br/>
+ [NatHaz Modeling Laboratory](https://nathaz.nd.edu/), University of Notre Dame
 
 <br/>
 
