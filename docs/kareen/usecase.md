@@ -11,7 +11,7 @@ The Jupyter Notebooks have been widely used in science and engineering communiti
 ### Citation
 
 * Please cite Ding and Kareem (2021) to acknowledge the use of any resources from this use case.<br>
-Fei, D., and Kareem, A. (2021). Using the Jupyter Notebooks as a tool for CFD simulations, 6th American Association for Wind Engineering (AAWE) Workshop (online),
+Ding, F., and Kareem, A. (2021). Using the Jupyter Notebooks as a tool for CFD simulations, 6th American Association for Wind Engineering (AAWE) Workshop (online),
 Clemson University, Clemson, SC, USA, May 12-14. [PDF](https://tigerprints.clemson.edu/cgi/viewcontent.cgi?article=1025&context=aawe)
 
 <br/>
