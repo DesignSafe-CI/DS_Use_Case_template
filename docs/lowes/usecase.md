@@ -72,7 +72,7 @@ RW1 is wall 34 in the database and using that single number, the modeling script
 
 ### Modeling Script 
 
-The sections of the modeling script are:
+The sections of the modeling script are: [Modeling Script](https://jupyter.designsafe-ci.org/user/stokljos/notebooks/MyData/UseCaseScripts/TCL_Script_Creator.ipynb)  
 * Section 1: Initializion of the model. The degrees of fredom are defined and the variables that carry uncertainty are also defined.  
 <!--- for each section I will have a side by side comaparison of code to RW1 tcl file---> 
 * Section 2: Defines nodal Locations.
@@ -98,22 +98,22 @@ After the script is finished running through OpenSees, there are multiple post-p
 
 ### Load-Displacment Graph
 
-The Load-Displacement script compares the experimental cyclic load history to the simulated cyclic load output. This Script can be found here:  
+The Load-Displacement script compares the experimental cyclic load history to the simulated cyclic load output. This Script can be found here: [Load Displacement Script](https://jupyter.designsafe-ci.org/user/stokljos/notebooks/MyData/UseCaseScripts/LoadDisplacement.ipynb)  
 
 <img src="img/disp.JPG"  width="900" height="750" />
 
 ### Cross Sectional Analysis of Concrete and Steel
 
-The cross sectional script shows stress and strain output across the cross section of the first level for the concrete and steel at various points on the displacement history. This script can be found here:  
+The cross sectional script shows stress and strain output across the cross section of the first level for the concrete and steel at various points on the displacement history. This script can be found here: [Cross Section Analysis Script](https://jupyter.designsafe-ci.org/user/stokljos/notebooks/MyData/UseCaseScripts/CrossSectionAnalysis.ipynb)   
 <img src="img/cs1.JPG"  />  
 <img src="img/cs1.JPG"  />
 
 ### Stress and Strain Profile Movies
 
-The Stress/Strain profile movie script utilizes plotly to create an interactive animation of stresses and strains on the wall throughout the load history. The stress animations are vertical stress, shear stress, and maximum and minimum principal stress. The strain animations are vertical strain, shear strain, and maximum and minimum principal strain. This script can be found here:
+The Stress/Strain profile movie script utilizes plotly to create an interactive animation of stresses and strains on the wall throughout the load history. The stress animations are vertical stress, shear stress, and maximum and minimum principal stress. The strain animations are vertical strain, shear strain, and maximum and minimum principal strain. This script can be found here: [Stress/Strain Movie Profiles Script](https://jupyter.designsafe-ci.org/user/stokljos/notebooks/MyData/UseCaseScripts/Movies.ipynb)    
 <img src="img/movies.JPG" />
 
 ### Crack Angle of Quadrature Points
 
-The crack angle script will show at what angle each quadrature point cracks. This script can be found here:  
+The crack angle script will show at what angle each quadrature point cracks. This script can be found here: [Cracked Points Script](https://jupyter.designsafe-ci.org/user/stokljos/notebooks/MyData/UseCaseScripts/cracked%20model.ipynb)   
 <img src="img/cracked.JPG" />
