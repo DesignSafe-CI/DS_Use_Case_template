@@ -4,7 +4,7 @@
 
 Summary about Jupiter Notebook goal. Introduction about test. System identification part. Obtained results. See Use Case 11 - Rathje for example and depth of content
 
-Introductory Text.  High-level overview of product. A condimentum vitae sapien pellentesque habitant morbi tristique.
+Jupyter Notebooks can provide fully integrated workflows of experiments from documentation of experimental design through analysis and publishing of data using the DesignSafe cyberinfrastructure. A Notebook is being developed to demonstrate its use in the experimental workflow of the shakedown of a unique reconfigurable, modular test bed building planned for testing on the NHERI@UC San Diego Experimental Facility. The Python-based code is being implemented in a modular fashion so that components can be used as desired in other experiments and is transferable to other experimental facilities.  The notebook can be used to evaluate shake table performance as well as dynamic properties of the structure. A key functionality is to increase the integration and collaboration between researchers at local or remote sites to view and analyze the experimental data during and after testing. The application example is being developed for the first experimental program planned on the upgraded 6DOF Large High Performance Shake Table (LHPOST6) to share and analyze data after testing and will later be published with the data in DesignSafe for use as a viewing tool for researchers interested in data reuse.
 
 ## HYBRID SHAKE TABLE FORMULATION 
 
