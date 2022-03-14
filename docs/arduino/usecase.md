@@ -18,7 +18,7 @@ A collection of educational notebooks to introduce model paraleter calibration a
 
 ### Description 
 
-Site response analysis for liquefiable soils is fundamental in the estimation of demands on civil infrastructure including buildings and lifelines. Current state of the art numerical methods require the use of advance constitutive models and fully couple nonlinear finite element (FEM) tools. Advanced constitutive models require the calibration of material parameters based on experimental tests. These parameters include uncertainties that in turn propagate to uncertenties in the estimation of demands. These use-case products provide simple examples showing how to achieve this using SimCenter tools and the DesignSafe cyber infrastructure. 
+Site response analysis for liquefiable soils is fundamental in the estimation of demands on civil infrastructure including buildings and lifelines. Current state of the art numerical methods require the use of advance constitutive models and fully couple nonlinear finite element (FEM) tools. Advanced constitutive models require calibration of material parameters based on experimental tests. These parameters include uncertainties that in turn propagate to uncertenties in the estimation of demands. The products included in this use-case provide simple examples showing how to achieve this using SimCenter tools and the DesignSafe cyber infrastructure. 
 
 [Link Example - this goes to Google](https://www.google.com)
 
