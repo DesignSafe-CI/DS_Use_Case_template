@@ -49,7 +49,7 @@ Figure 1: Smeared shell element representation
 
 RW1 is modeled from the database to produce a tcl file that represents the geometry, material, and simulation history of the wall. The wall is 144 inches high, 47.25 inches long, and 4 inches thick. It consists of 1241 amount of nodes, 1152 amount of shell elements, and 863 amount of steel truss elements. MITC4 shell elements are used to smear the concrete and transverse steel into the thickness while the vertical reinforce bars are modeled as truss elements. RW1 had a compression buckling failure mode in the lab. More information on RW1 and its experimental results can be found here: (RW1 LINK)  
  
-(Model picture of RW1 goes here)  
+
 
 The use case workflow involves the following steps:
 
@@ -74,7 +74,6 @@ RW1 is wall 34 in the database and using that single number, the modeling script
 
 The sections of the modeling script are: [Modeling Script](https://jupyter.designsafe-ci.org/user/stokljos/notebooks/MyData/UseCaseScripts/TCL_Script_Creator.ipynb)  
 * Section 1: Initializion of the model. The degrees of fredom are defined and the variables that carry uncertainty are also defined.  
-<!--- for each section I will have a side by side comaparison of code to RW1 tcl file---> 
 * Section 2: Defines nodal Locations.
 * Section 3: Defines material models and their variables.
 * Section 4: Defines the continuum shell model and the thicknesses of transverse steel and concrete.
