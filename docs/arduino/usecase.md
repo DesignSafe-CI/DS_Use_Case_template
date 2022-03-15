@@ -43,7 +43,7 @@ The parameter calibration  notebook is customized for the PM4Sand model and incl
 The *site response workflow notebook* presents typical steps used in the evaluation of the surface response for a site with liquefiable soil.
 The notebook takes advantage of the site response problem to introduce a general numerical analysis workflow that includes: 
 
-1. running OpenSees using a **tapis** app, 
+1. running OpenSees using a **TAPIS** APP, 
 2. postprocessing results using python, 
 3. generating authomatic reports using pdflatex or rst2pdf, and 
 4. Creating animated plots using visualization widgets. 
@@ -62,7 +62,7 @@ Users are invited to try it and use any parts for their respective needs.
 The notebook can be discected into four main components:
 
 <ol type="a">
-  <li>Setup tapis/agave app and run OpenSees job</li>
+  <li>Setup TAPIS/AGAVE APP and run OpenSees job</li>
   <li>Post process results</li>
   <li>Process report</li>
   <li>Generate interactive plots</li>
