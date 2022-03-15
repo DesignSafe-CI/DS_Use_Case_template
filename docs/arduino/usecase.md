@@ -25,7 +25,8 @@ Site response analysis for liquefiable soils is fundamental in the estimation of
 <p align="center">
 <img src="img/SRschematic2.PNG" alt="Propagation of vertical waves in site response analysis" width="600"/>
 </p>
-
+<p align="center"> <b>Fig.1 - Site response problem</b> </p>
+    
 [Link Example - this goes to Google](https://www.google.com)
 
 For this purpose, this document introduces (describes) a suite of Jupyter Notebooks published in DesignSafe that navigate the process of  constitutive model parameter calibration and site response analysis for a simple liquefaction case. They also introduce specific methods useful when using DesignSafe infrastructure in TACC. All notebooks leverage existing SimCenter backend functionality (e.g. Dakota, OpenSees, etc) implemented in quoFEM and run locally and in TACC through DesignSafe. Three notebooks are included for this purpose: 
@@ -53,6 +54,8 @@ A simple example of a liquefiable soil profile is used to demonstrate each step.
 <p align="center">
 <img src="img/SPschematic.png" alt="N10_T3 soil profile with liquefiable layer" width="200"/>
 </p>
+<p align="center"> <b>Fig.2 - N10_T3 soil profile with liquefiable layer</b> </p>
+
 
 The notebook inlcudes three 
 
