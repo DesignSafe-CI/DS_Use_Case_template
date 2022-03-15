@@ -56,7 +56,7 @@ A simple example of a liquefiable soil profile is used to demonstrate each step.
 </p>
 <p align="center"> <b>Fig.2 - N10_T3 soil profile with liquefiable layer</b> </p>
 
-The notebook and required scripts are available in the DesignSafe community folder and can be executed from any user without any modification.
+The notebook, and required scripts, are available in the DesignSafe community folder and can be executed by any user without any modification.
 Users are invited to try it and use any parts for their respective needs.
 
 The notebook can be discected into four main components:
@@ -69,11 +69,12 @@ The notebook can be discected into four main components:
 </ol>
 
 It is emphasize that the main motivation of this notebook is to take advantage of DesignSafe resources. 
-Relevant details for each component are described below.
+Therefore, relevant details for each component as it pertains to access to DesignSafe are described below.
 
 ### Setup tapis/agave app and run OpenSees job
 
-The notebook can be executed launching *Jupyter Lab* in Designsafe. This open a docker container in DesignSafe for the user that includes all the functionality required to execute jupyter commands. When 
+The notebook can be executed launching *Jupyter Lab* in Designsafe. This opens a user *docker container* in DesignSafe that includes all the functionality required to execute jupyter commands. This gives immediate access to the **agavepy** module from which it is possible to run any TAPIS APP. 
+A few commands are required to define 
 
 #### Setup job description
 
