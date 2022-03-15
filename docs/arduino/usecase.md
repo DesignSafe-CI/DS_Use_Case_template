@@ -18,10 +18,9 @@ A collection of educational notebooks to introduce model paraleter calibration a
 
 ### Description 
 
-Site response analysis for liquefiable soils is fundamental in the estimation of demands on civil infrastructure including buildings and lifelines. Current state of the art in numerical methods require the use of advance constitutive models and fully couple nonlinear finite element (FEM) tools. Advanced constitutive models require calibration of material parameters based on experimental tests. These parameters include uncertainties that in turn propagate to uncertenties in the estimation of demands. The products included in this use-case provide simple examples showing how to achieve site response analysis using SimCenter tools and the DesignSafe cyber infrastructure.
+Site response analysis for liquefiable soils is fundamental in the estimation of demands on civil infrastructure including buildings and lifelines. Current state of the art in numerical methods require the use of advance constitutive models and fully couple nonlinear finite element (FEM) tools. Advanced constitutive models require calibration of material parameters based on experimental tests. These parameters include uncertainties that in turn propagate to uncertenties in the estimation of demands. The products included in this use-case provide simple examples showing how to achieve site response analysis including parameter identification and uncertainty quantification using SimCenter tools and the DesignSafe cyber infrastructure.
 
 [//]: <![Propagation of vertical waves in site response analysis](img/SRschematic2.PNG){width=50%}>
-> Use case template design
 
 <p align="center">
 <img src="img/SRschematic2.PNG" alt="Propagation of vertical waves in site response analysis" width="600"/>
@@ -29,26 +28,26 @@ Site response analysis for liquefiable soils is fundamental in the estimation of
 
 [Link Example - this goes to Google](https://www.google.com)
 
-This page presents a suite of Jupyter Notebooks published in DesignSafe that navigate the process of  constitutive model parameter calibration and site response analysis for a simple liquefaction case. They also introduce specific methods useful when using DesignSafe infrastructure in TACC. All notebooks leverage existing SimCenter backend functionality (e.g. Dakota, OpenSees, etc) implemented in quoFEM and run locally and in TACC through DesignSafe. This use-case uses three notebooks for this purpose: 
-1. Site response workflow notebook: This notebooks introduces typical steps in any site response workflow using Jupyter notebooks in DesignSafe.
-2. Parameter calibration notebook: This  notebook is customized for the PM4Sand model and includes the estimation of main parameters that best fit experimental data as well as their uncertainty.
-3. Propagation of parameter undertainty in site response analysis notebook: This notebooks introduces methods that can be used to propagate material parameter uncertainties in sete reponse analysis.
+For this purpose, this document introduces (describes) a suite of Jupyter Notebooks published in DesignSafe that navigate the process of  constitutive model parameter calibration and site response analysis for a simple liquefaction case. They also introduce specific methods useful when using DesignSafe infrastructure in TACC. All notebooks leverage existing SimCenter backend functionality (e.g. Dakota, OpenSees, etc) implemented in quoFEM and run locally and in TACC through DesignSafe. Three notebooks are included for this purpose: 
+1. Site response workflow notebook: This notebook introduces typical steps used in any site response workflow taking advantage of the Jupyter lab available in DesignSafe.
+2. Parameter calibration notebook: This  notebook is customized for the PM4Sand model and present the estimation of main parameters that best fit experimental data as well as their uncertainty.
+3. Propagation of parameter undertainty in site response analysis notebook: This notebook introduces methods to propagate material parameter uncertainties in site reponse analysis.
 
-The current version of this use-case page presents details on the site response workflow notebook
+The current version of this use-case page is a work in progress and presents details on the site response workflow notebook. The parameter calibration and propagation of uncertainties notebooks will be updated in a second version.
 
 ### Parameter calibration notebook)
 The parameter calibration  notebook is customized for the PM4Sand model and includes the estimation of main parameters that best fit experimental data as well as their uncertainty (IN PROGRESS). 
 
 ### Site response workflow notebook
-The site response workflow notebook presents typical steps required for the evaluation of the surface response for a site with liquefiable soil.
-The notebook takes advantage of the site response problem to introduce a general numerical analysis workflow in DesignSafe that includes: 
+The site response workflow notebook introduce typical steps used in the evaluation of the surface response for a site with liquefiable soil.
+The notebook takes advantage of the site response problem to introduce a general numerical analysis workflow that includes: 
 
 1. running OpenSees using a tapis app, 
 2. postprocessing results using python, 
 3. generating authomatic reports using pdflatex or rst2pdf, and 
 4. taking advantage of visualization widgets. 
 
-For this purpose a simple example of a liquefiable soil profile is used to demonstrate each step. The soil profile (Figure 1) includes a 5.0m loose sand underlain by a 1.0 dense soil.The loose sand is modeled using the PM4Sand constitutive model for liquefiable soils available in OpenSees. The dense sand is considered linear elastic. The groundwter table is assumed at 2.0m making the lower 3.0m of the loose sand susceptible to liquefaction. The soil profile is subject to a dynamic excitation at its base. The site response of interest includes surface acceleration, profiles of lateral displacement, maximum shear strain, pore water pressure ratio (Ru), and peak ground acceleration (PGA).  The model definition, analysis steps, and recorder definition are all contained in the N10_T3.tcl, and the input signal is in velocity.input. The model can be run using OpenSees in any OS framework and the files are available in this link.
+A simple example of a liquefiable soil profile is used to demonstrate each step. The soil profile (Figure 1) includes a 5.0m loose sand underlain by a 1.0 dense soil.The loose sand is modeled using the PM4Sand constitutive model for liquefiable soils available in OpenSees. The dense sand is considered linear elastic. The groundwter table is assumed at 2.0m making the lower 3.0m of the loose sand susceptible to liquefaction. The soil profile is subject to a dynamic excitation at its base. The site response of interest includes surface acceleration, profiles of lateral displacement, maximum shear strain, pore water pressure ratio (Ru), and peak ground acceleration (PGA).  The model definition, analysis steps, and recorder definition are all contained in the N10_T3.tcl, and the input signal is in velocity.input. The model can be run using OpenSees in any OS framework and the files are available in this link.
 
 [//]: <![N10_T3 soil profile with liquefiable layer](img/SPschematic.png){width=50%}>
 <p align="center">
