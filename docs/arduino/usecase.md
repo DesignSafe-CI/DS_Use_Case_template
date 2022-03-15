@@ -20,8 +20,10 @@ A collection of educational notebooks to introduce model paraleter calibration a
 
 Site response analysis for liquefiable soils is fundamental in the estimation of demands on civil infrastructure including buildings and lifelines. Current state of the art in numerical methods require the use of advance constitutive models and fully couple nonlinear finite element (FEM) tools. Advanced constitutive models require calibration of material parameters based on experimental tests. These parameters include uncertainties that in turn propagate to uncertenties in the estimation of demands. The products included in this use-case provide simple examples showing how to achieve site response analysis using SimCenter tools and the DesignSafe cyber infrastructure.
 
-![Propagation of vertical waves in site response analysis](img/SRschematic2.PNG)
+![Propagation of vertical waves in site response analysis](img/SRschematic2.PNG){width=50%}
 > Use case template design
+
+<img src="img/SRschematic2.PNG" alt="drawing" width="400"/>
 
 [Link Example - this goes to Google](https://www.google.com)
 
@@ -46,7 +48,7 @@ The notebook takes advantage of the site response problem to introduce a general
 
 For this purpose a simple example of a liquefiable soil profile is used to demonstrate each step. The soil profile (Figure 1) includes a 5.0m loose sand underlain by a 1.0 dense soil.The loose sand is modeled using the PM4Sand constitutive model for liquefiable soils available in OpenSees. The dense sand is considered linear elastic. The groundwter table is assumed at 2.0m making the lower 3.0m of the loose sand susceptible to liquefaction. The soil profile is subject to a dynamic excitation at its base. The site response of interest includes surface acceleration, profiles of lateral displacement, maximum shear strain, pore water pressure ratio (Ru), and peak ground acceleration (PGA).  The model definition, analysis steps, and recorder definition are all contained in the N10_T3.tcl, and the input signal is in velocity.input. The model can be run using OpenSees in any OS framework and the files are available in this link.
 
-![N10_T3 soil profile with liquefiable layer](img/SPschematic.png)
+![N10_T3 soil profile with liquefiable layer](img/SPschematic.png){width=50%}
 > Use case template design
 
 The notebook inlcudes three 
