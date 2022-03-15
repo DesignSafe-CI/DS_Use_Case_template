@@ -100,16 +100,25 @@ Plot acceleration time hisotory and response spectra on log-linear scale
 from plotAcc import plot_acc
 plot_acc()
 ```
+![Surface acceleration](img/surfaceAccel.png)
+![Response spectrum](img/logSpectra.png)
+
+
 Plot profiles
 ``` python
 from plotProfile import plot_profile
 plot_profile()
 ```
+![Profile plots](img/profilePlot.png)
+
+
 Plot excess pore water pressure
 ``` python
 from plotPorepressure import plot_porepressure
 plot_porepressure()
 ```
+![Pore pressure](img/porePressure.png)
+
 
 #### Generate report (pdflatex, rst2pdf) 
 
