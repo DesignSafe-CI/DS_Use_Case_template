@@ -20,24 +20,28 @@ A collection of educational notebooks to introduce model paraleter calibration a
 
 Site response analysis for liquefiable soils is fundamental in the estimation of demands on civil infrastructure including buildings and lifelines. Current state of the art numerical methods require the use of advance constitutive models and fully couple nonlinear finite element (FEM) tools. Advanced constitutive models require calibration of material parameters based on experimental tests. These parameters include uncertainties that in turn propagate to uncertenties in the estimation of demands. The products included in this use-case provide simple examples showing how to achieve this using SimCenter tools and the DesignSafe cyber infrastructure.
 
-![caption](img/SRschematic2.PNG)
+![Propagation of vertical waves in site response analysis](img/SRschematic2.PNG)
 > Use case template design
 
 [Link Example - this goes to Google](https://www.google.com)
 
-For this purpose this page presents a suite of Jupyter Notebooks published in DesignSafe that navigate the process of  constitutive model parameter calibration and site response analysis for a simple liquefaction case. Both notebooks leverage existing SimCenter backend functionality (e.g. Dakota, OpenSees, etc) implemented in quoFEM and run locally and in TACC through DesignSafe.
+For this purpose this page presents a suite of Jupyter Notebooks published in DesignSafe that navigate the process of  constitutive model parameter calibration and site response analysis for a simple liquefaction case. All notebooks leverage existing SimCenter backend functionality (e.g. Dakota, OpenSees, etc) implemented in quoFEM and run locally and in TACC through DesignSafe.
 
 ### Parameter Calibration Notebook)
 The parameter calibration  notebook is customized for the PM4Sand model and includes the estimation of main parameters that best fit experimental data as well as their uncertainty (IN PROGRESS). 
 
 ### Site response Notebook
-The site response notebook presents the estimation of the surface response for a site with liquefiable soil using OpenSees and an advanced constitutive model. The soil profile (Figure 1) includes a 5.0m loose sand underlain by a 1.0 dense soil.The loose sand is modeled in OpenSees using and advanced constitutive model for liquefiable soils (PM4Sand). The dense sand is considered linear elastic. The groundwter table is assumed at 2.0m making the bottom 3.0m of the loose sand susceptible to liquefaction. The soil profile is subject to a dynamic excitation at its base. The response includes surface acceleration, profiles of lateral displacement, maximum shear strain, pore water pressure ratio (Ru), and peak ground acceleration (PGA) pore water pressure  and  lat.  
+The site response notebook presents the steps required for the evaluation of the surface response for a site with liquefiable soil.
+The notebook takes advantage of this problem to introduce a general DesignSafe numerical analysis workflow that includes: a) running OpenSees using a tapis app, b) postprocessing results using python, c) generating authomatic reports using pdflatex, rst2pdf, and d) taking advantage of visualization widgets. 
 
-![caption](img/SPschematic.png)
+The soil profile (Figure 1) includes a 5.0m loose sand underlain by a 1.0 dense soil.The loose sand is modeled in OpenSees using the PM4Sand constitutive model for liquefiable soils. The dense sand is considered linear elastic. The groundwter table is assumed at 2.0m making the lower 3.0m of the loose sand susceptible to liquefaction. The soil profile is subject to a dynamic excitation at its base. The response includes surface acceleration, profiles of lateral displacement, maximum shear strain, pore water pressure ratio (Ru), and peak ground acceleration (PGA).  The model definition, analysis steps and recorder definition are all contained in N10_T3.tcl and the input signal is in velocity.input. The model can be run using OpenSees in any OS framework and the files are available in this link.
+
+![N10_T3 soil profile with liquefiable layer](img/SPschematic.png)
 > Use case template design
 
+The notebook inlcudes three 
 
-### Setup agave and start OpenSees job
+### Setup tapis/agave app and run OpenSees job
 
 #### Setup job description
 
