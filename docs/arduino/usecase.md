@@ -56,7 +56,7 @@ A simple example of a liquefiable soil profile is used to demonstrate each step.
 </p>
 <p align="center"> <b>Fig.2 - N10_T3 soil profile with liquefiable layer</b> </p>
 
-The notebook, and required scripts, are available in the DesignSafe community folder and can be executed by any user without any modification.
+The notebook, and required scripts, are available in the [DesignSafe/community](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Jupyter%20Notebooks%20for%20Civil%20Engineering%20Courses/University_of_Washington/freeFieldJupyterPM4Sand) folder and can be executed without any modification.
 Users are invited to try it and use any parts for their respective needs.
 
 The notebook can be discected into four main components:
@@ -73,10 +73,11 @@ Therefore, relevant details for each component as it pertains to access to Desig
 
 ### Setup tapis/agave app and run OpenSees job
 
-The notebook can be executed launching *Jupyter Lab* in Designsafe. This opens a user *docker container* in DesignSafe that includes all the functionality required to execute jupyter commands. This gives immediate access to the **agavepy** module from which it is possible to run any TAPIS APP. 
-A few commands are required to define 
+The notebook can be executed launching *Jupyter Lab* in Designsafe. This opens a user *docker container* in DesignSafe that includes all the functionality required to execute jupyter commands. This gives immediate access to the **agavepy** module from which it is possible to run any **TAPIS** APP. 
 
 #### Setup job description
+
+A few commands are required to setup a job using TAPIS in DesignSafe. This requires definition of the TAPIS APP to use, it execution system, storage system, and input file to use. In this case we 
 
 ```python
 from agavepy.agave import Agave
@@ -91,6 +92,8 @@ storage_id = 'designsafe.storage.default'
 ```
 
 #### Run OpenSees Job
+
+
 ```python
 import time
 job = ag.jobs.submit(body=job_description)
