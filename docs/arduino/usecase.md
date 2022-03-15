@@ -32,7 +32,12 @@ The parameter calibration  notebook is customized for the PM4Sand model and incl
 
 ### Site response Notebook
 The site response notebook presents the steps required for the evaluation of the surface response for a site with liquefiable soil.
-The notebook takes advantage of this problem to introduce a general DesignSafe numerical analysis workflow that includes: a) running OpenSees using a tapis app, b) postprocessing results using python, c) generating authomatic reports using pdflatex, rst2pdf, and d) taking advantage of visualization widgets. 
+The notebook takes advantage of this problem to introduce a general DesignSafe numerical analysis workflow that includes: 
+
+1. running OpenSees using a tapis app, 
+2. postprocessing results using python, 
+3. generating authomatic reports using pdflatex, rst2pdf, and 
+4. taking advantage of visualization widgets. 
 
 The soil profile (Figure 1) includes a 5.0m loose sand underlain by a 1.0 dense soil.The loose sand is modeled in OpenSees using the PM4Sand constitutive model for liquefiable soils. The dense sand is considered linear elastic. The groundwter table is assumed at 2.0m making the lower 3.0m of the loose sand susceptible to liquefaction. The soil profile is subject to a dynamic excitation at its base. The response includes surface acceleration, profiles of lateral displacement, maximum shear strain, pore water pressure ratio (Ru), and peak ground acceleration (PGA).  The model definition, analysis steps and recorder definition are all contained in N10_T3.tcl and the input signal is in velocity.input. The model can be run using OpenSees in any OS framework and the files are available in this link.
 
