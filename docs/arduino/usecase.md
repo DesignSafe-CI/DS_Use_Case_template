@@ -30,9 +30,9 @@ Site response analysis for liquefiable soils is fundamental in the estimation of
 [Link Example - this goes to Google](https://www.google.com)
 
 For this purpose, this document introduces (describes) a suite of Jupyter Notebooks published in DesignSafe that navigate the process of  constitutive model parameter calibration and site response analysis for a simple liquefaction case. They also introduce specific methods useful when using DesignSafe infrastructure in TACC. All notebooks leverage existing SimCenter backend functionality (e.g. Dakota, OpenSees, etc) implemented in quoFEM and run locally and in TACC through DesignSafe. Three notebooks are included for this purpose: 
-1. Site response workflow notebook: This notebook introduces typical steps used in any site response workflow taking advantage of the Jupyter lab available in DesignSafe.
-2. Parameter calibration notebook: This  notebook is customized for the PM4Sand model and present the estimation of main parameters that best fit experimental data as well as their uncertainty.
-3. Propagation of parameter undertainty in site response analysis notebook: This notebook introduces methods to propagate material parameter uncertainties in site reponse analysis.
+1. **Site response workflow notebook**: This notebook introduces typical steps used in any site response workflow taking advantage of the Jupyter lab available in DesignSafe.
+2. **Parameter calibration notebook**: This  notebook is customized for the PM4Sand model and present the estimation of main parameters that best fit experimental data as well as their uncertainty.
+3. **Propagation of parameter undertainty in site response analysis notebook**: This notebook introduces methods to propagate material parameter uncertainties in site reponse analysis.
 
 The current version of this use-case page is a work in progress and presents details on the site response workflow notebook. The parameter calibration and propagation of uncertainties notebooks will be updated in a second version.
 
@@ -43,10 +43,10 @@ The parameter calibration  notebook is customized for the PM4Sand model and incl
 The *site response workflow notebook* presents typical steps used in the evaluation of the surface response for a site with liquefiable soil.
 The notebook takes advantage of the site response problem to introduce a general numerical analysis workflow that includes: 
 
-1. running OpenSees using a tapis app, 
+1. running OpenSees using a **tapis** app, 
 2. postprocessing results using python, 
 3. generating authomatic reports using pdflatex or rst2pdf, and 
-4. taking advantage of visualization widgets. 
+4. Creating animated plots using visualization widgets. 
 
 A simple example of a liquefiable soil profile is used to demonstrate each step. The soil profile shown in Figure 2 includes a 5.0m loose sand underlain by a 1.0 dense soil.The loose sand is modeled using the PM4Sand constitutive model for liquefiable soils available in OpenSees. The dense sand is considered linear elastic. The groundwter table is assumed at 2.0m making the lower 3.0m of the loose sand susceptible to liquefaction. The soil profile is subject to a dynamic excitation at its base. The site response of interest includes surface acceleration, profiles of lateral displacement, maximum shear strain, pore water pressure ratio (Ru), and peak ground acceleration (PGA).  The model definition, analysis steps, and recorders are all contained in the N10_T3.tcl, and the input signal is in velocity.input. The model can be run using OpenSees in any OS framework and the files are available in this link.
 
@@ -56,19 +56,24 @@ A simple example of a liquefiable soil profile is used to demonstrate each step.
 </p>
 <p align="center"> <b>Fig.2 - N10_T3 soil profile with liquefiable layer</b> </p>
 
+The notebook and required scripts are available in the DesignSafe community folder and can be executed from any user without any modification.
+Users are invited to try it and use any parts for their respective needs.
 
-The notebook can be discect into four main components:
+The notebook can be discected into four main components:
 
 <ol type="a">
   <li>Setup tapis/agave app and run OpenSees job</li>
   <li>Post process results</li>
-  <li>Generate report</li>
-  <li> Generate interactive plots</li>
+  <li>Process report</li>
+  <li>Generate interactive plots</li>
 </ol>
 
-Each component is described below.
+It is emphasize that the main motivation of this notebook is to take advantage of DesignSafe resources. 
+Relevant details for each component are described below.
 
 ### Setup tapis/agave app and run OpenSees job
+
+The notebook can be executed launching *Jupyter Lab* in Designsafe. This open a docker container in DesignSafe for the user that includes all the functionality required to execute jupyter commands. When 
 
 #### Setup job description
 
