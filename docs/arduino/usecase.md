@@ -4,7 +4,7 @@
 
 Pedro Arduino, University of Washington
 
-A collection of educational notebooks to introduce model paraleter calibration and site response analysis using OpenSees
+A collection of educational notebooks to introduce model paraleter calibration and site response analysis using OpenSees in ther DesignSafe-CI
 
 ## Background 
 
@@ -40,7 +40,7 @@ The current version of this use-case page is a work in progress and presents det
 The parameter calibration  notebook is customized for the PM4Sand model and includes the estimation of main parameters that best fit experimental data as well as their uncertainty (IN PROGRESS). 
 
 ### Site response workflow notebook
-The site response workflow notebook presents typical steps used in the evaluation of the surface response for a site with liquefiable soil.
+The *site response workflow notebook* presents typical steps used in the evaluation of the surface response for a site with liquefiable soil.
 The notebook takes advantage of the site response problem to introduce a general numerical analysis workflow that includes: 
 
 1. running OpenSees using a tapis app, 
@@ -48,7 +48,7 @@ The notebook takes advantage of the site response problem to introduce a general
 3. generating authomatic reports using pdflatex or rst2pdf, and 
 4. taking advantage of visualization widgets. 
 
-A simple example of a liquefiable soil profile is used to demonstrate each step. The soil profile shown in Figure 2 includes a 5.0m loose sand underlain by a 1.0 dense soil.The loose sand is modeled using the PM4Sand constitutive model for liquefiable soils available in OpenSees. The dense sand is considered linear elastic. The groundwter table is assumed at 2.0m making the lower 3.0m of the loose sand susceptible to liquefaction. The soil profile is subject to a dynamic excitation at its base. The site response of interest includes surface acceleration, profiles of lateral displacement, maximum shear strain, pore water pressure ratio (Ru), and peak ground acceleration (PGA).  The model definition, analysis steps, and recorder definition are all contained in the N10_T3.tcl, and the input signal is in velocity.input. The model can be run using OpenSees in any OS framework and the files are available in this link.
+A simple example of a liquefiable soil profile is used to demonstrate each step. The soil profile shown in Figure 2 includes a 5.0m loose sand underlain by a 1.0 dense soil.The loose sand is modeled using the PM4Sand constitutive model for liquefiable soils available in OpenSees. The dense sand is considered linear elastic. The groundwter table is assumed at 2.0m making the lower 3.0m of the loose sand susceptible to liquefaction. The soil profile is subject to a dynamic excitation at its base. The site response of interest includes surface acceleration, profiles of lateral displacement, maximum shear strain, pore water pressure ratio (Ru), and peak ground acceleration (PGA).  The model definition, analysis steps, and recorders are all contained in the N10_T3.tcl, and the input signal is in velocity.input. The model can be run using OpenSees in any OS framework and the files are available in this link.
 
 [//]: <![N10_T3 soil profile with liquefiable layer](img/SPschematic.png){width=50%}>
 <p align="center">
@@ -57,8 +57,16 @@ A simple example of a liquefiable soil profile is used to demonstrate each step.
 <p align="center"> <b>Fig.2 - N10_T3 soil profile with liquefiable layer</b> </p>
 
 
-The notebook inlcudes three 
+The notebook can be discect into four main components:
 
+<ol type="a">
+  <li>Setup tapis/agave app and run OpenSees job</li>
+  <li>Post process results</li>
+  <li>Generate report</li>
+  <li> Generate interactive plots</li>
+</ol>
+
+Each component is described below.
 
 ### Setup tapis/agave app and run OpenSees job
 
