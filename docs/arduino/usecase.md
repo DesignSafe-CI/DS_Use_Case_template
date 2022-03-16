@@ -29,12 +29,12 @@ Site response analysis for liquefiable soils is fundamental in the estimation of
     
 [Link Example - this goes to Google](https://www.google.com)
 
-This document presents a suite of Jupyter Notebooks published in DesignSafe that navigate the process of  constitutive model parameter calibration and site response analysis for a simple liquefaction case. They also introduce specific methods useful when using DesignSafe infrastructure in TACC. All notebooks leverage existing SimCenter backend functionality (e.g. Dakota, OpenSees, etc) implemented in quoFEM and run locally and in TACC through DesignSafe. Three notebooks are included for this purpose: 
-1. **Site response workflow notebook**: This notebook introduces typical steps used in any site response workflow taking advantage of the Jupyter lab available in DesignSafe.
-2. **Parameter calibration notebook**: This  notebook is customized for the PM4Sand model and present the estimation of its main parameters that best fit experimental data as well as their uncertainty.
+This document presents a suite of Jupyter Notebooks published in DesignSafe that navigate the process of  constitutive model parameter calibration and site response analysis for a simple liquefaction case. They also introduce methods useful when using DesignSafe infrastructure in TACC. All notebooks leverage existing SimCenter backend functionality (e.g. Dakota, OpenSees, etc) implemented in quoFEM and run locally and in TACC through DesignSafe. Three notebooks are included for this purpose: 
+1. **Site response workflow notebook**: This notebook introduces typical steps used in geotechnical numerical analysis workflows taking advantage of Jupyter and DesignSafe.
+2. **Parameter calibration notebook**: This  notebook is customized for the PM4Sand model and presents the estimation of its main parameters that best fit experimental data as well as their uncertainty.
 3. **Propagation of parameter undertainty in site response analysis notebook**: This notebook introduces methods to propagate material parameter uncertainties in site reponse analysis.
 
-The current version of this use-case page is a work in progress and includes details on the site response workflow notebook. The parameter calibration and propagation of uncertainties notebooks will be updated in a second version.
+This first version of this use-case page includes details on the site response workflow notebook. The parameter calibration and propagation of uncertainties notebooks will be updated in a second version.
 
 ### Site response workflow notebook
 The *site response workflow notebook* introduces typical steps used in the evaluation of the surface response for a site with liquefiable soil.
@@ -42,7 +42,7 @@ The notebook takes advantage of the site response problem to introduce a general
 
 1. running OpenSees using a **TAPIS** APP, 
 2. postprocessing results using python, 
-3. generating authomatic reports using pdflatex or rst2pdf, and 
+3. generating authomatic reports using rst2pdf, and 
 4. Creating animated plots using visualization widgets. 
 
 <p align="center">
@@ -50,7 +50,8 @@ The notebook takes advantage of the site response problem to introduce a general
 </p>
 <p align="center"> <b>Fig.2 - OpenSees numerical simulation workflow</b> </p>
 
-A simple example of a liquefiable soil profile is used to demonstrate each step. The soil profile shown in Figure 3 includes a 5.0m loose sand underlain by a 1.0 dense soil.The loose sand is modeled using the PM4Sand constitutive model for liquefiable soils available in OpenSees. The dense sand is considered linear elastic. The groundwter table is assumed at 2.0m making the lower 3.0m of the loose sand susceptible to liquefaction. The soil profile is subject to a dynamic excitation at its base. The site response of interest includes surface acceleration, profiles of lateral displacement, horizontal acceleration, maximum shear strain, and cyclic stress ratio.  The model definition, analysis steps, and recorders are contained in the N10_T3.tcl file, and the input signal is in velocity.input. The model can be run using OpenSees in any OS framework.
+
+The soil profile shown in Figure 3 includes a 5.0m loose sand underlain by a 1.0 m dense soil.The loose sand is modeled using the PM4Sand constitutive model for liquefiable soils available in OpenSees. The dense sand is considered linear elastic. The groundwter table is assumed at 2.0 m making the lower 3.0 m of the loose sand susceptible to liquefaction. The soil profile is subject to a dynamic excitation at its base. The site response of interest includes surface acceleration, profiles of lateral displacement, horizontal acceleration, maximum shear strain, and cyclic stress ratio and stress strain and pore pressure plots in the middle of the soil profile.  The opensees model definition, analysis steps, and recorders are contained in the [N10_T3.tcl](FreeField-JupyterNB/N10_T3.tcl) file, and the input signal is in [velocity.input](FreeField-JupyterNB/velo)city.input. The model can be run using OpenSees in any OS framework.
 
 [//]: <![N10_T3 soil profile with liquefiable layer](img/SPschematic.png){width=50%}>
 <p align="center">
