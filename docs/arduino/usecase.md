@@ -41,12 +41,18 @@ The parameter calibration  notebook is customized for the PM4Sand model and incl
 
 ### Site response workflow notebook
 The *site response workflow notebook* presents typical steps used in the evaluation of the surface response for a site with liquefiable soil.
-The notebook takes advantage of the site response problem to introduce a general numerical analysis workflow that includes: 
+The notebook takes advantage of the site response problem to introduce a general numerical analysis workflow shown in the figure that includes: 
 
 1. running OpenSees using a **TAPIS** APP, 
 2. postprocessing results using python, 
 3. generating authomatic reports using pdflatex or rst2pdf, and 
 4. Creating animated plots using visualization widgets. 
+
+<p align="center">
+<img src="img/DSworkflow.png" alt=" OpenSees numericla simulation workflow" width="200"/>
+</p>
+<p align="center"> <b>Fig.2 - OpenSees numerical simulation workflow</
+b> </p>
 
 A simple example of a liquefiable soil profile is used to demonstrate each step. The soil profile shown in Figure 2 includes a 5.0m loose sand underlain by a 1.0 dense soil.The loose sand is modeled using the PM4Sand constitutive model for liquefiable soils available in OpenSees. The dense sand is considered linear elastic. The groundwter table is assumed at 2.0m making the lower 3.0m of the loose sand susceptible to liquefaction. The soil profile is subject to a dynamic excitation at its base. The site response of interest includes surface acceleration, profiles of lateral displacement, maximum shear strain, pore water pressure ratio (Ru), and peak ground acceleration (PGA).  The model definition, analysis steps, and recorders are all contained in the N10_T3.tcl, and the input signal is in velocity.input. The model can be run using OpenSees in any OS framework and the files are available in this link.
 
@@ -59,12 +65,12 @@ A simple example of a liquefiable soil profile is used to demonstrate each step.
 The notebook, and required scripts, are available in the [DesignSafe/community](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Jupyter%20Notebooks%20for%20Civil%20Engineering%20Courses/University_of_Washington/freeFieldJupyterPM4Sand) folder and can be executed without any modification.
 Users are invited to try it and use any parts for their respective needs.
 
-The notebook can be discected into four main components:
+The notebook can be broken down into four main components:
 
 <ol type="a">
   <li>Setup TAPIS/AGAVE APP and run OpenSees job</li>
   <li>Post process results</li>
-  <li>Process report</li>
+  <li>Generate report</li>
   <li>Generate interactive plots</li>
 </ol>
 
