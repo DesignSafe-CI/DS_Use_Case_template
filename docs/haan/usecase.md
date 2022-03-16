@@ -29,26 +29,21 @@ Once you navigate to a folder of interest, you can select files to load into you
 
 ![caption](img/SelectImageFiles.JPG)
 
+Clicking Import will bring the selected files into your project, and you will see thumbnails of the images as shown below.
 
-### Header2 Subheading
-
-In aliquam sem fringilla ut morbi. Interdum varius sit amet mattis vulputate enim nulla aliquet. Sit amet mattis vulputate enim nulla.  In egestas erat imperdiet sed euismod nisi porta lorem. Eget nulla facilisi etiam dignissim diam.  Facilisi cras fermentum odio eu feugiat. Velit aliquet sagittis id consectetur. Vel quam elementum pulvinar etiam.  Ut diam quam nulla porttitor massa id neque aliquam. Sodales ut etiam sit amet nisl.  Scelerisque varius morbi enim nunc faucibus a. Sit amet volutpat consequat mauris nunc. Et leo duis ut diam.
-
-*Add images to the folder img and use relative path to specify the location of the image.*   
-
-![caption](img/CreateProjectSm.jpg)
-> Use case template design
+![caption](img/Thumbnails.JPG)
 
 
 ## Creating Groups and Organizing Images
 
-Morbi tristique senectus et netus et. Tristique senectus et netus et malesuada fames.  Eu mi bibendum neque egestas congue quisque. Id consectetur purus ut faucibus pulvinar elementum integer enim. Nunc consequat interdum varius sit amet mattis vulputate enim nulla.  Porta nibh venenatis cras sed felis eget. Dui id ornare arcu odio ut sem nulla pharetra diam. Pellentesque habitant morbi tristique senectus et netus et. Commodo nulla facilisi nullam vehicula ipsum a arcu. Nisi porta lorem mollis aliquam ut porttitor leo.
+To stMorbi tristique senectus et netus et. Tristique senectus et netus et malesuada fames.  Eu mi bibendum neque egestas congue quisque. Id consectetur purus ut faucibus pulvinar elementum integer enim. Nunc consequat interdum varius sit amet mattis vulputate enim nulla.  Porta nibh venenatis cras sed felis eget. Dui id ornare arcu odio ut sem nulla pharetra diam. Pellentesque habitant morbi tristique senectus et netus et. Commodo nulla facilisi nullam vehicula ipsum a arcu. Nisi porta lorem mollis aliquam ut porttitor leo.
 
-Numbered list 
+![caption](img/AddGroup.JPG)
 
-1. [numbered linked item](https://maps.google.com)
-2. second item
-3. third item
+![caption](img/GroupName.JPG)
+
+![caption](img/TaggitButton.JPG)
+
 
 ### Header3 subheading
 
