@@ -91,17 +91,30 @@ Once all the options have been added, click the Save button to get the final lis
 
 ## Plotting Images Locations with HazMapper
 
-Euismod nisi porta lorem mollis aliquam ut. Tincidunt ornare massa eget egestas purus viverra accumsan in. Varius quam quisque id diam vel. Fermentum odio eu feugiat pretium nibh ipsum consequat nisl. Placerat duis ultricies lacus sed turpis tincidunt id aliquet risus. Condimentum vitae sapien pellentesque habitant morbi tristique senectus et netus. Egestas sed sed risus pretium quam vulputate. Posuere morbi leo urna molestie at elementum. Eget magna fermentum iaculis eu non diam. Nisl tincidunt eget nullam non nisi. Sit amet risus nullam eget felis eget nunc lobortis mattis.
+A HazMapper button is provided in the upper right part of the screen to allow mapping all the images in a project. Clicking this button will launch HazMapper in its own browser tab.
 
-### Header2 Subheading
+![caption](img/HazMapperButton.JPG)
 
-In aliquam sem fringilla ut morbi. Interdum varius sit amet mattis vulputate enim nulla aliquet. Sit amet mattis vulputate enim nulla.  In egestas erat imperdiet sed euismod nisi porta lorem. Eget nul
+Once HazMapper launches, you will need to click on the Layers button (see below) to add the type of map desired.
+
+![caption](img/HazMapperLayerButton.JPG)
+
+In the window below, one can choose a Roads layer or a Satellite layer.
+
+![caption](img/CreateLayerWindow.JPG)
+
+Choosing the Roads layer creates a map like that shown below. The locations of collections of images are denoted with numbers on the map.
+
+![caption](img/HazMapperMap1.JPG)
+
+Zooming in to regions where images were taken shows that a generic camera icon or a user-selected icon denotes image location. If a Color tag was assigned to a given image, then that color will be used for the HazMapper icon.
+
+![caption](img/HazMapperMap2.JPG)
+
+
 
 
 ## Exporting Tag Data as CSV Files
 
 Euismod nisi porta lorem mollis aliquam ut. Tincidunt ornare massa eget egestas purus viverra accumsan in. Varius quam quisque id diam vel. Fermentum odio eu feugiat pretium nibh ipsum consequat nisl. Placerat duis ultricies lacus sed turpis tincidunt id aliquet risus. Condimentum vitae sapien pellentesque habitant morbi tristique senectus et netus. Egestas sed sed risus pretium quam vulputate. Posuere morbi leo urna molestie at elementum. Eget magna fermentum iaculis eu non diam. Nisl tincidunt eget nullam non nisi. Sit amet risus nullam eget felis eget nunc lobortis mattis.
 
-### Header2 Subheading
-
-In aliquam sem fringilla ut morbi. Interdum varius sit amet mattis vulputate enim nulla aliquet. Sit amet mattis vulputate enim nulla.  In egestas erat imperdiet sed euismod nisi porta lorem. Eget nul
