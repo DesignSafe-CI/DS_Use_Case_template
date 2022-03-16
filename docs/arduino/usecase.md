@@ -48,8 +48,7 @@ The notebook takes advantage of the site response problem to introduce a general
 <p align="center">
 <img src="img/DSworkflow.png" alt=" OpenSees numericla simulation workflow" width="200"/>
 </p>
-<p align="center"> <b>Fig.2 - OpenSees numerical simulation workflow</>
-b> </p>
+<p align="center"> <b>Fig.2 - OpenSees numerical simulation workflow</b> </p>
 
 A simple example of a liquefiable soil profile is used to demonstrate each step. The soil profile shown in Figure 3 includes a 5.0m loose sand underlain by a 1.0 dense soil.The loose sand is modeled using the PM4Sand constitutive model for liquefiable soils available in OpenSees. The dense sand is considered linear elastic. The groundwter table is assumed at 2.0m making the lower 3.0m of the loose sand susceptible to liquefaction. The soil profile is subject to a dynamic excitation at its base. The site response of interest includes surface acceleration, profiles of lateral displacement, horizontal acceleration, maximum shear strain, and cyclic stress ratio.  The model definition, analysis steps, and recorders are contained in the N10_T3.tcl file, and the input signal is in velocity.input. The model can be run using OpenSees in any OS framework.
 
