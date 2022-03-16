@@ -21,7 +21,13 @@ The collapsed menus icon (shown below) opens the main menu of Taggit and enables
 
 ## Loading Image Files
 
-Euismod nisi porta lorem mollis aliquam ut. Tincidunt ornare massa eget egestas purus viverra accumsan in. Varius quam quisque id diam vel. Fermentum odio eu feugiat pretium nibh ipsum consequat nisl. Placerat duis ultricies lacus sed turpis tincidunt id aliquet risus. Condimentum vitae sapien pellentesque habitant morbi tristique senectus et netus. Egestas sed sed risus pretium quam vulputate. Posuere morbi leo urna molestie at elementum. Eget magna fermentum iaculis eu non diam. Nisl tincidunt eget nullam non nisi. Sit amet risus nullam eget felis eget nunc lobortis mattis.
+Image files can be loaded into an existing project by selecting "File Browser" from the main menu. The File Browser (shown below) provides access to all parts of DesignSafe including My Data, Community Data, Published Project, and My Projects.
+
+![caption](img/FileBrowser.JPG)
+
+Once you navigate to a folder of interest, you can select files to load into your project by clicking to select, shift-clicking, or using the Select All button.
+![caption](img/SelectImageFiles.JPG)
+
 
 ### Header2 Subheading
 
