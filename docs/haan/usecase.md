@@ -48,6 +48,22 @@ Once you have a group created, the Taggit button will appear (see below). This T
 
 ![caption](img/TaggitButton.JPG)
 
+The Taggit screen is shown below. Here you can see the groups that have been created and the images in each group. The Gallery button toggles back to the thumbnail gallery.
+
+![caption](img/TaggitScreenIntro.JPG)
+
+When hovering over any given image in the thumbnail gallery, several icons will appear. The Zoom, Remove, and Add to Group buttons appear in the upper right. The Add To Group button provides another way to add an image to a group. The box in the lower right shows colored boxes representing each group this image belongs to.
+
+![caption](img/ThumbNailButtons2.JPG)
+
+After creating a number of groups and adding images to those groups, your Taggit view will look something like the image below. From this view you can click through the groups and through the images in each group.
+
+![caption](img/GroupsAndImages.JPG)
+
+Looking closely at the group list (below) shows that each group has an icon. These icons can be changed by the user simply by clicking on the icon and selecting a different one from the list.
+
+![caption](img/GroupListIcons.JPG)
+
 
 
 
