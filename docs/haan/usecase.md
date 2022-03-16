@@ -31,16 +31,20 @@ Once you navigate to a folder of interest, you can select files to load into you
 
 Clicking Import will bring the selected files into your project, and you will see thumbnails of the images as shown below.
 
-![caption](img/Thumbnails.JPG)
+![caption](img/ThumbNails.JPG)
 
 
 ## Creating Groups and Organizing Images
 
-To stMorbi tristique senectus et netus et. Tristique senectus et netus et malesuada fames.  Eu mi bibendum neque egestas congue quisque. Id consectetur purus ut faucibus pulvinar elementum integer enim. Nunc consequat interdum varius sit amet mattis vulputate enim nulla.  Porta nibh venenatis cras sed felis eget. Dui id ornare arcu odio ut sem nulla pharetra diam. Pellentesque habitant morbi tristique senectus et netus et. Commodo nulla facilisi nullam vehicula ipsum a arcu. Nisi porta lorem mollis aliquam ut porttitor leo.
+You can start creating groups for your images by clicking on one or more images. A green border will denote selected images, and the Add Group button will appear (see below).
 
 ![caption](img/AddGroup.JPG)
 
+Clicking the add group will bring up a dialog box for you to name the group.
+
 ![caption](img/GroupName.JPG)
+
+Once you have a group created, the Taggit button will appear (see below). This Taggit button takes you to the Taggit screen where you will see your images in their groups and begin to create tags.
 
 ![caption](img/TaggitButton.JPG)
 
