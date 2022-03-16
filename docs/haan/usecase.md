@@ -16,6 +16,8 @@ This documentation file walks the user through each of the steps required to use
 ## Creating a Project 
 
 
+![caption](img/CreateProjectSm.jpg)
+
 
 ### Description 
 
@@ -33,7 +35,7 @@ In aliquam sem fringilla ut morbi. Interdum varius sit amet mattis vulputate eni
 
 *Add images to the folder img and use relative path to specify the location of the image.*   
 
-![caption](img/mkdocs-template.png)
+![caption](img/CreateProjectSm.jpg)
 > Use case template design
 
 
