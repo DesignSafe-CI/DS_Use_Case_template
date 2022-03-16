@@ -69,11 +69,23 @@ Looking closely at the group list (below) shows that each group has an icon. The
 
 ## Creating Tags for Images
 
-Euismod nisi porta lorem mollis aliquam ut. Tincidunt ornare massa eget egestas purus viverra accumsan in. Varius quam quisque id diam vel. Fermentum odio eu feugiat pretium nibh ipsum consequat nisl. Placerat duis ultricies lacus sed turpis tincidunt id aliquet risus. Condimentum vitae sapien pellentesque habitant morbi tristique senectus et netus. Egestas sed sed risus pretium quam vulputate. Posuere morbi leo urna molestie at elementum. Eget magna fermentum iaculis eu non diam. Nisl tincidunt eget nullam non nisi. Sit amet risus nullam eget felis eget nunc lobortis mattis.
+On the Taggit screen below the Image List is the Tag Images area (see below). Pressing the "+" icon here allows the user to create custom tags for images. 
 
-### Header2 Subheading
+![caption](img/TagImagesArea.JPG)
 
-In aliquam sem fringilla ut morbi. Interdum varius sit amet mattis vulputate enim nulla aliquet. Sit amet mattis vulputate enim nulla.  In egestas erat imperdiet sed euismod nisi porta lorem. Eget nul
+The Create Tag list appears after pressing the "+" button. From this list, the user can select from several different types of tags to create. 
+
+![caption](img/CreateTag.JPG)
+
+For example, to create a Color Tag, one provides a Label and then adds options with the "+" button (see below).
+
+![caption](img/ColorTag1.JPG)
+
+![caption](img/ColorTag2.JPG)
+
+Once all the options have been added, click the Save button to get the final list of tag options. For the Color tag, colors are assigned to each option. These colors will be used if the user decides to map the image using HazMapper.
+
+![caption](img/ColorTag3.JPG)
 
 
 
