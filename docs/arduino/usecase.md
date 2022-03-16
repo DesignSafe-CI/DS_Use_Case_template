@@ -4,7 +4,7 @@
 
 Pedro Arduino, University of Washington
 
-A collection of educational notebooks to introduce model paraleter calibration and site response analysis using OpenSees in ther DesignSafe-CI
+A collection of educational notebooks to introduce model parameter calibration and site response analysis using OpenSees in DesignSafe-CI
 
 ## Background 
 
@@ -18,7 +18,7 @@ A collection of educational notebooks to introduce model paraleter calibration a
 
 ### Description 
 
-Site response analysis for liquefiable soils is fundamental in the estimation of demands on civil infrastructure including buildings and lifelines. Current state of the art in numerical methods require the use of advance constitutive models and fully couple nonlinear finite element (FEM) tools. Advanced constitutive models require calibration of material parameters based on experimental tests. These parameters include uncertainties that in turn propagate to uncertenties in the estimation of demands. The products included in this use-case provide simple examples showing how to achieve site response analysis including parameter identification and uncertainty quantification using SimCenter tools and the DesignSafe cyber infrastructure.
+Site response analysis for liquefiable soils is fundamental in the estimation of demands on civil infrastructure including buildings and lifelines. Current state of the art in numerical methods in geotechnical engineering require the use of advance constitutive models and fully couple nonlinear finite element (FEM) tools. Advanced constitutive models require calibration of material parameters based on experimental tests. These parameters include uncertainties that in turn propagate to uncertenties in the estimation of demands. The products included in this use-case provide simple examples showing how to achieve site response analysis including parameter identification and uncertainty quantification using SimCenter tools and the DesignSafe cyber infrastructure.
 
 [//]: <![Propagation of vertical waves in site response analysis](img/SRschematic2.PNG){width=50%}>
 
@@ -29,19 +29,16 @@ Site response analysis for liquefiable soils is fundamental in the estimation of
     
 [Link Example - this goes to Google](https://www.google.com)
 
-For this purpose, this document introduces (describes) a suite of Jupyter Notebooks published in DesignSafe that navigate the process of  constitutive model parameter calibration and site response analysis for a simple liquefaction case. They also introduce specific methods useful when using DesignSafe infrastructure in TACC. All notebooks leverage existing SimCenter backend functionality (e.g. Dakota, OpenSees, etc) implemented in quoFEM and run locally and in TACC through DesignSafe. Three notebooks are included for this purpose: 
+This document presents a suite of Jupyter Notebooks published in DesignSafe that navigate the process of  constitutive model parameter calibration and site response analysis for a simple liquefaction case. They also introduce specific methods useful when using DesignSafe infrastructure in TACC. All notebooks leverage existing SimCenter backend functionality (e.g. Dakota, OpenSees, etc) implemented in quoFEM and run locally and in TACC through DesignSafe. Three notebooks are included for this purpose: 
 1. **Site response workflow notebook**: This notebook introduces typical steps used in any site response workflow taking advantage of the Jupyter lab available in DesignSafe.
-2. **Parameter calibration notebook**: This  notebook is customized for the PM4Sand model and present the estimation of main parameters that best fit experimental data as well as their uncertainty.
+2. **Parameter calibration notebook**: This  notebook is customized for the PM4Sand model and present the estimation of its main parameters that best fit experimental data as well as their uncertainty.
 3. **Propagation of parameter undertainty in site response analysis notebook**: This notebook introduces methods to propagate material parameter uncertainties in site reponse analysis.
 
-The current version of this use-case page is a work in progress and presents details on the site response workflow notebook. The parameter calibration and propagation of uncertainties notebooks will be updated in a second version.
-
-### Parameter calibration notebook)
-The parameter calibration  notebook is customized for the PM4Sand model and includes the estimation of main parameters that best fit experimental data as well as their uncertainty (IN PROGRESS). 
+The current version of this use-case page is a work in progress and includes details on the site response workflow notebook. The parameter calibration and propagation of uncertainties notebooks will be updated in a second version.
 
 ### Site response workflow notebook
-The *site response workflow notebook* presents typical steps used in the evaluation of the surface response for a site with liquefiable soil.
-The notebook takes advantage of the site response problem to introduce a general numerical analysis workflow shown in the figure that includes: 
+The *site response workflow notebook* introduces typical steps used in the evaluation of the surface response for a site with liquefiable soil.
+The notebook takes advantage of the site response problem to introduce a general numerical analysis workflow shown in Figure 2 that includes: 
 
 1. running OpenSees using a **TAPIS** APP, 
 2. postprocessing results using python, 
@@ -54,16 +51,16 @@ The notebook takes advantage of the site response problem to introduce a general
 <p align="center"> <b>Fig.2 - OpenSees numerical simulation workflow</
 b> </p>
 
-A simple example of a liquefiable soil profile is used to demonstrate each step. The soil profile shown in Figure 2 includes a 5.0m loose sand underlain by a 1.0 dense soil.The loose sand is modeled using the PM4Sand constitutive model for liquefiable soils available in OpenSees. The dense sand is considered linear elastic. The groundwter table is assumed at 2.0m making the lower 3.0m of the loose sand susceptible to liquefaction. The soil profile is subject to a dynamic excitation at its base. The site response of interest includes surface acceleration, profiles of lateral displacement, maximum shear strain, pore water pressure ratio (Ru), and peak ground acceleration (PGA).  The model definition, analysis steps, and recorders are all contained in the N10_T3.tcl, and the input signal is in velocity.input. The model can be run using OpenSees in any OS framework and the files are available in this link.
+A simple example of a liquefiable soil profile is used to demonstrate each step. The soil profile shown in Figure 3 includes a 5.0m loose sand underlain by a 1.0 dense soil.The loose sand is modeled using the PM4Sand constitutive model for liquefiable soils available in OpenSees. The dense sand is considered linear elastic. The groundwter table is assumed at 2.0m making the lower 3.0m of the loose sand susceptible to liquefaction. The soil profile is subject to a dynamic excitation at its base. The site response of interest includes surface acceleration, profiles of lateral displacement, horizontal acceleration, maximum shear strain, and cyclic stress ratio.  The model definition, analysis steps, and recorders are contained in the N10_T3.tcl file, and the input signal is in velocity.input. The model can be run using OpenSees in any OS framework.
 
 [//]: <![N10_T3 soil profile with liquefiable layer](img/SPschematic.png){width=50%}>
 <p align="center">
 <img src="img/SPschematic.png" alt="N10_T3 soil profile with liquefiable layer" width="200"/>
 </p>
-<p align="center"> <b>Fig.2 - N10_T3 soil profile with liquefiable layer</b> </p>
+<p align="center"> <b>Fig.3 - N10_T3 soil profile with liquefiable layer</b> </p>
 
 The notebook, and required scripts, are available in the [DesignSafe/community](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Jupyter%20Notebooks%20for%20Civil%20Engineering%20Courses/University_of_Washington/freeFieldJupyterPM4Sand) folder and can be executed without any modification.
-Users are invited to try it and use any parts for their respective needs.
+Users are invited to try it and use any parts of it.
 
 The notebook can be broken down into four main components:
 
@@ -83,7 +80,7 @@ The notebook can be executed launching *Jupyter Lab* in Designsafe. This opens a
 
 #### Setup job description
 
-A few commands are required to setup a TAPIS OpenSees job in DesignSafe. This requires definition of the TAPIS APP to use, and code input parameters. For this particular case the *OpenseesSp-3.3.0u1* app is selected. The main steps include: 
+A few commands are required to setup a TAPIS OpenSees job in DesignSafe. This requires definition of the TAPIS APP to use, and code input parameters. For the site response particular case the *OpenseesSp-3.3.0u1* app is selected. The main steps required to setup a job are: 
 
 1. importing agave/tapis, 
 2. getting the specific app of interest,
@@ -119,7 +116,7 @@ job_description["parameters"] = parameters
 
 #### Run OpenSees Job
 
-Submitting a job using DesignSafe HPC resources requires the use of agave job.submit(); and passing the job_description array as argument. Checking the status of a job can be done using jobs.getStatus(). The python code shown below exemplifies these commands.  During this process agave copies all the files present in the input folder to a temporary folder that is used during execution. After completion agave copies all the results to an archive folder. 
+Submitting a job using DesignSafe HPC resources requires the use of agave job.submit(); and passing the job_description array as argument. Checking the status of a job can be done using jobs.getStatus(). The python code shown below exemplifies these commands.  When submitting a job, agave copies all the files present in the input folder to a temporary folder that is used during execution. After completion agave copies all the results to an archived folder. 
 
 ```python
 import time
@@ -136,7 +133,7 @@ while status != "FINISHED":
 
 ### Postprocess Results
 
-Postprocessing results requires identification of the location of archived files. This is done interrogating agave about a particular job of interest and evaluating the correct folder location. The python code lines shown below exemplifly the steps required for this purpose. 
+Postprocessing requires identification of the location of the archived files. This is done interrogating agave about a particular job of interest and evaluating the correct folder location. The python code lines shown below exemplifly the steps required for this purpose. 
 
 #### Identify job, archived location and user
 
@@ -155,12 +152,12 @@ os.chdir(cur_dir_name)
 ```
 #### Plot Results
 
-Once in the archived folder (cur_dir_name), postprocessing can be performed using python scripts that operate on output files. For the particualar case of the site response analysis three scripts are used to evaluate:
+Once in the archived folder (cur_dir_name), postprocessing can be done using python scripts that operate on output files. For the particualar case of the site response analysis three scripts are used to evaluate:
 1. surface acceleration time history and its response spectrum, 
 2. profiles of maximum displacement, peak horizontal acceleration (PHA), peak shear strain, and cyclic stress ratio, and
 3. Stress-strain and excess pore water pressure at the middle of the liquefiable layer.  
 
-The python code and figures shown exemplify these steps. All python scripts are available in the notebook community folder. 
+The python code and figures shown below exemplify these steps. All python scripts are available in the notebook community folder. 
 
 Plot acceleration time hisotory and response spectra on log-linear scale
 ``` python
@@ -203,7 +200,7 @@ plot_porepressure()
 
 #### Generate report (pdflatex, rst2pdf) 
 
-Generating a summary report is a convenient way to present results from lengthy simulations prcesses. This can be accomplished in jupyter invoking any posprocessor available in the jupyter lab container image. Among them rst2pdf is commonly distributed with python. For the site response notebook a simple ShortReport.rst file is included that collects the previous results and plots in a simple pdf file. The python code shown below, exemplifies this process and include:
+Generating a summary report is a convenient way to present results from lengthy simulations prcesses. In jupyter this can be done invoking any posprocessor available in the docker container image. Among them rst2pdf is commonly distributed with python. For the site response notebook a simple ShortReport.rst file is included that collects the results and plots generated in a simple pdf file. The python code shown below, exemplifies this process and include:
 1. Running rst2pdf on ShortReport.rst
 2. Posting the resulting pdf file in the jupyter notebook. For this it is convenient to define the PDF function shown below that specifies the format of the file in the screen. 
 
@@ -238,7 +235,7 @@ class PDF(object):
 
 #### Create Interactive Plots
 
-Finally, jupyter notebooks offer the flexibility to invoke GUI widgets that can help present results in a dynamic and interactive manner. The scripts shown below in python code create interactive plots for pore water pressure and soil profile lateral displacements. The horizontal bars allow the user to question each plot for results at any particular time. The complete pyhon scripts are included in the notebook folder in community.   
+Finally, jupyter notebooks offer the flexibility to invoke GUI widgets that can help present results in a dynamic and interactive manner. The python scripts shown below create interactive plots for pore water pressure and soil profile lateral displacements. The horizontal bars allow the user question each plot for results at any particular time. Complete pyhon scripts are included in the notebook folder in community.   
 
 Pore water pressure
 ``` python
