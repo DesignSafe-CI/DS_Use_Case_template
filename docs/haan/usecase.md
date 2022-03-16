@@ -26,6 +26,7 @@ Image files can be loaded into an existing project by selecting "File Browser" f
 ![caption](img/FileBrowser.JPG)
 
 Once you navigate to a folder of interest, you can select files to load into your project by clicking to select, shift-clicking, or using the Select All button.
+
 ![caption](img/SelectImageFiles.JPG)
 
 
