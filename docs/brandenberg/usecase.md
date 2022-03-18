@@ -143,13 +143,33 @@ df
 
 **Figure 3.** Screenshot of result of query of Wildlife liquefaction array query of cone penetration test data.
 
+### Query number of data entries in various tables, including indication of review status
+
+This query builds upon the previous query by adding an indication of whether the data quantity has been reviewed. Data in the NGL database is submitted for review by users, and subsequently reviewed by members of the database working group to check the data against published sources, identify errors, and ensure data entry completeness.
+
+```python
+import designsafe_db.ngl_db as ngl
+import pandas as pd
+```
+
+command = 'SELECT (SELECT COUNT(SCPG_ID) FROM SCPG) as "CPT Soundings", '
+command += '(SELECT COUNT(BORH_ID) FROM BORH) as "Boreholes", '
+command += '(SELECT COUNT(GSWG_ID) FROM GSWG) as "Surface Wave Measurements", '
+command += '(SELECT COUNT(GINV_ID) FROM GINV) as "Invasive VS Measurements", '
+command += '(SELECT COUNT(FLDM_ID) FROM FLDM WHERE FLDM_SFEV=1) as "Liquefaction Observations", '
+command += '(SELECT COUNT(FLDM_ID) FROM FLDM WHERE FLDM_SFEV=0) as "Non-Liquefaction Observations"'
+
+scpg_count = ngl.read_sql(command).T
+scpg_count.columns=["Count"]
+scpg_count
+
 ### Query list of table names
 
 The cell below queries the names of all of the tables in the NGL database into a Pandas dataframe. By default, Pandas truncates dataframes for compact viewing. The cell below illustrates how to use the "set_option" command to set the number of rows to a custom value, in this case the length of the Pandas dataframe.
 
 ```python
 import pandas as pd
-import designsafe_dg.ngl_db as ngl
+import designsafe_db.ngl_db as ngl
 
 sql = 'show tables'
 table_names = ngl.read_sql(sql)
@@ -182,7 +202,7 @@ import pandas as pd
 import designsafe_db.ngl_db as ngl
 
 sql = 'SHOW FULL COLUMNS FROM BORH'
-bohr_desc = ngl.read_sql(sql, cnx)
+bohr_desc = ngl.read_sql(sql)
 pd.set_option('display.max_rows', len(bohr_desc))
 bohr_desc
 ```
@@ -284,7 +304,7 @@ A site might contain more than one CPT test, but we do not want replicated field
 
 ```python
 sql = 'SELECT DISTINCT SITE.SITE_ID, SITE.SITE_NAME FROM SITE INNER JOIN TEST ON SITE.SITE_ID = TEST.SITE_ID INNER JOIN SCPG ON SCPG.TEST_ID = TEST.TEST_ID'
-site_df = ngl.read_sql_query(sql)
+site_df = ngl.read_sql(sql)
 ```
 
 #### Create key, value pairs for SITE_NAME and SITE_ID, and create site_widget
@@ -359,7 +379,7 @@ def on_site_widget_change(change):
    else:
        test_options = [('Select a test', -1)]
        sql = 'SELECT DISTINCT TEST.TEST_ID, TEST.TEST_NAME FROM TEST INNER JOIN SCPG ON TEST.TEST_ID = SCPG.TEST_ID WHERE TEST.SITE_ID = ' + str(change['new'])
-       test_df = pd.read_sql_query(sql,cnx)
+       test_df = ngl.read_sql(sql)
        test_df.set_index('TEST_ID',inplace=True)
        test_df.sort_values(by='TEST_NAME',inplace=True)
        for key, value in test_df['TEST_NAME'].to_dict().items():
@@ -386,7 +406,7 @@ def on_test_widget_change(change):
        fig.canvas.draw()
        sql = 'SELECT SCPG.SCPG_CSA, SCPG.SCPG_RATE, SCPG.SCPG_CREW, SCPG.SCPG_METH, SCPG.SCPG_STAR, '
        sql += 'SCPG.SCPG_ENDD, SCPG.SCPG_PWP, SCPG.SCPG_REM FROM SCPG WHERE SCPG.TEST_ID = ' + str(change['new'])
-       scpg_df = pd.read_sql_query(sql,cnx)
+       scpg_df = ngl.read_sql(sql,cnx)
        metadata = "<strong>CPT Test Metadata</strong><br>"
        metadata += "Cone area = " + str(scpg_df['SCPG_CSA'].values[0]) + ' cm<sup>2</sup><br>'
        metadata += "Push rate = " + str(scpg_df['SCPG_RATE'].values[0]) + ' cm/s<br>'
@@ -483,10 +503,17 @@ This section describes the [Jupyter notebook](https://jupyter.designsafe-ci.org/
 
 #### Import packages
 
-In this case, we need to import ipywidgets, matplotlib, numpy, ngl_db, and pandas. The "%matplotlib notebook" magic renders an interactive plot in the notebook.
+In this case, we need to import ipywidgets, matplotlib, numpy, ngl_db, and pandas. The "%matplotlib notebook" works for Jupyter notebooks and the %matplotlib widget" magic works for Jupyter Lab, and renders an interactive plot in the notebook.
 
 ```python
-%matplotlib notebook
+try:
+    %matplotlib widget
+except:
+    try:
+        %matplotlib notebook
+    except:
+        print("Falling back to '%matplotlib inline'")
+        
 import ipywidgets as widgets
 from matplotlib import pyplot as plt
 import numpy as np
@@ -494,7 +521,7 @@ import designsafe_db.ngl_db as ngl
 import pandas as pd
 ```
 
-#### Query distinct SITE_ID and SITE_NAME for sites that have invasive geophysical tests
+### Query distinct SITE_ID and SITE_NAME for sites that have invasive geophysical tests
 The query below finds distinct SITE_ID and SITE_NAME fields that contain invasive geophysical test data for the purpose of populating the site dropdown widget. 
 INNER JOIN commands are required between SITE, TEST, and GINV to find sites containing invasive geophysical testdata.
 A site might contain more than one CPT test, but we do not want replicated fields in the site dropdown widget. Therefore we use the "DISTINCT" command.
@@ -502,10 +529,10 @@ A site might contain more than one CPT test, but we do not want replicated field
 ```python
 sql = 'SELECT DISTINCT SITE.SITE_ID, SITE.SITE_NAME from SITE '
 sql += 'INNER JOIN TEST ON SITE.SITE_ID = TEST.SITE_ID INNER Join GINV ON GINV.TEST_ID = TEST.TEST_ID'
-site_df = ngl.read_sql_query(sql)
+site_df = ngl.read_sql(sql)
 ```    
 
-#### Create key, value pairs for SITE_NAME and SITE_ID, and create site_widget
+### Create key, value pairs for SITE_NAME and SITE_ID, and create site_widget
 
 Dropdown widgets accept key-value pairs for the "options" field. This is desireable here because the SITE_ID can be set to the key, and subsequently utilized in queries when a user selects a site. The code below converts queried site data into name, value pairs.
 
@@ -514,11 +541,11 @@ site_df.set_index('SITE_ID',inplace=True)
 site_df.sort_values(by='SITE_NAME',inplace=True)
 site_options = [('Select a site', -1)]
 for key, value in site_df['SITE_NAME'].to_dict().items():
-  site_options.append((value, key))
+    site_options.append((value, key))
 site_widget = widgets.Dropdown(options=site_options, description='Site')
 ```
 
-#### Create empty test_widget. This widget will get populated when a site is selected
+### Create empty test_widget. This widget will get populated when a site is selected
 
 ```python
 test_options = [('Select a test', -1)]
@@ -527,42 +554,38 @@ widget_box= widgets.VBox([site_widget, test_widget])
 display(widget_box)
 ```
 
-#### Create plot objects and initialize empty plots
+### Create plot objects and initialize empty plots
 
 ```python
-fig, ax = plt.subplots(1, 3, figsize=(6,4), sharey='row')
-
-line1, = ax[0].plot([], [])
-ax[0].set_xlabel('Vs (m/s)')
-ax[0].set_ylabel('depth (m)')
-ax[0].grid(True)
-ax[0].invert_yaxis()
-
-line2, = ax[1].plot([], [])
-ax[1].set_xlabel('VP (m/s)')
-ax[1].grid(True)
-
-fig.tight_layout()
+plot_widget = widgets.Output()
+with plot_widget:
+    fig, ax = plt.subplots(1, 2, figsize=(6,4), sharey='row')
+    line1, = ax[0].plot([], [])
+    ax[0].set_xlabel('Vs (m/s)')
+    ax[0].set_ylabel('depth (m)')
+    ax[0].grid(True)
+    ax[0].invert_yaxis()
+    line2, = ax[1].plot([], [])
+    ax[1].set_xlabel('VP (m/s)')
+    ax[1].grid(True)
+    fig.tight_layout()
 ```
 
-#### Create empty metadata_widget. This widget will get populated when an invasive geophysical test is selected
+### Create empty metadata_widget. This widget will get populated when an invasive geophysical test is selected
 
 ```python
 metadata_widget = widgets.HTML(value='')
-display(metadata_widget)
 ```
 
-#### Define function for populating test_widget when a user selects a site from the site_widget dropdown
+### Define function for populating test_widget when a user selects a site from the site_widget dropdown
 
 This code sets data for the plots to be empty, and sets the metadata widget to be empty as well. If the top-level field is selected (i.e., 'Select a Test'), then the test_widget is disabled.
 If a site is selected, a SQL query is made on all of the invasive geophysical tests for that site, and the test dropdown is populated.
 
 ```python
 def on_site_widget_change(change):
-    line1.set_xdata([])
-    line1.set_ydata([])
-    line2.set_xdata([])
-    line2.set_ydata([])
+    ax[0].lines.clear()
+    ax[1].lines.clear()
     metadata_widget.value=''
     if(change['new']==-1):
         test_widget.options = [('Select a test', -1)]
@@ -571,27 +594,29 @@ def on_site_widget_change(change):
         test_options = [('Select a test', -1)]
         sql = 'SELECT DISTINCT TEST.TEST_ID, TEST.TEST_NAME FROM TEST '
         sql += 'INNER JOIN GINV ON TEST.TEST_ID = GINV.TEST_ID WHERE TEST.SITE_ID = ' + str(change['new'])
-        test_df = pd.read_sql_query(sql,cnx)
+        test_df = ngl.read_sql(sql)
         test_df.set_index('TEST_ID',inplace=True)
         test_df.sort_values(by='TEST_NAME',inplace=True)
         for key, value in test_df['TEST_NAME'].to_dict().items():
             test_options.append((value, key))
         test_widget.options = test_options
         test_widget.disabled = False
+    return
 ```
 
-#### Define function for querying geophysical data and metadata when a user selects an invasive geophysical test
+### Define function for querying geophysical data and metadata when a user selects an invasive geophysical test
 
 ```python
 def on_test_widget_change(change):
+    ax[0].lines.clear()
+    ax[1].lines.clear()
+    metadata_widget.value=''
     if(change['new']!=-1):
         sql = 'SELECT GIND.GIND_DPTH, GIND.GIND_VS, GIND.GIND_VP FROM GIND '
         sql += 'INNER JOIN GINV ON GIND.GINV_ID = GINV.GINV_ID WHERE GINV.TEST_ID = ' + str(change['new'])
-        gind_df = pd.read_sql_query(sql,cnx)
-        line1.set_xdata(gind_df['GIND_VS'].values)
-        line1.set_ydata(gind_df['GIND_DPTH'].values)
-        line2.set_xdata(gind_df['GIND_VP'].values)
-        line2.set_ydata(gind_df['GIND_DPTH'].values)
+        gind_df = ngl.read_sql(sql)
+        line1, = ax[0].plot(gind_df['GIND_VS'].values, gind_df['GIND_DPTH'].values)
+        line2, = ax[1].plot(gind_df['GIND_VP'].values, gind_df['GIND_DPTH'].values)
         for a in ax:
             a.relim()
             a.autoscale_view(True)
@@ -607,17 +632,18 @@ def on_test_widget_change(change):
         metadata += "End Date = " + str(ginv_df ['GINV_ENDD'].values[0]) + '<br>'
         metadata_widget.value = metadata
     else:
-        line1.set_xdata([])
-        line1.set_ydata([])
-        line2.set_xdata([])
-        line2.set_ydata([])
+        ax[0].lines.clear()
+        ax[1].lines.clear()
         metadata_widget.value=''
+    return
 ```
 
-#### Use the ipywidgets 'observe' command to link widgets to appropriate functions on change
+### Use the ipywidgets 'observe' command to link widgets to appropriate functions on change
 ```python
 site_widget.observe(on_site_widget_change, names='value')
 test_widget.observe(on_test_widget_change, names='value')
+display(plot_widget)
+display(metadata_widget)
 ```
 
 ## October 2021 DesignSafe Webinar
@@ -715,13 +741,23 @@ Tables queried in this notebook, and the fields within those tables are describe
 This section describes the [Jupyter notebook](https://jupyter.designsafe-ci.org/user/name/notebooks/CommunityData/NGL/DesignSafe_Webinar_Oct2021.ipynb) available via DesignSafe. The code is broken into chunks with explanations of each section of code.
 
 
-#### Connect to NGL Database
-1) import the ngl_db package and 
-2) create a connection object to ngl_db called cnx
-
+#### Import ngl_db package
+1) import the ngl_db package and other required packages
 
 ```python
+try:
+    %matplotlib widget
+except:
+    try:
+        %matplotlib notebook
+    except:
+        print("Falling back to '%matplotlib inline'")
+        
+import ipywidgets as widgets
+from matplotlib import pyplot as plt
+import numpy as np
 import designsafe_db.ngl_db as ngl
+import pandas as pd
 ```
 
 #### Query SITE Table Using Pandas
@@ -733,8 +769,6 @@ An easy way to query the database is to use the Pandas read_sql command, which q
 
 
 ```python
-import pandas as pd
-
 sql = "SELECT * FROM SITE"
 df = ngl.read_sql(sql)
 df
@@ -768,12 +802,7 @@ SCPGdf
 #### Plot CPT Data (SCPT) for a given TEST
 This cell uses matplotlib to plot CPT data located in the SCPT table
 
-
 ```python
-%matplotlib notebook
-import matplotlib.pyplot as plt
-
-#get CPT data for a given SCPG_ID, and load into Pandas dataframe
 scpg_id = SCPGdf['SCPG_ID'][0]
 sql = 'SELECT * FROM SCPT where SCPT.SCPG_ID = "{}"'.format(scpg_id)
 SCPTdf = ngl.read_sql(sql)
@@ -812,11 +841,6 @@ This cell puts everything together in one cell, and adds horizontal lines repres
 
 
 ```python
-import designsafe_db.ngl_db as ngl
-import pandas as pd
-import matplotlib.pyplot as plt
-
-#Get list of TESTs for given SITE_ID
 site_id = 159
 sql = 'SELECT * FROM TEST where TEST.SITE_ID = "{}"'.format(site_id)
 TESTdf = ngl.read_sql(sql)
@@ -864,6 +888,6 @@ sql += 'FROM SITE INNER JOIN TEST ON TEST.SITE_ID = SITE.SITE_ID '
 sql += 'INNER JOIN SCPG ON SCPG.TEST_ID = TEST.TEST_ID '
 sql += 'INNER JOIN WATR ON WATR.TEST_ID = TEST.TEST_ID'
 
-test_metadata = ngl.read_sql(sql, cnx)
+test_metadata = ngl.read_sql(sql)
 test_metadata
 ```
