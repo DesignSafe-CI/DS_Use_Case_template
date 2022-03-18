@@ -46,7 +46,7 @@ Rather than requiring users to know these credentials, we have created a Python 
 connect to the database. This code installs the package containing the database connection script for NGL:
 
 ```python
-!pip install designsafe_db
+!pip install git+https://github.com/sjbrandenberg/designsafe_db
 ```
 
 ## Querying the Database
