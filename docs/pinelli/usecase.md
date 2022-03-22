@@ -2,24 +2,25 @@
 
 **Authors, Affiliations**  
 
-The Florida Tech (FIT) hurricane team deploys networks of wireless sensors on residential houses during high impact wind events or on full scale wind tunnel models. The team deploys pressure, temperature and humidity sensors alongside anemometry, which includes different anemometers and a lidar(Hadley?). The workflow starts with uploading the data to DesignSafe through aunthentication tokens created in Tapis. Once on DesignSafe, three Jupyter notebooks process and visualize the instruments’ data for analyses. The notebooks provide a user friendly and interactive environment that can adapt to different datasets. For this project, the notebooks perform quasi static real-time analyses, assess sensor performance, study pressure variations for different wind conditions and data correlation. The user interactivity of these notebooks facilitates an easy adaptation to different datasets with little to no-change in code.
+The Florida Tech (FIT) hurricane team deploys networks of wireless sensors on residential houses during high impact wind events or on full scale wind tunnel models. The team deploys pressure, temperature and humidity sensors alongside anemometry, which includes different anemometers and a conical scanning infrared LiDAR . The workflow starts with uploading the data to DesignSafe through aunthentication tokens created in Tapis. Once on DesignSafe, three Jupyter notebooks process and visualize the instruments’ data for analyses. The notebooks provide a user friendly and interactive environment that can adapt to different datasets. For this project, the notebooks perform quasi static real-time analyses, assess sensor performance, study pressure variations for different wind conditions and data correlation. The user interactivity of these notebooks facilitates an easy adaptation to different datasets with little to no-change in code.
 
 <p align="center">
 <img src="img/Picture1.png" alt="Flow Process" width="600">
 
-## Background 
 
 ### Citation and Licensing
 
-* Please cite [AUTHORS et al. (20xx) - example of published project](https://doi.org/10.17603/ds2-3zdj-493) to acknowledge the use of any resources from this use case.
+* Please cite [J. Wang et al. (2021)](https://tigerprints.clemson.edu/cgi/viewcontent.cgi?article=1077&context=aawe) and [S. Sridhar et al. (2021)](https://tigerprints.clemson.edu/cgi/viewcontent.cgi?article=1068&context=aawe) to acknowledge the use of any resources from this use case.
 
 * Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246) to acknowledge the use of DesignSafe resources.  
 
 * This software is distributed under the GNU General Public License (https://www.gnu.org/licenses/gpl-3.0.html).  
 
-Using Tapis for Data Uploads in Quasi-real time
+## Background 
+    
+### Using Tapis for Data Uploads in Quasi-real time
 
-The user needs a DesignSafe-CI (DS) account. During deployment, data is uploaded to DS in user defined time interval. Tapis CLI(full form? AND insert links to download them) and Python 3 enable this feature and must be installed on the local system. The user initiates Tapis before every deployment through Windows PowerShell and Tapis creates a token as described below:
+The user needs a DesignSafe-CI (DS) account. During deployment, data is uploaded to DS in user defined time interval. Tapis CLI and [Python 3 executable](https://www.python.org/downloads/windows/) enable this feature and must be installed on the local system. The user initiates Tapis before every deployment through Windows PowerShell and Tapis creates a token as described below:
 1.	Turn on Windows Power Shell and enter the command tapis auth init –interactive.  
 2.	For the tenant name, enter designsafe. 
 3.	Enter the DesignSafe username and password of the authorized user. 
@@ -28,26 +29,29 @@ The user needs a DesignSafe-CI (DS) account. During deployment, data is uploaded
 
 <p align="center">
 <img src="img/Picture2.png" alt="Flow Process" width="400">
+    
+Video Tutorial (Timestamps - 28:01 to 35:04): https://www.youtube.com/watch?v=C2McrpQ8XmI
 
-Using Jupyter Notebooks
+### Using Jupyter Notebooks
 
-To save time and memory, three different notebooks address the project objectives. The figure below illustrates the resulting workflow and the sections below describe the notebooks in detail.The first notebook is a user-interactive guide to enter important raw file definitions such as formats, column numbers and sensor information, and is used only once(REPHRASE). This notebook gathers the information necessary to transform datasets with a variety of formats into a standard format. The second notebook calibrates raw data and organizes them into csv and pickled files. The third and final notebook is also user interactive, and helps users analyze and visualize the data.  [For any given field deployment or wind tunnel experiment, the first notebook inputs metadata for the dataset.and second notebooks are typically used once for any given dataset. The third notebook is the frequently used notebook and run everytime need not be executed in sequence every time analysis is done and depends on the type of user and stage of analysis as illustrated in the figure below. ]integrate...
+To save time and memory, three different notebooks address the project objectives. For any field deployment or wind tunnel experiment, the first notebook inputs metadata (sensor information, data columns, timestamp formats) for the dataset and is ideally used once for every experiment. It outputs a csv file containing the metadata required to run the second notebook.  The second notebook calibrates raw data and organizes them into csv and pickled files. This notebook may be run more than once depending on how often new data is uploaded to the same experiment. The third and final notebook is also user interactive, and helps users analyze and visualize the data.  This is the most frequently used notebook and is run everytime the data needs to be analyzed. The notebooks need not be executed in sequence every time analysis is done and depends on the type of user and stage of analysis as illustrated in the figure below. 
 
 <p align="center">
-<img src="img/Picture3.png" alt="Flow Process" width="450">
+<img src="img/Picture3.png" alt="Flow Process" width="450"> [will be replaced]
 
-Adapting to Different Datasets
+### Adapting to Different Datasets
 
-The first notebook is a user interactive guide to input important raw data information. This notebook saves time as the user does not have to read, understand and edit the code to change information regarding sensors, columns and data formats. WSNS deployment during the tropical storm Isaias (8/2/2020) used an old and a new wsns system. Both had significant differences in how data was stored, and the first notebook was used to document them. This helps in faster data processing as there is no change required in code and the file generated by the notebook acts as a metadata for the second notebook responsible for data processing. The figure below are snapshots of the output file created by the first notebook describing raw data information from two different systems.
+The first notebook is a user interactive guide to input important raw data information. This notebook saves time as the user does not have to read, understand and edit the code to change information regarding sensors, columns and data formats.For example, WSNS deployment during the tropical storm Isaias (8/2/2020) used an old and a new wsns system. The first notebook documented the significant differences in how data was stored. This helps in faster data processing as there is no change required in code and the file generated by the notebook acts as a metadata for the second notebook responsible for data processing. The figure below are snapshots of the output file created by the first notebook describing raw data information from two different systems.
     
 
 <p align="center">    
 <img src="img/Picture4.png" alt="Flow Process" width="400" height="370">
 <img src="img/Picture5.png" alt="Flow Process" width="450" height="370">
+   
 
 ## Jupyter Notebook
 
-Analysis Notebooks and Examples
+### Analysis Notebooks and Examples
 
 Florida Tech team’s project goal is to measure pressure variation on non-structural components during strong wind events using their network of wireless sensors. The analysis notebooks on DesignSafe are user interactive with markdowns describing the test and also act as a guide to help the user look at the data they desire. An example of this is the analysis notebook for Isaias (tropical storm on August 1-3, 2020). The markdowns have important information and pictures from the deployment, and instructions for the user to easily access data.
 
@@ -59,7 +63,7 @@ And a menu allows user to select from options and look at specific time windows 
 <p align="center">    
 <img src="img/Picture7.png" alt="Flow Process" width="435">
 
-Using Plotly for Data Driven Animation Frames
+### Using Plotly for Data Driven Animation Frames
 
 The project objective is to study high impact wind events on non-structural components of residential houses. After the deployment, Jupyter notebooks process and visualize the important data that could be compared to ASCE 7 standards. A small part of that is assessing sensor performance with respect to wind conditions. Plotly is beneficial in creating animation frames to look at a snapshot of data from all sensors in different test conditions or even at different timestamps.  A single line of code enabled with the right dataframe can help in quickly looking at the trends and troubleshooting any system errors. The figure below shows an application of plotly for one of the wall of wind tests for glass sliding doors. The test model was a mock-up box with flat roof, and full scale glass sliding doors at 105 mph were tested at different wind directions. At uniform velocity, data for each wind direction was collected for 3 minutes and the program computed pressure coefficient Cp values averaged over that time window. A 2D scatter plot was created with x and z dimensions with each point representing a sensor whose color corresponded to a Cp value on the color scale. Important information is pieced together easily in a single line to enable the animation frame:
 px.scatter(dataframe, x=x column, y=y column, color=scatter point values, text=text to be displayed for each point, range_color=color scale range, animation_frame=variable for each animation frame, title = plot title)
@@ -136,5 +140,12 @@ fig.show()
 <p align="center">
 <img src="img/Picture10.gif" alt="Flow Process" width="450">
 
-•	Published Datasets and Notebooks
-o	Wang, M. Splitt, H. Besing, S. Sridhar. (2021), in Hurricane ISAIAS Data from Wireless Pressure Sensor Network and LIDAR. DesignSafe-CI. https://doi.org/10.17603/ds2-6qnj-tv17
+## Published Datasets and Notebooks
+    
+• Subramanian, C. Lazarus, S. Pinelli, J. Sun, J. Wang, J. Splitt, M. Besing, H. Sridhar, S. (2021) "WSN and Lidar Deployment during Hurricane Isaias, Satellite Beach, Melbourne, FL, Aug 2020", in Hurricane ISAIAS Data from Wireless Pressure Sensor Network and LIDAR. DesignSafe-CI. https://doi.org/10.17603/ds2-6qnj-tv17.
+
+• Pinelli, J. Subramanian, C. Lazarus, S. Wang, J. Sridhar, S. Zhang, J. Erwin, J. Chen, D. Lebbar, A. (2022) "Sliding Glass Patio Doors with and without Shutter", in Lab Tests with Wireless Sensor Network (WSN) system for the characterization of strong wind loads on non-structural components. DesignSafe-CI. https://doi.org/10.17603/ds2-jv3x-fp80.
+
+
+
+    
