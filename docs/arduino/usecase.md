@@ -20,8 +20,6 @@ A collection of educational notebooks to introduce model parameter calibration a
 
 Site response analysis for liquefiable soils is fundamental in the estimation of demands on civil infrastructure including buildings and lifelines. Current state of the art in numerical methods in geotechnical engineering require the use of advance constitutive models and fully couple nonlinear finite element (FEM) tools. Advanced constitutive models require calibration of material parameters based on experimental tests. These parameters include uncertainties that in turn propagate to uncertenties in the estimation of demands. The products included in this use-case provide simple examples showing how to achieve site response analysis including parameter identification and uncertainty quantification using SimCenter tools and the DesignSafe cyber infrastructure.
 
-[//]: <![Propagation of vertical waves in site response analysis](img/SRschematic2.PNG){width=50%}>
-
 <p align="center">
 <img src="img/SRschematic2.PNG" alt="Propagation of vertical waves in site response analysis" width="600"/>
 </p>
@@ -53,7 +51,6 @@ The notebook takes advantage of the site response problem to introduce a general
 
 The soil profile shown in Figure 3 includes a 5.0m loose sand underlain by a 1.0 m dense soil.The loose sand is modeled using the PM4Sand constitutive model for liquefiable soils available in OpenSees. The dense sand is considered linear elastic. The groundwter table is assumed at 2.0 m making the lower 3.0 m of the loose sand susceptible to liquefaction. The soil profile is subject to a dynamic excitation at its base. The site response of interest includes surface acceleration, profiles of lateral displacement, horizontal acceleration, maximum shear strain, and cyclic stress ratio and stress strain and pore pressure plots in the middle of the soil profile.  The opensees model definition, analysis steps, and recorders are contained in the [N10_T3.tcl](FreeField-JupyterNB/N10_T3.tcl) file, and the input signal is in [velocity.input](FreeField-JupyterNB/velo). The model can be run using OpenSees in any OS framework.
 
-[//]: <![N10_T3 soil profile with liquefiable layer](img/SPschematic.png){width=50%}>
 <p align="center">
 <img src="img/SPschematic.png" alt="N10_T3 soil profile with liquefiable layer" width="200"/>
 </p>
@@ -164,8 +161,7 @@ Plot acceleration time hisotory and response spectra on log-linear scale
 from plotAcc import plot_acc
 plot_acc()
 ```
-[//]: <![Surface acceleration](img/surfaceAccel.png)>
-[//]: <![Response spectrum](img/logSpectra.png)>
+
 <p align="center">
 <img src="img/surfaceAccel.png" alt="Surface acceleration" width="300"/>
 <img src="img/logSpectra.png" alt="Response spectrum" width="300"/>
@@ -178,7 +174,7 @@ Plot profiles
 from plotProfile import plot_profile
 plot_profile()
 ```
-[//]: <![Profile plots](img/profilePlot.png)>
+
 <p align="center">
 <img src="img/profilePlot.png" alt="Profiles" width="600"/>
 </p>
@@ -190,7 +186,6 @@ from plotPorepressure import plot_porepressure
 plot_porepressure()
 ```
 
-[//]: <![Pore pressure](img/porePressure.png)>
 <p align="center">
 <img src="img/stressstrain.png" alt="Stress strain" width="300"/>
 <img src="img/porePressure.png" alt="Pore pressure" width="300"/>
