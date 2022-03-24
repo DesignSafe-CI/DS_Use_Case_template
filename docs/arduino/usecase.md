@@ -25,7 +25,7 @@ Site response analysis for liquefiable soils is fundamental in the estimation of
 </p>
 <p align="center"> <b>Fig.1 - Site response problem</b> </p>
     
-[Link Example - this goes to Google](https://www.google.com)
+[Link Example - this link will go directly to communmity (will change the google link later)](https://www.google.com)
 
 This document presents a suite of Jupyter Notebooks published in DesignSafe that navigate the process of  constitutive model parameter calibration and site response analysis for a simple liquefaction case. They also introduce methods useful when using DesignSafe infrastructure in TACC. All notebooks leverage existing SimCenter backend functionality (e.g. Dakota, OpenSees, etc) implemented in quoFEM and run locally and in TACC through DesignSafe. Three notebooks are included for this purpose: 
 1. **Site response workflow notebook**: This notebook introduces typical steps used in geotechnical numerical analysis workflows taking advantage of Jupyter and DesignSafe.
