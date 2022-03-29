@@ -40,7 +40,7 @@ The notebook takes advantage of the site response problem to introduce a general
 
 1. running OpenSees using a **TAPIS** APP, 
 2. postprocessing results using python, 
-3. generating authomatic reports using rst2pdf, and 
+3. generating authomatic reports using rst2pdf or latex, and 
 4. Creating animated plots using visualization widgets. 
 
 <p align="center">
@@ -49,7 +49,7 @@ The notebook takes advantage of the site response problem to introduce a general
 <p align="center"> <b>Fig.2 - OpenSees numerical simulation workflow</b> </p>
 
 
-The soil profile shown in Figure 3 includes a 5.0m loose sand underlain by a 1.0 m dense soil.The loose sand is modeled using the PM4Sand constitutive model for liquefiable soils available in OpenSees. The dense sand is considered linear elastic. The groundwter table is assumed at 2.0 m making the lower 3.0 m of the loose sand susceptible to liquefaction. The soil profile is subject to a dynamic excitation at its base. The site response of interest includes surface acceleration, profiles of lateral displacement, horizontal acceleration, maximum shear strain, and cyclic stress ratio and stress strain and pore pressure plots in the middle of the soil profile.  The opensees model definition, analysis steps, and recorders are contained in the [N10_T3.tcl](FreeField-JupyterNB/N10_T3.tcl) file, and the input signal is in [velocity.input](FreeField-JupyterNB/velo). The model can be run using OpenSees in any OS framework.
+The soil profile shown in Figure 3 includes a 5.0m loose sand underlain by a 1.0 m dense soil.The loose sand is modeled using the PM4Sand constitutive model for liquefiable soils available in OpenSees. The dense sand is considered linear elastic. The groundwter table is assumed at 2.0 m making the lower 3.0 m of the loose sand susceptible to liquefaction. The soil profile is subject to a dynamic excitation at its base. The site response of interest includes (i) the surface acceleration, (ii) profiles of lateral displacement, horizontal acceleration, maximum shear strain, and cyclic stress ratio and (iii) stress strain and pore pressure plots for a point in the middle of the soil profile.  The opensees model definition, analysis steps, and recorders are contained in the [N10_T3.tcl](FreeField-JupyterNB/N10_T3.tcl) file, and the input signal is in [velocity.input](FreeField-JupyterNB/velo). The model can be run using OpenSees in any OS framework.
 
 <p align="center">
 <img src="img/SPschematic.png" alt="N10_T3 soil profile with liquefiable layer" width="200"/>
@@ -69,7 +69,7 @@ The notebook can be broken down into four main components:
 </ol>
 
 It is emphasize that the main motivation of this notebook is to take advantage of DesignSafe resources. 
-Therefore, relevant details for each component as it pertains to access to DesignSafe-CI are described below.
+Therefore, relevant details for each component as it pertains to access to DesignSafe-CI resources are described here.
 
 ### Setup tapis/agave app and run OpenSees job
 
@@ -77,14 +77,15 @@ The notebook can be executed launching *Jupyter Lab* in Designsafe. This opens a
 
 #### Setup job description
 
-A few commands are required to setup a TAPIS OpenSees job in DesignSafe. This requires definition of the TAPIS APP to use, and code input parameters. For the site response case the *OpenseesSp-3.3.0u1* app is selected. The main steps required to setup an agave job are: 
+A few commands are required to setup a TAPIS OpenSees job in DesignSafe. This requires definition of the TAPIS APP to use, control variables, parameters and inputs. The control variables define the infrastructre resources requested to TACC. The parameters define the executable (opensees), version (current), and opensees input file to run. For the site response case the *OpenseesSp-3.3.0u1* app is selected. The main steps required to setup an agave job are: 
+
 
 1. importing agave/tapis, 
 2. getting the specific app of interest,
-3. defining input folder locations, and parameters, and
+3. defining control variables, parameters and inputs, and
 4. encapsulating all data in a job_description array 
 
-The python code shown below exemplifies these steps. The complete set of commands is available in the notebook. The job_description array includes all the information to submit the job.
+The python code shown below exemplifies these steps. The complete set of commands is available in the notebook. The job_description array includes all the information required to submit the job.
 
 ```python
 # Import Agave
@@ -95,19 +96,42 @@ ag = Agave.restore()
 app_id = 'OpenseesSp-3.3.0u1'
 app = ag.apps.get(appId=app_id)
 
-# Define input folder and model parameters
-cur_dir = cur_dir.split('MyData').pop() 
-input_dir = ag.profiles.get()['username']+ cur_dir
-input_filename = 'N10_T3_M.tcl'
+# Define control tapis-app variables
+control_batchQueue       = 'small'
+control_jobname          = 'Jup_OP_Tapis'
+control_nodenumber       = '1'
+control_processorsnumber = '8'
+control_memorypernode    = '1'
+control_maxRunTime       = '00:1:00'
 
+# Define inputs
+# Identify folder with input file in DesignSafe
+cur_dir = os.getcwd()
+if ('jupyter/MyData' in cur_dir ):
+    cur_dir = cur_dir.split('MyData').pop() 
+    storage_id = 'designsafe.storage.default'
+    input_dir = ag.profiles.get()['username']+ cur_dir
+    input_uri = 'agave://{}/{}'.format(storage_id,input_dir)
+    input_uri = input_uri.replace(" ","%20")
+...
+...
 inputs = {"inputDirectory": [ input_uri ]}
-parameters = {"inputScript" : [input_filename]}
+
+# Define parameters
+parameter_executable      = 'opensees'
+parameter_version         = 'current'
+input_filename            = 'N10_T3.tcl'
+parameters = {}
+parameters["executable"]  = parameter_executable
+parameters["version"]     = parameter_version
+parameters["inputScript"] = input_filename
+
 
 # Set job_description array
 job_description = {}
-job_description["appId"] = (app_id)
+job_description["appId"]      = (app_id)
 ...
-job_description["inputs"] = inputs
+job_description["inputs"]     = inputs
 job_description["parameters"] = parameters
 ```
 
@@ -130,7 +154,7 @@ while status != "FINISHED":
 
 ### Postprocess Results
 
-Postprocessing requires identification of the location of the archived files. This is done interrogating the particular agave job of interest and evaluating the correct folder location. The python code lines shown below exemplifly the steps required for this purpose. 
+Postprocessing requires identification of the location of the archived files. This is done interrogating a particular agave job and evaluating the correct folder location. The python code lines shown below exemplifly the steps required for this purpose. 
 
 #### Identify job, archived location and user
 
@@ -230,14 +254,26 @@ class PDF(object):
 
 #### Create Interactive Plots
 
-Finally, jupyter notebooks offer the flexibility to invoke GUI widgets that can help present results in a dynamic and interactive manner. The python scripts shown below create interactive plots for pore water pressure and soil profile lateral displacements. The horizontal bars allow users interrogate each plot for results at any particular time. Complete pyhon scripts are included in the [interactiveplot.py](FreeField-JupyterNB/interactiveplot.py) available in community.   
+Finally, jupyter notebooks offer flexibility to invoke GUI widgets that can help present results in a dynamic and interactive manner. The python scripts shown below create interactive plots for pore water pressure and soil profile lateral displacements. The horizontal bars allow users interrogate each plot for results at any particular time. Complete pyhon scripts are included in the [interactiveplot.py](FreeField-JupyterNB/interactiveplot.py) available in community.   
 
-Pore water pressure
+### Pore water pressure
+
 ``` python
 from interactiveplot import createpwpplot, createDispplot
 createpwpplot()
 ```
-Displacement 
+<p align="center">
+<img src="img/widget-1.png" alt="Pore pressure interatvie plot" width="400"/>
+</p>
+<p align="center"> <b>Fig.7 - Pore pressure interactive plot</b> </p>
+
+### Displacement
+
 ``` python
 createDispplot()
 ```
+
+<p align="center">
+<img src="img/widget-2.png" alt="Displacement profile interatvie plot" width="400"/>
+</p>
+<p align="center"> <b>Fig.8 - Displacement proficle interactive plot</b> </p>
