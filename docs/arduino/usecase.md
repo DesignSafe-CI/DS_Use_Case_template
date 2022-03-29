@@ -263,7 +263,7 @@ from interactiveplot import createpwpplot, createDispplot
 createpwpplot()
 ```
 <p align="center">
-<img src="img/widget-1.png" alt="Pore pressure interatvie plot" width="400"/>
+<img src="img/widget-1.PNG" alt="Pore pressure interatvie plot" width="400"/>
 </p>
 <p align="center"> <b>Fig.7 - Pore pressure interactive plot</b> </p>
 
@@ -274,6 +274,6 @@ createDispplot()
 ```
 
 <p align="center">
-<img src="img/widget-2.png" alt="Displacement profile interatvie plot" width="400"/>
+<img src="img/widget-2.PNG" alt="Displacement profile interatvie plot" width="400"/>
 </p>
 <p align="center"> <b>Fig.8 - Displacement proficle interactive plot</b> </p>
