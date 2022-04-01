@@ -24,6 +24,13 @@ that particular problem. The focus of these examples is to demonstrate the gener
 particular machine learning algorithm and does not necessarily indicate that this is the correct or optimal
 solution.
 
+To run the examples for yourself, first copy the directory for the example you are interested in. You can
+do this by following the links below to find the location of the associated notebooks in community data,
+selecting the directory of interest (e.g., 0_linear_regression for the linear regression example) you will
+need to navigate up one directory to make this selection and then selecting `Copy > My Data > Copy Here`. You
+can then navigate to your `My Data` and run, explore, and modify the notebooks from your user space. If you do
+not make a copy the notebooks will open as read-only and you will not be able to fully explore the examples provided.
+
 ### Linear Regression - (Vantassel)
 
 Linear regression seeks to find linear relationships between features in a dataset and an associated set of labels
@@ -35,7 +42,7 @@ how to perform basic linear regression using the raw features, combine those fea
 produce better predictions, use regularization to reduce overfitting, and use learning curves as a diagnostic tool for
 machine learning problems.
 
-[Link to Linear Regression Example](TODO)
+[Linear Regression Example](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/An%20Example-Based%20Introduction%20to%20Machine%20Learning/0_linear_regression)
 
 ### Random Forest - (Zhang)
 
@@ -49,9 +56,10 @@ image classification algorithm for automatically reading hand-written digits. Th
 an image of a hand-written digit and predict a label classifying it as a number between 0 and 9. The notebooks
 will show how to install Keras/TensorFlow, load a standard dataset, pre-process the data for acceptance by the
 network, design and train a convolutional neural network using Keras/TensorFlow, and visualize output correct and
-incorrect output predictions.
+incorrect output predictions. For those who have access to graphical processing unit (GPU) computational
+resources a replica of the main notebook is provided that can run across multiple GPUs on a single system.
 
-[Link to Convolutional Neural Network Example](TODO)
+[Convolutional Neural Network Example](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/An%20Example-Based%20Introduction%20to%20Machine%20Learning/3_convolutional_neural_networks)
 
 
 ## Citation and Licensing
