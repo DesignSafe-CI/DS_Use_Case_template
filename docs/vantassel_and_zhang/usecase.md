@@ -13,6 +13,15 @@ of machine learning approaches (as there are many), nor in its coverage of the s
 intended to provide a high-level overview of different approaches to using machine learning to
 solve data-related problems.
 
+## Citation and Licensing
+
+<!-- * Please cite [AUTHORS et al. (20xx) - example of published project]() to acknowledge the use of any resources from this use case. -->
+
+* Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246) to acknowledge the use of DesignSafe resources.  
+
+* This software is distributed under the GNU General Public License ([https://www.gnu.org/licenses/gpl-3.0.html](https://www.gnu.org/licenses/gpl-3.0.html)).
+
+
 ## Overview
 
 This use case is example-based meaning that its contents have been organized into self-contained examples.
@@ -60,12 +69,3 @@ incorrect output predictions. For those who have access to graphical processing 
 resources a replica of the main notebook is provided that can run across multiple GPUs on a single system.
 
 [Convolutional Neural Network Example](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/An%20Example-Based%20Introduction%20to%20Machine%20Learning/3_convolutional_neural_networks)
-
-
-## Citation and Licensing
-
-<!-- * Please cite [AUTHORS et al. (20xx) - example of published project]() to acknowledge the use of any resources from this use case. -->
-
-* Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246) to acknowledge the use of DesignSafe resources.  
-
-* This software is distributed under the GNU General Public License ([https://www.gnu.org/licenses/gpl-3.0.html](https://www.gnu.org/licenses/gpl-3.0.html)).
