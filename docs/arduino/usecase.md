@@ -1,6 +1,5 @@
 # From constitutive parameter calibration to site response analysis
 
-**Authors, Affiliations**  
 
 Pedro Arduino, University of Washington
 
