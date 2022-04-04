@@ -73,11 +73,27 @@ RW1 is wall 34 in the database and using that single number, the modeling script
 ### Modeling Script 
 
 The sections of the modeling script are: [Modeling Script](https://jupyter.designsafe-ci.org/user/stokljos/notebooks/MyData/UseCaseScripts/TCL_Script_Creator.ipynb)  
-* Section 1: Initializion of the model. The degrees of fredom are defined and the variables that carry uncertainty are also defined.  
-* Section 2: Defines nodal Locations.
+* Section 1: Initializion of the model.  
+   * The degrees of freedom and the variables that carry uncertainty are defined.  
+* Section 2: Defines nodal locations and elements.  
+   * Nodes are placed at the locations of the vertical bars along the length of the wall
+   * If the ratio of the length of the wall to the number of elements is too coarse of a mesh, additional nodes are placed inbetween the bars.
+   * The height of each element is equal to the length of the nodes in the boundary to create square elements up the wall.
 * Section 3: Defines material models and their variables.
+   * The crushing energy and fracture energy are calculated and wrote to the .tcl file. The equations for these values come from (Nasser et al.)  Below is the code:
+   ```python
+   self.gtcc = abs((0.174*(.5)**2-0.0727*.5+0.149)*((self.Walldata[40]*1000*conMult)/1450)**0.7) #tensile energy of confined
+   self.gtuc = abs((0.174*(.5)**2-0.0727*.5+0.149)*((self.Walldata[40]*1000)/1450)**0.7) # tensile energy of unconfined
+        
+   self.gfuc = 2*self.Walldata[40]*6.89476*5.71015 #crushing energy of unconfined
+   self.gfcc = 2.2*self.gfuc #crushing energy of confined
+   ```  
+   * The crushing strain and fracture strain can then be calculated from the energy values
+   * The material models are then defined. The concrete material opensees model is:  
+   nDMaterial PlaneStressUserMaterial 
+
 * Section 4: Defines the continuum shell model and the thicknesses of transverse steel and concrete.
-* Section 5: Defines the eleemnts acrosss the width and height. Also adds vertical truss bars up the height.
+* Section 5: Defines the elements acrosss the width and height. Also adds vertical truss bars up the height.
 * Section 6: Defines constraints
 * Section 7: Defines recorders
 * Section 8: Defines and applies the gravity load of the wall.
