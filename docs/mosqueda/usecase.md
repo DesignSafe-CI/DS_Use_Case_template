@@ -2,8 +2,6 @@
 
 **Wendy Miao, Zane Schemmer, Enrique Simbort, Gilberto Mosqueda, University of California, San Diego**  
 
-Summary about Jupiter Notebook goal. Introduction about test. System identification part. Obtained results. See Use Case 11 - Rathje for example and depth of content
-
 Jupyter Notebooks can provide fully integrated workflows of experiments from documentation of experimental design through analysis and publishing of data using the DesignSafe cyberinfrastructure. A serires of Notebooks are being developed to demonstrate their use in the experimental workflow including recent testing of a reconfigurable, modular test bed building planned for testing on the NHERI@UC San Diego Experimental Facility. The Python-based code is being implemented in a modular fashion so that components can be used as desired in other experiments and is transferable to other experimental facilities.  The Notebook can be used to evaluate shake table performance as well as dynamic properties of the structure. A key functionality is to increase the integration and collaboration between researchers at local or remote sites to view and analyze the experimental data during and after testing including once the data is published. Additional Notebooks are available using for viewing data from past shake table experiments including NEES and NHERI funded experiments.
 
 ## HYBRID SHAKE TABLE FORMULATION 
@@ -29,7 +27,9 @@ Vol. 18, Issue 3.
 
 
 
-
+### Introduction
+The Natural Hazard Engineering Research Infrastructure (NHERI) DesignSafe [1] cyberinfrastructure provides a collaborative Workspace for cloud-based data analysis and the Data Depot for publishing curated data. Jupyter Notebooks can function across these tools to provide an interactive programable environment in Python for data viewing and analysis. Research teams can initially share and view data in a private collaborative environment while they conduct their analysis then publish the Notebook and curated data for simplified viewing by other researchers interested in data reuse.  A significant advantage is the cloud-based approach that allows for thorough exploration of the data without requiring downloading of potentially large data sets. 
+To demonstrate the use of Jupyter Notebook within the experimental workflow, an application is being explored for use with the first experiment to be conducted following the upgrade to 6DOF of the Large High Performance Shake Table (LHPOST6) at the NHERI@UC San Diego Experimental Facility [2].  The first test to be conducted will involve the shakedown of a Modular Tested Building (MTB2) planned for early 2022 [3]. The MTB2 consists of a two-bay by one-bay, 3-story steel building that will be available for future use on the LHPOST6 to examine the behavior of the building itself under 3-D shaking or examine the behavior of other systems such as protective systems and nonstructural systems that can be installed within the MTB2. The initial testing of the MTB2, thus provides an ideal application for the Jupyter Notebook that will allow for simplified viewing of data generated from these tests that will be of interest to future users of the MTB2. The development of the Jupyter Notebooks is being deployed for use while conducting the experiments and for publication with the data after testing. The modules for analysis are being developed using shake table test data from past experiments. Modules and functionality developed to date are presented here. The full application of the Jupyter notebook will be undertaken in conjunction with the shake down experiments.
 
 
 
