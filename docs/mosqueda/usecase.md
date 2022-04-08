@@ -10,7 +10,7 @@ Jupyter Notebooks can provide fully integrated workflows of experiments from doc
 
 ### Citation and Licensing
 
-* Please cite [AUTHORS et al. (20xx) - example of published project](https://doi.org/10.17603/ds2-3zdj-493) to acknowledge the use of any resources from this use case.
+* [Rathje E., Dawson C., Padgett J., Pinelli J.P., Stanzione D., Arduino P., Brandenberg S.J., Cockerill T., Esteva M., Haan F.L., Kareem A., Lowes L., and Mosqueda G., (2020)](https://doi.org/10.3389/fbuil.2020.547706) “Enhancing research in natural hazard engineering through the DesignSafe cyberinfrastructure”. Frontiers in Built Environment, 6:213..
 
 * [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246) to acknowledge the use of DesignSafe resources.  
 
