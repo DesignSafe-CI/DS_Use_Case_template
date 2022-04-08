@@ -27,16 +27,16 @@ Vol. 18, Issue 3.
 
 
 
-### Introduction
+## Introduction
 The Natural Hazard Engineering Research Infrastructure (NHERI) DesignSafe [1] cyberinfrastructure provides a collaborative Workspace for cloud-based data analysis and the Data Depot for publishing curated data. Jupyter Notebooks can function across these tools to provide an interactive programable environment in Python for data viewing and analysis. Research teams can initially share and view data in a private collaborative environment while they conduct their analysis then publish the Notebook and curated data for simplified viewing by other researchers interested in data reuse.  A significant advantage is the cloud-based approach that allows for thorough exploration of the data without requiring downloading of potentially large data sets. 
 To demonstrate the use of Jupyter Notebook within the experimental workflow, an application is being explored for use with the first experiment to be conducted following the upgrade to 6DOF of the Large High Performance Shake Table (LHPOST6) at the NHERI@UC San Diego Experimental Facility [2].  The first test to be conducted will involve the shakedown of a Modular Tested Building (MTB2) planned for early 2022 [3]. The MTB2 consists of a two-bay by one-bay, 3-story steel building that will be available for future use on the LHPOST6 to examine the behavior of the building itself under 3-D shaking or examine the behavior of other systems such as protective systems and nonstructural systems that can be installed within the MTB2. The initial testing of the MTB2, thus provides an ideal application for the Jupyter Notebook that will allow for simplified viewing of data generated from these tests that will be of interest to future users of the MTB2. The development of the Jupyter Notebooks is being deployed for use while conducting the experiments and for publication with the data after testing. The modules for analysis are being developed using shake table test data from past experiments. Modules and functionality developed to date are presented here. The full application of the Jupyter notebook will be undertaken in conjunction with the shake down experiments.
 
-### Modular Testbed Building
+## Modular Testbed Building
 The Modular Testbed Building (MTB2) is designed to be a shared-use, reconfigurable experimental structure. The standard 3-story building can simulate braced frame and moment frame behavior through replaceable fuse type components including buckling restrained braced frames and Durafuse shear plate connections, respectively. The unique connection scheme allows for yielded fuse type members to be easily replaced to restore the structure to its original condition. The MTB2 can be constructed in various configurations with three examples shown in Fig 1. The lateral framing system in the 2-bay direction can be modeled as moment frames or braced frames. The single bay direction has a span of 20 feet and is a braced frame. Each span in the double bay direction is 16 feet. The story height for all floors is 12 feet with columns that extend 4 feet above the top floor.  The Special Moment Frame (SMF) configuration utilizes replaceable shear fuse plates while the braced frame utilizes Buckling-Restrained Braces. 
 
 ![caption](img/Fig.1.png)
 
-### Development of Jupyter Notebooks for Experimental Workflow
+## Development of Jupyter Notebooks for Experimental Workflow
 Jupyter Notebooks work as an interactive development environment to code and view data in a report format. Within the notebook, the combination of cells enables formatted text and interactive plotting for viewing and analyzing data.  Users can select data files and data channels for viewing and processing. with the ability to view and print complete reports. Jupyter Notebooks are accessible in DesignSafe through the workspace analysis tools and can access private or public data in Data Depot. Sample modules are presented here that have been developed using published data in Data Depot including [4] and [5]. These modules will be configured and applied within the workflow of the MTB2 during shakedown testing.
 
 ### Shake table performance
@@ -54,7 +54,7 @@ Modal displacements can also be calculated directly from the CSD function output
 ![caption](img/Fig.4.png)
 
 
-### Conclusions
+## Conclusions
 The Jupyter Notebooks developed for use through DesignSafe will facilitate the viewing and analysis of data sharing with collaborators from testing through data publication. A key advantage is the cloud-based approach that facilitates interactive data viewing and analysis in a report format without having to download large datasets. Jupyter Notebooks are being developed for the first structural model to be tested on LHPOST6. in a modular fashion to allow flexibility in use of components and simplify the application for other experiments. The modules presented here include tools to evaluate the performance of the shake table and system identification of the structural models and can be readily extended to include other features. Current work for further development includes exploring applications of machine learning libraries for system identification and improving plotting capabilities.
 
 
