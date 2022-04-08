@@ -1,6 +1,6 @@
 # Integrated Workflow of Experiments using Jupyter Notebooks: From Experimental Design to Publication
 
-**Enrique, Wendy, Zane, Gilberto Mosqueda, University of California, San Diego**  
+**Wendy Miao, Zane Schemmer, Enrique Simbort, Gilberto Mosqueda, University of California, San Diego**  
 
 Summary about Jupiter Notebook goal. Introduction about test. System identification part. Obtained results. See Use Case 11 - Rathje for example and depth of content
 
