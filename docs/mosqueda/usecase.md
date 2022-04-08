@@ -21,7 +21,7 @@ Jupyter Notebooks can provide fully integrated workflows of experiments from doc
 Vol. 18, Issue 3.
 * [Vega et al. (2018)](https://doi.org/10.17603/DS2C687) "Five story building with tunned mass damper", in NHERI UCSD Hybrid Simulation Commissioning. DesignSafe-CI.
 * Chopra A. K., Dynamics of Structures. Harlow: Pearson Education, 2012. 
-* [Masroor et al. (2010)](doi: 10.4231/D3HH6C57D) "Limit State Behavior of Base Isolated Structures: Fixed Base Moment Frame", DesignSafe-CI [publisher].
+* [Masroor et al. (2010)](https://doi.org/10.4231/D3HH6C57D) "Limit State Behavior of Base Isolated Structures: Fixed Base Moment Frame", DesignSafe-CI [publisher].
 * This software is distributed under the GNU General Public License (https://www.gnu.org/licenses/gpl-3.0.html).
 
 
