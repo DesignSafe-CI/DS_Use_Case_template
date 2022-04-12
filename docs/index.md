@@ -5,7 +5,7 @@ DesignSafe provides a wide variety of resources that allow researchers to effect
 To help users fully embrace DesignSafe functionalities, we have developed a suite of Use Cases that demonstrate how DesignSafe is being used to advance natural hazards research.  Practical products, examples, and scripts developed as part of these Use Cases are documented in the sections below.  
 
 * [Example](example/usecase.md)
-* [Site Response Analysis and Model Calibration](arduino/usecase.md) (OpenSees, SimCenter quoFEM, Jupyter, HPC)
+* [**Site Response Analysis and Model Calibration**](arduino/usecase.md) (OpenSees, SimCenter quoFEM, Jupyter, HPC)
 * [Brandenberg](brandenberg/usecase.md)
 * [Large-Scale Ensemble Simulations of Storm Surge (ADCIRC, pylauncher, Jupyter, HPC)](dawson/usecase.md)
 * [Haan](haan/usecase.md)
