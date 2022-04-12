@@ -78,13 +78,12 @@ The sections of the modeling script are: [Modeling Script](https://jupyter.desig
   
 #### Section 3: Defines material models and their variables
    * The crushing energy and fracture energy are calculated and wrote to the .tcl file. The equations for these values come from (Nasser et al.) Below is the code:  
-  
+
    ```python
-   self.gtcc = abs((0.174*(.5)**2-0.0727*.5+0.149)*((self.Walldata[40]*1000*conMult)/1450)**0.7) #tensile energy of confined
-   self.gtuc = abs((0.174*(.5)**2-0.0727*.5+0.149)*((self.Walldata[40]*1000)/1450)**0.7) # tensile energy of unconfined
-        
-   self.gfuc = 2*self.Walldata[40]*6.89476*5.71015 #crushing energy of unconfined
-   self.gfcc = 2.2*self.gfuc #crushing energy of confined
+      self.gtcc = abs((0.174*(.5)**2-0.0727*.5+0.149)*((self.Walldata[40]*1000*conMult)/1450)**0.7) #tensile energy of confined
+      self.gtuc = abs((0.174*(.5)**2-0.0727*.5+0.149)*((self.Walldata[40]*1000)/1450)**0.7) # tensile energy of unconfined
+      self.gfuc = 2*self.Walldata[40]*6.89476*5.71015 #crushing energy of unconfined
+      self.gfcc = 2.2*self.gfuc #crushing energy of confined
    ```  
      
    * The crushing strain (epscu) and fracture strain (epstu) can then be calculated from the energy values.
@@ -120,9 +119,8 @@ The sections of the modeling script are: [Modeling Script](https://jupyter.desig
    * Recorders are defined as below where 'firstRow' and 'last' are the nodes along the bottom and top of the wall 'maxEle' is the total amount of shell elements and 'trussele' is the total elements of shell elements and truss elements in the wall.  
   
    ```python
-     self.f.write('recorder Node -file baseReactxcyc.txt  -node {}  -dof 1 reaction\n'.format(' '.join(firstRow)) )                           
-     self.f.write('recorder Node -file topDispxcyc.txt    -node {}  -dof 1 disp \n'.format(' '.join(last)))              
-
+     self.f.write('recorder Node -file baseReactxcyc.txt  -node {}  -dof 1 reaction\n'.format(' '.join(firstRow)) )         
+     self.f.write('recorder Node -file topDispxcyc.txt    -node {}  -dof 1 disp \n'.format(' '.join(last)))
      self.f.write('recorder Element -xml "elementsmat1fib5sig.xml"  -eleRange 1 ' + str(self.maxEle) + ' material 1    fiber 5    stresses\n')
      self.f.write('recorder Element -xml "elementsmat2fib5sig.xml"  -eleRange 1 ' + str(self.maxEle) + ' material 2    fiber 5    stresses\n')
      self.f.write('#recorder Element -xml "elementsmat3fib5sig.xml"  -eleRange 1 ' + str(self.maxEle) + ' material 3    fiber 5    stresses\n')
