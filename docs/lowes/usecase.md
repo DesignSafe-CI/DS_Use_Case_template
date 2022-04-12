@@ -78,14 +78,13 @@ The sections of the modeling script are: [Modeling Script](https://jupyter.desig
   
 #### Section 3: Defines material models and their variables
    * The crushing energy and fracture energy are calculated and wrote to the .tcl file. The equations for these values come from (Nasser et al.) Below is the code:
-
    ```python
-     self.gtcc = abs((0.174*(.5)**2-0.0727*.5+0.149)*((self.Walldata[40]*1000*conMult)/1450)**0.7) #tensile energy of confined
-     self.gtuc = abs((0.174*(.5)**2-0.0727*.5+0.149)*((self.Walldata[40]*1000)/1450)**0.7) # tensile energy of unconfined
-     self.gfuc = 2*self.Walldata[40]*6.89476*5.71015 #crushing energy of unconfined
-     self.gfcc = 2.2*self.gfuc #crushing energy of confined
+   self.gtcc = abs((0.174*(.5)**2-0.0727*.5+0.149)*((self.Walldata[40]*1000*conMult)/1450)**0.7) #tensile energy of confined
+   self.gtuc = abs((0.174*(.5)**2-0.0727*.5+0.149)*((self.Walldata[40]*1000)/1450)**0.7) # tensile energy of unconfined
+   self.gfuc = 2*self.Walldata[40]*6.89476*5.71015 #crushing energy of unconfined
+   self.gfcc = 2.2*self.gfuc #crushing energy of confined
    ```
-  
+
    * The crushing strain (epscu) and fracture strain (epstu) can then be calculated from the energy values.
    * The material models are then defined.
    * The concrete material opensees model: nDmaterial PlaneStressUserMaterial $matTag 40 7 $fc $ft $fcu $epsc0 $epscu $epstu $stc.
@@ -132,7 +131,7 @@ The sections of the modeling script are: [Modeling Script](https://jupyter.desig
      self.f.write('recorder Element -xml "trusssig.xml"  -eleRange ' + str(self.maxEle+1) + ' ' + str(self.trussele)+ ' material stress\n')
      self.f.write('recorder Element -xml "trussseps.xml" -eleRange ' + str(self.maxEle+1) + ' ' + str(self.trussele)+ ' material strain\n')
   ```
-  
+
 #### Section 8: Defines and applies the gravity load of the wall
    * The axial load of the wall is defined in the database and distributed equally amongst the top nodes and a static analysis is conducted to apply a gravity load to the wall.
   
