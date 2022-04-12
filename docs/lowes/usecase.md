@@ -77,13 +77,13 @@ The sections of the modeling script are: [Modeling Script](https://jupyter.desig
    * The height of each element is equal to the length of the nodes in the boundary to create square elements up the wall.  
   
 #### Section 3: Defines material models and their variables
-   * The crushing energy and fracture energy are calculated and wrote to the .tcl file. The equations for these values come from (Nasser et al.) Below is the code:  
+   * The crushing energy and fracture energy are calculated and wrote to the .tcl file. The equations for these values come from (Nasser et al.) Below is the code:
 
    ```python
-      self.gtcc = abs((0.174*(.5)**2-0.0727*.5+0.149)*((self.Walldata[40]*1000*conMult)/1450)**0.7) #tensile energy of confined
-      self.gtuc = abs((0.174*(.5)**2-0.0727*.5+0.149)*((self.Walldata[40]*1000)/1450)**0.7) # tensile energy of unconfined
-      self.gfuc = 2*self.Walldata[40]*6.89476*5.71015 #crushing energy of unconfined
-      self.gfcc = 2.2*self.gfuc #crushing energy of confined
+     self.gtcc = abs((0.174*(.5)**2-0.0727*.5+0.149)*((self.Walldata[40]*1000*conMult)/1450)**0.7) #tensile energy of confined
+     self.gtuc = abs((0.174*(.5)**2-0.0727*.5+0.149)*((self.Walldata[40]*1000)/1450)**0.7) # tensile energy of unconfined
+     self.gfuc = 2*self.Walldata[40]*6.89476*5.71015 #crushing energy of unconfined
+     self.gfcc = 2.2*self.gfuc #crushing energy of confined
    ```  
      
    * The crushing strain (epscu) and fracture strain (epstu) can then be calculated from the energy values.
@@ -116,7 +116,7 @@ The sections of the modeling script are: [Modeling Script](https://jupyter.desig
    * The first two recorders capture the force reactions in the x-direction of the bottom row of nodes and the displacements in the x-direction of the top row of nodes. These recorders will be used to develop load-displacement graphs.
    * The next eight recorders capture stress and strain of the four gauss points in the middle concrete fiber of all the elements and store them in an xml file. These recorders will be used to develop stress and strain profile movies, give insight to how the wall is failing, and how the cross section is reacting.
    * The last two recorders capture the stress and strain of all the truss elements. These will be used to determine when the steel fails and when the yield strength is reached.
-   * Recorders are defined as below where 'firstRow' and 'last' are the nodes along the bottom and top of the wall 'maxEle' is the total amount of shell elements and 'trussele' is the total elements of shell elements and truss elements in the wall.  
+   * Recorders are defined as below where 'firstRow' and 'last' are the nodes along the bottom and top of the wall 'maxEle' is the total amount of shell elements and 'trussele' is the total elements of shell elements and truss elements in the wall.
   
    ```python
      self.f.write('recorder Node -file baseReactxcyc.txt  -node {}  -dof 1 reaction\n'.format(' '.join(firstRow)) )         
