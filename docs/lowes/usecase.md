@@ -84,8 +84,8 @@ The sections of the modeling script are: [Modeling Script](https://jupyter.desig
      self.gtuc = abs((0.174*(.5)**2-0.0727*.5+0.149)*((self.Walldata[40]*1000)/1450)**0.7) # tensile energy of unconfined
      self.gfuc = 2*self.Walldata[40]*6.89476*5.71015 #crushing energy of unconfined
      self.gfcc = 2.2*self.gfuc #crushing energy of confined
-   ```  
-     
+   ```
+  
    * The crushing strain (epscu) and fracture strain (epstu) can then be calculated from the energy values.
    * The material models are then defined.
    * The concrete material opensees model: nDmaterial PlaneStressUserMaterial $matTag 40 7 $fc $ft $fcu $epsc0 $epscu $epstu $stc.
@@ -117,7 +117,7 @@ The sections of the modeling script are: [Modeling Script](https://jupyter.desig
    * The next eight recorders capture stress and strain of the four gauss points in the middle concrete fiber of all the elements and store them in an xml file. These recorders will be used to develop stress and strain profile movies, give insight to how the wall is failing, and how the cross section is reacting.
    * The last two recorders capture the stress and strain of all the truss elements. These will be used to determine when the steel fails and when the yield strength is reached.
    * Recorders are defined as below where 'firstRow' and 'last' are the nodes along the bottom and top of the wall 'maxEle' is the total amount of shell elements and 'trussele' is the total elements of shell elements and truss elements in the wall.
-  
+
    ```python
      self.f.write('recorder Node -file baseReactxcyc.txt  -node {}  -dof 1 reaction\n'.format(' '.join(firstRow)) )         
      self.f.write('recorder Node -file topDispxcyc.txt    -node {}  -dof 1 disp \n'.format(' '.join(last)))
@@ -131,7 +131,7 @@ The sections of the modeling script are: [Modeling Script](https://jupyter.desig
      self.f.write('#recorder Element -xml "elementsmat4fib5eps.xml"  -eleRange 1 ' + str(self.maxEle) + ' material 4    fiber 5    strains\n')
      self.f.write('recorder Element -xml "trusssig.xml"  -eleRange ' + str(self.maxEle+1) + ' ' + str(self.trussele)+ ' material stress\n')
      self.f.write('recorder Element -xml "trussseps.xml" -eleRange ' + str(self.maxEle+1) + ' ' + str(self.trussele)+ ' material strain\n')
-  ```  
+  ```
   
 #### Section 8: Defines and applies the gravity load of the wall
    * The axial load of the wall is defined in the database and distributed equally amongst the top nodes and a static analysis is conducted to apply a gravity load to the wall.
