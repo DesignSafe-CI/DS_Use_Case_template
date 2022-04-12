@@ -10,7 +10,7 @@ To help users fully embrace DesignSafe functionalities, we have developed a suit
 * [ADCIRC Ensemble Simulations of Storm Surge](dawson/usecase.md)
 * [Haan](haan/usecase.md)
 * [Kareen](kareen/usecase.md)
-* [Kumar](kumar/usecase.md)
+* [MPM Simulations](kumar/usecase.md)
 * [Lowes](lowes/usecase.md)
 * [Mosqueda](mosqueda/usecase.md)
 * [Storm Impacts Visualized using QGIS and Python](padgett/usecase.md)
