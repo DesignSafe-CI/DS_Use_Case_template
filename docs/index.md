@@ -6,7 +6,7 @@ To help users fully embrace DesignSafe functionalities, we have developed a suit
 
 ### General Use Cases
 * [**Damage Tagging of Field Images**](haan/usecase.md) (Taggit, HazMapper)
-* [**Machine Learning and AI Resources**] (ml_resources/usecase.md) (Jupyter, Interactive Data Analytics, HPC)
+* [**Machine Learning and AI Resources**](ml_resources/usecase.md) (Jupyter, Interactive Data Analytics, HPC)
 
 ### Geohazard Use Cases
 * [**Data Analysis using Next Generation Liquefaction (NGL) Database**](brandenberg/usecase.md) (NGL, Jupyter, SQL, Interactive Data Analytics)
