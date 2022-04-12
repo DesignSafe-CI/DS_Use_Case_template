@@ -2,6 +2,16 @@
 
 **Brandenberg, S.J., UCLA, Ulmer, K.J., Southwest Research Institute, and Zimmaro, P., University of Calabria**  
 
+## Citations and Licensing
+
+* Please cite [Zimmaro, P., et al. (2019)](https://doi.org/10.21222/C2J040) to acknowledge the use of the NGL Database. Data in the NGL database has been gathered from [these](https://nextgenerationliquefaction.org/citations.php) published sources. If you use specific data in the database, please cite the original source.
+
+* Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246) to acknowledge the use of DesignSafe resources.  
+
+* This software is distributed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.html).  
+
+## Background
+
 The Next Generation Liquefaction (NGL) Project is advancing the state of the art in liquefaction research 
 and working toward providing end users with a consensus approach to assess liquefaction potential within 
 a probabilistic and risk-informed framework. Specifically, NGL’s goal is to first collect and organize 
@@ -17,19 +27,11 @@ that the resulting liquefaction susceptibility, triggering, and consequence mode
 vetted by the scientific community, providing a solid foundation for designing, constructing and overseeing 
 critical infrastructure projects.
 
-The NGL database is populated through a web GUI at www.nextgenerationliquefaction.org/. The web interface 
+The NGL database is populated through a web interface at www.nextgenerationliquefaction.org/. The web interface 
 provides limited capabilities for users to interact with data. Users are able to view and download data, 
 but they cannot use the GUI to develop an end-to-end workflow to make scientific inferences and draw conclusions 
 from the data. To facilitate end-to-end workflows, the NGL database is replicated daily to [DesignSafe](https://www.designsafe-ci.org), where 
 users can interact with it using Jupyter notebooks.
-
-## Citations and Licensing
-
-* Please cite [Zimmaro, P., et al. (2019)](https://doi.org/10.21222/C2J040) to acknowledge the use of the NGL Database. Data in the NGL database has been gathered from [these](https://nextgenerationliquefaction.org/citations.php) published sources. If you use specific data in the database, please cite the original source.
-
-* Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246) to acknowledge the use of DesignSafe resources.  
-
-* This software is distributed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.html).  
 
 ## Understanding the Database Schema
 
@@ -39,177 +41,39 @@ schema is documented at the following URL:
 
 <https://nextgenerationliquefaction.org/schema/index.html>
   
+## Querying Data via Jupyter Notebooks
+
+Jupyter notebooks provide the capability to query NGL data, and subsequently process, visualize, and learn from the data in an end-to-end workflow. Jupyter notebooks run in the cloud on DesignSafe, and provide a number of benefits compared with a more traditional local mode of operation:
+
+1. The NGL database contains many GB of data, and interating with it in the cloud does not require downloading these data files to a local file system.
+2. Users can collaborate in the cloud by creating DesignSafe projects where they can share processing scripts.
+3. The NGL database is constantly changing as new data is added. Working in the cloud means that the data will always be up-to-date.
+4. Querying the MySQL database is faster than opening individual text files to extract data.
+
+This documentation first demonstrates how to install the database connection script, followed by several example scripts intended to serve as starting points for users who wish to develop their own tools.
+
 ## Installing Database Connection Script
  
 Connecting to a relational database requires credentials, like username, password, database name, and hostname. 
-Rather than requiring users to know these credentials, we have created a Python package that allows users to 
-connect to the database. This code installs the package containing the database connection script for NGL:
+Rather than requiring users to know these credentials and create their own database connections, we have created a Python package that allows users to
+query the database. This code installs the package containing the database connection script for NGL:
 
 ```python
 !pip install git+https://github.com/sjbrandenberg/designsafe_db
 ```
 
-## Querying the Database
+## Example Queries
 
-This section illustrates how to query the NGL database, and the example queries are contained in a [Jupyter Notebook on DesignSafe](https://jupyter.designsafe-ci.org/user/name/tree/CommunityData/NGL/ExampleQueries.ipynb).
+This notebook contains example queries to illustrate how to extract data from the NGL database into Pandas dataframe objects using Python scripts in Jupyter notebooks. The notebook contains cells that perform the following operations:
 
-### Query contents of SITE table
+1. Query contents of the SITE table
+2. Query event information and associated field observations at the Wildlife liquefaction array
+3. Query cone penetration test data at Wildlife liquefaction array
+4. Query a list of tables in the NGL database
+5. Query information about BORH table
+6. Query counts of cone penetration test data, boreholes, surface wave measurements, invasive shear wave velocity measurements, liquefaction observations, and non-liquefaction observations
 
-The lines of code below first imports the ngl_db Python package, then creates a query to read all data from the SITE table, then creates a Pandas dataframe by executing the read_sql command that is part of the designsafe_db.ngl_db package.
-
-```python
-import designsafe_db.ngl_db as ngl
-sql = "SELECT * FROM SITE"
-df = ngl.read_sql(sql)
-```
-
-The output from the command is illustrated in the figure below. When this query was written, there were a total of 333 sites in 
-the NGL database. The SITE_ID field is not contiguous because sites are sometimes deleted from the database, and the 
-SITE_ID field is never re-used. The Pandas dataframe is broken between SITE_ID 151 and 677 for ease of displaying 
-information in the output window. Many rows of data are not displayed in Figure 1 as a result.
-
-![Screenshot of result of query of SITE table data.](img/SiteTableQuery.png)
-
-**Figure 1.** Results of query of SITE table data.
-
-### Query Wildlife liquefaction array data
-
-This cell queries event information from the `EVNT` table and surface evidence of liquefaction information from the `FLDM` table at the Wildlife Array site. The definition of each table and site is below. The query utilizes an `INNER JOIN` statement to combine tables based on shared keys, and will return all values that have matching keys in both tables. For more details, see [https://www.w3schools.com/sql/sql_join_inner.asp](https://www.w3schools.com/sql/sql_join_inner.asp)
-
-**Table 1.** List of tables utilized in Wildlife liquefaction array queries.
-
-| Table	| Description |
-| ----- | ----------- |
-| EVNT	| 	Earthquake event information |
-| FLDM	| 	Field evidence of liquefaction information at a point within a site |
-| FLDO	| 	Field evidence of liquefaction information at a site |
-| SITE	| 	A site is the highest level organizational structure for information in the database |
-
-**Table 2.** List of fields utilized in Wildlife liquefaction array queries.
-
-| Field	| Description |
-| ----- | ----------- |
-| EVNT_MAG | 	Earthquake magnitude |
-| EVNT_NM | 	  Event name |
-| EVNT_YR | 	  Event year |
-| FLDM_LAT | 	Latitude of manifestation observation |
-| FLDM_LON | 	Longitude of manifestation observation |
-| FLDM_SFEV | 	Indication of whether surface manifestation occurred (0 = no, 1 = yes) |
-| FLDM_DESC | 	Description of liquefaction manifestation |
-| FLDO_ID |    Primary key in FLDO table, and foreign key in FLDM table |
-| EVNT_ID |    Primary key in EVNT table, and foreign key in FLDO table |
-| SITE_ID |    Primary key in SITE table, and foreign key in FLDO table |
-| SITE_NAME |  Site name |
-
-```python
-import designsafe_db.ngl_db as ngl
-
-sql = 'SELECT EVNT.EVNT_MAG, EVNT.EVNT_NM, EVNT.EVNT_YR, FLDM.FLDM_LAT, FLDM.FLDM_LON, FLDM.FLDM_SFEV, FLDM.FLDM_DESC '
-sql += 'FROM FLDO INNER JOIN FLDM on FLDO.FLDO_ID = FLDM.FLDO_ID '
-sql += 'INNER JOIN EVNT ON EVNT.EVNT_ID = FLDO.EVNT_ID '
-sql += 'INNER JOIN SITE ON FLDO.SITE_ID = SITE.SITE_ID '
-sql += 'WHERE SITE_NAME = "Wildlife Array"'
-
-df = ngl.read_sql(sql)
-pd.set_option('display.max_colwidth', 100)
-df
-```
-
-![Screenshot of result of query of Wildlife liquefaction array query of event information and field observations.](img/WildlifeQuery1.png)
-  
-
-**Figure 2.** Screenshot of result of query of Wildlife liquefaction array query of event information and field observations.
-
-### Query Wildlife liquefaction CPT data
-
-This query retrieves all cone penetration test data from the Wildlife liquefaction array. INNER JOIN statements are needed to link SCPT to SCPG (using SCPG_ID), SCPG to TEST (using TEST_ID), and TEST to SITE (using SITE_ID). This query demonstrates propagation of primary and foreign keys through the schema heirarchy.
-
-```python  
-import pandas as pd
-import designsafe_db.ngl_db as ngl
-
-command = 'SELECT TEST.TEST_ID, TEST.TEST_NAME, SCPT. SCPT_DPTH, SCPT.SCPT_RES, SCPT.SCPT_FRES FROM SCPT '
-command += 'INNER JOIN SCPG ON SCPT.SCPG_ID = SCPG.SCPG_ID '
-command += 'INNER JOIN TEST ON TEST.TEST_ID = SCPG.TEST_ID '
-command += 'INNER JOIN SITE ON SITE.SITE_ID = TEST.SITE_ID '
-command += 'WHERE SITE.SITE_NAME = "Wildlife Array"'
-
-df = ngl.read_sql(command)
-pd.set_option('display.max_rows', 10)
-df
-```
-
-![Screenshot of result of query of Wildlife liquefaction array query of cone penetration test data.](img/WildlifeQuery2.png)
-
-**Figure 3.** Screenshot of result of query of Wildlife liquefaction array query of cone penetration test data.
-
-### Query number of data entries in various tables, including indication of review status
-
-This query builds upon the previous query by adding an indication of whether the data quantity has been reviewed. Data in the NGL database is submitted for review by users, and subsequently reviewed by members of the database working group to check the data against published sources, identify errors, and ensure data entry completeness.
-
-```python
-import designsafe_db.ngl_db as ngl
-import pandas as pd
-```
-
-command = 'SELECT (SELECT COUNT(SCPG_ID) FROM SCPG) as "CPT Soundings", '
-command += '(SELECT COUNT(BORH_ID) FROM BORH) as "Boreholes", '
-command += '(SELECT COUNT(GSWG_ID) FROM GSWG) as "Surface Wave Measurements", '
-command += '(SELECT COUNT(GINV_ID) FROM GINV) as "Invasive VS Measurements", '
-command += '(SELECT COUNT(FLDM_ID) FROM FLDM WHERE FLDM_SFEV=1) as "Liquefaction Observations", '
-command += '(SELECT COUNT(FLDM_ID) FROM FLDM WHERE FLDM_SFEV=0) as "Non-Liquefaction Observations"'
-
-scpg_count = ngl.read_sql(command).T
-scpg_count.columns=["Count"]
-scpg_count
-
-### Query list of table names
-
-The cell below queries the names of all of the tables in the NGL database into a Pandas dataframe. By default, Pandas truncates dataframes for compact viewing. The cell below illustrates how to use the "set_option" command to set the number of rows to a custom value, in this case the length of the Pandas dataframe.
-
-```python
-import pandas as pd
-import designsafe_db.ngl_db as ngl
-
-sql = 'show tables'
-table_names = ngl.read_sql(sql)
-pd.set_option('display.max_rows', len(table_names))
-table_names
-```
-![Screenshot of list of tables in NGL database.](img/Tables.png)
-
-**Figure 4.** Screenshot of list of tables in NGL database.
-    
-### Query schema for BORH table
-
-The BORH table is the first in the alphebetical list of tables. A description of the headings returned by the DESCRIBE command is in the table below.
-
-**Table 3.** List of headings describing fields in table returned by SQL DESCRIBE command.
-
-| Column  |  Description |
-| ------  |  ----------- |
-| Field  |     Name of table entry |
-| Type |       Datatype of entry |
-| Null  |      YES = null fields are allowed, NO = null fields are not allowed |
-| Key   |      PRI = Primary key, MUL = Foreign key |
-| Default  |   Default value |
-| Extra   |    auto_increment = value is automatically assigned incrementally |
-
-The cell below uses the SHOW FULL COLUMNS command to display the fields in the BORH table. This includes a "Comment" that defines each field.
-
-```python
-import pandas as pd
-import designsafe_db.ngl_db as ngl
-
-sql = 'SHOW FULL COLUMNS FROM BORH'
-bohr_desc = ngl.read_sql(sql)
-pd.set_option('display.max_rows', len(bohr_desc))
-bohr_desc
-```
-
-![Screenshot of fields contained in BORH table.](img/borh_fields.png)
-
-**Figure 5.** Screenshot of fields contained in BORH table. 
+[ExampleQueries.ipynb](https://jupyter.designsafe-ci.org/user/name/tree/CommunityData/NGL/ExampleQueries.ipynb).
 
 ## Cone Penetration Test Viewer
 
@@ -224,214 +88,8 @@ The cone penetration test viewer demonstrates the following:
 
 Cone penetration test data plotted in the notebook include tip resistance, sleeve friction, and pore pressure. In some cases, sleeve friction and pore pressure are not measured, in which case the plots are empty.
 
-### Jupyter notebook
-[Jupyter notebook on DesignSafe](https://jupyter.designsafe-ci.org/user/name/tree/CommunityData/NGL/CPT_viewer.ipynb)
+[CPT_viewer.ipynb](https://jupyter.designsafe-ci.org/user/name/tree/CommunityData/NGL/CPT_viewer.ipynb)
 
-### Tables
-Tables queried in this notebook, and the fields within those tables are described in the tables below.
-
-#### List of Tables
-
-| Table | Description |
-| ----- | ----------- |
-| SITE  | Highest level table that serves as the organizational structure for project team collaboration |
-| TEST  | Table containing descriptions of tests including CPT, boreholes, geophysical tests, and groundwater measurements |
-| SCPG  | Table containing metadata about CPT test |
-| SCPT  | Table containing CPT test data |
-
-#### SITE Table
-
-| Field   | Description |
-| -----   | ----------- |
-| SITE_ID | Primary key for the site table |
-| SITE_NAME | Site name (appears in site_widget dropdown) |
-
-#### TEST Table
-
-| Field   | Description |
-| -----   | ----------- |
-| TEST_ID |  Primary key for TEST table |
-| SITE_ID |  Foreign key from SITE table associating a test with a site |
-| TEST_NAME | Test name (appears in test_widget dropdown) |
-
-#### SCPG Table
-
-| Field   | Description |
-| -----   | ----------- |
-| SCPG_ID | Primary key for SCPG table |
-| TEST_ID |  Foreign key from TEST table associating a cone penetration test with a test |
-| SCPG_CSA | Surface area of the cone tip in square centimeters |
-| SCPG_RATE | Nominal rate of penetration of the cone in cm/s |
-| SCPG_CREW | Name of logger / organization |
-| SCPG_METH | Penetration method |
-| SCPG_STAR | Start date of activity |
-| SCPG_ENDD | End date of activity |
-| SCPG_PWP  | Position of pore pressure measurement on cone |
-| SCPG_REM  | Remarks |
-
-#### SCPT Table
-
-| Field   | Description |
-| -----   | ----------- |
-| SCPT_ID |   Primary key for SCPT Table   |
-| SCPG_ID |   Foreign key from SCPG table associating cone penetratin test data with test metadata | 
-| SCPG_DPTH | Depth of CPT measurement in m |
-| SCPT_RES  | Cone tip resistance (qc) in MPa |
-| SCPT_FRES | Sleeve friction resistance (fs) in MPa | 
-| SCPT_PWP  | Pore-water pressure in MPa |
-
-### Code
-
-This section describes the [Jupyter notebook](https://jupyter.designsafe-ci.org/user/name/notebooks/CommunityData/NGL/CPT_viewer.ipynb) available via DesignSafe. The code is broken into chunks with explanations of each section of code.
-
-#### Import packages
-
-In this case, we need to import ipywidgets, matplotlib, numpy, ngl_db, and pandas. The "%matplotlib notebook" magic renders an interactive plot in the notebook.
-
-```python
-%matplotlib notebook
-import ipywidgets as widgets
-from matplotlib import pyplot as plt
-import numpy as np
-import designsafe_db.ngl_db as ngl
-import pandas as pd
-```
-
-#### Query distinct SITE_ID and SITE_NAME for sites that have CPT data
-The query below finds distinct SITE_ID and SITE_NAME fields that contain CPT data for the purpose of populating the site dropdown widget. 
-INNER JOIN commands are required between SITE, TEST, and SCPG to find sites containing CPT data.
-A site might contain more than one CPT test, but we do not want replicated fields in the site dropdown widget. Therefore we use the "DISTINCT" command.
-
-```python
-sql = 'SELECT DISTINCT SITE.SITE_ID, SITE.SITE_NAME FROM SITE INNER JOIN TEST ON SITE.SITE_ID = TEST.SITE_ID INNER JOIN SCPG ON SCPG.TEST_ID = TEST.TEST_ID'
-site_df = ngl.read_sql(sql)
-```
-
-#### Create key, value pairs for SITE_NAME and SITE_ID, and create site_widget
-Dropdown widgets accept key-value pairs for the "options" field. This is desireable here because the SITE_ID can be set to the key, and subsequently utilized in queries when a user selects a site. The code below converts queried site data into name, value pairs.
-
-```python
-site_df.set_index('SITE_ID',inplace=True)
-site_df.sort_values(by='SITE_NAME',inplace=True)
-site_options = [('Select a site', -1)]
-for key, value in site_df['SITE_NAME'].to_dict().items():
-    site_options.append((value, key))
-site_widget = widgets.Dropdown(options=site_options, description='Site')
-``` 
-
-#### Create empty test_widget. This widget will get populated when a site is selected
-
-```python
-test_options = [('Select a test', -1)]
-test_widget = widgets.Dropdown(options=test_options, description='Test', disabled=True)
-widget_box= widgets.VBox([site_widget, test_widget])
-display(widget_box)
-```
-
-#### Create plot objects and initialize empty plots
-
-```python
-fig, ax = plt.subplots(1, 3, figsize=(6,4), sharey='row')
-
-line1, = ax[0].plot([], [])
-ax[0].set_xlabel('qc (MPa)')
-ax[0].set_ylabel('depth (m)')
-ax[0].grid(True)
-ax[0].invert_yaxis()
-
-line2, = ax[1].plot([], [])
-ax[1].set_xlabel('fs (MPa)')
-ax[1].grid(True)
-ax[1].invert_yaxis()
-
-line3, = ax[2].plot([], [])
-ax[2].set_xlabel('u2 (MPa)')
-ax[2].grid(True)
-ax[2].invert_yaxis()
-
-fig.tight_layout()
-```
-
-#### Create empty metadata_widget. This widget will get populated when a CPT test is selected
-
-```python
-metadata_widget = widgets.HTML(value='')
-display(metadata_widget)
-```
-
-#### Define function for populating test_widget when a user selects a site from the site_widget dropdown
-
-This code sets data for the plots to be empty, and sets the metadata widget to be empty as well. If the top-level field is selected (i.e., 'Select a Test'), then the test_widget is disabled.
-If a site is selected, a SQL query is made on all of the CPT tests for that site, and the test dropdown is populated.
-
-```python
-def on_site_widget_change(change):
-   line1.set_xdata([])
-   line1.set_ydata([])
-   line2.set_xdata([])
-   line2.set_ydata([])
-   line3.set_xdata([])
-   line3.set_ydata([])
-   metadata_widget.value=''
-   if(change['new']==-1):
-       test_widget.options = [('Select a test', -1)]
-       test_widget.disabled = True
-   else:
-       test_options = [('Select a test', -1)]
-       sql = 'SELECT DISTINCT TEST.TEST_ID, TEST.TEST_NAME FROM TEST INNER JOIN SCPG ON TEST.TEST_ID = SCPG.TEST_ID WHERE TEST.SITE_ID = ' + str(change['new'])
-       test_df = ngl.read_sql(sql)
-       test_df.set_index('TEST_ID',inplace=True)
-       test_df.sort_values(by='TEST_NAME',inplace=True)
-       for key, value in test_df['TEST_NAME'].to_dict().items():
-           test_options.append((value, key))
-       test_widget.options = test_options
-       test_widget.disabled = False
-```
-
-#### Define function for querying CPT data and metadata when a user selects a CPT test
-```python
-def on_test_widget_change(change):
-   if(change['new']!=-1):
-       sql = 'SELECT SCPT.SCPT_DPTH, SCPT.SCPT_RES, SCPT.SCPT_FRES, SCPT.SCPT_PWP FROM SCPT INNER JOIN SCPG ON SCPT.SCPG_ID = SCPG.SCPG_ID WHERE SCPG.TEST_ID = ' + str(change['new'])
-       scpt_df = pd.read_sql_query(sql,cnx)
-       line1.set_xdata(scpt_df['SCPT_RES'].values)
-       line1.set_ydata(scpt_df['SCPT_DPTH'].values)
-       line2.set_xdata(scpt_df['SCPT_FRES'].values)
-       line2.set_ydata(scpt_df['SCPT_DPTH'].values)
-       line3.set_xdata(scpt_df['SCPT_PWP'].values)
-       line3.set_ydata(scpt_df['SCPT_DPTH'].values)
-       for a in ax:
-           a.relim()
-           a.autoscale_view(True)
-       fig.canvas.draw()
-       sql = 'SELECT SCPG.SCPG_CSA, SCPG.SCPG_RATE, SCPG.SCPG_CREW, SCPG.SCPG_METH, SCPG.SCPG_STAR, '
-       sql += 'SCPG.SCPG_ENDD, SCPG.SCPG_PWP, SCPG.SCPG_REM FROM SCPG WHERE SCPG.TEST_ID = ' + str(change['new'])
-       scpg_df = ngl.read_sql(sql,cnx)
-       metadata = "<strong>CPT Test Metadata</strong><br>"
-       metadata += "Cone area = " + str(scpg_df['SCPG_CSA'].values[0]) + ' cm<sup>2</sup><br>'
-       metadata += "Push rate = " + str(scpg_df['SCPG_RATE'].values[0]) + ' cm/s<br>'
-       metadata += "Crew = " + str(scpg_df['SCPG_CREW'].values[0]) + '<br>'
-       metadata += "Method = " + str(scpg_df['SCPG_METH'].values[0]) + '<br>'
-       metadata += "Start date = " + str(scpg_df['SCPG_STAR'].values[0]) + '<br>'
-       metadata += "End date = " + str(scpg_df['SCPG_ENDD'].values[0]) + '<br>'
-       metadata += "Position of pore pressure measurement = " + str(scpg_df['SCPG_PWP'].values[0]) + '<br>'
-       metadata += "Remarks = " + str(scpg_df['SCPG_REM'].values[0]) + '<br>'
-       metadata_widget.value = metadata
-   else:
-       line1.set_xdata([])
-       line1.set_ydata([])
-       line2.set_xdata([])
-       line2.set_ydata([])
-       line3.set_xdata([])
-       line3.set_ydata([])
-       metadata_widget.value=''
-```
-
-#### Use the ipywidgets 'observe' command to link widgets to appropriate functions on change
-```python
-site_widget.observe(on_site_widget_change, names='value')
-test_widget.observe(on_test_widget_change, names='value')
-```
 
 ## V<sub>S</sub> (Invasive) Test Viewer
 
