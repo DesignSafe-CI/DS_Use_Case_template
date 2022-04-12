@@ -70,17 +70,17 @@ RW1 is wall 34 in the database and using that single number, the modeling script
 
 
 
-### Modeling Script 
+### Modeling Script  
 
 The sections of the modeling script are: [Modeling Script](https://jupyter.designsafe-ci.org/user/stokljos/notebooks/MyData/UseCaseScripts/TCL_Script_Creator.ipynb)  
-* Section 1: Initialization of the model.  
+Section 1: Initialization of the model.  
    * The degrees of freedom and the variables that carry uncertainty are defined.  
-* Section 2: Defines nodal locations and elements.  
+Section 2: Defines nodal locations and elements.  
    * Nodes are placed at the locations of the vertical bars along the length of the wall  
    * If the ratio of the length of the wall to the number of elements is too coarse of a mesh, additional nodes are placed inbetween the bars.  
    * The height of each element is equal to the length of the nodes in the boundary to create square elements up the wall.  
-* Section 3: Defines material models and their variables.  
-   * The crushing energy and fracture energy are calculated and wrote to the .tcl file. The equations for these values come from (Nasser et al.)  Below is the code:     
+Section 3: Defines material models and their variables.  
+   * The crushing energy and fracture energy are calculated and wrote to the .tcl file. The equations for these values come from (Nasser et al.) Below is the code:   
    ```python
    self.gtcc = abs((0.174*(.5)**2-0.0727*.5+0.149)*((self.Walldata[40]*1000*conMult)/1450)**0.7) #tensile energy of confined
    self.gtuc = abs((0.174*(.5)**2-0.0727*.5+0.149)*((self.Walldata[40]*1000)/1450)**0.7) # tensile energy of unconfined
@@ -95,12 +95,12 @@ The sections of the modeling script are: [Modeling Script](https://jupyter.desig
    * The steel material opensees model: uniaxialMaterial Steel02 $matTag $Fy $E $b $R0 $cR1 $cR2.  
       * 'Fy' is the yield strength, 'E' is the youngs modulus, 'b' is the strain hardening ratio, and 'R0', 'cR1', and 'cR2' are paramters to control transitions from elastic to plastic branches.  
    * minMax wrappers are applied to the steel so that if the steel strain compresses more than the crushing strain of the concrete or exceeds the ultimate strain of the steel multiplied by the steel rupture ratio, the stress will go to 0.      
-* Section 4: Defines the continuum shell model.  
+Section 4: Defines the continuum shell model.  
    * The shell element is split up into multiple layers of the cover concrete, transverse steel, and core concrete.  
    * The cover concrete thickness is defined in the database, the transverse steel thickness is calculcated as:  
       * total layers of transverse steel multiplied by the area of the steel divided by the height of the wall.  
    * The total thickness of the wall is defined in the database so after the cover concrete and steel thicknesses are subtracted, the core concrete takes up the rest.
-* Section 5: Defines the elements.  
+Section 5: Defines the elements.  
    * The shell element opensees model is: element ShellMITC4 $eleTag $iNode $jNode $kNode $lNode $secTag  
       * 'eleTag' is the element number, the next four variables are the nodes associated to the element in ccw, and 'secTag' is the section number that defines the thickness of the element.  
    * There are usually two sections that are defined, the boundary and the web. Based on how many nodes are in the boundary, the script will print out the elements for the left side of the boundary, then for the entire web region, and lastly for the right side of the boundary. This process is repeated until the elements reach the last row of nodes.  
@@ -108,9 +108,9 @@ The sections of the modeling script are: [Modeling Script](https://jupyter.desig
       * The node variables are defined as going up the wall so if a wall has 10 nodes across the base, the first truss element would connect node 1 to node 11.  
       * 'A' is the area of the bar and 'matTag' is the material number applied to the truss element.  
    * The script prints out truss elements one row at a time so starting with the left furthest bar connecting to each node until the height of the wall is reached and then next row is started the bar to the right.           
-* Section 6: Defines constraints  
+Section 6: Defines constraints  
    * The bottom row of nodes are fixed in all degrees of freedom.  
-* Section 7: Defines recorders  
+Section 7: Defines recorders  
    * The first two recorders capture the force reactions in the x-direction of the bottom row of nodes and the displacements in the x-direction of the top row of nodes. These recorders will be used to develop load-displacement graphs.  
    * The next eight recorders capture stress and strain of the four gauss points in the middle concrete fiber of all the elements and store them in an xml file. These recorders will be used to develop stress and strain profile movies, give insight to how the wall is failing, and how the cross section is reacting.  
    * The last two recorders capture the stress and strain of all the truss elements. These will be used to determine when the steel fails and when the yield strength is reached.  
@@ -130,9 +130,9 @@ The sections of the modeling script are: [Modeling Script](https://jupyter.desig
      self.f.write('recorder Element -xml "trusssig.xml"  -eleRange ' + str(self.maxEle+1) + ' ' + str(self.trussele)+ ' material stress\n')
      self.f.write('recorder Element -xml "trussseps.xml" -eleRange ' + str(self.maxEle+1) + ' ' + str(self.trussele)+ ' material strain\n')
   ```  
-* Section 8: Defines and applies the gravity load of the wall.  
+Section 8: Defines and applies the gravity load of the wall.  
    * The axial load of the wall is defined in the database and distributed equally amongst the top nodes and a static analysis is conducted to apply a gravity load to the wall.  
-* Section 9: Defines the cyclic analysis of the wall.   
+Section 9: Defines the cyclic analysis of the wall.   
    * The experimental displacement recording of the wall is defined in the database and the peak displacement of each cycle is extracted.  
    * If the effective height of the wall is larger than the measured height, a moment is calculated from that difference and uniformly applied in the direction of the analysis to each of the top nodes.  
    * The displacement peaks are then defined in a list and ran through an opensees algorithm.  
