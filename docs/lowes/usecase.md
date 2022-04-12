@@ -80,14 +80,14 @@ The sections of the modeling script are: [Modeling Script](https://jupyter.desig
    * If the ratio of the length of the wall to the number of elements is too coarse of a mesh, additional nodes are placed inbetween the bars.  
    * The height of each element is equal to the length of the nodes in the boundary to create square elements up the wall.  
 * Section 3: Defines material models and their variables.  
-   * The crushing energy and fracture energy are calculated and wrote to the .tcl file. The equations for these values come from (Nasser et al.)  Below is the code:   
+   * The crushing energy and fracture energy are calculated and wrote to the .tcl file. The equations for these values come from (Nasser et al.)  Below is the code:     
    ```python
    self.gtcc = abs((0.174*(.5)**2-0.0727*.5+0.149)*((self.Walldata[40]*1000*conMult)/1450)**0.7) #tensile energy of confined
    self.gtuc = abs((0.174*(.5)**2-0.0727*.5+0.149)*((self.Walldata[40]*1000)/1450)**0.7) # tensile energy of unconfined
         
    self.gfuc = 2*self.Walldata[40]*6.89476*5.71015 #crushing energy of unconfined
    self.gfcc = 2.2*self.gfuc #crushing energy of confined
-   ```    
+   ```  
    * The crushing strain (epscu) and fracture strain (epstu) can then be calculated from the energy values.  
    * The material models are then defined.  
    * The concrete material opensees model: nDmaterial PlaneStressUserMaterial $matTag 40 7 $fc $ft $fcu $epsc0 $epscu $epstu $stc.  
