@@ -36,7 +36,7 @@ The modeling of these walls make use of the MITC4 shell element. This element sm
     * Variables include: yield strength, initial elastic tangent, and strain hardening ratio
     * Model can be found here: [Steel02 OpenSees](https://opensees.berkeley.edu/wiki/index.php/Steel02_Material_--_Giuffr%C3%A9-Menegotto-Pinto_Model_with_Isotropic_Strain_Hardening)  
 
-<img src="img/ShellEle.JPG" width="500" height="250" />
+<img src=".../img/ShellEle.JPG" width="500" height="250" />
 Figure 1: Smeared shell element representation  
 
 ## Example Description 
