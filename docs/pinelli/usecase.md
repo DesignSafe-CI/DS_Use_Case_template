@@ -28,7 +28,6 @@ The user needs a DesignSafe-CI (DS) account. During deployment, data is uploaded
 5.	Create a token using the command tapis auth tokens create. At the end, the following response will appear on the cmd line. 
 
 
-<p align="center">
 <img src="img/Picture2.png" alt="Flow Process" width="400">
     
 Video Tutorial (Timestamps - 28:01 to 35:04): https://www.youtube.com/watch?v=C2McrpQ8XmI
