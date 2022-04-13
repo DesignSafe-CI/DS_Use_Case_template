@@ -12,7 +12,7 @@ The Florida Tech (FIT) hurricane team deploys networks of wireless sensors on re
 
 * Please cite [J. Wang et al. (2021)](https://tigerprints.clemson.edu/cgi/viewcontent.cgi?article=1077&context=aawe) and [S. Sridhar et al. (2021)](https://tigerprints.clemson.edu/cgi/viewcontent.cgi?article=1068&context=aawe) to acknowledge the use of any resources from this use case.
 
-* Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246) to acknowledge the use of DesignSafe resources.  
+* Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246), [Pinelli et al. (2020)](https://link.springer.com/article/10.1007/s13753-020-00320-8) and [Rathje et al. (2020)](https://doi.org/10.3389/fbuil.2020.547706) to acknowledge the use of DesignSafe resources.  
 
 * This software is distributed under the GNU General Public License (https://www.gnu.org/licenses/gpl-3.0.html).  
 
@@ -37,10 +37,10 @@ Video Tutorial (Timestamps - 28:01 to 35:04): https://www.youtube.com/watch?v=C2
     
 ### Using Jupyter Notebooks
 
-To save time and memory, the project uses three different notebooks. For any event, either a field deployment or a wind tunnel experiment, the first notebook inputs metadata (sensor information, data columns, timestamp formats) for the dataset and is ideally used once for every event. It outputs a csv file containing the metadata required to run the second notebook.  The second notebook calibrates raw data and organizes them into csv and pickled files[insert link]. This notebook may be run more than once depending on how often new data is uploaded during the event. With the third and final notebook, users analyze and visualize the data interactively. This is the most frequently used notebook and is run everytime the data needs to be analyzed. There is no need to execute the notebooks sequentially everytime an analysis is done. The figure below illustrates the possible sequences of analysis: 
+To save time and memory, the project uses three different notebooks. For any event, either a field deployment or a wind tunnel experiment, the first notebook inputs metadata (sensor information, data columns, timestamp formats) for the dataset and is ideally used once for every event. It outputs a csv file containing the metadata required to run the second notebook.  The second notebook calibrates raw data and organizes them into csv and pickled files. This notebook may be run more than once depending on how often new data is uploaded during the event. With the third and final notebook, users analyze and visualize the data interactively. This is the most frequently used notebook and is run everytime the data needs to be analyzed. There is no need to execute the notebooks sequentially everytime an analysis is done. The figure below illustrates the possible sequences of analysis: 
 
 <p align="center">
-<img src="img/Jupyter user roles.png" alt="Flow Process" width="450"> [will be replaced]
+<img src="img/Jupyter user roles.png" alt="Flow Process" width="450">
 
     
 ### Adapting to Different Datasets
@@ -80,7 +80,7 @@ Additional lines of code describing indentations, dimensions and trace lines can
 
 <p align="center">    
 <img src="img/Picture8.png" alt="Flow Process" width="425">
-<img src="img/Picture9.gif" alt="Flow Process" width="425">
+<img src="img/Picture9.gif" alt="Flow Process" width="300">
 
 The exercise below is an illustration of these plotly features:
     
