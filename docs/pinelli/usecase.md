@@ -95,7 +95,7 @@ Consider a box of spheres that change their numbers ranging from 1 to 10 every h
 import random
 import pandas as pd
 
-#Define necessary columns
+# Define necessary columns
 ```spheres=[1,2,3,4,5]
 x=[6,14,10,6,14]
 y=[6,6,10,14,14]
