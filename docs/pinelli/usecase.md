@@ -2,7 +2,7 @@
 
 **Soundarya Sridhar and Jean-Paul Pinelli, Florida Institute of Technology**  
 
-The Florida Tech (FIT) hurricane team deploys networks of wireless sensors on residential houses during high impact wind events or on full scale wind tunnel models. The team deploys pressure, temperature and humidity sensors alongside anemometry, which includes different anemometers and a conical scanning infrared LiDAR . The workflow starts with uploading the data to DesignSafe through aunthentication tokens created in Tapis. Once on DesignSafe, three Jupyter notebooks process and visualize the instruments’ data for analyses. The notebooks provide a user friendly and interactive environment that can adapt to different datasets. For this project, the notebooks perform quasi static real-time analyses, assess sensor performance, study pressure variations for different wind conditions and data correlation. The user interactivity of these notebooks facilitates an easy adaptation to different datasets with little to no-change in code.
+The Florida Tech (FIT) hurricane team deploys networks of wireless sensors on residential houses during high impact wind events or on full scale wind tunnel models. The team deploys pressure, temperature and humidity sensors alongside anemometry, which includes different anemometers and a conical scanning infrared LiDAR . The workflow starts with uploading the data to DesignSafe through authentication tokens created in Tapis. Once on DesignSafe, three Jupyter notebooks process and visualize the instruments’ data for analyses. The notebooks provide a user friendly and interactive environment that can adapt to different datasets. For this project, the notebooks perform quasi static real-time analyses, assess sensor performance, study pressure variations for different wind conditions and data correlation. The user interactivity of these notebooks facilitates an easy adaptation to different datasets with little to no-change in code.
 
 <p align="center">
 <img src="img/Picture1.png" alt="Flow Process" width="600">
@@ -16,6 +16,7 @@ The Florida Tech (FIT) hurricane team deploys networks of wireless sensors on re
 
 * This software is distributed under the GNU General Public License (https://www.gnu.org/licenses/gpl-3.0.html).  
 
+
 ## Background 
     
 ### Using Tapis for Data Uploads in Quasi-real time
@@ -27,6 +28,7 @@ The user needs a DesignSafe-CI (DS) account. During deployment, data is uploaded
 4.	You can choose to set up Container registry access and Git server access, or skip this step by pressing the return key if you do not wish to do so. 
 5.	Create a token using the command tapis auth tokens create. At the end, the following response will appear on the cmd line. 
 
+
 <p align="center">
 <img src="img/Picture2.png" alt="Flow Process" width="400">
     
@@ -35,15 +37,15 @@ Video Tutorial (Timestamps - 28:01 to 35:04): https://www.youtube.com/watch?v=C2
     
 ### Using Jupyter Notebooks
 
-To save time and memory, three different notebooks address the project objectives. For any event, either a field deployment or a wind tunnel experiment, the first notebook inputs metadata (sensor information, data columns, timestamp formats) for the dataset and is ideally used once for every experiment. It outputs a csv file containing the metadata required to run the second notebook.  The second notebook calibrates raw data and organizes them into csv and pickled files[insert link]. This notebook may be run more than once depending on how often new data is uploaded during the experiment. With the third and final notebook, users analyze and visualize the data interactively. This is the most frequently used notebook and is run everytime the data needs to be analyzed. There is no need to execute the notebooks sequentially everytime an analysis is done. The figure below illustrates the possible sequences of analysis: 
+To save time and memory, the project uses three different notebooks. For any event, either a field deployment or a wind tunnel experiment, the first notebook inputs metadata (sensor information, data columns, timestamp formats) for the dataset and is ideally used once for every event. It outputs a csv file containing the metadata required to run the second notebook.  The second notebook calibrates raw data and organizes them into csv and pickled files[insert link]. This notebook may be run more than once depending on how often new data is uploaded during the event. With the third and final notebook, users analyze and visualize the data interactively. This is the most frequently used notebook and is run everytime the data needs to be analyzed. There is no need to execute the notebooks sequentially everytime an analysis is done. The figure below illustrates the possible sequences of analysis: 
 
 <p align="center">
-<img src="img/Picture3.png" alt="Flow Process" width="450"> [will be replaced]
+<img src="img/Jupyter user roles.png" alt="Flow Process" width="450"> [will be replaced]
 
     
 ### Adapting to Different Datasets
 
-The first notebook is a user interactive guide to input important raw data information. This notebook saves time as the user does not have to read, understand and edit the code to change information regarding sensors, columns and data formats.For example, WSNS deployment during the tropical storm Isaias (8/2/2020) used an old and a new wsns system. The first notebook documented the significant differences in how data was stored. This helps in faster data processing as there is no change required in code and the file generated by the notebook acts as a metadata for the second notebook responsible for data processing. The figure below are snapshots of the output file created by the first notebook describing raw data information from two different systems.
+The first notebook is a user interactive guide to input important raw data information. This notebook saves time as the user does not have to read, understand and edit the code to change information regarding sensors, columns and data formats.  For example, WSNS deployment during the tropical storm Isaias (8/2/2020) used an old and a new WSNS system. The first notebook documented the significant differences in data storage between the two systems. This accelerates data processing as there is no change required in code and the file generated by the notebook acts as a metadata for the second notebook responsible for data processing. The figure below are snapshots of the output file created by the first notebook describing raw data information from two different systems.
     
 
 <p align="center">    
@@ -56,7 +58,7 @@ The first notebook is a user interactive guide to input important raw data infor
 
 ### Analysis Notebooks and Examples
 
-Florida Tech team’s project goal is to measure pressure variation on non-structural components during strong wind events using their network of wireless sensors. The analysis notebooks on DesignSafe are user interactive with markdowns describing the test and also act as a guide to help the users look at the data they desire. An example of this is the analysis notebook for Isaias (tropical storm on August 1-3, 2020). The markdowns have important information and pictures from the deployment, and instructions for the user to easily access data.
+Florida Tech team’s project goal is to measure pressure variation on non-structural components during strong wind events using their network of wireless sensors. The analysis notebooks on DesignSafe are user interactive with markdowns describing the test.  They also provide the users with several options to visualize the data. An example of this is the analysis notebook for Isaias (tropical storm on August 1-3, 2020). The markdowns have important information and pictures from the deployment, and instructions for the user to easily access data.
 
 <p align="center">    
 <img src="img/Picture6.png" alt="Flow Process" width="520">
@@ -70,18 +72,23 @@ And a menu allows user to select from options and look at specific time windows 
     
 ### Using Plotly for Data Driven Animation Frames
 
-The project objective is to study high impact wind events on non-structural components of residential houses. After the deployment, Jupyter notebooks process and visualize the important data that could be compared to ASCE 7 standards. A small part of that is assessing sensor performance with respect to wind conditions. Plotly is beneficial in creating animation frames to look at a snapshot of data from all sensors in different test conditions or even at different timestamps.  A single line of code enabled with the right dataframe can help in quickly looking at the trends and troubleshooting any system errors. The figure below shows an application of plotly for one of the Wall of Wind tests for glass sliding doors. The test model was a mock-up box with flat roof, and full scale glass sliding doors at 105 mph were tested at different wind directions. At uniform velocity, data for each wind direction was collected for 3 minutes and the program computed pressure coefficient Cp values averaged over that time window. A 2D scatter plot was created with x and z dimensions with each point representing a sensor whose color corresponded to a Cp value on the color scale. Important information is pieced together easily in a single line to enable the animation frame:
+The project objective is to study high impact wind events on non-structural components of residential houses. After the deployment, Jupyter notebooks process and visualize important data for different purposes, including among others:  comparisons to ASCE 7 standard; and, assessment of sensor performance with respect to wind conditions. Plotly can create animation frames to look at a snapshot of data from all sensors in different test conditions or even at different timestamps.  A single line of code enabled with the right dataframe can quickly reveal trends in the data,  and facilitate troubleshooting of any system errors. The figure below shows an application of plotly for one of the Wall of Wind tests for glass sliding doors. The test model was a mock-up box with flat roof, and full scale glass sliding doors were tested at at 105 mph for different wind directions. At uniform velocity, data for each wind direction was collected for 3 minutes and the program computed pressure coefficient Cp values averaged over that time window. A 2D scatter plot was created with x and z dimensions with each point representing a sensor whose color corresponded to a Cp value on the color scale. A single line of code  enables the animation frame, which reveals important information:
+    
 px.scatter(dataframe, x=x column, y=y column, color=scatter point values, text=text to be displayed for each point, range_color=color scale range, animation_frame=variable for each animation frame, title = plot title)
-To add more clarity, additional lines of code describing indentations, dimensions and trace lines can be added.
+    
+Additional lines of code describing indentations, dimensions and trace lines can add more clarity.
 
 <p align="center">    
 <img src="img/Picture8.png" alt="Flow Process" width="425">
 <img src="img/Picture9.gif" alt="Flow Process" width="425">
 
-As an example to using this plotly feature, an exercise has been described below:
+The exercise below is an illustration of these plotly features:
+    
 Requirements:
-Jupyter Notebook and if you don’t have it, get it here to have it on local system (Anaconda Navigator) or here on cloud (link to google collab)!
-Once you have your notebook open and you don’t have plotly dash installed, go ahead and use: !pip install dash==1.14.0 –user
+    
+Jupyter Notebook and if you don’t have it, get it here to have it on local system [Anaconda Navigator](https://www.anaconda.com/) or here on [cloud](https://colab.research.google.com/)
+Once you have your notebook open and you don’t have plotly dash installed, go ahead and use: !pip install dash==1.14.0 --user
+    
 Building the Dataframe:
 Consider a box of spheres that change their numbers ranging from 1 to 10 every hour. You want to look at how the number changes for 12 hours.
 
