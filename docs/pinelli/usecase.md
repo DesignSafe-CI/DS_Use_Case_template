@@ -37,10 +37,10 @@ Video Tutorial (Timestamps - 28:01 to 35:04): https://www.youtube.com/watch?v=C2
     
 ### Using Jupyter Notebooks
 
-To save time and memory, the project uses three different notebooks. For any event, either a field deployment or a wind tunnel experiment, the first notebook inputs metadata (sensor information, data columns, timestamp formats) for the dataset and is ideally used once for every event. It outputs a csv file containing the metadata required to run the second notebook.  The second notebook calibrates raw data and organizes them into csv and pickled files. This notebook may be run more than once depending on how often new data is uploaded during the event. With the third and final notebook, users analyze and visualize the data interactively. This is the most frequently used notebook and is run everytime the data needs to be analyzed. There is no need to execute the notebooks sequentially everytime an analysis is done. The figure below illustrates the possible sequences of analysis: 
+To save time and memory, the project uses three different notebooks. For any event, either a field deployment or a wind tunnel experiment, the first notebook inputs metadata (sensor information, data columns, timestamp formats) for the dataset and is ideally used once for every event. It outputs a csv file containing the metadata required to run the second notebook. The second notebook calibrates raw data and organizes them into csv and pickled files. This notebook may be run more than once depending on how often new data is uploaded during the event. With the third and final notebook, users analyze and visualize the data interactively. This is the most frequently used notebook and is run everytime the data needs to be analyzed. There is no need to execute the notebooks sequentially everytime an analysis is done. The figure below illustrates the possible sequences of analysis: 
 
 <p align="center">
-<img src="img/Jupyter user roles.png" alt="Flow Process" width="450">
+<img src="img/Jupyter user roles.png" alt="Flow Process" width="600">
 
     
 ### Adapting to Different Datasets
