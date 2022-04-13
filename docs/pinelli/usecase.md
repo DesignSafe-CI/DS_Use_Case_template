@@ -75,7 +75,6 @@ px.scatter(dataframe, x=x column, y=y column, color=scatter point values, text=t
     
 Additional lines of code describing indentations, dimensions and trace lines can add more clarity.
 
-<p align="center">    
 <img src="img/Picture8.png" alt="Flow Process" width="425">
 <img src="img/Picture9.gif" alt="Flow Process" width="300">
 
