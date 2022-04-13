@@ -95,7 +95,8 @@ import random
 import pandas as pd
 
 # Define necessary columns
-```spheres=[1,2,3,4,5]
+```python
+spheres=[1,2,3,4,5]
 x=[6,14,10,6,14]
 y=[6,6,10,14,14]
 rad=[]
