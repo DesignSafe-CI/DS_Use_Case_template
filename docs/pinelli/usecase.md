@@ -4,7 +4,6 @@
 
 The Florida Tech (FIT) hurricane team deploys networks of wireless sensors on residential houses during high impact wind events or on full scale wind tunnel models. The team deploys pressure, temperature and humidity sensors alongside anemometry, which includes different anemometers and a conical scanning infrared LiDAR . The workflow starts with uploading the data to DesignSafe through authentication tokens created in Tapis. Once on DesignSafe, three Jupyter notebooks process and visualize the instruments’ data for analyses. The notebooks provide a user friendly and interactive environment that can adapt to different datasets. For this project, the notebooks perform quasi static real-time analyses, assess sensor performance, study pressure variations for different wind conditions and data correlation. The user interactivity of these notebooks facilitates an easy adaptation to different datasets with little to no-change in code.
 
-<p align="center">
 <img src="../img/Picture1.png" alt="Flow Process" width="600">
 
 
