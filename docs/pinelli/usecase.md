@@ -127,10 +127,12 @@ print(df)
 ```
 
 Matching the right columns to suit the syntax will result in an animation frame and a slider!
+
+```python
 import plotly.express as px
 import plotly.graph_objects as go
 
-``` fig = px.scatter(df, x='x',y='y', color='number',text="label", animation_frame='hour',title='Magic Box') #animation frame
+fig = px.scatter(df, x='x',y='y', color='number',text="label", animation_frame='hour',title='Magic Box') #animation frame
 fig.update_traces(textposition='top center',mode='markers', marker_line_width=2, marker_size=40)                      
 trace1 = go.Scatter(x=[2, 2], y=[2, 18],line=dict(color='black', width=4),showlegend=False) #Tracelines to create the box
 trace2 = go.Scatter(x=[2, 18], y=[18, 18],line=dict(color='black', width=4),showlegend=False)
