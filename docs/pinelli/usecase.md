@@ -91,7 +91,7 @@ Consider a box of spheres that change their numbers ranging from 1 to 10 every h
 
 ### Code
 
-#Importing libraries
+# Importing libraries
 import random
 import pandas as pd
 
