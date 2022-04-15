@@ -34,7 +34,8 @@ A series of Jupiter Notebooks aimed to serve as a learning tool is composed of t
 The Modular Testbed Building (MTB2) is designed to be a shared-use, reconfigurable experimental structure. The standard 3-story building can simulate braced frame and moment frame behavior through replaceable fuse type components including buckling restrained braced frames and Durafuse shear plate connections, respectively. The unique connection scheme allows for yielded fuse type members to be easily replaced to restore the structure to its original condition. The MTB2 can be constructed in various configurations with three examples shown in Fig 1. The lateral framing system in the 2-bay direction can be modeled as moment frames or braced frames. The single bay direction has a span of 20 feet and is a braced frame. Each span in the double bay direction is 16 feet. The story height for all floors is 12 feet with columns that extend 4 feet above the top floor.  The Special Moment Frame (SMF) configuration utilizes replaceable shear fuse plates while the braced frame utilizes Buckling-Restrained Braces. 
 
 ![caption](img/Fig.1.png)
-a)	b)	c)
+a)	                                                                    b)	                                                      c)
+
 Figure 1.   MTB2 building: a) SMF configuration, b) BRB-1 configuration, and c) BRB-2 configuration.
 
 ## Development of Jupyter Notebooks for Experimental Workflow
@@ -52,9 +53,11 @@ The primary goal of the structural response module is to quickly and accurately 
 Modal displacements can also be calculated directly from the CSD function outputs. This is accomplished by using the frequency-power relation between acceleration spectral density functions and displacement spectral density functions [10]. The modal displacements for each story occur at frequencies where the CSD has a local maximum. To obtain these values for the test data of the three-story structure, the frequencies of the first three local maxima were recorded. For future investigators wishing to use this code for smaller or larger versions of the MTB2, the desired number of mode shapes can be scaled by adding or removing local maxima terms at the start of the mode shapes code section. Using the CSD function does not take into account the sign of the modal displacement, however, since these functions are strictly positive over their domain. To account for this, the output of the CSD function at the local maxima frequencies is reexamined without considering the absolute values of its components to identify if the parameters yield a negative number at the corresponding frequency. The rough shape of the modal displacements is plotted as shown in Fig. 4. Future work for this notebook includes generating a smoothing function for the mode shapes and comparison of data from different tests to identify changes in dynamic properties through the testing series that could be indicative of damage.
 
 ![caption](img/Fig.3.png)
+
 Figure 3. System identification of three story moment frame [5] subjected to white noise from CSD function outputs.
 
 ![caption](img/Fig.4.png)
+
 Figure 4. Estimated mode shapes from 3-story building subjected to white noise on shake table.
 
 
