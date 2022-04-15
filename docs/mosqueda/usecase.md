@@ -57,6 +57,7 @@ Modal displacements can also be calculated directly from the CSD function output
 The Jupyter Notebooks developed for use through DesignSafe will facilitate the viewing and analysis of data sharing with collaborators from testing through data publication. A key advantage is the cloud-based approach that facilitates interactive data viewing and analysis in a report format without having to download large datasets. 
 The Jupiter Notebook presented here includes routines to evaluate the performance of the shake table and carry out system identification of structural models. Since one major goal of DesignSafe is to develop a collaborative workspace to view, analyze and share data, the implemented Jupiter Notebook represents the first step towards this goal. Here by means of the anlysis of a three degree of freedom system based on test results, a potential user can start learning system identification on a simple structure. Further work for development this Jupiter Notebook includes applications of machine learning based on regression analysis for system identification.
 
+## Annex 1
 ### [Fragment of System Identification Routine](https://www.designsafe-ci.org/data/browser/projects/954727520918105625-242ac11c-0001-012/Jupyter_Notebook_Code_documents/Jupyter_Notebook_Project)
 
 ### Cell 2
@@ -94,7 +95,7 @@ for k in range(0,n_channels):
 tab=pd.DataFrame(list(zip(DESC_CHAN,UNITS_CHAN)), columns = ['Description','Units'])
 display(tab)
 ```
-Description of cell 2
+### Description of cell 2
 
 To begin processing data, python libraries will be utilized to form the basis of the module; this includes NumPy, pandas, and linecache. NumPy will take multiple data points about a single variable represented in arrays to compute various forms of numerical representation such as means, standard deviations, variance, and medium. For a graphical representation, pandas will allow users to manipulate datasets with various variables to produce two-dimensional tables and other graphical visualizations - displaying trends amongst the data. As the basis of the python is developed, linecache will allow users to easily search lines and trace back written codes to identify things like syntax errors.
 
