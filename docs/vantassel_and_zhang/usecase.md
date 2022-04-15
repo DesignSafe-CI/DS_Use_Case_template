@@ -24,11 +24,11 @@ solve data-related problems.
 
 ## Overview
 
-This use case is example-based meaning that its contents have been organized into self-contained examples.
+This use case is example-based meaning that is its contents have been organized into self-contained examples.
 These self-contained example are organized by machine learning algorithm. Importantly, the machine learning
 algorithm applied to the specific example provided here are not the only (or even necessarily the optimal)
 algorithm for that particular (or related) problem, instead the datasets considered are used merely for example
-and teh algorithm applied is but one of the potentially many reasonable alternatives one could use to solve
+and the algorithm applied is but one of the potentially many reasonable alternatives one could use to solve
 that particular problem. The focus of these examples is to demonstrate the general procedure for applying that
 particular machine learning algorithm and does not necessarily indicate that this is the correct or optimal
 solution.
@@ -51,6 +51,8 @@ how to perform basic linear regression using the raw features, combine those fea
 produce better predictions, use regularization to reduce overfitting, and use learning curves as a diagnostic tool for
 machine learning problems.
 
+[image_of_linear_regression_training](./img/0_linear_regression.png)
+
 [Linear Regression Example](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/An%20Example-Based%20Introduction%20to%20Machine%20Learning/0_linear_regression)
 
 ### Random Forest - (Zhang)
@@ -68,12 +70,14 @@ Artificial neural networks (ANNs), usually simply called neural networks (NNs), 
 ### Convolutional Neural Networks - (Vantassel)
 
 Convolutional neural networks fall under the deep learning subset of machine learning and are an effective
-tool for processing and understanding image-like data. The convolutional neural network example will show an
+tool for processing and understanding image and image-like data. The convolutional neural network example will show an
 image classification algorithm for automatically reading hand-written digits. The network will be provided
 an image of a hand-written digit and predict a label classifying it as a number between 0 and 9. The notebooks
 will show how to install Keras/TensorFlow, load a standard dataset, pre-process the data for acceptance by the
-network, design and train a convolutional neural network using Keras/TensorFlow, and visualize output correct and
+network, design and train a convolutional neural network using Keras/TensorFlow, and visualize correct and
 incorrect output predictions. For those who have access to graphical processing unit (GPU) computational
-resources a replica of the main notebook is provided that can run across multiple GPUs on a single system.
+resources a replica of the main notebook is provided that can run across multiple GPUs on a single machine.
+
+[image_of_5_with_label](./img/2_convolutional_neural_network.png)
 
 [Convolutional Neural Network Example](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/An%20Example-Based%20Introduction%20to%20Machine%20Learning/3_convolutional_neural_networks)
