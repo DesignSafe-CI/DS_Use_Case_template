@@ -56,52 +56,7 @@ Modal displacements can also be calculated directly from the CSD function output
 ## Conclusions
 The Jupyter Notebooks developed for use through DesignSafe will facilitate the viewing and analysis of data sharing with collaborators from testing through data publication. A key advantage is the cloud-based approach that facilitates interactive data viewing and analysis in a report format without having to download large datasets. Jupyter Notebooks are being developed for the first structural model to be tested on LHPOST6. in a modular fashion to allow flexibility in use of components and simplify the application for other experiments. The modules presented here include tools to evaluate the performance of the shake table and system identification of the structural models and can be readily extended to include other features. Current work for further development includes exploring applications of machine learning libraries for system identification and improving plotting capabilities.
 
-
-
-
-
-
-
-
-
-
-
-### System Identification
-
-In all these cases system identification analysis is implemented based on the estimation of the cross power spectral density of the structural response. However, one of the goals that is pursued with the implementation of this notebook is the application of Machine Learning as a tool to obtained important dynamic characteristic of the structures, estimate the uncertainty of common applied procedures as well as to show a “new” alternative solution based on both computational mechanics and deep learning algorithms.
-The system identification analysis is performed on experimental data published in the Technical Report MCEER-13-0003. This report describes both the analytical and experimental procedures to assess the dynamic response of a base isolated structure when it is subject to impact force. This data is subsequently used to validate the numerical models of structural pounding. In addition to generating unique data on structural pounding, the behavior of a base isolated building impacting different types of moat wall installed at different gap distance was also of investigated.
-The abstract of the Jupiter notebook describes the experimental program designed to capture the structural response of base isolated building when it impacts against a surrounding moat wall under extreme ground motions.
-
-
-*Add images to the folder img and use relative path to specify the location of the image.*   
-
-
-
-
-
-> Use case template design
-
-
-## About Technical Report MCEER-13-0003
-
-The results that are used in the system identification analysis are obtained from a test program consisting of shake table testing of a quarter-scale model representative of the three-story IMRF at the Structural Engineering and Earthquake Simulation Laboratory (SEESL) at the University at Buffalo.
-The base isolated IMRF model was selected for the experimental program due to availability of scaled members and simplicity in fabrication. However, both base isolated buildings including the IMRF and OCBF are used in numerical simulations presented latter in this report. The principal objective of these experiments was to generate experimental data for base isolated building pounding a moat wall, specifically the impact force and the superstructure response. This data is subsequently used to validate the numerical models of structural pounding. In addition to generating unique data on structural pounding, the behavior of a base isolated building impacting different types of moat wall installed at different gap distance was also of investigated. [extract from Technical Report MCEER-13-0003.]
-Numbered list 
-
-1. [numbered linked item](https://maps.google.com)
-2. second item
-3. third item
-
-### Header3 subheading
-
-Ac feugiat sed lectus vestibulum mattis ullamcorper. Et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut. Scelerisque eu ultrices vitae auctor eu augue ut lectus arcu.  Imperdiet proin fermentum leo vel orci porta non pulvinar. Dictumst quisque sagittis purus sit amet. Aliquam purus sit amet luctus. Aliquet bibendum enim facilisis gravida neque convallis a cras. Orci porta non pulvinar neque laoreet suspendisse. Urna neque viverra justo nec ultrices dui.
-
-**Example Table**
-
-| Column 1 | Column 2 | Column 3 |
-|----------|----------|----------|
-| Stampede2| CPU      | 2017     |     
-| Frontera | CPU & GPU| 2019     |     
+ 
 
 Or use markdown table generator: [https://www.tablesgenerator.com/markdown_tables](https://www.tablesgenerator.com/markdown_tables)
 
