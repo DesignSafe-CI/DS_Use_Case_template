@@ -10,7 +10,7 @@ Jupyter Notebooks can provide fully integrated workflows of experiments from doc
 
 * [Brandenberg, S., J., & Yang, Y. (2021)](https://doi.org/10.5281/zenodo.5621169) "ucla_geotech_tools: A set of Python packages developed by the UCLA geotechnical group" (Version 1.0.2) [Computer software].
 * Morano M., Liu J., Hutchinson T. C., and Pantelides C.P. (2021), “Design and Analysis of a Modular Test Building for the 6-DOF Large High-Performace Outdoor Shake Table”, 17th World Conference on Earthquake Engineering, Japan.
-* [Rathje et al. (2020)](https://doi.org/10.3389/fbuil.2020.547706) “Enhancing research in natural hazard engineering through the DesignSafe cyberinfrastructure”. Frontiers in Built Environment, 6:213.
+*[1] [Rathje et al. (2020)](https://doi.org/10.3389/fbuil.2020.547706) “Enhancing research in natural hazard engineering through the DesignSafe cyberinfrastructure”. Frontiers in Built Environment, 6:213.
 *  [Van Den Einde et al (2020)](https://doi.org/10.3389/fbuil.2020.580333) “NHERI@ UC San Diego 6-DOF Large High-Performance Outdoor Shake Table Facility.” Frontiers in Built Environment, 6:181.
 * Vega et al (2020), “Implementation of real-time hybrid shake table testing using the UCSD large high-performance outdoor shake table”. Int. J. Lifecycle Performance Engineering, Vol. 4, p.80-102.
 * [Virtanen et al (2020)](https://doi.org/10.1038/s41592-019-0686-2) “SciPy 1.0: Fundamental Algorithms for Scientific Computing in Python”. Nature Methods, 17, 261–272.
@@ -24,7 +24,7 @@ Vol. 18, Issue 3.
 
 ## Introduction
 
-DesignSafe is a component of The Natural Hazard Engineering Research Infrastructure (NHERI). Being a cyberinfrastructure DesignSafe provides a collaborative workspace for cloud-based data analysis, data sharing, curation and publication of curated data. Within this workspace Jupyter Notebooks are applied to perform data analysis in an interactive environment. Since one of the major goals of DesignSafe is spread the capabilities of collaborative workspace by means of data sharing, the main objective of this document is to demonstrate the use of Jupyter Notebook within the experimental workflow.
+DesignSafe [1] is a component of The Natural Hazard Engineering Research Infrastructure (NHERI). Being a cyberinfrastructure DesignSafe provides a collaborative workspace for cloud-based data analysis, data sharing, curation and publication of curated data. Within this workspace Jupyter Notebooks are applied to perform data analysis in an interactive environment. Since one of the major goals of DesignSafe is spread the capabilities of collaborative workspace by means of data sharing, the main objective of this document is to demonstrate the use of Jupyter Notebook within the experimental workflow.
 
 A series of Jupiter Notebooks aimed to serve as a learning tool is composed of the following routines:
 1.	Shake table performance. In which data extraction and data processing of testing results for the case of the first experiment to be conducted following the upgrade to 6DOF of the Large High Performance Shake Table (LHPOST6) at the NHERI@UC San Diego Experimental Facility
