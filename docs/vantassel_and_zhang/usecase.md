@@ -78,6 +78,6 @@ network, design and train a convolutional neural network using Keras/TensorFlow,
 incorrect output predictions. For those who have access to graphical processing unit (GPU) computational
 resources a replica of the main notebook is provided that can run across multiple GPUs on a single machine.
 
-![image_of_5_with_label](img/2_convolutional_neural_network.png)
+![image_of_5_with_label](img/2_convolutional_neural_networks.png)
 
 [Convolutional Neural Network Example](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/An%20Example-Based%20Introduction%20to%20Machine%20Learning/3_convolutional_neural_networks)
