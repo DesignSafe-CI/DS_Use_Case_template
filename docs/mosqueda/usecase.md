@@ -38,7 +38,7 @@ The Modular Testbed Building (MTB2) is designed to be a shared-use, reconfigurab
 ## Development of Jupyter Notebooks for Experimental Workflow
 Jupyter Notebooks work as an interactive development environment to code and view data in a report format. Within the notebook, the combination of cells enables formatted text and interactive plotting for viewing and analyzing data.  Users can select data files and data channels for viewing and processing. with the ability to view and print complete reports. Jupyter Notebooks are accessible in DesignSafe through the workspace analysis tools and can access private or public data in Data Depot. Sample modules are presented here that have been developed using published data in Data Depot including [4] and [5]. These modules will be configured and applied within the workflow of the MTB2 during shakedown testing.
 
-### Case 1. Shake table performance
+### [Case 1. Shake table performance](https://www.designsafe-ci.org/data/browser/projects/954727520918105625-242ac11c-0001-012/Jupyter_Notebook_Code_documents/Jupyter_Notebook_Project)
 A set of modules have been developed to evaluate the performance of the shake table using data from past experiments conducted to demonstrate the hybrid testing capabilities of LHPOST [6]. For these hybrid tests, separate Jupyter Notebooks have been developed to consider the various sources of generated data including i) Shake Table Controller, ii) the primary Data Acquisition System (DAQ), and iii) additional computational sources for hybrid testing. In a typical shake table test, the first two sources of data would be included plus any other user specified data acquisition system.  
 Data collected by the shake table controller is expected to be standard across most tests and useful to verify the performance of the shake table in reproducing the ground motions. Here, data from the shake table controller [4] is used to compare reference command and measured feedback data to evaluate the fidelity of the shake table in reproducing the desired ground motions. The Jupyter notebook functionality includes interactive plotters for viewing either a single channel or multiple channels to compare the reference input and feedback, for example, by viewing the time history, Fourier Transform or Response Spectra (Fig 2). The shake table controller sampling rate was set to a frequency of 2048 [Hz] for this test.  Initial implementation of the code required about 3.5 minutes to run. To improve the run-time, various options were explored including down sampling and use of tools such as those being developed by Brandenberg and Yang [7] to calculate the spectral acceleration. By using these tools, the run time was reduced to approximately 10 s. The module was implemented for the previous 1-D capability of LHPOST but can be easily extended for its newly upgraded 6DOF capabilities.
 
@@ -54,11 +54,28 @@ Modal displacements can also be calculated directly from the CSD function output
 
 
 ## Conclusions
-The Jupyter Notebooks developed for use through DesignSafe will facilitate the viewing and analysis of data sharing with collaborators from testing through data publication. A key advantage is the cloud-based approach that facilitates interactive data viewing and analysis in a report format without having to download large datasets. Jupyter Notebooks are being developed for the first structural model to be tested on LHPOST6. in a modular fashion to allow flexibility in use of components and simplify the application for other experiments. The modules presented here include tools to evaluate the performance of the shake table and system identification of the structural models and can be readily extended to include other features. Current work for further development includes exploring applications of machine learning libraries for system identification and improving plotting capabilities.
+The Jupyter Notebooks developed for use through DesignSafe will facilitate the viewing and analysis of data sharing with collaborators from testing through data publication. A key advantage is the cloud-based approach that facilitates interactive data viewing and analysis in a report format without having to download large datasets. 
+The Jupiter Notebook presented here includes routines to evaluate the performance of the shake table and carry out system identification of structural models. Since one major goal of DesignSafe is to develop a collaborative workspace to view, analyze and share data, the implemented Jupiter Notebook represents the first step towards this goal. Here by means of the anlysis of a three degree of freedom system based on test results, a potential user can start learning system identification on a simple structure. Further work for development this Jupiter Notebook includes applications of machine learning based on regression analysis for system identification.
 
- 
 
-Or use markdown table generator: [https://www.tablesgenerator.com/markdown_tables](https://www.tablesgenerator.com/markdown_tables)
+
+
+
+
+
+
+
+
+
+
+
+
+### Explained System Identification Routine
+
+In all these cases system identification analysis is implemented based on the estimation of the cross power spectral density of the structural response. However, one of the goals that is pursued with the implementation of this notebook is the application of Machine Learning as a tool to obtained important dynamic characteristic of the structures, estimate the uncertainty of common applied procedures as well as to show a “new” alternative solution based on both computational mechanics and deep learning algorithms.
+The system identification analysis is performed on experimental data published in the Technical Report MCEER-13-0003. This report describes both the analytical and experimental procedures to assess the dynamic response of a base isolated structure when it is subject to impact force. This data is subsequently used to validate the numerical models of structural pounding. In addition to generating unique data on structural pounding, the behavior of a base isolated building impacting different types of moat wall installed at different gap distance was also of investigated.
+The abstract of the Jupiter notebook describes the experimental program designed to capture the structural response of base isolated building when it impacts against a surrounding moat wall under extreme ground motions.
+
 
 
 ### Math
