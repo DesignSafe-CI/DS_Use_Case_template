@@ -59,7 +59,7 @@ Figure 3. System identification of three story moment frame [5] subjected to whi
 
 ![caption](img/Fig.4.png)
 
-Figure 4. Estimated mode shapes from 3-story building subjected to white noise on shake table.
+Figure 4. Mode shapes estimation from 3-story building subjected to white noise on shake table.
 
 
 ## Conclusions
