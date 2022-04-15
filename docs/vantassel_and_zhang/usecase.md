@@ -19,6 +19,8 @@ solve data-related problems.
 
 * Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246) to acknowledge the use of DesignSafe resources.  
 
+* Please cite [Durante and Rathje (2021)](https://doi.org/10.1177/87552930211004613) to acknowledge the use of any resources for the Random Forest and Neural Networks examples included in this use case.
+
 * This software is distributed under the GNU General Public License ([https://www.gnu.org/licenses/gpl-3.0.html](https://www.gnu.org/licenses/gpl-3.0.html)).
 
 
