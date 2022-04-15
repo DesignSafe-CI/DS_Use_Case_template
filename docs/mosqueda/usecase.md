@@ -34,7 +34,7 @@ A series of Jupiter Notebooks aimed to serve as a learning tool is composed of t
 The Modular Testbed Building (MTB2) is designed to be a shared-use, reconfigurable experimental structure. The standard 3-story building can simulate braced frame and moment frame behavior through replaceable fuse type components including buckling restrained braced frames and Durafuse shear plate connections, respectively. The unique connection scheme allows for yielded fuse type members to be easily replaced to restore the structure to its original condition. The MTB2 can be constructed in various configurations with three examples shown in Fig 1. The lateral framing system in the 2-bay direction can be modeled as moment frames or braced frames. The single bay direction has a span of 20 feet and is a braced frame. Each span in the double bay direction is 16 feet. The story height for all floors is 12 feet with columns that extend 4 feet above the top floor.  The Special Moment Frame (SMF) configuration utilizes replaceable shear fuse plates while the braced frame utilizes Buckling-Restrained Braces. 
 
 ![caption](img/Fig.1.png)
-a)	                                                                    b)	                                                      c)
+a)________________________________________________________________________b)________________________________________________________c)
 
 Figure 1.   MTB2 building: a) SMF configuration, b) BRB-1 configuration, and c) BRB-2 configuration.
 
@@ -46,6 +46,7 @@ A set of modules have been developed to evaluate the performance of the shake ta
 Data collected by the shake table controller is expected to be standard across most tests and useful to verify the performance of the shake table in reproducing the ground motions. Here, data from the shake table controller [4] is used to compare reference command and measured feedback data to evaluate the fidelity of the shake table in reproducing the desired ground motions. The Jupyter notebook functionality includes interactive plotters for viewing either a single channel or multiple channels to compare the reference input and feedback, for example, by viewing the time history, Fourier Transform or Response Spectra (Fig 2). The shake table controller sampling rate was set to a frequency of 2048 [Hz] for this test.  Initial implementation of the code required about 3.5 minutes to run. To improve the run-time, various options were explored including down sampling and use of tools such as those being developed by Brandenberg and Yang [7] to calculate the spectral acceleration. By using these tools, the run time was reduced to approximately 10 s. The module was implemented for the previous 1-D capability of LHPOST but can be easily extended for its newly upgraded 6DOF capabilities.
 
 ![caption](img/Fig.2.png)
+
 Figure 2. Evaluation of shake table performance through comparison of command reference and feedback including a) Fourier Transform and b) response spectra .
 
 ### [Case 2.Module for Structural Response and System Identification](https://www.designsafe-ci.org/data/browser/projects/954727520918105625-242ac11c-0001-012/Jupyter_Notebook_Code_documents/Jupyter_Notebook_Project)
@@ -55,6 +56,7 @@ Modal displacements can also be calculated directly from the CSD function output
 ![caption](img/Fig.3.png)
 
 Figure 3. System identification of three story moment frame [5] subjected to white noise from CSD function outputs.
+
 
 ![caption](img/Fig.4.png)
 
