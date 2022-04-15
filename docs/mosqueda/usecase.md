@@ -22,18 +22,13 @@ Vol. 18, Issue 3.
 * [Masroor et al. (2010)](https://doi.org/10.4231/D3HH6C57D) "Limit State Behavior of Base Isolated Structures: Fixed Base Moment Frame", DesignSafe-CI.
 * This software is distributed under the GNU General Public License (https://www.gnu.org/licenses/gpl-3.0.html).
 
-
-
-
-
-
 ## Introduction
 
-DesignSafe is a component of The Natural Hazard Engineering Research Infrastructure (NHERI). Being a cyberinfrastructure DesignSafe provides a collaborative workspace for cloud-based data analysis, data sharing, curation and publication of curated data. Within this workspace Jupyter Notebooks are applied to perform data analysis in an interactive environment. Since one of the major goals of DesignSafe is spread the capabilities of collaborative workspace by means of data sharing, the main objective of the present Jupiter Notebook is to develop an interactive computing platform able to perform system identification procedures of a three degree of freedom system based on real test results, as well as offer all the potential users a tool to start learning system identification on a simple structure. In this Jupiter Notebook system identification of structure is carried out based on the dynamic response of structure under white noise input signal based on the estimation of the cross power spectral density of the structural response. All the routines implemented for structure system identifiaction are explaiend herein.
+DesignSafe is a component of The Natural Hazard Engineering Research Infrastructure (NHERI). Being a cyberinfrastructure DesignSafe provides a collaborative workspace for cloud-based data analysis, data sharing, curation and publication of curated data. Within this workspace Jupyter Notebooks are applied to perform data analysis in an interactive environment. Since one of the major goals of DesignSafe is spread the capabilities of collaborative workspace by means of data sharing, the main objective of this document is to demonstrate the use of Jupyter Notebook within the experimental workflow.
 
-
-The Natural Hazard Engineering Research Infrastructure (NHERI) DesignSafe [1] cyberinfrastructure provides a collaborative Workspace for cloud-based data analysis and the Data Depot for publishing curated data. Jupyter Notebooks can function across these tools to provide an interactive programable environment in Python for data viewing and analysis. Research teams can initially share and view data in a private collaborative environment while they conduct their analysis then publish the Notebook and curated data for simplified viewing by other researchers interested in data reuse.  A significant advantage is the cloud-based approach that allows for thorough exploration of the data without requiring downloading of potentially large data sets. 
-To demonstrate the use of Jupyter Notebook within the experimental workflow, an application is being explored for use with the first experiment to be conducted following the upgrade to 6DOF of the Large High Performance Shake Table (LHPOST6) at the NHERI@UC San Diego Experimental Facility [2].  The first test to be conducted will involve the shakedown of a Modular Tested Building (MTB2) planned for early 2022 [3]. The MTB2 consists of a two-bay by one-bay, 3-story steel building that will be available for future use on the LHPOST6 to examine the behavior of the building itself under 3-D shaking or examine the behavior of other systems such as protective systems and nonstructural systems that can be installed within the MTB2. The initial testing of the MTB2, thus provides an ideal application for the Jupyter Notebook that will allow for simplified viewing of data generated from these tests that will be of interest to future users of the MTB2. The development of the Jupyter Notebooks is being deployed for use while conducting the experiments and for publication with the data after testing. The modules for analysis are being developed using shake table test data from past experiments. Modules and functionality developed to date are presented here. The full application of the Jupyter notebook will be undertaken in conjunction with the shake down experiments.
+A series of Jupiter Notebooks aimed to serve as a learning tool is composed of the following routines:
+1.	System identification of a two-bay by one-bay, 3-story steel building
+2.	Data extraction and data processing of testing results for the case of the first experiment to be conducted following the upgrade to 6DOF of the Large High Performance Shake Table (LHPOST6) at the NHERI@UC San Diego Experimental Facility
 
 ## Modular Testbed Building
 The Modular Testbed Building (MTB2) is designed to be a shared-use, reconfigurable experimental structure. The standard 3-story building can simulate braced frame and moment frame behavior through replaceable fuse type components including buckling restrained braced frames and Durafuse shear plate connections, respectively. The unique connection scheme allows for yielded fuse type members to be easily replaced to restore the structure to its original condition. The MTB2 can be constructed in various configurations with three examples shown in Fig 1. The lateral framing system in the 2-bay direction can be modeled as moment frames or braced frames. The single bay direction has a span of 20 feet and is a braced frame. Each span in the double bay direction is 16 feet. The story height for all floors is 12 feet with columns that extend 4 feet above the top floor.  The Special Moment Frame (SMF) configuration utilizes replaceable shear fuse plates while the braced frame utilizes Buckling-Restrained Braces. 
@@ -68,18 +63,7 @@ The Jupyter Notebooks developed for use through DesignSafe will facilitate the v
 
 
 
-### Description 
 
-The main objective of the present Jupiter Notebook is to develop an interactive computing platform able to perform system identification procedures of a three degree of freedom system based on real test results, as well as offer all the potential users a tool to start learning system identification on a simple structure.
-
-[Link Example - this goes to Google](https://www.google.com)
-
-## Analysis Cases
-
-The system identification of the structure is carried out for three analysis cases:
-1.	White noise signal
-2.	Dynamic elastic/inelastic response of the structure
-3.	Impact loads coming from for base isolated building pounding a moat wall-the superstructure response.
 
 
 ### System Identification
