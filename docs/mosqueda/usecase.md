@@ -34,7 +34,7 @@ A series of Jupiter Notebooks aimed to serve as a learning tool is composed of t
 The Modular Testbed Building (MTB2) is designed to be a shared-use, reconfigurable experimental structure. The standard 3-story building can simulate braced frame and moment frame behavior through replaceable fuse type components including buckling restrained braced frames and Durafuse shear plate connections, respectively. The unique connection scheme allows for yielded fuse type members to be easily replaced to restore the structure to its original condition. The MTB2 can be constructed in various configurations with three examples shown in Fig 1. The lateral framing system in the 2-bay direction can be modeled as moment frames or braced frames. The single bay direction has a span of 20 feet and is a braced frame. Each span in the double bay direction is 16 feet. The story height for all floors is 12 feet with columns that extend 4 feet above the top floor.  The Special Moment Frame (SMF) configuration utilizes replaceable shear fuse plates while the braced frame utilizes Buckling-Restrained Braces. 
 
 ![caption](img/Fig.1.png)
-_________________________a)__________________________________________________b)________________________________________________________c)_____________________________
+__________________a)_________________________________________________________________________b)____________________________________________________________c)_____________________________
 
 Figure 1.   MTB2 building: a) SMF configuration, b) BRB-1 configuration, and c) BRB-2 configuration.
 
