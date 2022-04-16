@@ -2,9 +2,8 @@
 
 **Wendy Miao, Zane Schemmer, Enrique Simbort, Gilberto Mosqueda, University of California, San Diego**  
 
-Jupyter Notebooks can provide fully integrated workflows of experiments from documentation of experimental design through analysis and publishing of data using the DesignSafe cyberinfrastructure. A serires of Notebooks are being developed to demonstrate their use in the experimental workflow including recent testing of a reconfigurable, modular test bed building planned for testing on the NHERI@UC San Diego Experimental Facility. The Python-based code is being implemented in a modular fashion so that components can be used as desired in other experiments and is transferable to other experimental facilities.  The Notebook can be used to evaluate shake table performance as well as dynamic properties of the structure. A key functionality is to increase the integration and collaboration between researchers at local or remote sites to view and analyze the experimental data during and after testing including once the data is published. Additional Notebooks are available using for viewing data from past shake table experiments including NEES and NHERI funded experiments.
+Jupyter Notebooks can provide fully integrated workflows of experiments from documentation of experimental design through analysis and publishing of data using the DesignSafe cyberinfrastructure. A serires of Notebooks are being developed to demonstrate their use in the experimental workflow including notebooks showing how to view and anayzed past published data and data from recent testing of a reconfigurable, modular test bed building planned for testing on the NHERI@UC San Diego Experimental Facility. The Python-based code is being implemented in a modular fashion so that components can be used as desired in other experiments and is transferable to other experimental facilities.  In the examples provided, the Notebook can be used to evaluate shake table performance as well as dynamic properties of the structure. A key functionality is to increase the integration and collaboration between researchers at local or remote sites to view and analyze the experimental data during and after testing including after the data is published. Examples are provides for viewing data from past shake table experiments including NEES and more current NHERI data repositories.
 
-## HYBRID SHAKE TABLE FORMULATION 
 
 ### Citation and Licensing
 
@@ -18,13 +17,12 @@ Jupyter Notebooks can provide fully integrated workflows of experiments from doc
 8. [Mosqueda et al. (2017)](https://www.buffalo.edu/mceer/catalog.host.html/content/shared/www/mceer/publications/MCEER-13-0003.detail.html) “Seismic Response of Base Isolated Buildings Considering Pounding to Moat Walls”. Technical report MCEER-13-0003.
 9. [Virtanen et al (2020)](https://doi.org/10.1038/s41592-019-0686-2) “SciPy 1.0: Fundamental Algorithms for Scientific Computing in Python”. Nature Methods, 17, 261–272.
 10. Chopra A. K., Dynamics of Structures. Harlow: Pearson Education, 2012. 
-11. [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246) DesignSafe: New Cyberinfrastructure for Natural Hazards Engineering. ASCE J.Struct. Eng., 
-Vol. 18, Issue 3.
+11. [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246) DesignSafe: New Cyberinfrastructure for Natural Hazards Engineering. ASCE J.Struct. Eng., Vol. 18, Issue 3.
 12. This software is distributed under the GNU General Public License (https://www.gnu.org/licenses/gpl-3.0.html).
 
 ## Introduction
 
-DesignSafe [1] is a component of The Natural Hazard Engineering Research Infrastructure (NHERI). Being a cyberinfrastructure DesignSafe provides a collaborative workspace for cloud-based data analysis, data sharing, curation and publication of curated data. Within this workspace Jupyter Notebooks are applied to perform data analysis in an interactive environment. Since one of the major goals of DesignSafe is spread the capabilities of collaborative workspace by means of data sharing, the main objective of this document is to demonstrate the use of Jupyter Notebook within the experimental workflow.
+As the cyberinfrastructure for The Natural Hazard Engineering Research Infrastructure (NHERI), DesignSafe [1] provides a collaborative workspace for cloud-based data analysis, data sharing, curation and publication of models and data. Within this workspace, Jupyter Notebooks can be applied to perform data analysis in an interactive environment with access to published data.  A rich set of data from natural hazard experimetns is avaialble from NHERI projects and its predecesso the Network for Earthquake Engineering Simulation (NEES) . Since one of the major goals of DesignSafe is spread the capabilities of collaborative workspace by means of data sharing, the main objective of this document is to demonstrate the use of Jupyter Notebook within the experimental workflow and viewing published data.
 
 A series of Jupiter Notebooks aimed to serve as a learning tool is composed of the following routines:
 1.	Shake table performance. In which data extraction and data processing of testing results for the case of the first experiment to be conducted following the upgrade to 6DOF of the Large High Performance Shake Table (LHPOST6) at the NHERI@UC San Diego Experimental Facility [2]
