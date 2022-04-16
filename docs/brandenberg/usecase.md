@@ -119,9 +119,6 @@ Cone penetration test data plotted in the notebook include tip resistance, sleev
 
 [DesignSafe_Webinar_Oct2021.ipynb](https://jupyter.designsafe-ci.org/user/name/tree/CommunityData/NGL/DesignSafe_Webinar_Oct2021.ipynb)
 
-### Related Links
------------------
+[DesignSafe Webinar YouTube video](https://youtu.be/TNOPOU4lx5w)
 
-[DesignSafe Webinar Recording](https://youtu.be/TNOPOU4lx5w)
-
-[DesignSafe Workshop Recording](https://youtu.be/_nKpSqa1rso)
+[DesignSafe Workshop YouTube video](https://youtu.be/_nKpSqa1rso)
