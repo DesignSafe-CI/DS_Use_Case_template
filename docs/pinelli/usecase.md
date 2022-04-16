@@ -2,9 +2,9 @@
 
 **Soundarya Sridhar and Jean-Paul Pinelli, Florida Institute of Technology**  
 
-The Florida Tech (FIT) hurricane team deploys networks of wireless sensors on residential houses during high impact wind events or on full scale wind tunnel models. The team deploys pressure, temperature and humidity sensors alongside anemometry, which includes different anemometers and a conical scanning infrared LiDAR . The workflow starts with uploading the data to DesignSafe through authentication tokens created in Tapis. Once on DesignSafe, three Jupyter notebooks process and visualize the instruments’ data for analyses. The notebooks provide a user friendly and interactive environment that can adapt to different datasets. For this project, the notebooks perform quasi static real-time analyses, assess sensor performance, study pressure variations for different wind conditions and data correlation. The user interactivity of these notebooks facilitates an easy adaptation to different datasets with little to no-change in code.
+The Florida Tech (FIT) hurricane team deploys networks of wireless sensors on residential houses during high impact wind events or on full scale wind tunnel models. The team deploys pressure, temperature and humidity sensors alongside anemometry, which includes different anemometers and a conical scanning infrared lidar . The workflow starts with uploading the data to DesignSafe through authentication tokens created in Tapis. Once on DesignSafe, three Jupyter notebooks process and visualize the instruments’ data for analyses. The notebooks provide a user friendly and interactive environment that can adapt to different datasets. For this project, the notebooks perform quasi static real-time analyses, assess sensor performance, study pressure variations for different wind conditions and data correlation. The user interactivity of these notebooks facilitates an easy adaptation to different datasets with little to no-change in code.
 
-<img src="../img/Picture1.png"  width="600">
+<img src="../img/Workflow.png"  width="600">
 
 
 ### Citation and Licensing
@@ -18,9 +18,13 @@ The Florida Tech (FIT) hurricane team deploys networks of wireless sensors on re
 
 ## Background 
     
-### Using Tapis for Data Uploads in Quasi-real time
+### Quasi-real time Data Upload with Tapis
 
 The user needs a DesignSafe-CI (DS) account. During deployment, data is uploaded to DS in user defined time interval. Tapis CLI and [Python 3 executable](https://www.python.org/downloads/windows/) enable this feature and must be installed on the local system. The user initiates Tapis before every deployment through Windows PowerShell and Tapis creates a token as described below:
+
+Video Tutorial (Timestamps - 28:01 to 35:04): https://www.youtube.com/watch?v=C2McrpQ8XmI
+
+**Guide**
 1.	Turn on Windows Power Shell and enter the command tapis auth init –interactive.  
 2.	For the tenant name, enter designsafe. 
 3.	Enter the DesignSafe username and password of the authorized user. 
@@ -28,14 +32,12 @@ The user needs a DesignSafe-CI (DS) account. During deployment, data is uploaded
 5.	Create a token using the command tapis auth tokens create. At the end, the following response will appear on the cmd line. 
 
 
-<img src="../img/Picture2.png"  width="400">
+<img src="../img/Picture2.png"  width="600">
     
-Video Tutorial (Timestamps - 28:01 to 35:04): https://www.youtube.com/watch?v=C2McrpQ8XmI
-
     
 ### Using Jupyter Notebooks
 
-To save time and memory, the project uses three different notebooks. For any event, either a field deployment or a wind tunnel experiment, the first notebook inputs metadata (sensor information, data columns, timestamp formats) for the dataset and is ideally used once for every event. It outputs a csv file containing the metadata required to run the second notebook. The second notebook calibrates raw data and organizes them into csv and pickled files. This notebook may be run more than once depending on how often new data is uploaded during the event. With the third and final notebook, users analyze and visualize the data interactively. This is the most frequently used notebook and is run everytime the data needs to be analyzed. There is no need to execute the notebooks sequentially everytime an analysis is done. The figure below illustrates the possible sequences of analysis: 
+To save time and memory, the project uses three different notebooks. For any event, either a field deployment or a wind tunnel experiment, the first notebook inputs metadata (sensor information, data columns, timestamp formats) for the dataset and is ideally used once for every event. It outputs a csv file containing the metadata required to run the second notebook. The second notebook calibrates raw data and organizes them into csv and pickled files. This notebook may be run more than once depending on how often new data is uploaded during the event. With the third notebook, users analyze and visualize the data interactively. This is the most frequently used notebook and is run everytime the data needs to be analyzed. There is no need to execute the notebooks sequentially everytime an analysis is done. The figure below illustrates the possible sequences of analysis: 
 
 
 <img src="../img/Jupyter user roles.png"  width="600">
@@ -47,7 +49,7 @@ The first notebook is a user interactive guide to input important raw data infor
     
 
 <img src="../img/Picture4.png"  width="300" height="250">
-<img src="../img/Picture5.png"  width="300" height="250">
+<img src="../img/Picture5.png"  width="300" height="300">
    
 
     
@@ -55,9 +57,9 @@ The first notebook is a user interactive guide to input important raw data infor
 
 ### Analysis Notebooks and Examples
 
-Florida Tech team’s project goal is to measure pressure variation on non-structural components during strong wind events using their network of wireless sensors. The analysis notebooks on DesignSafe are user interactive with markdowns describing the test.  They also provide the users with several options to visualize the data. An example of this is the analysis notebook for Isaias (tropical storm on August 1-3, 2020). The markdowns have important information and pictures from the deployment, and instructions for the user to easily access data.
+Florida Tech team’s project goal is to measure pressure variation on non-structural components during strong wind events using their network of wireless sensors. The analysis notebooks on DesignSafe are user interactive with markdowns describing the test. They also provide the users with several options to visualize the data. An example of this is the analysis notebook for Isaias (tropical storm on August 1-3, 2020). The markdowns have important information and pictures from the deployment, and instructions for the user to easily access data.
  
-<img src="../img/Picture6.png"  width="520">
+<img src="../img/jupyter.png"  width="520">
 
 And a menu allows user to select from options and look at specific time windows or test conditions.
    
@@ -85,7 +87,7 @@ Once you have your notebook open and you don’t have plotly dash installed, go 
 Building the Dataframe:
 Consider a box of spheres that change their numbers ranging from 1 to 10 every hour. You want to look at how the number changes for 12 hours.
 
-### Code
+**Code**
 
 ```python
 # Importing libraries
