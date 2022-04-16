@@ -7,20 +7,10 @@ A collection of educational notebooks to introduce model parameter calibration a
 
 ## Background 
 
-### Citation and Licensing
-
-* Please cite [Arduino, P. et al. (2022)](https://doi.org/10.17603/ds2-3zdj-493) to acknowledge the use of any resources from this use case.
-
-* Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246) to acknowledge the use of DesignSafe resources.  
-
-* This software is distributed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.html).  
-
-## Description 
-
 Site response analysis for liquefiable soils is fundamental in the estimation of demands on civil infrastructure including buildings and lifelines. Current state of the art in numerical methods in geotechnical engineering require the use of advance constitutive models and fully couple nonlinear finite element (FEM) tools. Advanced constitutive models require calibration of material parameters based on experimental tests. These parameters include uncertainties that in turn propagate to uncertenties in the estimation of demands. The products included in this use-case provide simple examples showing how to achieve site response analysis including parameter identification and uncertainty quantification using SimCenter tools and the DesignSafe cyber infrastructure.
 
 <p align="center">
-<img src="../img/SRschematic2.PNG" alt="Propagation of vertical waves in site response analysis" width="600"/>
+<img src="./img/SRschematic2.PNG" alt="Propagation of vertical waves in site response analysis" width="600"/>
 </p>
 <p align="center"> <b>Fig.1 - Site response problem</b> </p>
     
@@ -52,7 +42,7 @@ The notebook takes advantage of the site response problem to introduce a general
 4. Creating animated plots using visualization widgets. 
 
 <p align="center">
-<img src="img/DSworkflow.png" alt=" OpenSees numericla simulation workflow" width="200"/>
+<img src="./img/DSworkflow.png" alt=" OpenSees numericla simulation workflow" width="200"/>
 </p>
 <p align="center"> <b>Fig.2 - OpenSees numerical simulation workflow</b> </p>
 
@@ -60,7 +50,7 @@ The notebook takes advantage of the site response problem to introduce a general
 The soil profile shown in Figure 3 includes a 5.0m loose sand underlain by a 1.0 m dense soil.The loose sand is modeled using the PM4Sand constitutive model for liquefiable soils available in OpenSees. The dense sand is considered linear elastic. The groundwter table is assumed at 2.0 m making the lower 3.0 m of the loose sand susceptible to liquefaction. The soil profile is subject to a dynamic excitation at its base. The site response of interest includes (i) the surface acceleration, (ii) profiles of lateral displacement, horizontal acceleration, maximum shear strain, and cyclic stress ratio and (iii) stress strain and pore pressure plots for a point in the middle of the soil profile.  The opensees model definition, analysis steps, and recorders are contained in the [N10_T3.tcl](FreeField-JupyterNB/N10_T3.tcl) file, and the input signal is in [velocity.input](FreeField-JupyterNB/velo). The model can be run using OpenSees in any OS framework.
 
 <p align="center">
-<img src="img/SPschematic.png" alt="N10_T3 soil profile with liquefiable layer" width="200"/>
+<img src="./img/SPschematic.png" alt="N10_T3 soil profile with liquefiable layer" width="200"/>
 </p>
 <p align="center"> <b>Fig.3 - N10_T3 soil profile with liquefiable layer</b> </p>
 
@@ -195,8 +185,8 @@ plot_acc()
 ```
 
 <p align="center">
-<img src="img/surfaceAccel.png" alt="Surface acceleration" width="300"/>
-<img src="img/logSpectra.png" alt="Response spectrum" width="300"/>
+<img src="./img/surfaceAccel.png" alt="Surface acceleration" width="300"/>
+<img src="./img/logSpectra.png" alt="Response spectrum" width="300"/>
 </p>
 <p align="center"> <b>Fig.4 - Surface acceleratio and response spectrum</b> </p>
 
@@ -208,7 +198,7 @@ plot_profile()
 ```
 
 <p align="center">
-<img src="img/profilePlot.png" alt="Profiles" width="600"/>
+<img src="./img/profilePlot.png" alt="Profiles" width="600"/>
 </p>
 <p align="center"> <b>Fig.5 - Profiles of max displacement, PHA, Max shear strain and cyclic stress ratio</b> </p>
 
@@ -219,8 +209,8 @@ plot_porepressure()
 ```
 
 <p align="center">
-<img src="img/stressstrain.png" alt="Stress strain" width="300"/>
-<img src="img/porePressure.png" alt="Pore pressure" width="300"/>
+<img src="./img/stressstrain.png" alt="Stress strain" width="300"/>
+<img src="./img/porePressure.png" alt="Pore pressure" width="300"/>
 </p>
 <p align="center"> <b>Fig.6 - stress strain and pore pressure in the middle of liquefiable layer</b> </p>
 
@@ -271,7 +261,7 @@ from interactiveplot import createpwpplot, createDispplot
 createpwpplot()
 ```
 <p align="center">
-<img src="img/widget-1.PNG" alt="Pore pressure interatvie plot" width="400"/>
+<img src="./img/widget-1.PNG" alt="Pore pressure interatvie plot" width="400"/>
 </p>
 <p align="center"> <b>Fig.7 - Pore pressure interactive plot</b> </p>
 
@@ -282,7 +272,7 @@ createDispplot()
 ```
 
 <p align="center">
-<img src="img/widget-2.PNG" alt="Displacement profile interatvie plot" width="400"/>
+<img src="./img/widget-2.PNG" alt="Displacement profile interatvie plot" width="400"/>
 </p>
 <p align="center"> <b>Fig.8 - Displacement proficle interactive plot</b> </p>
 
