@@ -1,4 +1,5 @@
-# From constitutive parameter calibration to site response analysis 
+# From constitutive parameter calibration to site response analysis
+
 
 Pedro Arduino, University of Washington
 
@@ -6,10 +7,20 @@ A collection of educational notebooks to introduce model parameter calibration a
 
 ## Background 
 
+### Citation and Licensing
+
+* Please cite [Arduino, P. et al. (2022)](https://doi.org/10.17603/ds2-3zdj-493) to acknowledge the use of any resources from this use case.
+
+* Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246) to acknowledge the use of DesignSafe resources.  
+
+* This software is distributed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.html).  
+
+## Description 
+
 Site response analysis for liquefiable soils is fundamental in the estimation of demands on civil infrastructure including buildings and lifelines. Current state of the art in numerical methods in geotechnical engineering require the use of advance constitutive models and fully couple nonlinear finite element (FEM) tools. Advanced constitutive models require calibration of material parameters based on experimental tests. These parameters include uncertainties that in turn propagate to uncertenties in the estimation of demands. The products included in this use-case provide simple examples showing how to achieve site response analysis including parameter identification and uncertainty quantification using SimCenter tools and the DesignSafe cyber infrastructure.
 
 <p align="center">
-<img src="img/SRschematic2.PNG" alt="Propagation of vertical waves in site response analysis" width="600"/>
+<img src="../img/SRschematic2.PNG" alt="Propagation of vertical waves in site response analysis" width="600"/>
 </p>
 <p align="center"> <b>Fig.1 - Site response problem</b> </p>
     
