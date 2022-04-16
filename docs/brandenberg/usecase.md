@@ -73,7 +73,7 @@ This notebook contains example queries to illustrate how to extract data from th
 5. Query information about BORH table
 6. Query counts of cone penetration test data, boreholes, surface wave measurements, invasive shear wave velocity measurements, liquefaction observations, and non-liquefaction observations
 
-[ExampleQueries.ipynb](https://jupyter.designsafe-ci.org/user/name/tree/CommunityData/NGL/ExampleQueries.ipynb).
+[ExampleQueries.ipynb](https://jupyter.designsafe-ci.org/user/name/tree/CommunityData/NGL/ExampleQueries.ipynb)
 
 ## Cone Penetration Test Viewer
 
