@@ -12,23 +12,21 @@ Taggit allows users to browse images files on DesignSafe and tag them for later 
 * This software is distributed under the GNU General Public License (https://www.gnu.org/licenses/gpl-3.0.html).  
 
 
-## Getting Started and Creating a Project 
-The collapsed menus icon (shown below) opens the main menu of Taggit and enables creating a project, selecting from existing projects, and opening the file browser. Other options from this menu will be described later. To start a new project select "Create Project" and follow the prompts.
+## Getting Started and Creating a Gallery 
+The collapsed menus icon (shown below) opens the main menu of Taggit and enables creating a gallery, selecting from existing galleries, and opening the file browser. For this project, "Create Gallery" was selected to get started. 
 
-<img src="img/CreateProjectSm.jpg" alt="CreateProjectSm" width="400"/>
+<img src="img/CreateProject2.PNG" alt="CreateProject2" width="400"/>
 
 
 ## Loading Image Files
 
 Image files can be loaded into an existing project by selecting "File Browser" from the main menu. The File Browser (shown below) provides access to all parts of DesignSafe including My Data, Community Data, Published Project, and My Projects.
 
-![caption](img/FileBrowser.JPG)
-
-Once you navigate to a folder of interest, you can select files to load into your project by clicking to select, shift-clicking, or using the Select All button.
+Once you navigate to a folder of interest, you can select files to load into your gallery by clicking to select, shift-clicking, or using the Select All button.
 
 ![caption](img/SelectImageFiles.JPG)
 
-Clicking Import will bring the selected files into your project, and you will see thumbnails of the images as shown below.
+Clicking Import will bring the selected files into your gallery, and you will see thumbnails of the images as shown below.
 
 ![caption](img/ThumbNails.JPG)
 
