@@ -1,4 +1,4 @@
-# Using Taggit to browse and tag Hurricane Irma damage survery iamges on DesignSafe
+# Using Taggit to browse and tag Hurricane Irma damage survey images on DesignSafe
 
 **Fred L. Haan, Jr, Calvin University**  
 
