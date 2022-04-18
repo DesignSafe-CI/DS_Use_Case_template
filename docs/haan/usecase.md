@@ -20,9 +20,7 @@ The collapsed menus icon (shown below) opens the main menu of Taggit and enables
 
 ## Loading Image Files
 
-Image files can be loaded into an existing project by selecting "File Browser" from the main menu. The File Browser (shown below) provides access to all parts of DesignSafe including My Data, Community Data, Published Project, and My Projects.
-
-Once you navigate to a folder of interest, you can select files to load into your gallery by clicking to select, shift-clicking, or using the Select All button.
+Image files can be loaded into an existing project by selecting "File Browser" from the main menu. This enables access to all parts of DesignSafe including My Data, Community Data, Published Project, and My Projects. For this project, the PI's images from the Irma damage survey were selected.
 
 ![caption](img/SelectImageFiles.JPG)
 
@@ -33,7 +31,7 @@ Clicking Import brings the selected files into the gallery, and you see thumbnai
 
 ## Creating Groups and Organizing Images
 
-Groups were created for this gallery to organize the photos into types of structures. Clicking on one or more images generates a green border that denotes selected images. The Add Group button (see below) was used to create names for groups.
+Groups were created for this gallery to organize the photos into types of structures and types of damage. Clicking on one or more images generates a green border that denotes selected images. The Add Group button (see below) was used to create names for groups.
 
 ![caption](img/AddGroup.JPG)
 
@@ -41,7 +39,7 @@ The add group dialog box enables naming the groups.
 
 ![caption](img/GroupName.JPG)
 
-Once a group or groups is created, the Taggit button appears (see below). The Taggit button takes you to the Taggit screen where you will see your images in their groups and begin to create tags.
+Once a group or groups is created, the Taggit button appears (see below). The Taggit button takes you to the Taggit screen where you can see the images in their groups and begin to create tags.
 
 ![caption](img/TaggitButton.JPG)
 
@@ -53,11 +51,11 @@ When hovering over any given image in the thumbnail gallery, several icons will 
 
 ![caption](img/ThumbNailButtons2.JPG)
 
-After creating a number of groups and adding images to those groups, your Taggit view will look something like the image below. From this view you can click through the groups and through the images in each group.
+After creating a number of groups and adding images to those groups, the Taggit view looks like the image below. From this view, you can browse through the groups and through the images in each group.
 
 ![caption](img/GroupsAndImages.JPG)
 
-Looking closely at the group list (below) shows that each group has an icon. These icons can be changed by the user simply by clicking on the icon and selecting a different one from the list.
+The icons associated with each group were customized by clicking on the icon and selecting different ones from the list.
 
 ![caption](img/GroupListIcons.JPG)
 
