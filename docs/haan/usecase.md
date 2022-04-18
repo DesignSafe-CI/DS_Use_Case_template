@@ -64,21 +64,17 @@ The icons associated with each group were customized by clicking on the icon and
 
 ## Creating Tags for Images
 
-On the Taggit screen below the Image List is the Tag Images area (see below). Pressing the "+" icon here allows the user to create custom tags for images. 
+The Tag Images area below the Image List was used to create custom tags for images. 
 
 ![caption](img/TagImagesArea.JPG)
 
-The Create Tag list appears after pressing the "+" button. From this list, the user can select from several different types of tags to create. 
-
-![caption](img/CreateTag.JPG)
-
-For example, to create a Color Tag, one provides a Label and then adds options with the "+" button (see below).
+For this group, a Color Tag representing damage was created (see below).
 
 ![caption](img/ColorTag1.JPG)
 
 ![caption](img/ColorTag2.JPG)
 
-Once all the options have been added, click the Save button to get the final list of tag options. For the Color tag, colors are assigned to each option. These colors will be used if the user decides to map the image using HazMapper.
+The colors assigned with a Color Tag will be used if the user decides to map the image using HazMapper.
 
 ![caption](img/ColorTag3.JPG)
 
@@ -86,7 +82,7 @@ Once all the options have been added, click the Save button to get the final lis
 
 ## Plotting Images Locations with HazMapper
 
-A HazMapper button is provided in the upper right part of the screen to allow mapping all the images in a project. Clicking this button will launch HazMapper in its own browser tab.
+Clicking the HazMapper button launches HazMapper to see all the photos from this project located on a map.
 
 ![caption](img/HazMapperButton.JPG)
 
