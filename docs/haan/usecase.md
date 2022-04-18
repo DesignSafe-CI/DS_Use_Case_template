@@ -1,8 +1,8 @@
-# Using Taggit to Browse and Tag Image Files on DesignSafe
+# Using Taggit to browse and tag Hurricane Irma damage survery iamges on DesignSafe
 
 **Fred L. Haan, Jr, Calvin University**  
 
-Taggit allows users to easily browse images files on DesignSafe and tag them for later use in analysis or mapping applications. Taggit connects seamlessly to HazMapper to map image locations. Images can be orgnized into groups and the user can create custom tags for each group. All group and tag information can also be exported as data files to be used in other applications.
+Taggit allows users to browse images files on DesignSafe and tag them for later use in analysis or mapping applications. It also easily connects to HazMapper to map image locations. Images can be organized into groups and the user can create custom tags for each group. All group and tag information can also be exported as data files to be used in other applications.
 
 This documentation file walks the user through each of the steps required to use Taggit.
 
