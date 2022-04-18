@@ -39,7 +39,7 @@ The NGL database is organized into tables that are related to each other via key
 you will need to understand the organizational structure of the database, called the schema. The database 
 schema is documented at the following URL:
 
-<https://nextgenerationliquefaction.org/schema/index.html>
+[https://nextgenerationliquefaction.org/schema/index.html](https://nextgenerationliquefaction.org/schema/index.html)
   
 ## Querying Data via Jupyter Notebooks
 
