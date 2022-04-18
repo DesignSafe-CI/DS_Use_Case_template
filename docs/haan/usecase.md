@@ -16,7 +16,7 @@ This documentation file walks the user through each of the steps required to use
 ## Getting Started and Creating a Project 
 The collapsed menus icon (shown below) opens the main menu of Taggit and enables creating a project, selecting from existing projects, and opening the file browser. Other options from this menu will be described later. To start a new project select "Create Project" and follow the prompts.
 
-![caption]<img src="CreateProjectSm.jpg" alt="CreateProjectSm" width="200"/>
+<img src="CreateProjectSm.jpg" alt="CreateProjectSm" width="200"/>
 
 
 ## Loading Image Files
