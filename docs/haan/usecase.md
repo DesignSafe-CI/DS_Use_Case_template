@@ -82,19 +82,15 @@ The colors assigned with a Color Tag will be used if the user decides to map the
 
 ## Plotting Images Locations with HazMapper
 
-Clicking the HazMapper button launches HazMapper to see all the photos from this project located on a map.
+Clicking the HazMapper button launches HazMapper to see all the photos from this gallery located on a map.
 
 ![caption](img/HazMapperButton.JPG)
 
-Once HazMapper launches, you will need to click on the Layers button (see below) to add the type of map desired.
-
-![caption](img/HazMapperLayerButton.JPG)
-
-In the window below, one can choose a Roads layer or a Satellite layer.
+For this gallery, a Roads layer was added to the map.
 
 ![caption](img/CreateLayerWindow.JPG)
 
-Choosing the Roads layer creates a map like that shown below. The locations of collections of images are denoted with numbers on the map.
+The locations of collections of images are denoted with numbers on the map.
 
 ![caption](img/HazMapperMap1.JPG)
 
