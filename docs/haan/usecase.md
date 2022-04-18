@@ -26,22 +26,22 @@ Once you navigate to a folder of interest, you can select files to load into you
 
 ![caption](img/SelectImageFiles.JPG)
 
-Clicking Import will bring the selected files into your gallery, and you will see thumbnails of the images as shown below.
+Clicking Import brings the selected files into the gallery, and you see thumbnails of the images as shown below.
 
 ![caption](img/ThumbNails.JPG)
 
 
 ## Creating Groups and Organizing Images
 
-You can start creating groups for your images by clicking on one or more images. A green border will denote selected images, and the Add Group button will appear (see below).
+Groups were created for this gallery to organize the photos into types of structures. Clicking on one or more images generates a green border that denotes selected images. The Add Group button (see below) was used to create names for groups.
 
 ![caption](img/AddGroup.JPG)
 
-Clicking the add group will bring up a dialog box for you to name the group.
+The add group dialog box enables naming the groups.
 
 ![caption](img/GroupName.JPG)
 
-Once you have a group created, the Taggit button will appear (see below). This Taggit button takes you to the Taggit screen where you will see your images in their groups and begin to create tags.
+Once a group or groups is created, the Taggit button appears (see below). The Taggit button takes you to the Taggit screen where you will see your images in their groups and begin to create tags.
 
 ![caption](img/TaggitButton.JPG)
 
