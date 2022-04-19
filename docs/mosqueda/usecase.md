@@ -1,23 +1,14 @@
 # Integrated Workflow of Experiments using Jupyter Notebooks: From Experimental Design to Publication
 
-**Wendy Miao, Zane Schemmer, Enrique Simbort, Gilberto Mosqueda, University of California, San Diego**  
+Enrique Simbort and Gilberto Mosqueda, University of California, San Diego**  
 
 Jupyter Notebooks can provide fully integrated workflows of experiments from documentation of experimental design through analysis and publishing of data using the DesignSafe cyberinfrastructure. A series of Notebooks are being developed to demonstrate their use in the experimental workflow including notebooks showing how to view and analyzed past published data and data from testing of a reconfigurable, modular test bed building planned to be tested on the NHERI@UC San Diego Experimental Facility. The Python-based code is implemented in a modular fashion so that components can be used as desired in other experiments and are transferable to other experimental facilities. In the examples provided, the Notebook can be used to evaluate shake table performance as well as dynamic properties of the structure. A key functionality is to increase the integration and collaboration between researchers at local or remote sites to view and analyze the experimental data during and after testing including after the data is published. As Notebooks are developed to view experimental data by the research team, they can also be published with the data allowing other researchers to quickly view the data for promoting data reuse. Examples are providing for viewing data from past shake table experiments including NEES and more current NHERI data repositories.
 
 ### Citation and Licensing
 
-1. [Rathje et al. (2020)](https://doi.org/10.3389/fbuil.2020.547706) “Enhancing research in natural hazard engineering through the DesignSafe cyberinfrastructure”. Frontiers in Built Environment, 6:213.
-2. [Vega et al. (2018)](https://doi.org/10.17603/DS2C687) "Five story building with tunned mass damper", in NHERI UCSD Hybrid Simulation Commissioning. DesignSafe-CI.
-3. [Mosqueda et al. (2017)](https://www.buffalo.edu/mceer/catalog.host.html/content/shared/www/mceer/publications/MCEER-13-0003.detail.html) “Seismic Response of Base Isolated Buildings Considering Pounding to Moat Walls”. Technical report MCEER-13-0003.
-4. [Van Den Einde et al (2020)](https://doi.org/10.3389/fbuil.2020.580333) “NHERI@ UC San Diego 6-DOF Large High-Performance Outdoor Shake Table Facility.” Frontiers in Built Environment, 6:181.
-5. [Masroor et al. (2010)](https://doi.org/10.4231/D3HH6C57D) "Limit State Behavior of Base Isolated Structures: Fixed Base Moment Frame", DesignSafe-CI.
-6. Vega et al (2020), “Implementation of real-time hybrid shake table testing using the UCSD large high-performance outdoor shake table”. Int. J. Lifecycle Performance Engineering, Vol. 4, p.80-102.
-7. [Brandenberg, S., J., & Yang, Y. (2021)](https://doi.org/10.5281/zenodo.5621169) "ucla_geotech_tools: A set of Python packages developed by the UCLA geotechnical group" (Version 1.0.2) [Computer software].
-8. [Virtanen et al (2020)](https://doi.org/10.1038/s41592-019-0686-2) “SciPy 1.0: Fundamental Algorithms for Scientific Computing in Python”. Nature Methods, 17, 261–272.
-9. Chopra A. K., Dynamics of Structures. Harlow: Pearson Education, 2012. 
-10. Morano M., Liu J., Hutchinson T. C., and Pantelides C.P. (2021), “Design and Analysis of a Modular Test Building for the 6-DOF Large High-Performace Outdoor Shake Table”, 17th World Conference on Earthquake Engineering, Japan.
-11. [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246) DesignSafe: New Cyberinfrastructure for Natural Hazards Engineering. ASCE J.Struct. Eng., Vol. 18, Issue 3.
-12. This software is distributed under the GNU General Public License (https://www.gnu.org/licenses/gpl-3.0.html).
+1. Please cite [Mosqueda et al. (2017)](https://12ncee.org/) to acknowledge the use of resources from this use case with additional data sources referenced below.
+2. Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246) to acknowledge the use of DesignSafe resources.
+3. This software is distributed under the GNU General Public License (https://www.gnu.org/licenses/gpl-3.0.html).
 
 ## Introduction
 
@@ -63,6 +54,21 @@ Figure 4.   MTB2 building: a) SMF configuration (left), b) BRB-1 configuration (
 
 ## Conclusions
 The Jupyter Notebooks developed for use through DesignSafe will facilitate the viewing and analysis of data sharing with collaborators from testing through data publication. A key advantage is the cloud-based approach that facilitates interactive data viewing and analysis in a report format without having to download large datasets. These tools are intended to make data more readily accessible and promote data reuse. The Jupiter Notebook presented here includes routines to evaluate the performance of the shake table and carry out system identification of structural models. 
+
+### References
+
+1. [Rathje et al. (2020)](https://doi.org/10.3389/fbuil.2020.547706) “Enhancing research in natural hazard engineering through the DesignSafe cyberinfrastructure”. Frontiers in Built Environment, 6:213.
+2. [Vega et al. (2018)](https://doi.org/10.17603/DS2C687) "Five story building with tunned mass damper", in NHERI UCSD Hybrid Simulation Commissioning. DesignSafe-CI.
+3. [Mosqueda et al. (2017)](https://www.buffalo.edu/mceer/catalog.host.html/content/shared/www/mceer/publications/MCEER-13-0003.detail.html) “Seismic Response of Base Isolated Buildings Considering Pounding to Moat Walls”. Technical report MCEER-13-0003.
+4. [Van Den Einde et al (2020)](https://doi.org/10.3389/fbuil.2020.580333) “NHERI@ UC San Diego 6-DOF Large High-Performance Outdoor Shake Table Facility.” Frontiers in Built Environment, 6:181.
+5. [Masroor et al. (2010)](https://doi.org/10.4231/D3HH6C57D) "Limit State Behavior of Base Isolated Structures: Fixed Base Moment Frame", DesignSafe-CI.
+6. Vega et al (2020), “Implementation of real-time hybrid shake table testing using the UCSD large high-performance outdoor shake table”. Int. J. Lifecycle Performance Engineering, Vol. 4, p.80-102.
+7. [Brandenberg, S., J., & Yang, Y. (2021)](https://doi.org/10.5281/zenodo.5621169) "ucla_geotech_tools: A set of Python packages developed by the UCLA geotechnical group" (Version 1.0.2) [Computer software].
+8. [Virtanen et al (2020)](https://doi.org/10.1038/s41592-019-0686-2) “SciPy 1.0: Fundamental Algorithms for Scientific Computing in Python”. Nature Methods, 17, 261–272.
+9. Chopra A. K., Dynamics of Structures. Harlow: Pearson Education, 2012. 
+10. Morano M., Liu J., Hutchinson T. C., and Pantelides C.P. (2021), “Design and Analysis of a Modular Test Building for the 6-DOF Large High-Performace Outdoor Shake Table”, 17th World Conference on Earthquake Engineering, Japan.
+11. Mosqueda G, Guerrero N, Schmemmer Z., Lin L, Morano M., Liu J., Hutchinson T, Pantelides C P. Jupyter Notebooks for Data workflow of NHERI Experimental Facilities. Proceedings of the 12th National Conference in Earthquake Engineering, Earthquake Engineering Research Institute, Salt Lake City, UT. 2022.
+
 
 ## Annex 1
 ### [Fragment of System Identification Routine](https://www.designsafe-ci.org/data/browser/projects/954727520918105625-242ac11c-0001-012/Jupyter_Notebook_Code_documents/Jupyter_Notebook_Project)
