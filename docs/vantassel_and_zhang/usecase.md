@@ -21,7 +21,7 @@ solve data-related problems.
 
 * Please cite [Durante and Rathje (2021)](https://doi.org/10.1177/87552930211004613) to acknowledge the use of any resources for the Random Forest and Neural Networks examples included in this use case.
 
-* This software is distributed under the GNU General Public License ([https://www.gnu.org/licenses/gpl-3.0.html](https://www.gnu.org/licenses/gpl-3.0.html)).
+* This software is distributed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.html).
 
 
 ## Overview
