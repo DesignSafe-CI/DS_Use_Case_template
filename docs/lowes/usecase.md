@@ -56,8 +56,7 @@ The use case workflow involves the following steps:
 
 The modeling script is broken up into 2 notebooks, the first notebook imports the variables to build the wall into an array. The second notebook builds out the tcl file that will be ran through openseees. The sections defined below are from the second notebook.  
 The matlab to python script can be found here: [matlab_to_python](https://jupyter.designsafe-ci.org/user/stokljos/notebooks/MyData/UseCaseScripts/TCL_Script_Creator.ipynb)  
-The jupyter notebook that creates the OpenSees input file can be found here: [Modeling Script](https://jupyter.designsafe-ci.org/user/stokljos/notebooks/MyData/UseCaseScripts/TCL_Script_Creator.ipynb)    
-.
+The jupyter notebook that creates the OpenSees input file can be found here: [Modeling Script](https://jupyter.designsafe-ci.org/user/stokljos/notebooks/MyData/UseCaseScripts/TCL_Script_Creator.ipynb)
 
 ### Reinforced Concrete Wall Database   
 
