@@ -9,13 +9,13 @@ Taggit allows users to browse images files on DesignSafe and tag them for later 
 
 * Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246) to acknowledge the use of DesignSafe resources.  
 
-* This software is distributed under the GNU General Public License (https://www.gnu.org/licenses/gpl-3.0.html).  
+* This software is distributed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.html).  
 
 
 ## Getting Started and Creating a Gallery 
 The collapsed menus icon (shown below) opens the main menu of Taggit and enables creating a gallery, selecting from existing galleries, and opening the file browser. For this project, "Create Gallery" was selected to get started. 
 
-<img src="img/CreateProject2.PNG" alt="CreateProject2" width="400"/>
+<img src="../img/CreateProject2.PNG" alt="CreateProject2" width="400"/>
 
 
 ## Loading Image Files
