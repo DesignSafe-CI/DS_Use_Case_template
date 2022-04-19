@@ -14,3 +14,4 @@ As the cyberinfrastructure component of NHERI, DesignSafe provides a wide variet
 * [Padgett](padgett/usecase.md)
 * [Pinelli](pinelli/usecase.md)
 * [Rathje](rathje/usecase.md)
+* [ML Resources](ml_resources/usecase.md)
