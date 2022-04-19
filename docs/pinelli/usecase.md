@@ -13,7 +13,7 @@ Florida Tech (FIT) teams  deploy networks of wireless sensors on residential hou
 
 * Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246), [Pinelli et al. (2020)](https://link.springer.com/article/10.1007/s13753-020-00320-8) and [Rathje et al. (2020)](https://doi.org/10.3389/fbuil.2020.547706) to acknowledge the use of DesignSafe resources.  
 
-* This software is distributed under the GNU General Public License (https://www.gnu.org/licenses/gpl-3.0.html).  
+* This software is distributed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.html).  
 
 
 ## Background 
@@ -153,6 +153,6 @@ fig.show()
 
 ## Published Datasets and Notebooks
     
-• Subramanian, C. Lazarus, S. Pinelli, J. Sun, J. Wang, J. Splitt, M. Besing, H. Sridhar, S. (2021) "WSN and Lidar Deployment during Hurricane Isaias, Satellite Beach, Melbourne, FL, Aug 2020", in Hurricane ISAIAS Data from Wireless Pressure Sensor Network and LIDAR. DesignSafe-CI. https://doi.org/10.17603/ds2-6qnj-tv17.
+• Subramanian, C. Lazarus, S. Pinelli, J. Sun, J. Wang, J. Splitt, M. Besing, H. Sridhar, S. (2021) "WSN and Lidar Deployment during Hurricane Isaias, Satellite Beach, Melbourne, FL, Aug 2020", in Hurricane ISAIAS Data from Wireless Pressure Sensor Network and LIDAR. DesignSafe-CI. [https://doi.org/10.17603/ds2-6qnj-tv17](https://doi.org/10.17603/ds2-6qnj-tv17).
 
-• Pinelli, J. Subramanian, C. Lazarus, S. Wang, J. Sridhar, S. Zhang, J. Erwin, J. Chen, D. Lebbar, A. (2022) "Sliding Glass Patio Doors with and without Shutter", in Lab Tests with Wireless Sensor Network (WSN) system for the characterization of strong wind loads on non-structural components. DesignSafe-CI. https://doi.org/10.17603/ds2-jv3x-fp80.
+• Pinelli, J. Subramanian, C. Lazarus, S. Wang, J. Sridhar, S. Zhang, J. Erwin, J. Chen, D. Lebbar, A. (2022) "Sliding Glass Patio Doors with and without Shutter", in Lab Tests with Wireless Sensor Network (WSN) system for the characterization of strong wind loads on non-structural components. DesignSafe-CI. [https://doi.org/10.17603/ds2-jv3x-fp80](https://doi.org/10.17603/ds2-jv3x-fp80).
