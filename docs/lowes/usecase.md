@@ -41,7 +41,7 @@ Figure 1: Smeared shell element representation
 
 ## Example Description 
 
-RW1 is modeled from the database to produce a tcl file that represents the geometry, material, and simulation history of the wall. The wall is 144 inches high, 47.25 inches long, and 4 inches thick. It consists of 1241 amount of nodes, 1152 amount of shell elements, and 863 amount of steel truss elements. MITC4 shell elements are used to smear the concrete and transverse steel into the thickness while the vertical reinforce bars are modeled as truss elements. RW1 had a compression buckling failure mode in the lab. More information on RW1 and its experimental results can be found here: (RW1 LINK)  
+RW1 is modeled from the database to produce a tcl file that represents the geometry, material, and simulation history of the wall. The wall is 150 inches high, 46.37 inches long, and 4 inches thick. It consists of 1292 amount of nodes, 1200 amount of shell elements, and 900 amount of steel truss elements. MITC4 shell elements are used to smear the concrete and transverse steel into the thickness while the vertical reinforce bars are modeled as truss elements. RW1 had a compression buckling failure mode in the lab. More information on RW1 and its experimental results can be found here: [Wallace et al. (2004)](https://ascelibrary.org/doi/10.1061/%28ASCE%290733-9445%282004%29130%3A4%28618%29#:~:text=Application%20of%20displacement%2Dbased%20design,for%20a%20given%20top%20displacement.)  
  
 
 
@@ -78,7 +78,7 @@ The sections of the modeling script are: [Modeling Script](https://jupyter.desig
    * The height of each element is equal to the length of the nodes in the boundary to create square elements up the wall.  
   
 #### Section 3: Defines material models and their variables
-   * The crushing energy and fracture energy are calculated and wrote to the .tcl file. The equations for these values come from ([Nasser et al.](https://ascelibrary.org/doi/pdf/10.1061/%28ASCE%29ST.1943-541X.0002311)) Below is the code: 
+   * The crushing energy and fracture energy are calculated and wrote to the .tcl file. The equations for these values come from ([Nasser et al. (2019)](https://ascelibrary.org/doi/pdf/10.1061/%28ASCE%29ST.1943-541X.0002311)) Below is the code: 
 
 ```python
 self.gtcc = abs((0.174*(.5)**2-0.0727*.5+0.149)*((self.Walldata[40]*1000*conMult)/1450)**0.7) #tensile energy of confined
