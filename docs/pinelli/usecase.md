@@ -84,8 +84,7 @@ The exercise below is an illustration of these plotly features:
     
 Requirements:
     
-Jupyter Notebook and if you don’t have it, get it here to have it on local system [Anaconda Navigator](https://www.anaconda.com/) or here on [cloud](https://colab.research.google.com/)
-Once you have your notebook open and you don’t have plotly dash installed, go ahead and use: !pip install dash==1.14.0 --user
+Access [Jupyter Notebook on DesignSafe](https://jupyter.designsafe-ci.org/). Once you have your notebook open and you don’t have plotly dash installed, go ahead and use: `!pip install dash==1.14.0 --user`
     
 Building the Dataframe:
 Consider a box of spheres that change their numbers ranging from 1 to 10 every hour. You want to look at how the number changes for 12 hours.
