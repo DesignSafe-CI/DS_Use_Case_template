@@ -22,9 +22,7 @@ This use case example shows how to run an OpenSeesMP analysis on the high-perfor
 
 A hypothetical three dimensional soil–foundation– structure system on liquefiable soil layer is analyzed using OpenSees MP. The soil profile first included a 12-m thick dense sand layer with Dr of 90%, followed by a 4-m thick loose sand layer with Dr of 40%, and overlaid by a 2-m thick dense sand layer. The ground water table was at ground surface. An earthquake excitation was applied at the bottom of the soil domain under rigid bedrock conditons. A three-story, elastic structure was considered on a 1-m-thick mat foundation.The foundation footprint size (i.e., width and length) was 9.6m x 9.6m with bearing pressure of 65 kPa. Additional information cane be found in [Hwang et al. (2021)](https://ascelibrary.org/doi/pdf/10.1061/%28ASCE%29GT.1943-5606.0002546?casa_token=VvVOt4ua4GAAAAAA:f_aX-l0Jn0UwtpJf_0SfF323zdh7edMKxb3ou635HE5obgmO7amjFMkmLArlLE-LDM6MBfVCMPSh)
 
-<p align="center">
-    <img width="600" src="img/SchematicView.png" align="center">
-</p>
+![SchematicView](img/SchematicView.png)
 
 The use case workflow involves the following steps:
 * Creating the OpenSees input files using STKO.
@@ -39,8 +37,8 @@ The use case workflow involves the following steps:
 * Save all the files (tcl script and mpco.cdata files) in a folder under the user's My Data directory within the Data Depot.
 * Alternatively, the input OpenSees-STKO model can be created on the user's local computer and all the files uploaded to a My Data folder.
 
-<img src="img/TOOLS.png" width="450"> <img src="img/VM_STKO.png" height="300" width="500">
-
+![TOOLS](img/TOOLS.png)
+![VM_STKO](img/VM_STKO.png)
 
 
 
@@ -79,13 +77,17 @@ control_maxRunTime = '24:00:00'
 ### Submit and Run job on DesignSafe
 The script below submits the job to the HPC system.  
 ```python
-from agavepy.async import AgaveAsyncResponse
 job = ag.jobs.submit(body=job_description)
-asrp = AgaveAsyncResponse(ag, job)
+print("Job launched")
 ```
-The command below shows the status of the user's analysis.
+The command below shows the status of the user's analysis on an hourly basis.
 ```python
-asrp.result()
+import time
+status = ag.jobs.getStatus(jobId=job["id"])["status"]
+while status != "FINISHED":
+    status = ag.jobs.getStatus(jobId=job["id"])["status"]
+    print(f"Status: {status}")
+    time.sleep(3600)
 ```
 ### Identify Job ID and Archived Location
 
@@ -109,9 +111,7 @@ The output from an OpenSeesMP-STKO analysis are provided in a number of '\*.mpco
 ### Visualize and extract data from STKO
 After the job is finished, the user can use [STKO](https://www.designsafe-ci.org/rw/workspace/#!/stko-ds-exec-01-1.0.0u1) to visualize the results in the '\*.mpco' files that are located in the archive directory. If the user would like to extract data from the GUI of STKO, they can copy and paste the data using the "Leafpad" text editor within the DS virtual machine that serves STKO.  The user can then save the text file to a folder within the user's My Data directory.
 
-<p align="center">
-    <img width="600" src="img/Post_OPENSEES_STKO.png" align="center">
-</p>
+![Post_OPENSEES_STKO](img/Post_OPENSEES_STKO.png)
 
 ### Example post-processing scripts using Jupyter
 
@@ -142,19 +142,12 @@ eval "recorder Node -file $filename.txt -time -node $SoilList -dof 4 -dT $timest
 ### Example Post-processing Results
 This section shows the results from the post-processing scripts performed via the Jupyter notebook. The notebook is broken into segments with explanations of each section of code.  Users should edit the code to fit their own needs.   
  
- **Response spectra for motions at various locations within the model**
- <p align="center">
-    <img width="600" src="img/Sa.png" align="center">
-</p>
+**Response spectra for motions at various locations within the model**
+![Sa](img/Sa.png)
 
 **Time history of excess pore pressure at different locations in the soil**
-  
- <p align="center">
-    <img width="600" src="img/EPWP.png" align="center">
-</p>
+![EPWP](img/EPWP.png)
 
 **Time history of foundation settlement and tilt**
-  
- <p align="center">
-    <img width="600" src="img/Foundation.png" align="center">
-</p>
+
+![Foundation](img/Foundation.png)  

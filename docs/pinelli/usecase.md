@@ -1,89 +1,159 @@
-# TITLE for Use Case Documentation Page
+# Wind Data Analysis Tools
 
-**Authors, Affiliations**  
+**Soundarya Sridhar and Jean-Paul Pinelli, Florida Institute of Technology**  
 
-Introductory Text.  High-level overview of product. A condimentum vitae sapien pellentesque habitant morbi tristique.
+Florida Tech (FIT) teams  deploy networks of wireless sensors on residential houses during high impact wind events or on full scale wind tunnel models. Each team deploys pressure, temperature and humidity sensors alongside anemometry, which includes different anemometers and a conical scanning infrared lidar . The workflow starts with uploading the data to DesignSafe through authentication tokens created in Tapis. Once on DesignSafe, three Jupyter notebooks process and visualize the instruments’ data for analyses. The notebooks provide a user friendly and interactive environment that can adapt to different datasets. For this project, the notebooks perform quasi static real-time analyses, assess sensor performance, study pressure variations for different wind conditions and data correlation. The user interactivity of these notebooks facilitates an easy adaptation to different datasets with little to no-change in code.
 
-## Background 
+<img src="../img/Workflow.png"  width="600">
+
 
 ### Citation and Licensing
 
-* Please cite [AUTHORS et al. (20xx) - example of published project](https://doi.org/10.17603/ds2-3zdj-493) to acknowledge the use of any resources from this use case.
+* Please cite [J. Wang et al. (2021)](https://tigerprints.clemson.edu/cgi/viewcontent.cgi?article=1077&context=aawe) and [S. Sridhar et al. (2021)](https://tigerprints.clemson.edu/cgi/viewcontent.cgi?article=1068&context=aawe) to acknowledge the use of any resources from this use case.
 
-* Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246) to acknowledge the use of DesignSafe resources.  
+* Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246), [Pinelli et al. (2020)](https://link.springer.com/article/10.1007/s13753-020-00320-8) and [Rathje et al. (2020)](https://doi.org/10.3389/fbuil.2020.547706) to acknowledge the use of DesignSafe resources.  
 
-* This software is distributed under the GNU General Public License (https://www.gnu.org/licenses/gpl-3.0.html).  
-
-### Description 
-
-Enim ut sem viverra aliquet.  Nisi scelerisque eu ultrices vitae auctor. Scelerisque viverra mauris in aliquam.  Ut morbi tincidunt augue interdum velit euismod in pellentesque massa. Sagittis purus sit amet volutpat consequat mauris nunc congue nisi. Sed adipiscing diam donec adipiscing tristique.  In pellentesque massa placerat duis. Tortor condimentum lacinia quis vel eros donec ac. Sed velit dignissim sodales ut eu sem. Adipiscing elit duis tristique sollicitudin nibh sit amet commodo. Quis risus sed vulputate odio ut.
-
-[Link Example - this goes to Google](https://www.google.com)
-
-## Header 2
-
-Euismod nisi porta lorem mollis aliquam ut. Tincidunt ornare massa eget egestas purus viverra accumsan in. Varius quam quisque id diam vel. Fermentum odio eu feugiat pretium nibh ipsum consequat nisl. Placerat duis ultricies lacus sed turpis tincidunt id aliquet risus. Condimentum vitae sapien pellentesque habitant morbi tristique senectus et netus. Egestas sed sed risus pretium quam vulputate. Posuere morbi leo urna molestie at elementum. Eget magna fermentum iaculis eu non diam. Nisl tincidunt eget nullam non nisi. Sit amet risus nullam eget felis eget nunc lobortis mattis.
-
-### Header2 Subheading
-
-In aliquam sem fringilla ut morbi. Interdum varius sit amet mattis vulputate enim nulla aliquet. Sit amet mattis vulputate enim nulla.  In egestas erat imperdiet sed euismod nisi porta lorem. Eget nulla facilisi etiam dignissim diam.  Facilisi cras fermentum odio eu feugiat. Velit aliquet sagittis id consectetur. Vel quam elementum pulvinar etiam.  Ut diam quam nulla porttitor massa id neque aliquam. Sodales ut etiam sit amet nisl.  Scelerisque varius morbi enim nunc faucibus a. Sit amet volutpat consequat mauris nunc. Et leo duis ut diam.
-
-*Add images to the folder img and use relative path to specify the location of the image.*   
-
-![caption](img/mkdocs-template.png)
-> Use case template design
+* This software is distributed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.html).  
 
 
-## Header3
+## Background 
+    
+### Quasi-real time Data Upload with Tapis
 
-Morbi tristique senectus et netus et. Tristique senectus et netus et malesuada fames.  Eu mi bibendum neque egestas congue quisque. Id consectetur purus ut faucibus pulvinar elementum integer enim. Nunc consequat interdum varius sit amet mattis vulputate enim nulla.  Porta nibh venenatis cras sed felis eget. Dui id ornare arcu odio ut sem nulla pharetra diam. Pellentesque habitant morbi tristique senectus et netus et. Commodo nulla facilisi nullam vehicula ipsum a arcu. Nisi porta lorem mollis aliquam ut porttitor leo.
+The user needs a DesignSafe-CI (DS) account. During deployment, data is uploaded to DS in user defined time interval. Tapis CLI and [Python 3 executable](https://www.python.org/downloads/windows/) enable this feature and must be installed on the local system. The user initiates Tapis before every deployment through Windows PowerShell and Tapis creates a token as described below:
 
-Numbered list 
+Video Tutorial (Timestamps - 28:01 to 35:04): [https://www.youtube.com/watch?v=C2McrpQ8XmI](https://youtu.be/C2McrpQ8XmI?t=1678)
 
-1. [numbered linked item](https://maps.google.com)
-2. second item
-3. third item
+**User Guide**
 
-### Header3 subheading
-
-Ac feugiat sed lectus vestibulum mattis ullamcorper. Et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut. Scelerisque eu ultrices vitae auctor eu augue ut lectus arcu.  Imperdiet proin fermentum leo vel orci porta non pulvinar. Dictumst quisque sagittis purus sit amet. Aliquam purus sit amet luctus. Aliquet bibendum enim facilisis gravida neque convallis a cras. Orci porta non pulvinar neque laoreet suspendisse. Urna neque viverra justo nec ultrices dui.
-
-**Example Table**
-
-| Column 1 | Column 2 | Column 3 |
-|----------|----------|----------|
-| Stampede2| CPU      | 2017     |     
-| Frontera | CPU & GPU| 2019     |     
-
-Or use markdown table generator: [https://www.tablesgenerator.com/markdown_tables](https://www.tablesgenerator.com/markdown_tables)
+1.	Turn on Windows Power Shell and enter the command tapis auth init –interactive.  
+2.	Enter designsafe for the tenant name,. 
+3.	Enter the DesignSafe username and password of the authorized user. 
+4.	Choose to set up Container registry access and Git server access, or skip this step by pressing the return key. 
+5.	Create a token using the command tapis auth tokens create. At the end, the following response will appear on the cmd line. 
 
 
-### Math
+<img src="../img/Picture2.png"  width="600">
+    
+    
+### Using Jupyter Notebooks
 
-To generate math equations in markdown.
+To save time and memory, the project uses three different notebooks. For any event, either a field deployment or a wind tunnel experiment, the first notebook inputs metadata (sensor information, data columns, timestamp formats) for the dataset and is ideally used once for every event. It outputs a csv file containing the metadata required to run the second notebook. The second notebook calibrates raw data and organizes them into csv and pickled files. This notebook may be run more than once depending on how often new data is uploaded during the event. With the third notebook, users analyze and visualize the data interactively. This is the most frequently used notebook and is run everytime the data needs to be analyzed. There is no need to execute the notebooks sequentially everytime an analysis is done. The figure below illustrates the possible sequences of analysis: 
 
-For inline mode formulas: $`a^2+b^2=c^2`$.
 
-For display mode formulas which appear on a separate line
-```math
-f(x) = \int_{-\infty}^\infty
-\hat f(\xi)\,e^{2 \pi i \xi x}
-\,d\xi
+<img src="../img/Jupyter user roles.png"  width="600">
+
+    
+### Adaptation to Different Datasets
+
+The first notebook is a user interactive guide to input important raw data information. This notebook saves time as the user does not have to read, understand and edit the code to change information regarding sensors, columns and data formats.  For example, WSNS deployment during the tropical storm Isaias (8/2/2020) used an old and a new WSNS system. The first notebook documented the significant differences in data storage between the two systems. This accelerates data processing as there is no change required in code and the file generated by the notebook acts as a metadata for the second notebook responsible for data processing. The figure below are snapshots of the output file created by the first notebook describing raw data information from two different systems.
+    
+
+<img src="../img/Picture4.png"  width="300" height="250">
+<img src="../img/Picture5.png"  width="300" height="350">
+   
+
+    
+## Jupyter Notebooks
+
+### Analyses Notebooks and Examples
+
+The project goal is to measure pressure variation on non-structural components during strong wind events using the network of wireless sensors. The analysis notebooks on DesignSafe are user interactive with markdowns describing the test. They also provide the users with several options to visualize the data. For example, see the analysis notebook for [Isaias](https://doi.org/10.17603/ds2-6qnj-tv17) (tropical storm on August 1-3, 2020). The markdowns have important information and pictures from the deployment, and instructions for the user to easily access data.
+ 
+<img src="../img/jupyter.png"  width="520">
+
+And a menu allows user to select from options and look at specific time windows or test conditions.
+   
+<img src="../img/Picture7.png"  width="520">
+   
+    
+### Using Plotly for Data Driven Animation Frames
+
+The project objective is to study high impact wind events on non-structural components of residential houses. After the deployment, Jupyter notebooks process and visualize important data for different purposes, including among others:  comparisons to ASCE 7 standard; and, assessment of sensor performance with respect to wind conditions. Plotly can create animation frames to look at a snapshot of data from all sensors in different test conditions or even at different timestamps.  A single line of code enabled with the right dataframe can quickly reveal trends in the data,  and facilitate troubleshooting of any system errors. The figure below shows an application of plotly for one of the Wall of Wind tests for glass sliding doors. The test model was a mock-up box with flat roof, and full scale glass sliding doors were tested at at 105 mph for different wind directions. At uniform velocity, data for each wind direction was collected for 3 minutes and the program computed pressure coefficient Cp values averaged over that time window. A 2D scatter plot was created with x and z dimensions with each point representing a sensor whose color corresponded to a Cp value on the color scale. A single line of code  enables the animation frame, which reveals important information:
+
+```python
+px.scatter(dataframe, x=x column, y=y column, color=scatter point values, text=text to be displayed for each point, range_color=color scale range, animation_frame=variable for each animation frame, title = plot title)
+``` 
+
+Including dimensions and trace lines to the plots can add more clarity.
+
+<img src="../img/Picture8.png"  width="425">
+<img src="../img/Picture9.gif"  width="300">
+
+The exercise below is an illustration of these plotly features:
+    
+Requirements:
+    
+Access [Jupyter Notebook on DesignSafe](https://jupyter.designsafe-ci.org/). Once you have your notebook open and you don’t have plotly dash installed, go ahead and use: `!pip install dash==1.14.0 --user`
+    
+Building the Dataframe:
+Consider a box of spheres that change their numbers ranging from 1 to 10 every hour. You want to look at how the number changes for 12 hours.
+
+**Code**
+
+```python
+# Importing libraries
+import random
+import pandas as pd
+
+# Define necessary columns
+spheres=[1,2,3,4,5]
+x=[6,14,10,6,14]
+y=[6,6,10,14,14]
+rad=[]
+for i in range (0,5): #generates 5 random numbers ranging from 1 to 10
+    n = random.randint(1,10)
+    rad.append(n)
+hour=1
+Label = ['1','2','3','4','5']
+
+df=pd.DataFrame(spheres,columns=['Sphere']) #dataframe for first hour
+df['x']=x
+df['y']=y
+df['number']=rad
+df['hour']=hour
+df['label']=Label
+for i in range (0,11): #for loop to repeat for the next 11 hours
+    hour=hour+1
+    temp=pd.DataFrame(spheres,columns=['Sphere'])
+    temp['x']=x
+    temp['y']=y
+    rad=[]
+    for i in range (0,5):
+        n = random.randint(1,10)
+        rad.append(n)
+    temp['number']=rad
+    temp['hour']=hour
+    temp['label']=Label
+    df=df.append(temp)  
+    
+print(df)
 ```
 
-### Code
+Matching the right columns to suit the syntax will result in an animation frame and a slider!
 
-``` python
-import tensorflow as tf
+```python
+import plotly.express as px
+import plotly.graph_objects as go
+
+fig = px.scatter(df, x='x',y='y', color='number',text="label", animation_frame='hour',title='Magic Box') #animation frame
+fig.update_traces(textposition='top center',mode='markers', marker_line_width=2, marker_size=40)                      
+trace1 = go.Scatter(x=[2, 2], y=[2, 18],line=dict(color='black', width=4),showlegend=False) #Tracelines to create the box
+trace2 = go.Scatter(x=[2, 18], y=[18, 18],line=dict(color='black', width=4),showlegend=False)
+trace3 = go.Scatter(x=[18, 18], y=[18, 2],line=dict(color='black', width=4),showlegend=False)
+trace4 = go.Scatter(x=[18, 2], y=[2, 2],line=dict(color='black', width=4),showlegend=False)
+fig.add_trace(trace1)
+fig.add_trace(trace2)
+fig.add_trace(trace3)
+fig.add_trace(trace4)
+fig.update_layout(autosize=False,width=500,height=500,showlegend=True)
+fig.show()
 ```
 
-Highlight specific lines of the code
+<img src="../img/Picture10.gif"  width="450">
 
-``` python hl_lines="3 4"
-""" Bubble sort """
-def bubble_sort(items):
-    for i in range(len(items)):
-        for j in range(len(items) - 1 - i):
-            if items[j] > items[j + 1]:
-                items[j], items[j + 1] = items[j + 1], items[j]
-```
+## Published Datasets and Notebooks
+    
+• Subramanian, C. Lazarus, S. Pinelli, J. Sun, J. Wang, J. Splitt, M. Besing, H. Sridhar, S. (2021) "WSN and Lidar Deployment during Hurricane Isaias, Satellite Beach, Melbourne, FL, Aug 2020", in Hurricane ISAIAS Data from Wireless Pressure Sensor Network and LIDAR. DesignSafe-CI. [https://doi.org/10.17603/ds2-6qnj-tv17](https://doi.org/10.17603/ds2-6qnj-tv17).
+
+• Pinelli, J. Subramanian, C. Lazarus, S. Wang, J. Sridhar, S. Zhang, J. Erwin, J. Chen, D. Lebbar, A. (2022) "Sliding Glass Patio Doors with and without Shutter", in Lab Tests with Wireless Sensor Network (WSN) system for the characterization of strong wind loads on non-structural components. DesignSafe-CI. [https://doi.org/10.17603/ds2-jv3x-fp80](https://doi.org/10.17603/ds2-jv3x-fp80).
