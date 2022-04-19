@@ -70,10 +70,12 @@ And a menu allows user to select from options and look at specific time windows 
 ### Using Plotly for Data Driven Animation Frames
 
 The project objective is to study high impact wind events on non-structural components of residential houses. After the deployment, Jupyter notebooks process and visualize important data for different purposes, including among others:  comparisons to ASCE 7 standard; and, assessment of sensor performance with respect to wind conditions. Plotly can create animation frames to look at a snapshot of data from all sensors in different test conditions or even at different timestamps.  A single line of code enabled with the right dataframe can quickly reveal trends in the data,  and facilitate troubleshooting of any system errors. The figure below shows an application of plotly for one of the Wall of Wind tests for glass sliding doors. The test model was a mock-up box with flat roof, and full scale glass sliding doors were tested at at 105 mph for different wind directions. At uniform velocity, data for each wind direction was collected for 3 minutes and the program computed pressure coefficient Cp values averaged over that time window. A 2D scatter plot was created with x and z dimensions with each point representing a sensor whose color corresponded to a Cp value on the color scale. A single line of code  enables the animation frame, which reveals important information:
-    
+
+```python
 px.scatter(dataframe, x=x column, y=y column, color=scatter point values, text=text to be displayed for each point, range_color=color scale range, animation_frame=variable for each animation frame, title = plot title)
-    
-Additional lines of code describing indentations, dimensions and trace lines can add more clarity.
+``` 
+
+Including dimensions and trace lines to the plots can add more clarity.
 
 <img src="../img/Picture8.png"  width="425">
 <img src="../img/Picture9.gif"  width="300">
