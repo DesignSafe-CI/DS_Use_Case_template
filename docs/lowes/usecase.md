@@ -54,21 +54,20 @@ The use case workflow involves the following steps:
 
 ## Create Input File using Modeling Script
 
-The jupyter notebook that creates the OpenSees input file can be found here: (LINK TO FILE).
+The modeling script is broken up into 2 notebooks, the first notebook imports the variables to build the wall into an array. The second notebook builds out the tcl file that will be ran through openseees. The sections defined below are from the second notebook.  
+The matlab to python script can be found here: [matlab_to_python](https://jupyter.designsafe-ci.org/user/stokljos/notebooks/MyData/UseCaseScripts/TCL_Script_Creator.ipynb)  
+The jupyter notebook that creates the OpenSees input file can be found here: [Modeling Script](https://jupyter.designsafe-ci.org/user/stokljos/notebooks/MyData/UseCaseScripts/TCL_Script_Creator.ipynb)    
+.
 
 ### Reinforced Concrete Wall Database   
 
 Each wall in the database has a number corresponding to its unique ID. This number will be the single input to the modeling script to create the script. The use case will loop through multiple numbers to create multiple files at once and run them through opensees. Variables are separated in the database by sections. For example, under the section 'Geometry', one can find the heights of the walls, the thickness of walls, the aspect ratios, and so on. By parsing through these sections, the necessary information can found and imported into the modeling script to build out the wall.
 
-RW1 is wall 34 in the database and using that single number, the modeling script can grab everything that defines RW1.  
-
-
+RW1 is wall 33 in the database (with the first wall index starting at 0) and using that index number, the modeling script can grab everything that defines RW1.  
 
 ### Modeling Script  
-The modeling script is broken up into 2 notebooks, the first notebook imports the variables to build the wall into an array. The second notebook builds out the tcl file that will be ran through openseees. The sections defined below are from the second notebook.  
-The matlab to python script can be found here: [matlab_to_python](https://jupyter.designsafe-ci.org/user/stokljos/notebooks/MyData/UseCaseScripts/TCL_Script_Creator.ipynb)  
-The sections of the modeling script are: [Modeling Script](https://jupyter.designsafe-ci.org/user/stokljos/notebooks/MyData/UseCaseScripts/TCL_Script_Creator.ipynb)  
 
+The sections of the modeling script are:  
 #### Section 1: Initialization of the model
    * The degrees of freedom and the variables that carry uncertainty are defined.  
   
