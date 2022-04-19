@@ -21,14 +21,14 @@ The purpose of this use case is to be able to model, simulate, and post process 
 
 ### Data  
 
-The walls that are modeled are defined in a database provided by Alex Shegay. The database is a MATLAB variable of type 'structure'. The tree-like structure of the variable consists of several levels. Each level consists of several varaiables, each being a 1x142 dimension array. Each entry within the array corresponds to a separate wall specimen. The order of these entries is consistent throughout the database and reflects the order of walls as appearing in the 'UniqueID' array.  
+The walls that are modeled are defined in a database provided by Alex Shegay. The database is a MATLAB variable of type 'structure'. The tree-like structure of the variable consists of several levels. Each level consists of several variables, each being a 1x142 dimension array. Each entry within the array corresponds to a separate wall specimen. The order of these entries is consistent throughout the database and reflects the order of walls as appearing in the 'UniqueID' array.  
 
 ### Modeling
 
 The modeling techniques are inspired by the work of Lu XZ.
 The modeling of these walls make use of the MITC4 shell element. This element smears concrete and steel in multiple layers through the thickness of the element. Figure 1 demonstrates this.  Within the shell element, only the transverse steel is smeared with the concrete. The shell elements are modeled to be square or close to square for best accuracy, an assumption that follows this is that cover concrete on the ends of the wall are not taken into account as it would produce skinny elements that would cause the wall to fail prematurely. The vertical steel bars are modeled as trusses up the wall to better simulate the stress of those bars.  The opensees material models that are used are:  
 
-* PlaneStressUserMaterial- Utilizes damage mechanisms and smeared crack model to defin a multi-dimensional concrete model  
+* PlaneStressUserMaterial- Utilizes damage mechanisms and smeared crack model to define a multi-dimensional concrete model  
     * Variables include: compressive strength, tensile strength, crushing strength, strain at maximum and crushing strengths, ultimate tensile strain, and shear retention factor
     * Model can be found in Lu XZs citation  
    
@@ -49,7 +49,7 @@ The use case workflow involves the following steps:
 
 * Using Jupyter notebook modeling script to create input file for OpenSees
 * Running input file through HPC on DesignSafe
-* Using Jupyter notebook post processing scripts to evaulate model
+* Using Jupyter notebook post processing scripts to evaluate model
 
 
 ## Create Input File using Modeling Script
@@ -58,14 +58,15 @@ The jupyter notebook that creates the OpenSees input file can be found here: (LI
 
 ### Reinforced Concrete Wall Database   
 
-Each wall in the database has a number corrosponding to its unique ID. This number will be the single input to the modeling script to create the script. The use case will loop through multiple numbers to create multiple files at once and run them through opensees. Variables are seperated in the database by sections. For example, under the section 'Geometry', one can find the heights of the walls, the thickness of walls, the aspect ratios, and so on. By parsing through these sections, the necassary information can found and imported into the modeling script to build out the wall.
+Each wall in the database has a number corresponding to its unique ID. This number will be the single input to the modeling script to create the script. The use case will loop through multiple numbers to create multiple files at once and run them through opensees. Variables are separated in the database by sections. For example, under the section 'Geometry', one can find the heights of the walls, the thickness of walls, the aspect ratios, and so on. By parsing through these sections, the necessary information can found and imported into the modeling script to build out the wall.
 
 RW1 is wall 34 in the database and using that single number, the modeling script can grab everything that defines RW1.  
 
 
 
 ### Modeling Script  
-
+The modeling script is broken up into 2 notebooks, the first notebook imports the variables to build the wall into an array. The second notebook builds out the tcl file that will be ran through openseees. The sections defined below are from the second notebook.  
+The matlab to python script can be found here: [matlab_to_python](https://jupyter.designsafe-ci.org/user/stokljos/notebooks/MyData/UseCaseScripts/TCL_Script_Creator.ipynb)  
 The sections of the modeling script are: [Modeling Script](https://jupyter.designsafe-ci.org/user/stokljos/notebooks/MyData/UseCaseScripts/TCL_Script_Creator.ipynb)  
 
 #### Section 1: Initialization of the model
@@ -73,11 +74,11 @@ The sections of the modeling script are: [Modeling Script](https://jupyter.desig
   
 #### Section 2: Defines nodal locations and elements 
    * Nodes are placed at the locations of the vertical bars along the length of the wall.
-   * If the ratio of the length of the wall to the number of elements is too coarse of a mesh, additional nodes are placed inbetween the bars.
+   * If the ratio of the length of the wall to the number of elements is too coarse of a mesh, additional nodes are placed in between the bars.
    * The height of each element is equal to the length of the nodes in the boundary to create square elements up the wall.  
   
 #### Section 3: Defines material models and their variables
-   * The crushing energy and fracture energy are calculated and wrote to the .tcl file. The equations for these values come from (Nasser et al.) Below is the code: 
+   * The crushing energy and fracture energy are calculated and wrote to the .tcl file. The equations for these values come from ([Nasser et al.](https://ascelibrary.org/doi/pdf/10.1061/%28ASCE%29ST.1943-541X.0002311)) Below is the code: 
 
 ```python
 self.gtcc = abs((0.174*(.5)**2-0.0727*.5+0.149)*((self.Walldata[40]*1000*conMult)/1450)**0.7) #tensile energy of confined
@@ -91,12 +92,12 @@ self.gfcc = 2.2*self.gfuc #crushing energy of confined
    * The concrete material opensees model: nDmaterial PlaneStressUserMaterial $matTag 40 7 $fc $ft $fcu $epsc0 $epscu $epstu $stc.
       * 'fc' is the compressive strength, 'ft' is the tensile strength, 'fcu' is the crushing strength, and 'epsc0' is the strain at the compressive strength.
    * The steel material opensees model: uniaxialMaterial Steel02 $matTag $Fy $E $b $R0 $cR1 $cR2.
-      * 'Fy' is the yield strength, 'E' is the youngs modulus, 'b' is the strain hardening ratio, and 'R0', 'cR1', and 'cR2' are paramters to control transitions from elastic to plastic branches.
+      * 'Fy' is the yield strength, 'E' is the youngs modulus, 'b' is the strain hardening ratio, and 'R0', 'cR1', and 'cR2' are parameters to control transitions from elastic to plastic branches.
    * minMax wrappers are applied to the steel so that if the steel strain compresses more than the crushing strain of the concrete or exceeds the ultimate strain of the steel multiplied by the steel rupture ratio, the stress will go to 0.  
   
 #### Section 4: Defines the continuum shell model
    * The shell element is split up into multiple layers of the cover concrete, transverse steel, and core concrete.
-   * The cover concrete thickness is defined in the database, the transverse steel thickness is calculcated as:
+   * The cover concrete thickness is defined in the database, the transverse steel thickness is calculated as:
       * total layers of transverse steel multiplied by the area of the steel divided by the height of the wall.
    * The total thickness of the wall is defined in the database so after the cover concrete and steel thicknesses are subtracted, the core concrete takes up the rest.
   
@@ -140,9 +141,19 @@ self.f.write('recorder Element -xml "trussseps.xml" -eleRange ' + str(self.maxEl
    * The experimental displacement recording of the wall is defined in the database and the peak displacement of each cycle is extracted.
    * If the effective height of the wall is larger than the measured height, a moment is calculated from that difference and uniformly applied in the direction of the analysis to each of the top nodes.
    * The displacement peaks are then defined in a list and ran through an opensees algorithm.
-      * This algorithm takes each peak and displaces the top nodes of the wall by 0.01 inches until that peak is reached, it then displaces by 0.01 inches back to zero where it then takes on the next peak. This process continues until failure of the wall or until the last peak is reached.
+      * This algorithm takes each peak and displaces the top nodes of the wall by 0.01 inches until that peak is reached, it then displaces by 0.01 inches back to zero where it then takes on the next peak. This process continues until failure of the wall or until the last peak is reached.  
   
-The last function of the script is to then run the wall through opensees (This feature can be disabled if the user would like to look at the script before running OpenSees)  
+The last section of this notebook creates a reference file that holds variables needed for postprocessing. In order, those variables are:
+  * Total nodes along the width of the wall
+  * Total nodes along the width of the wall that are connected to a truss element
+  * Total nodes in the file
+  * Total elements in the file
+  * Displacement peaks in the positive direction
+  * Fracture strength of the concrete
+  * total layers of elements in the file
+  * Unique ID of the wall
+  * filepath to the folder of the wall
+  * filepath to the tcl file  
 
   
 ## Running Opensees through HPC
@@ -152,26 +163,30 @@ The last function of the script is to then run the wall through opensees (This f
 
 ## Post Processing
 
-After the script is finished running through OpenSees, there are multiple post-processing scripts that can be used to analyize the simulation and compare it to the experimental numbers.
+After the script is finished running through OpenSees, there are multiple post-processing scripts that can be used to analyze the simulation and compare it to the experimental numbers.
 
-### Load-Displacment Graph
+### Load-Displacement Graph
 
-The Load-Displacement script compares the experimental cyclic load history to the simulated cyclic load output. This Script can be found here: [Load Displacement Script](https://jupyter.designsafe-ci.org/user/stokljos/notebooks/MyData/UseCaseScripts/LoadDisplacement.ipynb)  
+The Load-Displacement script compares the experimental cyclic load history to the simulated cyclic load output. The x axis is defined as drift % which is calculated as displacement (inches) divided by the height of the wall. The y axis is defined as shear ratio and calculated as force (kips) divided by cross sectional area and the square root of the concrete compressive strength.  This Script can be found here: [Load Displacement Script](https://jupyter.designsafe-ci.org/user/stokljos/notebooks/MyData/UseCaseScripts/LoadDisplacement.ipynb)  
 
 ![SchematicView](img/disp.JPG)
 
 ### Cross Sectional Analysis of Concrete and Steel
 
-The cross sectional script shows stress and strain output across the cross section of the first level for the concrete and steel at various points on the displacement history. This script can be found here: [Cross Section Analysis Script](https://jupyter.designsafe-ci.org/user/stokljos/notebooks/MyData/UseCaseScripts/CrossSectionAnalysis.ipynb)   
+The cross sectional script shows stress and strain output across the cross section of the first level for the concrete and steel at various points corresponding with the positive displacement peaks.  This script can be found here: [Cross Section Analysis Script](https://jupyter.designsafe-ci.org/user/stokljos/notebooks/MyData/UseCaseScripts/CrossSectionAnalysis.ipynb)   
+
 ![SchematicView](img/cs1.JPG)  
+
 ![SchematicView](img/cs1.JPG)  
 
 ### Stress and Strain Profile Movies
 
-The Stress/Strain profile movie script utilizes plotly to create an interactive animation of stresses and strains on the wall throughout the load history. The stress animations are vertical stress, shear stress, and maximum and minimum principal stress. The strain animations are vertical strain, shear strain, and maximum and minimum principal strain. This script can be found here: [Stress/Strain Movie Profiles Script](https://jupyter.designsafe-ci.org/user/stokljos/notebooks/MyData/UseCaseScripts/Movies.ipynb)    
+The Stress/Strain profile movie script utilizes plotly to create an interactive animation of stresses and strains on the wall throughout the load history. The stress animations are vertical stress, shear stress, and maximum and minimum principal stress. The strain animations are vertical strain, shear strain, and maximum and minimum principal strain. This script can be found here: [Stress/Strain Movie Profiles Script](https://jupyter.designsafe-ci.org/user/stokljos/notebooks/MyData/UseCaseScripts/Movies.ipynb)  
+
 ![SchematicView](img/movies.JPG)  
 
 ### Crack Angle of Quadrature Points
 
-The crack angle script will show at what angle each quadrature point cracks. This script can be found here: [Cracked Points Script](https://jupyter.designsafe-ci.org/user/stokljos/notebooks/MyData/UseCaseScripts/cracked%20model.ipynb)   
+The crack angle script will show at what angle each quadrature point cracks. When the concrete reaches its fracture strength in the direction of the maximum principal stress, it is assumed that it cracked and the orientation at that point is then calculated shown on the graph. The blue lines indicates the crack angle was below the local x axis of the element and the red line means the crack angle was above the local x axis of the element.  This script can be found here: [Cracked Points Script](https://jupyter.designsafe-ci.org/user/stokljos/notebooks/MyData/UseCaseScripts/cracked%20model.ipynb)   
+
 ![SchematicView](img/cracked.JPG)  
