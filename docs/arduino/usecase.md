@@ -1,7 +1,6 @@
 # From constitutive parameter calibration to site response analysis
 
-
-Pedro Arduino, University of Washington
+**Pedro Arduino, University of Washington**
 
 A collection of educational notebooks to introduce model parameter calibration and site response analysis using OpenSees in DesignSafe-CI
 
