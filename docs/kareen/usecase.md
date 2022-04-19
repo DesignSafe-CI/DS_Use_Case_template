@@ -10,7 +10,7 @@ All files discussed in this use case are shared at [Data Depot > Community Data]
 
 * Please cite [Ding and Kareem (2021)](https://tigerprints.clemson.edu/cgi/viewcontent.cgi?article=1025&context=aawe) to acknowledge the use of any resources from this use case.
 * Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246) to acknowledge the use of DesignSafe resources.
-* This software is distributed under the GNU General Public License (https://www.gnu.org/licenses/gpl-3.0.html).
+* This software is distributed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.html).
 
 ## OpenFOAM with the Jupyter Notebook for creating input environments
 
