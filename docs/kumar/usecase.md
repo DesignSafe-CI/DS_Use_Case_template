@@ -17,7 +17,7 @@ This use case demonstrates how to run MPM simulations on DesignSafe using [Jupyt
 
 * Please cite [Abram et al. (2022)](https://arxiv.org/abs/2109.02754) to acknowledge the use of any resources from this use case.
 
-* This software is distributed under the MIT License (https://github.com/cb-geo/mpm/blob/develop/license.md).
+* This software is distributed under the [MIT License](https://github.com/cb-geo/mpm/blob/develop/license.md).
 
 ## Input generation
 
