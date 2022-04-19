@@ -17,8 +17,11 @@ Site response analysis for liquefiable soils is fundamental in the estimation of
 > TODO: Link to community data 
 
 This document presents a suite of Jupyter Notebooks published in DesignSafe that navigate the process of  constitutive model parameter calibration and site response analysis for a simple liquefaction case. They also introduce methods useful when using DesignSafe infrastructure in TACC. All notebooks leverage existing SimCenter backend functionality (e.g. Dakota, OpenSees, etc) implemented in quoFEM and run locally and in TACC through DesignSafe. Three notebooks are included for this purpose: 
+
 1. **Site response workflow notebook**: This notebook introduces typical steps used in geotechnical numerical analysis workflows taking advantage of Jupyter and DesignSafe.
+
 2. **Parameter calibration notebook**: This  notebook is customized for the PM4Sand model and presents the estimation of its main parameters that best fit experimental data as well as their uncertainty.
+
 3. **Propagation of parameter undertainty in site response analysis notebook**: This notebook introduces methods to propagate material parameter uncertainties in site reponse analysis.
 
 This first version of this use-case page includes details on the site response workflow notebook. The parameter calibration and propagation of uncertainties notebooks will be updated in a second version.
