@@ -1,89 +1,109 @@
-# TITLE for Use Case Documentation Page
+# Using Taggit to browse and tag Hurricane Irma damage survey images on DesignSafe
 
-**Authors, Affiliations**  
+**Fred L. Haan, Jr, Calvin University**  
 
-Introductory Text.  High-level overview of product. A condimentum vitae sapien pellentesque habitant morbi tristique.
+Taggit allows users to browse images files on DesignSafe and tag them for later use in analysis or mapping applications. It also easily connects to HazMapper to map image locations. This use case illustrates how photos from a 2017 damage survey in the Florida Keys after Hurricane Irma were organized into groups and tagged for later analysis. 
 
-## Background 
 
 ### Citation and Licensing
 
-* Please cite [AUTHORS et al. (20xx) - example of published project](https://doi.org/10.17603/ds2-3zdj-493) to acknowledge the use of any resources from this use case.
-
 * Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246) to acknowledge the use of DesignSafe resources.  
 
-* This software is distributed under the GNU General Public License (https://www.gnu.org/licenses/gpl-3.0.html).  
-
-### Description 
-
-Enim ut sem viverra aliquet.  Nisi scelerisque eu ultrices vitae auctor. Scelerisque viverra mauris in aliquam.  Ut morbi tincidunt augue interdum velit euismod in pellentesque massa. Sagittis purus sit amet volutpat consequat mauris nunc congue nisi. Sed adipiscing diam donec adipiscing tristique.  In pellentesque massa placerat duis. Tortor condimentum lacinia quis vel eros donec ac. Sed velit dignissim sodales ut eu sem. Adipiscing elit duis tristique sollicitudin nibh sit amet commodo. Quis risus sed vulputate odio ut.
-
-[Link Example - this goes to Google](https://www.google.com)
-
-## Header 2
-
-Euismod nisi porta lorem mollis aliquam ut. Tincidunt ornare massa eget egestas purus viverra accumsan in. Varius quam quisque id diam vel. Fermentum odio eu feugiat pretium nibh ipsum consequat nisl. Placerat duis ultricies lacus sed turpis tincidunt id aliquet risus. Condimentum vitae sapien pellentesque habitant morbi tristique senectus et netus. Egestas sed sed risus pretium quam vulputate. Posuere morbi leo urna molestie at elementum. Eget magna fermentum iaculis eu non diam. Nisl tincidunt eget nullam non nisi. Sit amet risus nullam eget felis eget nunc lobortis mattis.
-
-### Header2 Subheading
-
-In aliquam sem fringilla ut morbi. Interdum varius sit amet mattis vulputate enim nulla aliquet. Sit amet mattis vulputate enim nulla.  In egestas erat imperdiet sed euismod nisi porta lorem. Eget nulla facilisi etiam dignissim diam.  Facilisi cras fermentum odio eu feugiat. Velit aliquet sagittis id consectetur. Vel quam elementum pulvinar etiam.  Ut diam quam nulla porttitor massa id neque aliquam. Sodales ut etiam sit amet nisl.  Scelerisque varius morbi enim nunc faucibus a. Sit amet volutpat consequat mauris nunc. Et leo duis ut diam.
-
-*Add images to the folder img and use relative path to specify the location of the image.*   
-
-![caption](img/mkdocs-template.png)
-> Use case template design
+* This software is distributed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.html).  
 
 
-## Header3
+## Getting Started and Creating a Gallery 
+The collapsed menus icon (shown below) opens the main menu of Taggit and enables creating a gallery, selecting from existing galleries, and opening the file browser. For this project, "Create Gallery" was selected to get started. 
 
-Morbi tristique senectus et netus et. Tristique senectus et netus et malesuada fames.  Eu mi bibendum neque egestas congue quisque. Id consectetur purus ut faucibus pulvinar elementum integer enim. Nunc consequat interdum varius sit amet mattis vulputate enim nulla.  Porta nibh venenatis cras sed felis eget. Dui id ornare arcu odio ut sem nulla pharetra diam. Pellentesque habitant morbi tristique senectus et netus et. Commodo nulla facilisi nullam vehicula ipsum a arcu. Nisi porta lorem mollis aliquam ut porttitor leo.
-
-Numbered list 
-
-1. [numbered linked item](https://maps.google.com)
-2. second item
-3. third item
-
-### Header3 subheading
-
-Ac feugiat sed lectus vestibulum mattis ullamcorper. Et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut. Scelerisque eu ultrices vitae auctor eu augue ut lectus arcu.  Imperdiet proin fermentum leo vel orci porta non pulvinar. Dictumst quisque sagittis purus sit amet. Aliquam purus sit amet luctus. Aliquet bibendum enim facilisis gravida neque convallis a cras. Orci porta non pulvinar neque laoreet suspendisse. Urna neque viverra justo nec ultrices dui.
-
-**Example Table**
-
-| Column 1 | Column 2 | Column 3 |
-|----------|----------|----------|
-| Stampede2| CPU      | 2017     |     
-| Frontera | CPU & GPU| 2019     |     
-
-Or use markdown table generator: [https://www.tablesgenerator.com/markdown_tables](https://www.tablesgenerator.com/markdown_tables)
+<img src="../img/CreateProject2.PNG" alt="CreateProject2" width="400"/>
 
 
-### Math
+## Loading Image Files
 
-To generate math equations in markdown.
+Image files can be loaded into an existing project by selecting "File Browser" from the main menu. This enables access to all parts of DesignSafe including My Data, Community Data, Published Project, and My Projects. For this project, the PI's images from the Irma damage survey were selected.
 
-For inline mode formulas: $`a^2+b^2=c^2`$.
+![caption](img/SelectImageFiles.JPG)
 
-For display mode formulas which appear on a separate line
-```math
-f(x) = \int_{-\infty}^\infty
-\hat f(\xi)\,e^{2 \pi i \xi x}
-\,d\xi
-```
+Clicking Import brings the selected files into the gallery, and you see thumbnails of the images as shown below.
 
-### Code
+![caption](img/ThumbNails.JPG)
 
-``` python
-import tensorflow as tf
-```
 
-Highlight specific lines of the code
+## Creating Groups and Organizing Images
 
-``` python hl_lines="3 4"
-""" Bubble sort """
-def bubble_sort(items):
-    for i in range(len(items)):
-        for j in range(len(items) - 1 - i):
-            if items[j] > items[j + 1]:
-                items[j], items[j + 1] = items[j + 1], items[j]
-```
+Groups were created for this gallery to organize the photos into types of structures and types of damage. Clicking on one or more images generates a green border that denotes selected images. The Add Group button (see below) was used to create names for groups.
+
+![caption](img/AddGroup.JPG)
+
+The add group dialog box enables naming the groups.
+
+![caption](img/GroupName.JPG)
+
+Once a group or groups is created, the Taggit button appears (see below). The Taggit button takes you to the Taggit screen where you can see the images in their groups and begin to create tags.
+
+![caption](img/TaggitButton.JPG)
+
+The Taggit screen is shown below. Here you can see the groups that have been created and the images in each group. The Gallery button toggles back to the thumbnail gallery.
+
+![caption](img/TaggitScreenIntro.JPG)
+
+When hovering over any given image in the thumbnail gallery, several icons will appear. The Zoom, Remove, and Add to Group buttons appear in the upper right. The Add To Group button provides another way to add an image to a group. The box in the lower right shows colored boxes representing each group this image belongs to.
+
+![caption](img/ThumbNailButtons2.JPG)
+
+After creating a number of groups and adding images to those groups, the Taggit view looks like the image below. From this view, you can browse through the groups and through the images in each group.
+
+![caption](img/GroupsAndImages.JPG)
+
+The icons associated with each group were customized by clicking on the icon and selecting different ones from the list.
+
+![caption](img/GroupListIcons.JPG)
+
+
+
+
+## Creating Tags for Images
+
+The Tag Images area below the Image List was used to create custom tags for images. 
+
+![caption](img/TagImagesArea.JPG)
+
+For this group, a Color Tag representing damage was created (see below).
+
+![caption](img/ColorTag1.JPG)
+
+![caption](img/ColorTag2.JPG)
+
+The colors assigned with a Color Tag will be used if the user decides to map the image using HazMapper.
+
+![caption](img/ColorTag3.JPG)
+
+
+
+## Plotting Images Locations with HazMapper
+
+Clicking the HazMapper button launches HazMapper to see all the photos from this gallery located on a map.
+
+![caption](img/HazMapperButton.JPG)
+
+For this gallery, a Roads layer was added to the map.
+
+![caption](img/CreateLayerWindow.JPG)
+
+The locations of collections of images are denoted with numbers on the map.
+
+![caption](img/HazMapperMap1.JPG)
+
+Zooming in to regions where images were taken shows that a generic camera icon or a user-selected icon denotes image location. If a Color tag was assigned to a given image, then that color will be used for the HazMapper icon.
+
+![caption](img/HazMapperMap2.JPG)
+
+
+
+
+## Exporting Tag Data as CSV Files
+
+From the main menu, the user can select several options (see below) for exporting the group and tag information from the current project. These files can be used for further analysis or for machine learning applications.
+
+![caption](img/SaveAsCSV.JPG)
+
