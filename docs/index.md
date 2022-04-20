@@ -1,4 +1,4 @@
-# Use Case Products and Documentation
+# Use Case Products
 
 DesignSafe provides a wide variety of resources that allow researchers to effectively share, find, analyze, and publish data; perform numerical simulations and utilize high performance computing (HPC); and integrate diverse datasets.  
 
@@ -14,8 +14,8 @@ To help users fully embrace DesignSafe functionalities, we have developed a suit
 
 ### Hurricane and Windstorm Use Cases
 * [**Large-Scale Ensemble Simulations of Storm Surge**](dawson/usecase.md)  (ADCIRC, pylauncher, Jupyter, HPC)
-* [**Simulation of Wind Flow around Buildings**](kareen/usecase.md) (OpenFOAM, Jupyter, Paraview, HPC)
 * [**Visualization of Storm Surge Impacts**](padgett/usecase.md) (ADCIRC, Jupyter, QGIS)
+* [**Simulation of Wind Flow around Buildings**](kareem/usecase.md) (OpenFOAM, Jupyter, Paraview, HPC)
 * [**Analysis of Field Sensor Data from Wind Events**](pinelli/usecase.md) (Jupyter, Interactive Data Analysis)
 
 ### Seismic Use Cases 
