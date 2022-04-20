@@ -8,7 +8,7 @@ Jupyter Notebooks can provide fully integrated workflows of experiments from doc
 
 1. Please cite [Mosqueda et al. (2017)](https://12ncee.org/) to acknowledge the use of resources from this use case with additional data sources referenced below.
 2. Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246) to acknowledge the use of DesignSafe resources.
-3. This software is distributed under the GNU General Public License (https://www.gnu.org/licenses/gpl-3.0.html).
+3. This software is distributed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.html).
 
 ## Introduction
 
