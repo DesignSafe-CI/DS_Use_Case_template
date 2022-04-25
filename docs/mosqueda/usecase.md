@@ -6,7 +6,7 @@ Jupyter Notebooks can provide fully integrated workflows of experiments from doc
 
 ### Citation and Licensing
 
-* [Mosqueda et al. (2017)](https://12ncee.org/) to acknowledge the use of resources from this use case with additional data sources referenced below.
+* [Mosqueda et al. (2022)](https://12ncee.org/) "Jupyter Notebooks for Data Workflow of NHERI Experimental Programs". 12NCEE U.S. National Conference on Earthquake Engineering
 * [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246) "DesignSafe: New Cyberinfrastructure for Natural Hazards Engineering". ASCE: Natural Hazards Review / Volume 18 Issue 3 - August 2017
 * This software is distributed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.html).
 
