@@ -77,13 +77,17 @@ control_maxRunTime = '24:00:00'
 ### Submit and Run job on DesignSafe
 The script below submits the job to the HPC system.  
 ```python
-from agavepy.async import AgaveAsyncResponse
 job = ag.jobs.submit(body=job_description)
-asrp = AgaveAsyncResponse(ag, job)
+print("Job launched")
 ```
-The command below shows the status of the user's analysis.
+The command below shows the status of the user's analysis on an hourly basis.
 ```python
-asrp.result()
+import time
+status = ag.jobs.getStatus(jobId=job["id"])["status"]
+while status != "FINISHED":
+    status = ag.jobs.getStatus(jobId=job["id"])["status"]
+    print(f"Status: {status}")
+    time.sleep(3600)
 ```
 ### Identify Job ID and Archived Location
 

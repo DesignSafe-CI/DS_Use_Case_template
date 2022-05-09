@@ -23,20 +23,20 @@ markdown_extensions:
 #### Do NOT edit above this line
 
 nav:
-  - Use Cases : index.md
-  - Example : example/usecase.md
-  - Use Case 1 - Arduino: arduino/usecase.md
-  - Use Case 2 - Brandenberg: brandenberg/usecase.md
-  - Use Case 3 - Dawson: dawson/usecase.md
-  - Use Case 4 - Haan: haan/usecase.md
-  - Use Case 5 - Kareen: kareen/usecase.md
-  - Use Case 6 - Kumar: kumar/usecase.md
-  - Use Case 7 - Lowes: lowes/usecase.md
-  - Use Case 8 - Mosqueda: mosqueda/usecase.md
-  - Use Case 9 - Padgett: padgett/usecase.md
-  - Use Case 10 - Pinelli: pinelli/usecase.md
-  - Use Case 11 - Rathje: rathje/usecase.md
-  - Use Case 12 - Vantassel and Zhang: ml_resources/usecase.md
+  - Use Cases Products: index.md
+  - Taggit: haan/usecase.md
+  - ML and AI: vantassel_and_zhang/usecase.md
+  - NGL Database: brandenberg/usecase.md
+  - MPM Landslide: kumar/usecase.md
+  - Large-Scale Storm Surge: dawson/usecase.md
+  - Visualizing Storm Surge: padgett/usecase.md
+  - Wind Flow: kareem/usecase.md
+  - Field Sensing Wind Events: pinelli/usecase.md
+  - OpenSees Model Calibration: arduino/usecase.md
+  - Seismic Response of Concrete Walls: lowes/usecase.md
+  - Soil Structure Interaction: rathje/usecase.md
+  - Experimental Shake Table Testing: mosqueda/usecase.md
+  
  
   
 #### DO NOT MAKE ANY CHANGES TO THE EXAMPLE FOLDER
