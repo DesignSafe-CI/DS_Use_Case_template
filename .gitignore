@@ -5,6 +5,7 @@ site/*
 *~*
 *#*
 *.DS_Store
+*.ipynb_checkpoints*
 
 # Remove env variable
 venv/*
