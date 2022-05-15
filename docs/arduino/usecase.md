@@ -25,7 +25,7 @@ This first version of this use-case page includes details on the site response w
 
 ### Citation and Licensing
 
-* Please cite [Arduino, P. et al. (2022)](https://peer.berkeley.edu/sites/default/files/2021_chen_final.pdf) to acknowledge the use of resources from this use case.
+* Please cite [Chen, L. et al. (2021)](https://peer.berkeley.edu/sites/default/files/2021_chen_final.pdf) to acknowledge the use of resources from this use case.
 
 * Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246) to acknowledge the use of DesignSafe resources.  
 
