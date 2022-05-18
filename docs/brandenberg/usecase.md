@@ -1,7 +1,7 @@
 # Next Generation Liquefaction (NGL) Database Jupyter Notebooks
 
-**Brandenberg, S.J. - UCLA**
-**Ulmer, K.J. - Southwest Research Institute**
+**Brandenberg, S.J. - UCLA**<br/>
+**Ulmer, K.J. - Southwest Research Institute**<br/>
 **Zimmaro, P. - University of Calabria**  
 
 The example makes use of the following DesignSafe resources:
