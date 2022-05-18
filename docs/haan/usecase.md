@@ -1,10 +1,13 @@
 # Using Taggit to browse and tag Hurricane Irma damage survey images on DesignSafe
 
-**Fred L. Haan, Jr, Calvin University**  
+**Fred L. Haan, Jr - Calvin University**  
 
-Taggit allows users to browse images files on DesignSafe and tag them for later use in analysis or mapping applications. It also easily connects to HazMapper to map image locations. This use case illustrates how photos from a 2017 damage survey in the Florida Keys after Hurricane Irma were organized into groups and tagged for later analysis. 
+Taggit allows users to browse images files on DesignSafe and tag them for later use in analysis or mapping applications. It also easily connects to HazMapper to map image locations. This use case illustrates how photos from a 2017 damage survey in the Florida Keys after Hurricane Irma were organized into groups and tagged for later analysis. The example makes use of the following DesignSafe resources:
 
+[Taggit](https://taggit-tacc.github.io/)<br/>
+[HazMapper](https://www.designsafe-ci.org/rw/workspace/#!/Hazmapper-1.0)
 
+## Background
 ### Citation and Licensing
 
 * Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246) to acknowledge the use of DesignSafe resources.  
