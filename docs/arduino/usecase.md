@@ -2,10 +2,21 @@
 
 **Pedro Arduino, University of Washington**
 
-A collection of educational notebooks to introduce model parameter calibration and site response analysis using OpenSees in DesignSafe-CI
+A collection of educational notebooks to introduce model parameter calibration and site response analysis using OpenSees in DesignSafe-CI. The example makes use of the following DesignSafe resources:
+
+[Simulation on DS - OpenSees](https://www.designsafe-ci.org/rw/workspace/#!/OpenSees::Simulation)<br/>
+[Jupyter notebooks on DS Juypterhub](https://www.designsafe-ci.org/rw/workspace/#!/Jupyter::Analysis)<br/>
 
 ## Background 
+### Citation and Licensing
 
+* Please cite [Chen, L. et al. (2021)](https://peer.berkeley.edu/sites/default/files/2021_chen_final.pdf) to acknowledge the use of resources from this use case.
+
+* Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246) to acknowledge the use of DesignSafe resources.  
+
+* This software is distributed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.html).  
+
+## Description
 Site response analysis for liquefiable soils is fundamental in the estimation of demands on civil infrastructure including buildings and lifelines. Current state of the art in numerical methods in geotechnical engineering require the use of advance constitutive models and fully couple nonlinear finite element (FEM) tools. Advanced constitutive models require calibration of material parameters based on experimental tests. These parameters include uncertainties that in turn propagate to uncertenties in the estimation of demands. The products included in this use-case provide simple examples showing how to achieve site response analysis including parameter identification and uncertainty quantification using SimCenter tools and the DesignSafe cyber infrastructure.
 
 <p align="center">
@@ -22,14 +33,6 @@ This document presents a suite of Jupyter Notebooks published in DesignSafe that
 3. **Propagation of parameter undertainty in site response analysis notebook**: This notebook introduces methods to propagate material parameter uncertainties in site reponse analysis.
 
 This first version of this use-case page includes details on the site response workflow notebook. The parameter calibration and propagation of uncertainties notebooks will be updated in a second version.
-
-### Citation and Licensing
-
-* Please cite [Chen, L. et al. (2021)](https://peer.berkeley.edu/sites/default/files/2021_chen_final.pdf) to acknowledge the use of resources from this use case.
-
-* Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246) to acknowledge the use of DesignSafe resources.  
-
-* This software is distributed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.html).  
 
 
 ## Site response workflow notebook
@@ -275,13 +278,4 @@ createDispplot()
 <img src="../img/widget-2.PNG" alt="Displacement profile interatvie plot" width="400"/>
 </p>
 <p align="center"> <b>Fig.8 - Displacement proficle interactive plot</b> </p>
-
-
-## Parameter calibration notebook
-
-  In preparation
-
-## Propagation of parameter undertainty in site response analysis notebook
-
-  In preparation
 
