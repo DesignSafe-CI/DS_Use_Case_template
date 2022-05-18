@@ -1,7 +1,6 @@
 # An Example-Based Introduction to Common Machine Learning Approaches
 
-**Joseph P. Vantassel, Texas Advanced Computing Center - The University of Texas at Austin**  
-**Wenyang Zhang, Texas Advanced Computing Center - The University of Texas at Austin**  
+**Joseph P. Vantassel and Wenyang Zhang, Texas Advanced Computing Center - The University of Texas at Austin**  
 
 With the increasing acquisition and sharing of data in the natural hazards community, solutions from 
 data science, in particular machine learning, are increasingly being applied to natural hazard problems.
@@ -11,9 +10,13 @@ learning approaches. This use case is not intended to be exhaustive in its cover
 of machine learning approaches (as there are many), nor in its coverage of the selected approaches
 (as they are more complex than can be effectively communicated here), rather, this use case is
 intended to provide a high-level overview of different approaches to using machine learning to
-solve data-related problems.
+solve data-related problems.  The example makes use of the following DesignSafe resources:
 
-## Citation and Licensing
+[Jupyter notebooks on DS Juypterhub](https://www.designsafe-ci.org/rw/workspace/#!/Jupyter::Analysis)<br/>
+
+
+## Background
+### Citation and Licensing
 
 <!-- * Please cite [AUTHORS et al. (20xx) - example of published project]() to acknowledge the use of any resources from this use case. -->
 
@@ -24,7 +27,7 @@ solve data-related problems.
 * This software is distributed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.html).
 
 
-## Overview
+## Overview of ML examples
 
 This use case is example-based meaning that is its contents have been organized into self-contained examples.
 These self-contained example are organized by machine learning algorithm. Importantly, the machine learning
