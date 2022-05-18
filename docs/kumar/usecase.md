@@ -1,16 +1,14 @@
 # Material Point Method for landslide modeling
 
-**Krishna Kumar, UT Austin**
+**Krishna Kumar - UT Austin**
+
+The example makes use of the following DesignSafe resources:
+
+[Jupyter notebooks on DS Juypterhub](https://www.designsafe-ci.org/rw/workspace/#!/Jupyter::Analysis)<br/>
+[CB-Geo MPM](https://www.designsafe-ci.org/rw/workspace/#!/mpm-1.0.0)<br/> 
+[ParaView](https://www.designsafe-ci.org/rw/workspace/#!/Paraview::Visualization)<br/> 
 
 ## Background 
-
-Material Point Method (MPM) is a particle based method that represents the material as a collection of material points, and their deformations are determined by Newton’s laws of motion. The MPM is a hybrid Eulerian-Lagrangian approach, which uses moving material points and computational nodes on a background mesh. This approach is very effective particularly in the context of large deformations.
-
-![MPM Algorithm](img/mpm-algorithm.png)
-> Illustration of the MPM algorithm (1) A representation of material points overlaid on a computational grid. Arrows represent material point state vectors (mass, volume, velocity, etc.) being projected to the nodes of the computational grid. (2) The equations of motion are solved onto the nodes, resulting in updated nodal velocities and positions. (3) The updated nodal kinematics are interpolated back to the material points. (4) The state of the material points is updated, and the computational grid is reset.
-
-This use case demonstrates how to run MPM simulations on DesignSafe using [Jupyter Notebook](https://www.designsafe-ci.org/rw/workspace/#!/Jupyter::Analysis).
-
 ### Citation and Licensing
 
 * Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246) to acknowledge the use of DesignSafe resources.  
@@ -19,9 +17,20 @@ This use case demonstrates how to run MPM simulations on DesignSafe using [Jupyt
 
 * This software is distributed under the [MIT License](https://github.com/cb-geo/mpm/blob/develop/license.md).
 
+
+### Description
+Material Point Method (MPM) is a particle based method that represents the material as a collection of material points, and their deformations are determined by Newton’s laws of motion. The MPM is a hybrid Eulerian-Lagrangian approach, which uses moving material points and computational nodes on a background mesh. This approach is very effective particularly in the context of large deformations.
+
+![MPM Algorithm](img/mpm-algorithm.png)
+> Illustration of the MPM algorithm (1) A representation of material points overlaid on a computational grid. Arrows represent material point state vectors (mass, volume, velocity, etc.) being projected to the nodes of the computational grid. (2) The equations of motion are solved onto the nodes, resulting in updated nodal velocities and positions. (3) The updated nodal kinematics are interpolated back to the material points. (4) The state of the material points is updated, and the computational grid is reset.
+
+This use case demonstrates how to run MPM simulations on DesignSafe using [Jupyter Notebook](https://www.designsafe-ci.org/rw/workspace/#!/Jupyter::Analysis).
+
+
+
 ## Input generation
 
-Input files for the MPM code can be generated using [pycbg]](https://forgemia.inra.fr/mpm-at-recover/pycbg). The documentation of the input generator is [here](https://pycbg.readthedocs.io/en/latest/). For more information on the input files, please refer to [CB-Geo MPM documentation](https://mpm.cb-geo.com/#/user/preprocess/input).
+Input files for the MPM code can be generated using [pycbg](https://forgemia.inra.fr/mpm-at-recover/pycbg). The documentation of the input generator is [here](https://pycbg.readthedocs.io/en/latest/). For more information on the input files, please refer to [CB-Geo MPM documentation](https://mpm.cb-geo.com/#/user/preprocess/input).
 
 [It has been uploaded to PyPI](https://pypi.org/project/pycbg/) so it can be easily installed with `pip install pycbg`.
 
