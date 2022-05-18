@@ -1,8 +1,16 @@
 # Next Generation Liquefaction (NGL) Database Jupyter Notebooks
 
-**Brandenberg, S.J., UCLA, Ulmer, K.J., Southwest Research Institute, and Zimmaro, P., University of Calabria**  
+**Brandenberg, S.J. - UCLA**
+**Ulmer, K.J. - Southwest Research Institute**
+**Zimmaro, P. - University of Calabria**  
 
-## Citations and Licensing
+The example makes use of the following DesignSafe resources:
+
+[Jupyter notebooks on DS Juypterhub](https://www.designsafe-ci.org/rw/workspace/#!/Jupyter::Analysis)<br/>
+[NGL Database](https://www.nextgenerationliquefaction.org/)<br/>
+
+## Background
+### Citations and Licensing
 
 * Please cite [Zimmaro, P., et al. (2019)](https://doi.org/10.21222/C2J040) to acknowledge the use of the NGL Database. Data in the NGL database has been gathered from [these](https://nextgenerationliquefaction.org/citations.php) published sources. If you use specific data in the database, please cite the original source.
 
@@ -10,8 +18,8 @@
 
 * This software is distributed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.html).  
 
-## Background
 
+### Description  
 The Next Generation Liquefaction (NGL) Project is advancing the state of the art in liquefaction research 
 and working toward providing end users with a consensus approach to assess liquefaction potential within 
 a probabilistic and risk-informed framework. Specifically, NGL’s goal is to first collect and organize 
