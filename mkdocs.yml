@@ -30,7 +30,7 @@ nav:
   - MPM Landslide: kumar/usecase.md
   - Large-Scale Storm Surge: dawson/usecase.md
   - Visualizing Surge for Regional Risks: padgett/usecase.md
-  - Wind Flow: kareem/usecase.md
+  - CFD Analysis of Winds on Structures: kareem/usecase.md
   - Field Sensing Wind Events: pinelli/usecase.md
   - OpenSees Model Calibration: arduino/usecase.md
   - Seismic Response of Concrete Walls: lowes/usecase.md

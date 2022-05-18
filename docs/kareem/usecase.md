@@ -1,11 +1,15 @@
 # CFD Simulations using the Jupyter Notebooks
-**Fei Ding, Ahsan Kareem, and Dae Kun Kwon**<br/>
- [NatHaz Modeling Laboratory](https://nathaz.nd.edu/), University of Notre Dame
+**Fei Ding, Ahsan Kareem, and Dae Kun Kwon - [NatHaz Modeling Laboratory](https://nathaz.nd.edu/), University of Notre Dame**
 
-OpenFOAM is the free, open source CFD software and is popularly used for computationally establishing wind effects on structures. To help beginners overcome the challenges of the steep learning curve posed by OpenFOAM and provide users with the capabilities of generating repetitive jobs and advanced functions, this use case example presents the work to script the workflow for CFD simulations using OpenFOAM in the Jupyter Notebooks. The developed two Jupyter Notebooks can aid in determining inflow conditions, creating mesh files for parameterized building geometries, and running the selected solvers. They can also contribute to the education for CFD learning as online resources, which will be implemented in the [DesignSafe cyberinfrastructure (CI)](https://www.designsafe-ci.org).
+OpenFOAM is the free, open source CFD software and is popularly used for computationally establishing wind effects on structures. To help beginners overcome the challenges of the steep learning curve posed by OpenFOAM and provide users with the capabilities of generating repetitive jobs and advanced functions, this use case example presents the work to script the workflow for CFD simulations using OpenFOAM in the Jupyter Notebooks. The developed two Jupyter Notebooks can aid in determining inflow conditions, creating mesh files for parameterized building geometries, and running the selected solvers. They can also contribute to the education for CFD learning as online resources, which will be implemented in the [DesignSafe](https://www.designsafe-ci.org).
 
-All files discussed in this use case are shared at [Data Depot > Community Data](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/OpenFOAM). It is recommended that users make a copy of the contents to their directory (My Data) for tests and simulations.
+All files discussed in this use case are shared at [Data Depot > Community Data](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/OpenFOAM). It is recommended that users make a copy of the contents to their directory (My Data) for tests and simulations. The example makes use of the following DesignSafe resources:
 
+[OpenFoam](https://www.designsafe-ci.org/rw/workspace/#!/OpenFOAM::Simulation)<br/> 
+[ParaView](https://www.designsafe-ci.org/rw/workspace/#!/Paraview::Visualization)<br/>
+[Jupyter notebooks on DS Juypterhub](https://www.designsafe-ci.org/rw/workspace/#!/Jupyter::Analysis)<br/>
+
+## Background
 ### Citation and Licensing
 
 * Please cite [Ding and Kareem (2021)](https://tigerprints.clemson.edu/cgi/viewcontent.cgi?article=1025&context=aawe) to acknowledge the use of any resources from this use case.
@@ -185,8 +189,8 @@ Simulation results are stored in the Data Depot in the DesignSafe and available 
 
 For data analysis such as plotting the time series of drag or lift force coefficients, users can make a script in a Jupyter Notebook to load simulation results and make output figures using a python graphic library such as `Matplotlib`, etc. An example script using Matplotlib can also be found in this use case Jupyter Notebook.
 
-## Reference
+## References
 [1] H. Jasak, A. Jemcov, Z. Tukovic, et al. OpenFOAM: A C++ library for complex physics simulations. In International workshop on coupled methods in numerical dynamics, volume 1000, pages 1-20. IUC Dubrovnik Croatia, 2007.<br />
-[2] OpenFOAM wiki. Pyfoam. https://openfoamwiki.net/index.php/Contrib/PyFoam. Online; accessed 24-Feb-2022.<br />
+[2] OpenFOAM wiki. Pyfoam. [https://openfoamwiki.net/index.php/Contrib/PyFoam](https://openfoamwiki.net/index.php/Contrib/PyFoam). Online; accessed 24-Feb-2022.<br />
 [3] Harish, Ajay Bangalore; Govindjee, Sanjay; McKenna, Frank. [CFD Notebook (Beginner)](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published/PRJ-2915). DesignSafe-CI, 2020. <br />
-[3] N. Vuaille. Controlling paraview from jupyter notebook. https://www.kitware.com/paraview-jupyter-notebook/. Online; accessed 24-Feb-2022.<br />
+[3] N. Vuaille. Controlling paraview from jupyter notebook. [https://www.kitware.com/paraview-jupyter-notebook/](https://www.kitware.com/paraview-jupyter-notebook/). Online; accessed 24-Feb-2022.<br />
