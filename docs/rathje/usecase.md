@@ -16,17 +16,20 @@ This use case example shows how to run an OpenSeesMP analysis on the high-perfor
 
 * Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246) to acknowledge the use of DesignSafe resources.  
 
-* This software is distributed under the GNU General Public License (http://www.gnu.org/licenses/gpl-3.0.html). 
+* This software is distributed under the [GNU General Public License](http://www.gnu.org/licenses/gpl-3.0.html). 
 
 ### Description  
 
-A hypothetical three dimensional soil–foundation– structure system on liquefiable soil layer is analyzed using OpenSees MP. The soil profile first included a 12-m thick dense sand layer with Dr of 90%, followed by a 4-m thick loose sand layer with Dr of 40%, and overlaid by a 2-m thick dense sand layer. The ground water table was at ground surface. An earthquake excitation was applied at the bottom of the soil domain under rigid bedrock conditons. A three-story, elastic structure was considered on a 1-m-thick mat foundation.The foundation footprint size (i.e., width and length) was 9.6m x 9.6m with bearing pressure of 65 kPa. Additional information cane be found in [Hwang et al. (2021)](https://ascelibrary.org/doi/pdf/10.1061/%28ASCE%29GT.1943-5606.0002546?casa_token=VvVOt4ua4GAAAAAA:f_aX-l0Jn0UwtpJf_0SfF323zdh7edMKxb3ou635HE5obgmO7amjFMkmLArlLE-LDM6MBfVCMPSh)
+A hypothetical three dimensional soil–foundation–structure system on liquefiable soil layer is analyzed using OpenSees MP. The soil profile first included a 12-m thick dense sand layer with Dr of 90%, followed by a 4-m thick loose sand layer with Dr of 40%, and overlaid by a 2-m thick dense sand layer. The ground water table was at ground surface. An earthquake excitation was applied at the bottom of the soil domain under rigid bedrock conditons. A three-story, elastic structure was considered on a 1-m-thick mat foundation. The foundation footprint size (i.e., width and length) was 9.6m x 9.6m with bearing pressure of 65 kPa. Additional information can be found in [Hwang et al. (2021)](https://ascelibrary.org/doi/pdf/10.1061/%28ASCE%29GT.1943-5606.0002546?casa_token=VvVOt4ua4GAAAAAA:f_aX-l0Jn0UwtpJf_0SfF323zdh7edMKxb3ou635HE5obgmO7amjFMkmLArlLE-LDM6MBfVCMPSh)
 
 ![SchematicView](img/SchematicView.png)
 
 The use case workflow involves the following steps:
+
 * Creating the OpenSees input files using STKO.
+
 * Submitting the OpenSees job to the Stampede2 HPC resources at DesignSafe/TACC.
+
 * Post-processing the results using STKO and python.
 
 
@@ -115,11 +118,14 @@ After the job is finished, the user can use [STKO](https://www.designsafe-ci.org
 
 ### Example post-processing scripts using Jupyter
 
-A separate Jupyter notebook is provided ([Example post-processing scripts.ipynb.ipynb](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/OpenSees-STKO)) that post-processes data from OpenSees recorders and save in \*.txt files.  The Jupyter notebook is set up to open the \*.txt files after thay have been copied from the archive directory to the same My Data in which the notebook resides. 
+A separate Jupyter notebook is provided ([Example post-processing scripts.ipynb](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/OpenSees-STKO)) that post-processes data from OpenSees recorders and save in \*.txt files.  The Jupyter notebook is set up to open the \*.txt files after thay have been copied from the archive directory to the same My Data in which the notebook resides. 
 
 For this example, recorders are created to generate output presented in terms of:
+
 * Acceleration response spectra at the mid of loose sand layer, foundation, and roof.
+
 * Evolution of excess pore water pressure at the bottom, mid, and top of the loose sand layer.
+
 * Time history of foundation settlement and tilt.
 
 #### Creating recorders
