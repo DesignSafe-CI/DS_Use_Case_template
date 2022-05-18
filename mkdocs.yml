@@ -29,7 +29,7 @@ nav:
   - NGL Database: brandenberg/usecase.md
   - MPM Landslide: kumar/usecase.md
   - Large-Scale Storm Surge: dawson/usecase.md
-  - Visualizing Storm Surge: padgett/usecase.md
+  - Visualizing Surge for Regional Risks: padgett/usecase.md
   - Wind Flow: kareem/usecase.md
   - Field Sensing Wind Events: pinelli/usecase.md
   - OpenSees Model Calibration: arduino/usecase.md
