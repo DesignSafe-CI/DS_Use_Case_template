@@ -1,6 +1,6 @@
 # Material Point Method for landslide modeling
 
-**Krishna Kumar - UT Austin**
+**Krishna Kumar - University of Texas at Austin**  
 
 The example makes use of the following DesignSafe resources:
 

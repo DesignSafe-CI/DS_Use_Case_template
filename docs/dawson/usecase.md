@@ -1,14 +1,14 @@
 # ADCIRC Use Case - Using Tapis and Pylauncher for Ensemble Modeling in DesignSafe 
 
-**Clint Dawson, University of Texas at Austin**  
-**Carlos del-Castillo-Negrete, University of Texas at Austin**  
-**Benjamin Pachev, University of Texas at Austin**  
+**Clint Dawson, Carlos del-Castillo-Negrete, Benjamin Pachev - University of Texas at Austin** 
 
-The following use case presents an example of how to leverage the Tapis API to run an ensemble of HPC simulations. The specific workflow to be presented consists of running ADCIRC, a storm-surge modeling application available on DesignSafe, using the parametric job launcher pylauncher. All code and examples presented are meant to be be executed from a Jupyter Notebook on the DesignSafe platform and using a DesignSafe account to make Tapis API calls. Accompanying notebooks for this use case can be found in the ADCIRC folder in [Community Data](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/ADCIRC).
+The following use case presents an example of how to leverage the Tapis API to run an ensemble of HPC simulations. The specific workflow to be presented consists of running ADCIRC, a storm-surge modeling application available on DesignSafe, using the parametric job launcher pylauncher. All code and examples presented are meant to be be executed from a Jupyter Notebook on the DesignSafe platform and using a DesignSafe account to make Tapis API calls. Accompanying notebooks for this use case can be found in the ADCIRC folder in [Community Data](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/ADCIRC).   The example makes use of the following DesignSafe resources:
 
-Learn more: [Jupyter notebooks on DS Juypterhub](https://www.designsafe-ci.org/rw/workspace/#!/Jupyter::Analysis).
+[ADCIRC](https://www.designsafe-ci.org/rw/workspace/#!/ADCIRC::Simulation)<br/>
+[Jupyter notebooks on DS Juypterhub](https://www.designsafe-ci.org/rw/workspace/#!/Jupyter::Analysis)<br/>
 
-## Background 
+
+## Background
 
 ### Citation and Licensing
 
