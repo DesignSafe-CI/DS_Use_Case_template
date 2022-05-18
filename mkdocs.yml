@@ -24,7 +24,7 @@ markdown_extensions:
 
 nav:
   - Use Cases Products: index.md
-  - Taggit: haan/usecase.md
+  - Taggit - Image Tagging: haan/usecase.md
   - ML and AI: vantassel_and_zhang/usecase.md
   - NGL Database: brandenberg/usecase.md
   - MPM Landslide: kumar/usecase.md
