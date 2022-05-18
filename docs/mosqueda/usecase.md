@@ -1,26 +1,34 @@
 # Integrated Workflow of Experiments using Jupyter Notebooks: From Experimental Design to Publication
 
-Enrique Simbort and Gilberto Mosqueda, University of California, San Diego**  
+**Enrique Simbort and Gilberto Mosqueda - University of California, San Diego**  
 
-Jupyter Notebooks can provide fully integrated workflows of experiments from documentation of experimental design through analysis and publishing of data using the DesignSafe cyberinfrastructure. A series of Notebooks are being developed to demonstrate their use in the experimental workflow including notebooks showing how to view and analyzed past published data and data from testing of a reconfigurable, modular test bed building planned to be tested on the NHERI@UC San Diego Experimental Facility. The Python-based code is implemented in a modular fashion so that components can be used as desired in other experiments and are transferable to other experimental facilities. In the examples provided, the Notebook can be used to evaluate shake table performance as well as dynamic properties of the structure. A key functionality is to increase the integration and collaboration between researchers at local or remote sites to view and analyze the experimental data during and after testing including after the data is published. As Notebooks are developed to view experimental data by the research team, they can also be published with the data allowing other researchers to quickly view the data for promoting data reuse. Examples are providing for viewing data from past shake table experiments including NEES and more current NHERI data repositories.
+Jupyter Notebooks can provide fully integrated workflows of experiments from documentation of experimental design through analysis and publishing of data using the DesignSafe cyberinfrastructure. A series of Notebooks are being developed to demonstrate their use in the experimental workflow including notebooks showing how to view and analyzed past published data and data from testing of a reconfigurable, modular test bed building planned to be tested on the NHERI@UC San Diego Experimental Facility. The Python-based code is implemented in a modular fashion so that components can be used as desired in other experiments and are transferable to other experimental facilities. In the examples provided, the Notebook can be used to evaluate shake table performance as well as dynamic properties of the structure. A key functionality is to increase the integration and collaboration between researchers at local or remote sites to view and analyze the experimental data during and after testing including after the data is published. As Notebooks are developed to view experimental data by the research team, they can also be published with the data allowing other researchers to quickly view the data for promoting data reuse. Examples are providing for viewing data from past shake table experiments including NEES and more current NHERI data repositories.  The example makes use of the following DesignSafe resources:
 
+[Jupyter notebooks on DS Juypterhub](https://www.designsafe-ci.org/rw/workspace/#!/Jupyter::Analysis)<br/>
+
+## Background 
 ### Citation and Licensing
 
 1. Please cite [Mosqueda et al. (2017)](https://12ncee.org/) to acknowledge the use of resources from this use case with additional data sources referenced below.
 2. Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246) to acknowledge the use of DesignSafe resources.
 3. This software is distributed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.html).
 
-## Introduction
+## Description
 
 As the cyberinfrastructure for The Natural Hazard Engineering Research Infrastructure (NHERI), DesignSafe [1] provides a collaborative workspace for cloud-based data analysis, data sharing, curation and publication of models and data. Within this workspace, Jupyter Notebooks can be applied to perform data analysis in an interactive environment with access to published data.  A rich set of data from natural hazard experiments and field studies is available from NHERI projects and its predecessor the Network for Earthquake Engineering Simulation (NEES). Since one of the major goals of DesignSafe is to provide a collaborative workspace by means of data sharing and access for data reuses, the main objective of this document is to demonstrate the use of Jupyter Notebook for viewing and analyzing published data using cloud-based tools.
 
 This use case includes a series of Jupyter Notebooks aimed to serve as a learning tool for viewing and analyzing data from shake table experiments including:
+
 1.	The first module examines the performance of Hybrid Simulation Experiments conducted on the 1D Large High Performance Outdoor Shake table at UC San Diego with the data published in DesignSafe [2]. This module focuses on the response of the shake table including tools to compare different signals. Data extraction and processing of measured sensor data includes comparison of time history signals, comparison of signals in the frequency domain using FFT and comparison of response spectra showing for example target and measured table response.  
+
 2.	The second module examines the use of Jupyter Notebooks including Python libraries for structural response and system identification. In this case data from a past NEES experiment [3] of three-story moment frame structure is examined. The data published in DataDepot under as a NEES project. Using selected sensors at each story of the structure and white noise excitation, the frequencies and mode shapes of the structure are identified. The processing tools rely on existing libraries in Python demonstrating the wealth of access to subroutine that can be applied for analysis.
+
 3.	The third module is a Jupyter notebook for viewing and analyzing data from tests on a 3-story steel Modular Testbed Building (MTB2) conducted on the recently upgrades 6DOF shake table at the UC San Diego NHEIR Experimental Facilty [4]. These tests will examine the shake table performance and structural response for the 3D structure.  These tests are currently in progress and this notebook is being updated.
 
 ## Jupyter Notebooks for Experimental Data
-Jupyter Notebooks work as an interactive development environment to code and view data in a report format. Within the notebook, the combination of cells enables formatted text and interactive plotting for viewing and analyzing data.  Users can select data files and data channels for viewing and processing. with the ability to view and print complete reports. Jupyter Notebooks are accessible in DesignSafe through the workspace analysis tools and can access private or public data in Data Depot. Sample modules are presented here that have been developed using published data in Data Depot including [2] and [5]. These modules will be configured and applied within the workflow of the MTB2 during shakedown testing.
+Jupyter Notebooks work as an interactive development environment to code and view data in a report format. Within the notebook, the combination of cells enables formatted text and interactive plotting for viewing and analyzing data.  Users can select data files and data channels for viewing and processing. with the ability to view and print complete reports. Jupyter Notebooks are accessible in DesignSafe through the workspace analysis tools and can access private or public data in Data Depot. Sample modules are presented here that have been developed using published data in Data Depot including [2] and [5]. These modules will be configured and applied within the workflow of the MTB2 during shakedown testing. 
+
+Jupyter notebook for [System Identification Routine](https://www.designsafe-ci.org/data/browser/projects/954727520918105625-242ac11c-0001-012/Jupyter_Notebook_Code_documents/Jupyter_Notebook_Project).
 
 ### [Case 1. Shake table performance](https://www.designsafe-ci.org/data/browser/projects/954727520918105625-242ac11c-0001-012/Jupyter_Notebook_Code_documents/Jupyter_Notebook_Project)
 A set of modules have been developed to evaluate the performance of the shake table using data from past experiments conducted to demonstrate the hybrid testing capabilities of LHPOST [6]. For these hybrid tests, separate Jupyter Notebooks have been developed to consider the various sources of generated data including i) Shake Table Controller, ii) the primary Data Acquisition System (DAQ), and iii) additional computational sources for hybrid testing. In a typical shake table test, the first two sources of data would be included plus any other user specified data acquisition system.  
@@ -68,51 +76,3 @@ The Jupyter Notebooks developed for use through DesignSafe will facilitate the v
 9. Chopra A. K., Dynamics of Structures. Harlow: Pearson Education, 2012. 
 10. Morano M., Liu J., Hutchinson T. C., and Pantelides C.P. (2021), “Design and Analysis of a Modular Test Building for the 6-DOF Large High-Performace Outdoor Shake Table”, 17th World Conference on Earthquake Engineering, Japan.
 11. Mosqueda G, Guerrero N, Schmemmer Z., Lin L, Morano M., Liu J., Hutchinson T, Pantelides C P. Jupyter Notebooks for Data workflow of NHERI Experimental Facilities. Proceedings of the 12th National Conference in Earthquake Engineering, Earthquake Engineering Research Institute, Salt Lake City, UT. 2022.
-
-
-## Annex 1
-### [Fragment of System Identification Routine](https://www.designsafe-ci.org/data/browser/projects/954727520918105625-242ac11c-0001-012/Jupyter_Notebook_Code_documents/Jupyter_Notebook_Project)
-
-### Cell 2
-``` python
-from IPython.utils import io
-
-import numpy as np
-import pandas as pd
-import linecache
-pd.set_option('display.max_rows', None)
-
-#path=fc.selected
-path='/home/jupyter/NEES/NEES-2008-0571.groups/Experiment-8/Trial-12/Rep-1/Unprocessed_Data/fbgm152s3.asc'
-data_open = open(path) # open data and store data
-print(data_open)
-data = np.loadtxt(path,skiprows=6,unpack=True) # convert to readable data
-n,c = data.shape
-print('n=',n)
-print('c=',c)
-n_channels=len(data)
-print(n_channels)
-info_head=[]
-for i in range(0,n_channels):
-    info_head.append("CHAN_"+str(i+1))#create the names of the channels
-
-data1 = pd.read_table(path,delimiter='\s+',nrows=6,skiprows=4,names=info_head)
-print(data1)
-DESC_CHAN=[]
-UNITS_CHAN =[]
-
-for k in range(0,n_channels):
-    DESC_CHAN.append((data1.loc[0, info_head[k]]))
-    UNITS_CHAN.append((data1.loc[1, info_head[k]]))  
-    
-tab=pd.DataFrame(list(zip(DESC_CHAN,UNITS_CHAN)), columns = ['Description','Units'])
-display(tab)
-```
-### Description of cell 2
-
-To begin processing data, python libraries will be utilized to form the basis of the module; this includes NumPy, pandas, and linecache. NumPy will take multiple data points about a single variable represented in arrays to compute various forms of numerical representation such as means, standard deviations, variance, and medium. For a graphical representation, pandas will allow users to manipulate datasets with various variables to produce two-dimensional tables and other graphical visualizations - displaying trends amongst the data. As the basis of the python is developed, linecache will allow users to easily search lines and trace back written codes to identify things like syntax errors.
-
-With the basis of the module set up, the data set is now ready to be uploaded into the module. Users can begin by searching and locating the corresponding file with raw data on their local harddrive. Once the file has been located and selected, the program will then work to extract the data and replicate it onto the module. The imported data will then be examined by the module to establish a new system of organization based upon the number of variables and the number of datapoints - establishing dimension and arrays of the data set.
-
-More specifically, the module will first identify the number of elements and its corresponding name in the table. Once the general parameters are set, the module works to transcribe the data from the original file located in the local harddrive - displaying 6 rows and skipping the 4th row. The resulting product will provide users with 2 columns, Description and Units with corresponding data points representing various measurements taken throughout the experiment.
-
