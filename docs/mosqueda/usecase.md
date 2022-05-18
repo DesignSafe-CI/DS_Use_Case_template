@@ -28,9 +28,11 @@ This use case includes a series of Jupyter Notebooks aimed to serve as a learnin
 ## Jupyter Notebooks for Experimental Data
 Jupyter Notebooks work as an interactive development environment to code and view data in a report format. Within the notebook, the combination of cells enables formatted text and interactive plotting for viewing and analyzing data.  Users can select data files and data channels for viewing and processing. with the ability to view and print complete reports. Jupyter Notebooks are accessible in DesignSafe through the workspace analysis tools and can access private or public data in Data Depot. Sample modules are presented here that have been developed using published data in Data Depot including [2] and [5]. These modules will be configured and applied within the workflow of the MTB2 during shakedown testing. 
 
-Jupyter notebook for [System Identification Routine](https://www.designsafe-ci.org/data/browser/projects/954727520918105625-242ac11c-0001-012/Jupyter_Notebook_Code_documents/Jupyter_Notebook_Project).
 
-### [Case 1. Shake table performance](https://www.designsafe-ci.org/data/browser/projects/954727520918105625-242ac11c-0001-012/Jupyter_Notebook_Code_documents/Jupyter_Notebook_Project)
+### Case 1. Shake table performance
+
+[Jupyter Notebook for shake table peformance](https://www.designsafe-ci.org/data/browser/projects/954727520918105625-242ac11c-0001-012/Jupyter_Notebook_Code_documents/Jupyter_Notebook_Project).
+
 A set of modules have been developed to evaluate the performance of the shake table using data from past experiments conducted to demonstrate the hybrid testing capabilities of LHPOST [6]. For these hybrid tests, separate Jupyter Notebooks have been developed to consider the various sources of generated data including i) Shake Table Controller, ii) the primary Data Acquisition System (DAQ), and iii) additional computational sources for hybrid testing. In a typical shake table test, the first two sources of data would be included plus any other user specified data acquisition system.  
 Data collected by the shake table controller is expected to be standard across most tests and useful to verify the performance of the shake table in reproducing the ground motions. Here, data from the shake table controller [2] is used to compare reference command and measured feedback data to evaluate the fidelity of the shake table in reproducing the desired ground motions. The Jupyter notebook functionality includes interactive plotters for viewing either a single channel or multiple channels to compare the reference input and feedback, for example, by viewing the time history, Fourier Transform or Response Spectra (Fig 1). The shake table controller sampling rate was set to a frequency of 2048 [Hz] for this test.  Initial implementation of the code required about 3.5 minutes to run. To improve the run-time, various options were explored including down sampling and use of tools such as those being developed by Brandenberg and Yang [7] to calculate the spectral acceleration. By using these tools, the run time was reduced to approximately 10 s. The module was implemented for the previous 1-D capability of LHPOST but can be easily extended for its newly upgraded 6DOF capabilities.
 
@@ -38,7 +40,10 @@ Data collected by the shake table controller is expected to be standard across m
 
 Figure 1. Evaluation of shake table performance through comparison of command reference and feedback including a) Fourier Transform and b) response spectra .
 
-### [Case 2. Module for Structural Response and System Identification](https://www.designsafe-ci.org/data/browser/projects/954727520918105625-242ac11c-0001-012/Jupyter_Notebook_Code_documents/Jupyter_Notebook_Project)
+### Case 2. Module for Structural Response and System Identification
+
+Jupyter Notebook for [Module for Structural Response and System Identification](https://www.designsafe-ci.org/data/browser/projects/954727520918105625-242ac11c-0001-012/Jupyter_Notebook_Code_documents/Jupyter_Notebook_Project).
+
 The primary goal of the structural response module is to quickly and accurately analyze experimental data.  For development and testing of available algorithms, experimental data from a previous dynamic experiment involving a ¼ scale three-story steel moment frame structure were used [3, 5]. A cross spectral density function (CSD) is applied to compare the white noise acceleration input at the platen to the acceleration at each floor. To improve code clarity and compatibility for future investigators, the CSD function from the SciPy signal package [8] is implemented, which is well documented. The CSD for each floor is plotted using the matplotlib library. The resulting CSD plots are shown up to 20 Hz in Fig. 2 and identify the natural frequencies of the structure. 
 Modal displacements can also be calculated directly from the CSD function outputs. This is accomplished by using the frequency-power relation between acceleration spectral density functions and displacement spectral density functions [9]. The modal displacements for each story occur at frequencies where the CSD has a local maximum. To obtain these values for the test data of the three-story structure, the frequencies of the first three local maxima were recorded. For future use of this code, the desired number of mode shapes can be scaled by adding or removing local maxima terms at the start of the mode shapes code section. Using the CSD function does not take into account the sign of the modal displacement, however, since these functions are strictly positive over their domain. To account for this, the output of the CSD function at the local maxima frequencies is reexamined without considering the absolute values of its components to identify if the parameters yield a negative number at the corresponding frequency. The rough shape of the modal displacements is plotted as shown in Fig. 3. Future work for this notebook includes generating a smoothing function for the mode shapes and comparison of data from different tests to identify changes in dynamic properties through the testing series that could be indicative of damage.
 
@@ -52,7 +57,10 @@ Figure 2. System identification of three story moment frame [5] subjected to whi
 
 Figure 3. Mode shapes estimation from 3-story building subjected to white noise on shake table.
 
-### [Case 3. Integration of Notebooks in Experimental Workflow](https://www.designsafe-ci.org/data/browser/projects/954727520918105625-242ac11c-0001-012/Jupyter_Notebook_Code_documents/Jupyter_Notebook_Project)
+### Case 3. Integration of Notebooks in Experimental Workflow
+
+[Jupyter Notebook for experimental workflow](https://www.designsafe-ci.org/data/browser/projects/954727520918105625-242ac11c-0001-012/Jupyter_Notebook_Code_documents/Jupyter_Notebook_Project).
+
 The primary goal of this module is to develop the Jupyter Notebooks through the experimental program.  The experiments are in planning and thus, this module would be programmed based on draft instrumentation plans. This module will plot the primary structural response such as story accelerations and drifts as well as employ system identification routines available in Python and previously demonstrated.  Current work is exploring use of machine learning libraries for applications to these modules.  
 The Modular Testbed Building (MTB2) [10] is designed to be a shared-use, reconfigurable experimental structure. The standard 3-story building can simulate braced frame and moment frame behavior through replaceable fuse type components including buckling restrained braced frames and Durafuse shear plate connections, respectively. The unique connection scheme allows for yielded fuse type members to be easily replaced to restore the structure to its original condition. The MTB2 can be constructed in various configurations with three examples shown in Fig 4. The lateral framing system in the 2-bay direction can be modeled as moment frames or braced frames. The single bay direction has a span of 20 feet and is a braced frame. Each span in the double bay direction is 16 feet. The story height for all floors is 12 feet with columns that extend 4 feet above the top floor.  The Special Moment Frame (SMF) configuration utilizes replaceable shear fuse plates while the braced frame utilizes Buckling-Restrained Braces.
 
@@ -60,7 +68,7 @@ The Modular Testbed Building (MTB2) [10] is designed to be a shared-use, reconfi
 
 Figure 4.   MTB2 building: a) SMF configuration (left), b) BRB-1 configuration (center), and c) BRB-2 configuration (right).
 
-## Conclusions
+## Summary
 The Jupyter Notebooks developed for use through DesignSafe will facilitate the viewing and analysis of data sharing with collaborators from testing through data publication. A key advantage is the cloud-based approach that facilitates interactive data viewing and analysis in a report format without having to download large datasets. These tools are intended to make data more readily accessible and promote data reuse. The Jupyter Notebook presented here includes routines to evaluate the performance of the shake table and carry out system identification of structural models. 
 
 ### References
