@@ -256,7 +256,7 @@ class PDF(object):
 
 Finally, jupyter notebooks offer flexibility to invoke GUI widgets that can help present results in a dynamic and interactive manner. The python scripts shown below create interactive plots for pore water pressure and soil profile lateral displacements. The horizontal bars allow users interrogate each plot for results at any particular time. Complete pyhon scripts are included in the [interactiveplot.py](FreeField-JupyterNB/interactiveplot.py) available in community.   
 
-### Pore water pressure
+#### Pore water pressure
 
 ``` python
 from interactiveplot import createpwpplot, createDispplot
@@ -267,7 +267,7 @@ createpwpplot()
 </p>
 <p align="center"> <b>Fig.7 - Pore pressure interactive plot</b> </p>
 
-### Displacement
+#### Displacement
 
 ``` python
 createDispplot()
