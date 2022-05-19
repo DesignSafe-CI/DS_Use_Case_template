@@ -100,6 +100,8 @@ This creates in the working directory a folder `Two_materials_column` where all 
 ## Running the MPM Code
 The CB-Geo MPM code is available on DesignSafe under `WorkSpace > Tools & Applications > Simulations`. [Launch a new MPM Job](https://www.designsafe-ci.org/rw/workspace/#!/MPM::Simulation). The input folder should have all the scripts, mesh and particle files. CB-Geo MPM can run on multi-nodes and has been tested to run on upto 15,000 cores. 
 
+![Run MPM on DS](img/mpm-ds.png)
+
 ## Post Processing
 
 ### VTK and ParaView
