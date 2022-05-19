@@ -35,11 +35,17 @@ This use case demonstrates how to run MPM simulations on DesignSafe using [Jupyt
 Input files for the MPM code can be generated using [pycbg](https://forgemia.inra.fr/mpm-at-recover/pycbg). The documentation of the input generator is [here](https://pycbg.readthedocs.io/en/latest/). For more information on the input files, please refer to [CB-Geo MPM documentation](https://mpm.cb-geo.com/#/user/preprocess/input). The generator is available at [PyPI](https://pypi.org/project/pycbg/) and an be easily installed with `pip install pycbg`. `pycbg` enables a Python generation of expected `.json` input files, offering all Python capabilities to CB-Geo MPM users for this preprocessing stage.
 
 Typing a few Python lines is usually enough for a user to define all necessary ingredients for a MPM simulation:
+
  - generate the mesh (using [gmsh](https://pypi.org/project/gmsh/))
+
  - generate the particles
+
  - define the entity sets
+
  - create boundary conditions
+
  - set the analysis' parameters
+
  - setup batch of simulations (the documentation doesn't mention it yet but the function `pycbg.preprocessing.setup_batch` has a complete docstring)
 
 
