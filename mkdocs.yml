@@ -23,7 +23,6 @@ markdown_extensions:
 #### Do NOT edit above this line
 
 nav:
-  - Use Cases Products: index.md
   - Taggit - Image Tagging: haan/usecase.md
   - ML and AI: vantassel_and_zhang/usecase.md
   - NGL Database: brandenberg/usecase.md
