@@ -5,22 +5,25 @@ DesignSafe provides a wide variety of resources that allow researchers to effect
 To help users fully embrace DesignSafe functionalities, we have developed a suite of Use Cases that demonstrate how DesignSafe is being used to advance natural hazards research.  Practical products, examples, and scripts developed as part of these Use Cases are provided at the links below.  The different simulation codes, tools, and DesignSafe resources used in each Use Case are also indicated.
 
 <b> General Use Cases </b><br/>
-* [**Damage Tagging of Field Images**](haan/usecase.md) (Taggit, HazMapper)<br/>
-* [**Machine Learning and AI Resources**](vantassel_and_zhang/usecase.md) (Jupyter, Interactive Data Analytics, HPC)<br/>
 
+* [**Damage Tagging of Field Images**](haan/usecase.md) (Taggit, HazMapper)
+* [**Machine Learning and AI Resources**](vantassel_and_zhang/usecase.md) (Jupyter, Interactive Data Analytics, HPC)
 
-<b> Geohazard Use Cases </b><br/>
-* [**Data Analysis using Next Generation Liquefaction (NGL) Database**](brandenberg/usecase.md) (NGL, Jupyter, SQL, Interactive Data Analytics)<br/>
-* [**Landslide Runout Simulations**](kumar/usecase.md) (MPM, Jupyter, Paraview, HPC)<br/>
+<b> Geohazard Use Cases </b>
 
-<b> Hurricane and Windstorm Use Cases </b><br/>
-* [**Large-Scale Ensemble Simulations of Storm Surge**](dawson/usecase.md)  (ADCIRC, pylauncher, Jupyter, HPC)<br/>
-* [**Visualization of Storm Surge Impacts**](padgett/usecase.md) (ADCIRC, Jupyter, QGIS)<br/>
-* [**Simulation of Wind Flow around Buildings**](kareem/usecase.md) (OpenFOAM, Jupyter, Paraview, HPC)<br/>
-* [**Analysis of Field Sensor Data from Wind Events**](pinelli/usecase.md) (Jupyter, Interactive Data Analysis)<br/>
+* [**Data Analysis using Next Generation Liquefaction (NGL) Database**](brandenberg/usecase.md) (NGL, Jupyter, SQL, Interactive Data Analytics)
+* [**Landslide Runout Simulations**](kumar/usecase.md) (MPM, Jupyter, Paraview, HPC)
 
-<b> Seismic Use Cases </b><br/>
-* [**Site Response Analysis and Model Calibration**](arduino/usecase.md) (OpenSees, SimCenter quoFEM, Jupyter, HPC)<br/>
-* [**Simulating the Seismic Performance of Reinforced Concrete Walls**](lowes/usecase.md) (OpenSees, Jupyter, HPC)<br/>
-* [**Soil-Structure-Interaction Simulations**](rathje/usecase.md) (OpenSees, STKO, Jupyter, HPC)<br/>
-* [**Experimental Visualization of Shaking Table Data**](mosqueda/usecase.md) (Jupyter, Interactive Data Analysis, UCSD NHERI Facility)<br/>
+<b> Hurricane and Windstorm Use Cases </b>
+
+* [**Large-Scale Ensemble Simulations of Storm Surge**](dawson/usecase.md)  (ADCIRC, pylauncher, Jupyter, HPC)
+* [**Visualization of Storm Surge Impacts**](padgett/usecase.md) (ADCIRC, Jupyter, QGIS)
+* [**Simulation of Wind Flow around Buildings**](kareem/usecase.md) (OpenFOAM, Jupyter, Paraview, HPC)
+* [**Analysis of Field Sensor Data from Wind Events**](pinelli/usecase.md) (Jupyter, Interactive Data Analysis)
+
+<b> Seismic Use Cases </b>
+
+* [**Site Response Analysis and Model Calibration**](arduino/usecase.md) (OpenSees, SimCenter quoFEM, Jupyter, HPC)
+* [**Simulating the Seismic Performance of Reinforced Concrete Walls**](lowes/usecase.md) (OpenSees, Jupyter, HPC)
+* [**Soil-Structure-Interaction Simulations**](rathje/usecase.md) (OpenSees, STKO, Jupyter, HPC)
+* [**Experimental Visualization of Shaking Table Data**](mosqueda/usecase.md) (Jupyter, Interactive Data Analysis, UCSD NHERI Facility)
