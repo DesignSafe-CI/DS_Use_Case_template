@@ -1,24 +1,21 @@
 # ADCIRC Use Case - Using Tapis and Pylauncher for Ensemble Modeling in DesignSafe 
 
-**Clint Dawson, Carlos del-Castillo-Negrete, Benjamin Pachev - University of Texas at Austin** 
+**Clint Dawson, University of Texas at Austin**  
+**Carlos del-Castillo-Negrete, University of Texas at Austin**  
+**Benjamin Pachev, University of Texas at Austin**  
 
-The following use case presents an example of how to leverage the Tapis API to run an ensemble of HPC simulations. The specific workflow to be presented consists of running ADCIRC, a storm-surge modeling application available on DesignSafe, using the parametric job launcher pylauncher. All code and examples presented are meant to be be executed from a Jupyter Notebook on the DesignSafe platform and using a DesignSafe account to make Tapis API calls. Accompanying Jupyter notebooks for this use case can be found in the ADCIRC folder in [Community Data](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/ADCIRC). The example makes use of the following DesignSafe resources:
+The following use case presents an example of how to leverage the Tapis API to run an ensemble of HPC simulations. The specific workflow to be presented consists of running ADCIRC, a storm-surge modeling application available on DesignSafe, using the parametric job launcher pylauncher. All code and examples presented are meant to be be executed from a Jupyter Notebook on the DesignSafe platform and using a DesignSafe account to make Tapis API calls. Accompanying jupyter notebooks for this use case can be found in the ADCIRC folder in [Community Data](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/ADCIRC).
 
-[ADCIRC](https://www.designsafe-ci.org/rw/workspace/#!/ADCIRC::Simulation)<br/>
-[Jupyter notebooks on DS Juypterhub](https://www.designsafe-ci.org/rw/workspace/#!/Jupyter::Analysis)<br/>
+Learn more: [Jupyter notebooks on DS Juypterhub](https://www.designsafe-ci.org/rw/workspace/#!/Jupyter::Analysis).
 
-
-## Background
+## Background 
 
 ### Citation and Licensing
-
-* Please cite [Dawson et al. (2021)](https://doi.org/10.17603/ds2-68a9-0s64) if using any of the Texas FEMA Hurricane data used in the examples below. 
 
 * Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246) to acknowledge the use of DesignSafe resources.  
 
 * This software is distributed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.html).  
 
-## Description
 ### ADCIRC
 
 For more information on running ADCIRC and documentation, see the following links:
@@ -70,7 +67,10 @@ Overview of this section:
 
 ### Accessing the Application
 
-Check out the application from the github page - [https://github.com/UT-CHG/tapis-pylauncher](https://github.com/UT-CHG/tapis-pylauncher) and deploy it using either the Tapis CLI or AgavePy (See documentation links above under Tapis section), or email cdelcastillo21@gmail.com for access to an already deployed version of the application (it is not a public application yet, so has to be shared explicitly with users).
+The code for the tapis application is publicly accessible at [https://github.com/UT-CHG/tapis-pylauncher](https://github.com/UT-CHG/tapis-pylauncher). A public Tapis application exists using [version 0.0.0](https://github.com/UT-CHG/tapis-pylauncher/tree/v0.0.0) of the application deployed under the ID `pylauncher-0.0.0u1 `. 
+
+![caption](img/pylauncher_app.png)
+> The publicly available pylauncher application should be available to all users via the CLI/API, but will not be visible via DesignSafe's workspaces front-end.
 
 ### Basic Application Overview
 
@@ -166,4 +166,4 @@ The notebook goes over how to run ADCIRC on the [Shinnecock Inlet Test Grid](htt
 An ensemble of adcirc simulations using different amounts of parallel processes on the same grid is configured, and output from active and archived job runs is analyzed to produced bar plots of run-time versus number of processors used for the Shinneocock Inlet Grid.
 
 ![caption](img/si_runtimes.png)
-> Total Runtime for ADCIRC on the Shinnecock Inlet grid pictured above using different number of processors on Stampede2.
+> Total Runtime for ADCIRC on the Shinnecock Inlet grid pictured above using different number of processors on stampede2.
