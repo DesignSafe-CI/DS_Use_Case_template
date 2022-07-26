@@ -1,20 +1,20 @@
 # CFD Simulations using the Jupyter Notebooks
-**Fei Ding, Ahsan Kareem, and Dae Kun Kwon - [NatHaz Modeling Laboratory](https://nathaz.nd.edu/), University of Notre Dame**
+**Fei Ding, Ahsan Kareem, and Dae Kun Kwon - [NatHaz Modeling Laboratory](https://nathaz.nd.edu/){target=_blank}, University of Notre Dame**
 
-OpenFOAM is the free, open source CFD software and is popularly used for computationally establishing wind effects on structures. To help beginners overcome the challenges of the steep learning curve posed by OpenFOAM and provide users with the capabilities of generating repetitive jobs and advanced functions, this use case example presents the work to script the workflow for CFD simulations using OpenFOAM in the Jupyter Notebooks. The developed two Jupyter Notebooks can aid in determining inflow conditions, creating mesh files for parameterized building geometries, and running the selected solvers. They can also contribute to the education for CFD learning as online resources, which will be implemented in the [DesignSafe](https://www.designsafe-ci.org).
+OpenFOAM is the free, open source CFD software and is popularly used for computationally establishing wind effects on structures. To help beginners overcome the challenges of the steep learning curve posed by OpenFOAM and provide users with the capabilities of generating repetitive jobs and advanced functions, this use case example presents the work to script the workflow for CFD simulations using OpenFOAM in the Jupyter Notebooks. The developed two Jupyter Notebooks can aid in determining inflow conditions, creating mesh files for parameterized building geometries, and running the selected solvers. They can also contribute to the education for CFD learning as online resources, which will be implemented in the [DesignSafe](https://www.designsafe-ci.org){target=_blank}.
 
-All files discussed in this use case are shared at [Data Depot > Community Data](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/OpenFOAM). It is recommended that users make a copy of the contents to their directory (My Data) for tests and simulations. The example makes use of the following DesignSafe resources:
+All files discussed in this use case are shared at [Data Depot > Community Data](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/OpenFOAM){target=_blank}. It is recommended that users make a copy of the contents to their directory (My Data) for tests and simulations. The example makes use of the following DesignSafe resources:
 
-[OpenFoam](https://www.designsafe-ci.org/rw/workspace/#!/OpenFOAM::Simulation)<br/> 
-[ParaView](https://www.designsafe-ci.org/rw/workspace/#!/Paraview::Visualization)<br/>
-[Jupyter notebooks on DS Juypterhub](https://www.designsafe-ci.org/rw/workspace/#!/Jupyter::Analysis)<br/>
+[OpenFoam](https://www.designsafe-ci.org/rw/workspace/#!/OpenFOAM::Simulation){target=_blank}<br/> 
+[ParaView](https://www.designsafe-ci.org/rw/workspace/#!/Paraview::Visualization){target=_blank}<br/>
+[Jupyter notebooks on DS Juypterhub](https://www.designsafe-ci.org/rw/workspace/#!/Jupyter::Analysis){target=_blank}<br/>
 
 ## Background
 ### Citation and Licensing
 
-* Please cite [Ding and Kareem (2021)](https://tigerprints.clemson.edu/cgi/viewcontent.cgi?article=1025&context=aawe) to acknowledge the use of any resources from this use case.
-* Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246) to acknowledge the use of DesignSafe resources.
-* This software is distributed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.html).
+* Please cite [Ding and Kareem (2021)](https://tigerprints.clemson.edu/cgi/viewcontent.cgi?article=1025&context=aawe){target=_blank} to acknowledge the use of any resources from this use case.
+* Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246){target=_blank} to acknowledge the use of DesignSafe resources.
+* This software is distributed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.html){target=_blank}.
 
 ## OpenFOAM with the Jupyter Notebook for creating input environments
 
@@ -43,11 +43,11 @@ Jupyter Notebooks can provide an interpretable and interactive computing environ
 
 #### Jupyter Notebook example for advanced utilities
 
-For better understanding, A Jupyter Notebook example, [Jupyter_PyFoam.ipynb](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/OpenFOAM/PyFoam_Jupyter/), is provided that facilitates the automated CFD modeling with the aid of advanced utilities. Automated mesh generation and inflow configuration in the Jupyter Notebooks are explored through the case study of a rectangular building's cross-section.
+For better understanding, A Jupyter Notebook example, [Jupyter_PyFoam.ipynb](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/OpenFOAM/PyFoam_Jupyter/){target=_blank}, is provided that facilitates the automated CFD modeling with the aid of advanced utilities. Automated mesh generation and inflow configuration in the Jupyter Notebooks are explored through the case study of a rectangular building's cross-section.
 
-In addition, a baseline model housed in [DH_Baseline](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/OpenFOAM/PyFoam_Jupyter) directory is provided that can be used to generate an input environment for an OpenFOAM simulation.
+In addition, a baseline model housed in [DH_Baseline](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/OpenFOAM/PyFoam_Jupyter){target=_blank} directory is provided that can be used to generate an input environment for an OpenFOAM simulation.
 
-It is worth noting that DesignSafe recently introduced a [Jupyterhub Spawner](https://www.designsafe-ci.org/rw/user-guides/tools-applications/jupyter/) for users to run one of two Jupyter server images. To run Jupyter Notebooks for CFD presented in this document, users should use the `Classic Jupyter Image` as the Jupyter server.
+It is worth noting that DesignSafe recently introduced a [Jupyterhub Spawner](https://www.designsafe-ci.org/rw/user-guides/tools-applications/jupyter/){target=_blank} for users to run one of two Jupyter server images. To run Jupyter Notebooks for CFD presented in this document, users should use the `Classic Jupyter Image` as the Jupyter server.
 
 #### Using PyFoam utilities in the Jupyter Notebook
 
@@ -107,13 +107,13 @@ sol=SolutionFile(dire.initialDir(),”omega”)
 sol.replaceBoundary(”inlet”,”%f” %(omega))
 ```
 
-More detailed information can be found in the [Jupyter_PyFoam.ipynb](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/OpenFOAM/PyFoam_Jupyter/). The Notebook also illustrates how to prepare multiple models to simulate simultaneously and their automatic generation of input environments.
+More detailed information can be found in the [Jupyter_PyFoam.ipynb](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/OpenFOAM/PyFoam_Jupyter/){target=_blank}. The Notebook also illustrates how to prepare multiple models to simulate simultaneously and their automatic generation of input environments.
 
 ### Use case of an OpenFOAM simulation with Jupyter Notebook in the DesignSafe workspace
 
 #### Description
 
-A use case example is a `URANS` simulation for wind flow around a rectangular building's cross-section, which is implemented at a Jupyter Notebook, [OpenFOAM_Run_example.ipynb](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/OpenFOAM/). The input environments are prepared at [DH1_run](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/OpenFOAM/) directory. The test rectangular cross-section model and its mesh are shown in Fig. 4.
+A use case example is a `URANS` simulation for wind flow around a rectangular building's cross-section, which is implemented at a Jupyter Notebook, [OpenFOAM_Run_example.ipynb](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/OpenFOAM/){target=_blank}. The input environments are prepared at [DH1_run](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/OpenFOAM/){target=_blank} directory. The test rectangular cross-section model and its mesh are shown in Fig. 4.
 
 ![fig4](img/fig4.png)
 <p align="center">Fig. 4 Test model and its mesh</p>
@@ -191,6 +191,6 @@ For data analysis such as plotting the time series of drag or lift force coeffic
 
 ## References
 [1] H. Jasak, A. Jemcov, Z. Tukovic, et al. OpenFOAM: A C++ library for complex physics simulations. In International workshop on coupled methods in numerical dynamics, volume 1000, pages 1-20. IUC Dubrovnik Croatia, 2007.<br />
-[2] OpenFOAM wiki. Pyfoam. [https://openfoamwiki.net/index.php/Contrib/PyFoam](https://openfoamwiki.net/index.php/Contrib/PyFoam). Online; accessed 24-Feb-2022.<br />
-[3] Harish, Ajay Bangalore; Govindjee, Sanjay; McKenna, Frank. [CFD Notebook (Beginner)](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published/PRJ-2915). DesignSafe-CI, 2020. <br />
-[3] N. Vuaille. Controlling paraview from jupyter notebook. [https://www.kitware.com/paraview-jupyter-notebook/](https://www.kitware.com/paraview-jupyter-notebook/). Online; accessed 24-Feb-2022.<br />
+[2] OpenFOAM wiki. Pyfoam. [https://openfoamwiki.net/index.php/Contrib/PyFoam](https://openfoamwiki.net/index.php/Contrib/PyFoam){target=_blank}. Online; accessed 24-Feb-2022.<br />
+[3] Harish, Ajay Bangalore; Govindjee, Sanjay; McKenna, Frank. [CFD Notebook (Beginner)](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published/PRJ-2915){target=_blank}. DesignSafe-CI, 2020. <br />
+[3] N. Vuaille. Controlling paraview from jupyter notebook. [https://www.kitware.com/paraview-jupyter-notebook/](https://www.kitware.com/paraview-jupyter-notebook/){target=_blank}. Online; accessed 24-Feb-2022.<br />

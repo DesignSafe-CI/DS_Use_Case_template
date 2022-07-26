@@ -4,20 +4,20 @@
 
 The example makes use of the following DesignSafe resources:
 
-[Jupyter notebooks on DS Juypterhub](https://www.designsafe-ci.org/rw/workspace/#!/Jupyter::Analysis)<br/>
-[CB-Geo MPM](https://www.designsafe-ci.org/rw/workspace/#!/mpm-1.0.0u1)<br/> 
-[ParaView](https://www.designsafe-ci.org/rw/workspace/#!/Paraview::Visualization)<br/> 
+[Jupyter notebooks on DS Juypterhub](https://www.designsafe-ci.org/rw/workspace/#!/Jupyter::Analysis){target=_blank}<br/>
+[CB-Geo MPM](https://www.designsafe-ci.org/rw/workspace/#!/mpm-1.0.0u1){target=_blank}<br/> 
+[ParaView](https://www.designsafe-ci.org/rw/workspace/#!/Paraview::Visualization){target=_blank}<br/> 
 
 ## Background 
 ### Citation and Licensing
 
-* Please cite [Kumar et al. (2019)](https://arxiv.org/abs/1909.13380) to acknowledge the use of CB-Geo MPM.
+* Please cite [Kumar et al. (2019)](https://arxiv.org/abs/1909.13380){target=_blank} to acknowledge the use of CB-Geo MPM.
 
-* Please cite [Abram et al. (2022)](https://arxiv.org/abs/2109.02754) to acknowledge the use of any resources from the Oso in situ use case.
+* Please cite [Abram et al. (2022)](https://arxiv.org/abs/2109.02754){target=_blank} to acknowledge the use of any resources from the Oso in situ use case.
 
-* Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246) to acknowledge the use of DesignSafe resources.  
+* Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246){target=_blank} to acknowledge the use of DesignSafe resources.  
 
-* This software is distributed under the [MIT License](https://github.com/cb-geo/mpm/blob/develop/license.md).
+* This software is distributed under the [MIT License](https://github.com/cb-geo/mpm/blob/develop/license.md){target=_blank}.
 
 
 ### Description
@@ -26,17 +26,17 @@ Material Point Method (MPM) is a particle based method that represents the mater
 ![MPM Algorithm](img/mpm-algorithm.png)
 > Illustration of the MPM algorithm (1) A representation of material points overlaid on a computational grid. Arrows represent material point state vectors (mass, volume, velocity, etc.) being projected to the nodes of the computational grid. (2) The equations of motion are solved onto the nodes, resulting in updated nodal velocities and positions. (3) The updated nodal kinematics are interpolated back to the material points. (4) The state of the material points is updated, and the computational grid is reset.
 
-This use case demonstrates how to run MPM simulations on DesignSafe using [Jupyter Notebook](https://www.designsafe-ci.org/rw/workspace/#!/Jupyter::Analysis). For more information on CB-Geo MPM visit the [GitHub repo](https://github.com/cb-geo/mpm) and [user documentation](https://mpm.cb-geo.com).
+This use case demonstrates how to run MPM simulations on DesignSafe using [Jupyter Notebook](https://www.designsafe-ci.org/rw/workspace/#!/Jupyter::Analysis){target=_blank}. For more information on CB-Geo MPM visit the [GitHub repo](https://github.com/cb-geo/mpm){target=_blank} and [user documentation](https://mpm.cb-geo.com){target=_blank}.
 
 
 
 ## Input generation
 
-Input files for the MPM code can be generated using [pycbg](https://forgemia.inra.fr/mpm-at-recover/pycbg). The documentation of the input generator is [here](https://pycbg.readthedocs.io/en/latest/). For more information on the input files, please refer to [CB-Geo MPM documentation](https://mpm.cb-geo.com/#/user/preprocess/input). The generator is available at [PyPI](https://pypi.org/project/pycbg/) and an be easily installed with `pip install pycbg`. `pycbg` enables a Python generation of expected `.json` input files, offering all Python capabilities to CB-Geo MPM users for this preprocessing stage.
+Input files for the MPM code can be generated using [pycbg](https://forgemia.inra.fr/mpm-at-recover/pycbg){target=_blank}. The documentation of the input generator is [here](https://pycbg.readthedocs.io/en/latest/){target=_blank}. For more information on the input files, please refer to [CB-Geo MPM documentation](https://mpm.cb-geo.com/#/user/preprocess/input){target=_blank}. The generator is available at [PyPI](https://pypi.org/project/pycbg/){target=_blank} and an be easily installed with `pip install pycbg`. `pycbg` enables a Python generation of expected `.json` input files, offering all Python capabilities to CB-Geo MPM users for this preprocessing stage.
 
 Typing a few Python lines is usually enough for a user to define all necessary ingredients for a MPM simulation:
 
- - generate the mesh (using [gmsh](https://pypi.org/project/gmsh/))
+ - generate the mesh (using [gmsh](https://pypi.org/project/gmsh/){target=_blank})
 
  - generate the particles
 
@@ -51,7 +51,7 @@ Typing a few Python lines is usually enough for a user to define all necessary i
 
 ### An example 
 
-Simulation of a settling column made with two different materials is described in [preprocess.ipynb](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/MPM) as follows:
+Simulation of a settling column made with two different materials is described in [preprocess.ipynb](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/MPM){target=_blank} as follows:
 
 ```python
 import pycbg.preprocessing as utl
@@ -98,7 +98,7 @@ sim.write_input_file()
 This creates in the working directory a folder `Two_materials_column` where all the necessary input files are located. 
 
 ## Running the MPM Code
-The CB-Geo MPM code is available on DesignSafe under `WorkSpace > Tools & Applications > Simulations`. [Launch a new MPM Job](https://www.designsafe-ci.org/rw/workspace/#!/mpm-1.0.0u1). The input folder should have all the scripts, mesh and particle files. CB-Geo MPM can run on multi-nodes and has been tested to run on upto 15,000 cores. 
+The CB-Geo MPM code is available on DesignSafe under `WorkSpace > Tools & Applications > Simulations`. [Launch a new MPM Job](https://www.designsafe-ci.org/rw/workspace/#!/mpm-1.0.0u1){target=_blank}. The input folder should have all the scripts, mesh and particle files. CB-Geo MPM can run on multi-nodes and has been tested to run on upto 15,000 cores. 
 
 ![Run MPM on DS](img/mpm-ds.png)
 
@@ -122,7 +122,7 @@ The MPM code can be set to write VTK data of particles at a specified output fre
   }
 ```
 
-> When opening particle data (*.vtp) in [ParaView](https://www.paraview.org/), please use the representation `Point Gaussian` to visualise the particle data attribute.
+> When opening particle data (*.vtp) in [ParaView](https://www.paraview.org/){target=_blank}, please use the representation `Point Gaussian` to visualise the particle data attribute.
 
 
 The CB-Geo MPM code generates parallel `*.pvtp` files when the code is executed across MPI ranks. Each MPI rank will produce an attribute subdomain files, for example `stresses-0_2-100.vtp` and `stresses-1_2-100.vtp` file for stresses generated in rank 0 of 2 rank MPI processes and also a parallel `pvtp` file `stresses-100.pvtp`. The parallel `*.pvtp` file combines all the VTK outputs from different MPI ranks. 
@@ -139,7 +139,7 @@ You can view the results in [DesignSafe ParaView](https://www.designsafe-ci.org/
 
 ### HDF5
 
-The CB-Geo mpm code writes HDF5 data of particles at each output time step. The HDF5 data can be read using Python / Pandas. If `pandas` package is not installed, run `pip3 install pandas`. The [postprocess.ipynb](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/MPM) shows how to perform data analysis using HDF5 data.
+The CB-Geo mpm code writes HDF5 data of particles at each output time step. The HDF5 data can be read using Python / Pandas. If `pandas` package is not installed, run `pip3 install pandas`. The [postprocess.ipynb](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/MPM){target=_blank} shows how to perform data analysis using HDF5 data.
 
 To read a particles HDF5 data, for example `particles00.h5` at step 0:
 
@@ -195,7 +195,7 @@ visualization allows simulations to export complete datasets
 only at the temporal frequency necessary for economic check-
 point/restart.
 
-We leverage in situ viz with MPM using [TACC Galaxy](https://github.com/TACC/galaxy).
+We leverage in situ viz with MPM using [TACC Galaxy](https://github.com/TACC/galaxy){target=_blank}.
 
 ![In situ viz](img/oso-mpm-viz.png)
 

@@ -6,17 +6,17 @@
 
 The example makes use of the following DesignSafe resources:
 
-[Jupyter notebooks on DS Juypterhub](https://www.designsafe-ci.org/rw/workspace/#!/Jupyter::Analysis)<br/>
-[NGL Database](https://www.nextgenerationliquefaction.org/)<br/>
+[Jupyter notebooks on DS Juypterhub](https://www.designsafe-ci.org/rw/workspace/#!/Jupyter::Analysis){target=_blank}<br/>
+[NGL Database](https://www.nextgenerationliquefaction.org/){target=_blank}<br/>
 
 ## Background
 ### Citations and Licensing
 
-* Please cite [Zimmaro, P., et al. (2019)](https://doi.org/10.21222/C2J040) to acknowledge the use of the NGL Database. Data in the NGL database has been gathered from [these](https://nextgenerationliquefaction.org/citations.php) published sources. If you use specific data in the database, please cite the original source.
+* Please cite [Zimmaro, P., et al. (2019)](https://doi.org/10.21222/C2J040){target=_blank} to acknowledge the use of the NGL Database. Data in the NGL database has been gathered from [these](https://nextgenerationliquefaction.org/citations.php){target=_blank} published sources. If you use specific data in the database, please cite the original source.
 
-* Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246) to acknowledge the use of DesignSafe resources.  
+* Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246){target=_blank} to acknowledge the use of DesignSafe resources.  
 
-* This software is distributed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.html).  
+* This software is distributed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.html){target=_blank}.  
 
 
 ### Description  
@@ -28,7 +28,7 @@ substantially larger, more consistent, and more reliable source of liquefaction 
 Based on this database, we will create probabilistic models that provide hazard- and risk-consistent bases 
 for assessing liquefaction susceptibility, the potential for liquefaction to be triggered in susceptible soils, 
 and the likely consequences. NGL is committed to an open and objective evaluation and integration of data, 
-models and methods, as recommended in a 2016 National Academies [report](https://www.nap.edu/catalog/23474/state-of-the-art-and-practice-in-the-assessment-of-earthquake-induced-soil-liquefaction-and-its-consequences). 
+models and methods, as recommended in a 2016 National Academies [report](https://www.nap.edu/catalog/23474/state-of-the-art-and-practice-in-the-assessment-of-earthquake-induced-soil-liquefaction-and-its-consequences){target=_blank}. 
 
 The evaluation and integration of the data into new models and methods will be clear and transparent. Following these principles will ensure 
 that the resulting liquefaction susceptibility, triggering, and consequence models are reliable, robust and 
@@ -38,7 +38,7 @@ critical infrastructure projects.
 The NGL database is populated through a web interface at www.nextgenerationliquefaction.org/. The web interface 
 provides limited capabilities for users to interact with data. Users are able to view and download data, 
 but they cannot use the GUI to develop an end-to-end workflow to make scientific inferences and draw conclusions 
-from the data. To facilitate end-to-end workflows, the NGL database is replicated daily to [DesignSafe](https://www.designsafe-ci.org), where 
+from the data. To facilitate end-to-end workflows, the NGL database is replicated daily to [DesignSafe](https://www.designsafe-ci.org){target=_blank}, where 
 users can interact with it using Jupyter notebooks.
 
 ## Understanding the Database Schema
@@ -47,7 +47,7 @@ The NGL database is organized into tables that are related to each other via key
 you will need to understand the organizational structure of the database, called the schema. The database 
 schema is documented at the following URL:
 
-[https://nextgenerationliquefaction.org/schema/index.html](https://nextgenerationliquefaction.org/schema/index.html)
+[https://nextgenerationliquefaction.org/schema/index.html](https://nextgenerationliquefaction.org/schema/index.html){target=_blank}
   
 ## Querying Data via Jupyter Notebooks
 
@@ -81,7 +81,7 @@ This notebook contains example queries to illustrate how to extract data from th
 5. Query information about BORH table
 6. Query counts of cone penetration test data, boreholes, surface wave measurements, invasive shear wave velocity measurements, liquefaction observations, and non-liquefaction observations
 
-[ExampleQueries.ipynb](https://jupyter.designsafe-ci.org/user/name/tree/CommunityData/NGL/ExampleQueries.ipynb)
+[ExampleQueries.ipynb](https://jupyter.designsafe-ci.org/user/name/tree/CommunityData/NGL/ExampleQueries.ipynb){target=_blank}
 
 ## Cone Penetration Test Viewer
 
@@ -96,7 +96,7 @@ The cone penetration test viewer demonstrates the following:
 
 Cone penetration test data plotted in the notebook include tip resistance, sleeve friction, and pore pressure. In some cases, sleeve friction and pore pressure are not measured, in which case the plots are empty.
 
-[CPT_viewer.ipynb](https://jupyter.designsafe-ci.org/user/name/tree/CommunityData/NGL/CPT_viewer.ipynb)
+[CPT_viewer.ipynb](https://jupyter.designsafe-ci.org/user/name/tree/CommunityData/NGL/CPT_viewer.ipynb){target=_blank}
 
 
 ## V<sub>S</sub> (Invasive) Test Viewer
@@ -110,7 +110,7 @@ The V<sub>s</sub> (Invasive) Test Viewer demonstrates the following:
 5. Using the ipywidgets "observe" feature to call functions when users select a widget value
 6. Plotting data from the selected invasive geophysical test using matplotlib
 
-[VS_Invasive_viewer.ipynb](https://jupyter.designsafe-ci.org/user/name/tree/CommunityData/NGL/VS_Invasive_viewer.ipynb)
+[VS_Invasive_viewer.ipynb](https://jupyter.designsafe-ci.org/user/name/tree/CommunityData/NGL/VS_Invasive_viewer.ipynb){target=_blank}
 
 
 ## October 2021 DesignSafe Webinar
@@ -125,8 +125,8 @@ The notebook demonstrates the following:
 
 Cone penetration test data plotted in the notebook include tip resistance, sleeve friction, and pore pressure. In some cases, sleeve friction and pore pressure are not measured, in which case the plots are empty.
 
-[DesignSafe_Webinar_Oct2021.ipynb](https://jupyter.designsafe-ci.org/user/name/tree/CommunityData/NGL/DesignSafe_Webinar_Oct2021.ipynb)
+[DesignSafe_Webinar_Oct2021.ipynb](https://jupyter.designsafe-ci.org/user/name/tree/CommunityData/NGL/DesignSafe_Webinar_Oct2021.ipynb){target=_blank}
 
-[DesignSafe Webinar YouTube video](https://youtu.be/TNOPOU4lx5w)
+[DesignSafe Webinar YouTube video](https://youtu.be/TNOPOU4lx5w){target=_blank}
 
-[DesignSafe Workshop YouTube video](https://youtu.be/_nKpSqa1rso)
+[DesignSafe Workshop YouTube video](https://youtu.be/_nKpSqa1rso){target=_blank}
