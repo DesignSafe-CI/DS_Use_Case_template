@@ -12,7 +12,7 @@ of machine learning approaches (as there are many), nor in its coverage of the s
 intended to provide a high-level overview of different approaches to using machine learning to
 solve data-related problems.  The example makes use of the following DesignSafe resources:
 
-[Jupyter notebooks on DS Juypterhub](https://www.designsafe-ci.org/rw/workspace/#!/Jupyter::Analysis)<br/>
+[Jupyter notebooks on DS Juypterhub](https://www.designsafe-ci.org/rw/workspace/#!/Jupyter::Analysis){target=_blank}<br/>
 
 
 ## Background
@@ -20,11 +20,11 @@ solve data-related problems.  The example makes use of the following DesignSafe 
 
 <!-- * Please cite [AUTHORS et al. (20xx) - example of published project]() to acknowledge the use of any resources from this use case. -->
 
-* Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246) to acknowledge the use of DesignSafe resources.  
+* Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246){target=_blank} to acknowledge the use of DesignSafe resources.  
 
-* Please cite [Durante and Rathje (2021)](https://doi.org/10.1177/87552930211004613) to acknowledge the use of any resources for the Random Forest and Neural Networks examples included in this use case.
+* Please cite [Durante and Rathje (2021)](https://doi.org/10.1177/87552930211004613){target=_blank} to acknowledge the use of any resources for the Random Forest and Neural Networks examples included in this use case.
 
-* This software is distributed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.html).
+* This software is distributed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.html){target=_blank}.
 
 
 ## Overview of ML examples
@@ -58,7 +58,7 @@ machine learning problems.
 
 ![image_of_linear_regression_training](img/0_linear_regression.png)
 
-[Linear Regression Example](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/An%20Example-Based%20Introduction%20to%20Machine%20Learning/0_linear_regression)
+[Linear Regression Example](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/An%20Example-Based%20Introduction%20to%20Machine%20Learning/0_linear_regression){target=_blank}
 
 ### Random Forest
 
@@ -66,7 +66,7 @@ Random forests or random decision forests is an ensemble learning method for cla
 
 ![image_of_5_with_label](img/1_random_forest.png)
 
-[Random Forest Example](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/An%20Example-Based%20Introduction%20to%20Machine%20Learning/1_random_forest)
+[Random Forest Example](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/An%20Example-Based%20Introduction%20to%20Machine%20Learning/1_random_forest){target=_blank}
 
 ### Neural Networks
 
@@ -74,7 +74,7 @@ Artificial neural networks (ANNs), usually simply called neural networks (NNs), 
 
 ![image_of_5_with_label](img/2_artificial_neural_network.png)
 
-[Artificial Neural Network Example](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/An%20Example-Based%20Introduction%20to%20Machine%20Learning/2_artificial_neural_networks)
+[Artificial Neural Network Example](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/An%20Example-Based%20Introduction%20to%20Machine%20Learning/2_artificial_neural_networks){target=_blank}
 
 ### Convolutional Neural Networks
 
@@ -89,4 +89,4 @@ resources a replica of the main notebook is provided that can run across multipl
 
 ![image_of_5_with_label](img/2_convolutional_neural_networks.png)
 
-[Convolutional Neural Network Example](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/An%20Example-Based%20Introduction%20to%20Machine%20Learning/3_convolutional_neural_networks)
+[Convolutional Neural Network Example](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/An%20Example-Based%20Introduction%20to%20Machine%20Learning/3_convolutional_neural_networks){target=_blank}
