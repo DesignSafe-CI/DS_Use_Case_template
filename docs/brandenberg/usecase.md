@@ -130,3 +130,17 @@ Cone penetration test data plotted in the notebook include tip resistance, sleev
 [DesignSafe Webinar YouTube video](https://youtu.be/TNOPOU4lx5w){target=_blank}
 
 [DesignSafe Workshop YouTube video](https://youtu.be/_nKpSqa1rso){target=_blank}
+
+## Direct Simple Shear Laboratory Test Viewer
+
+The Direct Simple Shear Laboratory Test Viewer is a graphical interface that plots direct simple shear tests in the NGL database. It demonstrates the following:
+
+1. Connecting to NGL database in DesignSafe
+2. Querying data from LAB, LAB_PROGRAM, SAMP, SPEC, DSSG, and DSSS tables into Pandas dataframes
+3. Creating dropdown widgets using the ipywidgets package to allow users to select lab, sample, specimen, and test data
+4. Creating javascript for downloading the selected direct simple shear test to a local computer
+5. Plotting data from the selected direct simple shear test using matplotlib
+
+Direct simple shear data plotted in the notebook include shear stress, shear strain, vertical stress, and vertical strain time series in the first plot. The second plot displays shear strain and void ratio versus vertical stress and void ratio, shear stress, and vertical stress ratio versus shear strain.
+
+[DSS_Viewer.ipynb](https://jupyter.designsafe-ci.org/user/name/tree/CommunityData/NGL/DSS_Viewer.ipynb){target=_blank}
