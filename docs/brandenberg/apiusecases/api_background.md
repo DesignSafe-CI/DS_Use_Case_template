@@ -52,3 +52,7 @@ img = Image.open(BytesIO(r_img.content))
 print(explanation)
 img
 ```
+
+Example output from this script is shown below.
+
+![Example output of NASA Astronomy Picture of the Day, or APOD, API](APOD_example.jpg)
