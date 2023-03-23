@@ -23,14 +23,6 @@ The example also makes use of the following outside resources.
 
 ### Description  
 Welcome! This Jupyter notebook will walk through how to access an Application Programming Interface (API) that is available through the US Census Bureau. This API collates census data, including but not limited to total state populations, and population in poverty for example. 
-
-### What is an API?
-An API is a program that enables communication between two software components. In this case, the US Census Bureau maintains a database on their servers, and they make data available to users through requests in the format of Uniform Resource Locators (URLs). The content can be returned in various formats like html, xml, and json. Various online databases have API's that enable users to query data. 
-
-## Authentication, Authorization, and API Keys
-Authentication verifies the identity of a user, generally by entering a username and password, and sometimes through additional measures like multi-factor authentication. Authorization determines the access rights extended to a user. API's are often stateless, meaning that the server does not store any information about the client session on the server-side. Authorization of an API request is therefore handled using keys or tokens that are passed from the client to the server as part of the API request. Generally an API key or token is only provided to authenticated users.
-
-The US Census Bureau API requires users to have an API Key. To use this use case, you will first need to create your own unique US Census API Key, and will be prompted below to input it. More information can be found here: https://api.census.gov/data/key_signup.html
  
 ## Purpose of API and converting it to a usable source 
 
