@@ -170,13 +170,13 @@ The obtained samples of the soil parameters in Fig. 6 are used to predict the un
 shown in Fig. 1 and Figure 2 is introduced in which the liquefiable layer in the middle is modeled using PM4Sand and the other parts are assumed to remain elastic throughout the shaking. The results of 500 simulations are shown in Fig. 7. The mean and standard deviation of the residual displacement at the surface level (6 m) are 0.24 m and 0.02 m, respectively. Depending on the application, the uncertainty in these results can be considered reasonably low. The sample of the predictive distribution shown on the top of the vertical profile can further be utilized in reliability and risk assessment workflows
 
 <p align="center">
-<img src="./img/UC2-Arduino-4.png" alt="Forward propagation" width="400"/>
+<img src="./img/UC2-Arduino-4.PNG" alt="Forward propagation" width="400"/>
 </p>
 <p align="center"> <b>Fig.6 - PM4Sand model parameters sampled from the joint posterior distribution</b> </p>
     
 
 <p align="center">
-<img src="./img/UC2-Arduino-5.png" alt="Forward propagation" width="300"/>
+<img src="./img/UC2-Arduino-5.PNG" alt="Forward propagation" width="300"/>
 </p>
 <p align="center"> <b>Fig.7 - Predicted earthquake
 response of soil column</b> </p>
