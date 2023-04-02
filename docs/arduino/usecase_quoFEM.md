@@ -170,7 +170,7 @@ The obtained samples of the soil parameters in Fig. 6 are used to predict the un
 
 
 <p align="center">
-<img src="./img/UC2-Arduino-6.PNG" alt="Forward propagation" width="150"/>
+<img src="./img/UC2-Arduino-6.png" alt="Forward propagation" width="150"/>
 </p>
 <p align="center"> <b>Fig.6 - 1D soil layer with liquefiable soil</b> </p>
 
