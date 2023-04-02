@@ -76,7 +76,7 @@ In quoFEM this information is in the file **/tmp.SimCenter/templatedir/scInput.j
 An schematic of a typical quoFEM workflow information is shown in Figure X. 
 
 <p align="center">
-<img src="./img/UC2-Arduino-02.png" alt="quoFEM workflow" width="400"/>
+<img src="./img/UC2-Arduino-02.png" alt="quoFEM workflow" width="500"/>
 </p>
 <p align="center"> <b>Fig.2 - Elements of quoFEM workflow (showing relevant elements for launching notebook from JupyterHub only)</b> </p>
 
