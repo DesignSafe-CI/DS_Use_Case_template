@@ -78,7 +78,7 @@ An schematic of a typical quoFEM workflow information is shown in Figure X.
 <p align="center">
 <img src="./img/UC2-Arduino-02.png" alt="quoFEM workflow" width="500"/>
 </p>
-<p align="center"> <b>Fig.2 - Elements of quoFEM workflow (showing relevant elements for launching notebook from JupyterHub only)</b> </p>
+<p align="center"> <b>Fig.2 - Elements of quoFEM workflow (only relevant elements for launching notebook from JupyterHub)</b> </p>
 
 For launching a quoFEM workflow from a Jupyter Hub notebook it is required to:a JSON parser 
 
@@ -98,7 +98,7 @@ where $\theta_i$ is the parameter of interest (i.e., one of the $\{D_r,G_o,h_{po
 contributions of $\theta_i$ and other parameters [10].
 
 <p align="center">
-<img src="./img/UC2-Arduino-00.png" alt="OpenSees models" width="200"/>
+<img src="./img/UC2-Arduino-00.png" alt="OpenSees models" width="250"/>
 </p>
 <p align="center"> <b>Fig.2 - (a) Single element FE model used in sensitivity analysis and Bayesian calibration; (b) Schematic of soil column and the finite element used to discretize the column in free-field analysis</b> </p>
 
