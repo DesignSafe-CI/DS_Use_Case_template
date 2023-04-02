@@ -98,7 +98,7 @@ where $\theta_i$ is the parameter of interest (i.e., one of the $\{D_r,G_o,h_{po
 contributions of $\theta_i$ and other parameters [10].
 
 <p align="center">
-<img src="./img/UC2-Arduino-00.png" alt="OpenSees models" width="400"/>
+<img src="./img/UC2-Arduino-00.png" alt="OpenSees models" width="200"/>
 </p>
 <p align="center"> <b>Fig.2 - (a) Single element FE model used in sensitivity analysis and Bayesian calibration; (b) Schematic of soil column and the finite element used to discretize the column in free-field analysis</b> </p>
 
@@ -166,15 +166,23 @@ application-specific quantities of interest before practically applying these pa
 
 [quoFEM-Propagation](https://jupyter.designsafe-ci.org/user/name/tree/CommunityData/XXX/quoFEM-Propagation){target=_blank}
 
-The obtained samples of the soil parameters in Fig. 6 are used to predict the uncertainty in the lateral spreading response of a site subjected to an earthquake (Loma Prieta Gilroy Array #2) with peak ground acceleration of 0.37 g. The soil column model
-shown in Fig. 1 and Figure 2 is introduced in which the liquefiable layer in the middle is modeled using PM4Sand and the other parts are assumed to remain elastic throughout the shaking. The results of 500 simulations are shown in Fig. 7. The mean and standard deviation of the residual displacement at the surface level (6 m) are 0.24 m and 0.02 m, respectively. Depending on the application, the uncertainty in these results can be considered reasonably low. The sample of the predictive distribution shown on the top of the vertical profile can further be utilized in reliability and risk assessment workflows
+The obtained samples of the soil parameters in Fig. 6 are used to predict the uncertainty in the lateral spreading response of a site subjected to an earthquake (Loma Prieta Gilroy Array #2) with peak ground acceleration of 0.37 g. The soil column model shown in Fig. 7 is introduced in which the liquefiable layer in the middle is modeled using PM4Sand and the other parts are assumed to remain elastic throughout the shaking. 
+
+
+<p align="center">
+<img src="./img/UC2-Arduino-6.PNG" alt="Forward propagation" width="150"/>
+</p>
+<p align="center"> <b>Fig.6 - 1D soil layer with liquefiable soil</b> </p>
+
+The results of 500 simulations are shown in Fig. 7. The mean and standard deviation of the residual displacement at the surface level (6 m) are 0.24 m and 0.02 m, respectively. Depending on the application, the uncertainty in these results can be considered reasonably low. The sample of the predictive distribution shown on the top of the vertical profile can further be utilized in reliability and risk assessment workflows
+
+
 
 <p align="center">
 <img src="./img/UC2-Arduino-4.PNG" alt="Forward propagation" width="400"/>
 </p>
 <p align="center"> <b>Fig.6 - PM4Sand model parameters sampled from the joint posterior distribution</b> </p>
     
-
 <p align="center">
 <img src="./img/UC2-Arduino-5.PNG" alt="Forward propagation" width="300"/>
 </p>
