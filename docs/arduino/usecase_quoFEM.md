@@ -35,7 +35,7 @@ The PM4Sand constitutive model has 24 parameters. Among them, apparent relative 
 
 
 <p align="center">
-<img src="./img/UC2-Arduino-1.PNG" alt="Probabilistic calibration" width="600"/>
+<img src="./img/UC2-Arduino-1.png" alt="Probabilistic calibration" width="600"/>
 </p>
 <p align="center"> <b>Fig.1 - Probabilistic calibration of soil model (step 2) with sensitivity analysis (step 1) and prediction of uncertainty in seismic liquefaction (step 3)</b> </p>
 
@@ -77,7 +77,7 @@ In quoFEM this information is in the file **/tmp.SimCenter/templatedir/scInput.j
 An schematic of a typical quoFEM workflow information is shown in Figure X. 
 
 <p align="center">
-<img src="./img/UC2-Arduino-02.PNG" alt="quoFEM workflow" width="400"/>
+<img src="./img/UC2-Arduino-02.png" alt="quoFEM workflow" width="400"/>
 </p>
 <p align="center"> <b>Fig.2 - Elements of quoFEM workflow (showing relevant elements for launching notebook from JupyterHub only)</b> </p>
 
@@ -97,12 +97,12 @@ where $\theta_i$ is the parameter of interest (i.e., one of the $\{D_r,G_o,h_{po
 contributions of $\theta_i$ and other parameters [10].
 
 <p align="center">
-<img src="./img/UC2-Arduino-00.PNG" alt="OpenSees models" width="400"/>
+<img src="./img/UC2-Arduino-00.png" alt="OpenSees models" width="400"/>
 </p>
 <p align="center"> <b>Fig.2 - (a) Single element FE model used in sensitivity analysis and Bayesian calibration; (b) Schematic of soil column and the finite element used to discretize the column in free-field analysis</b> </p>
 
 <p align="center">
-<img src="./img/UC2-Arduino-01.PNG" alt="OpenSees models" width="600"/>
+<img src="./img/UC2-Arduino-01.png" alt="OpenSees models" width="600"/>
 </p>
 <p align="center"> <b>Fig.3 - (a) simulated cyclic stress-strain curve; (b)stress path during the simulated cyclic direct simple shear test; (c) evolution of pore water pressure ratio during the simulated CyDSS test</b> </p>
 
@@ -165,13 +165,13 @@ The obtained samples of the soil parameters in Fig. 6 are used to predict the un
 shown in Fig. 1 and Figure 2 is introduced in which the liquefiable layer in the middle is modeled using PM4Sand and the other parts are assumed to remain elastic throughout the shaking. The results of 500 simulations are shown in Fig. 7. The mean and standard deviation of the residual displacement at the surface level (6 m) are 0.24 m and 0.02 m, respectively. Depending on the application, the uncertainty in these results can be considered reasonably low. The sample of the predictive distribution shown on the top of the vertical profile can further be utilized in reliability and risk assessment workflows
 
 <p align="center">
-<img src="./img/UC2-Arduino-4.PNG" alt="Forward propagation" width="400"/>
+<img src="./img/UC2-Arduino-4.png" alt="Forward propagation" width="400"/>
 </p>
 <p align="center"> <b>Fig.6 - PM4Sand model parameters sampled from the joint posterior distribution</b> </p>
     
 
 <p align="center">
-<img src="./img/UC2-Arduino-5.PNG" alt="Forward propagation" width="300"/>
+<img src="./img/UC2-Arduino-5.png" alt="Forward propagation" width="300"/>
 </p>
 <p align="center"> <b>Fig.7 - Predicted earthquake
 response of soil column</b> </p>
