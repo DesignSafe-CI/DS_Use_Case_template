@@ -1,8 +1,7 @@
 # Sensitivity Analysis and Bayesian Calibration of a Constitutive Soil Model Using quoFEM
 
-**Pedro Arduino - University of Washington**
-
-**Sang-Ri Yi and**
+**Pedro Arduino - University of Washington** <br/>
+**Sang-Ri Yi and** <br/>
 **Aakash Bangalore Satish - SimCenter, UC Berkeley**
 
 This use-case outlines a Bayesian updating framework that integrates probabilistic calibration of a soil constitutive model and probabilistic prediction of lateral spreading due to seismic liquefaction. To accomplish this, the SimCenter quoFEM tool and UQ backend applications are utilized alongside a collection of jupyter notebooks that enhance the functionality of quoFEM within the DesignSafe infrastructure.
@@ -89,6 +88,8 @@ In such a Jupyter notebook, the remote UQ analysis through quoFEM can be treated
 
 ## Step 1 – Global Sensitivity Analysis
 
+[quoFEM-Sensitivity.ipynb](https://jupyter.designsafe-ci.org/user/name/tree/CommunityData/XXX/quoFEM-Sensitivity.ipynb){target=_blank}
+
 The sensitivity analysis is performed for a simulation model that reproduces the CyDSS test shown in Fig. 2. The output quantity of interest is the number of cycles until the onset of liquefaction (denoted as Y). The onset of liquefaction is defined as the time step when the shear strain shown in Fig. 3 exceeds $3.5\%$. Liquefaction capacity is affected by the initial shear stress typically characterized by the cyclic shear stress ratio ($CSR$; i.e., ratio of horizontal cyclic shear stress to vertical consolidation stress). In this sensitivity analysis, a $CSR$ of 0.175 is considered. Two variance-based global sensitivity indices are evaluated:
 
 ADD EQUATIONS!!!!!!!!!!!!!!!!!!!!!!!!
@@ -119,6 +120,8 @@ shown in Fig. 4(a) which indicates that $D_r$ is the dominating parameter for th
 The notebook in [] helps
 
 ## Step 2 – Bayesian Parameter Calibration
+
+[quoFEM-Bayesian.ipynb](https://jupyter.designsafe-ci.org/user/name/tree/CommunityData/XXX/quoFEM-Bayesian.ipynb){target=_blank}
 
 Consider now the observations of the CyDSS experiment in Table 2, that are publicly available on the DesignSafe data depot [8, 9]. We assume that the observed count of cycles at different CSR values, denoted as $Y_i^m$ $(i = 1,…,6)$, is given by the simulation model predictions and an added Gaussian noise. The latter captures various inaccuracies such as inherent uncertainty in the phenomenon, the imperfection of our simulation model, and measurement error. Given the above assumptions, we can denote the relationship between the data and model prediction, $Y_i(\theta)$, as
 
@@ -160,6 +163,8 @@ of cycles to liquefaction, but this simulation model was prepared to reproduce t
 application-specific quantities of interest before practically applying these parameter values in a simulation for decision making.
 
 ## Step 3 – Forward Propagation
+
+[quoFEM-Propagation](https://jupyter.designsafe-ci.org/user/name/tree/CommunityData/XXX/quoFEM-Propagation){target=_blank}
 
 The obtained samples of the soil parameters in Fig. 6 are used to predict the uncertainty in the lateral spreading response of a site subjected to an earthquake (Loma Prieta Gilroy Array #2) with peak ground acceleration of 0.37 g. The soil column model
 shown in Fig. 1 and Figure 2 is introduced in which the liquefiable layer in the middle is modeled using PM4Sand and the other parts are assumed to remain elastic throughout the shaking. The results of 500 simulations are shown in Fig. 7. The mean and standard deviation of the residual displacement at the surface level (6 m) are 0.24 m and 0.02 m, respectively. Depending on the application, the uncertainty in these results can be considered reasonably low. The sample of the predictive distribution shown on the top of the vertical profile can further be utilized in reliability and risk assessment workflows
