@@ -40,7 +40,8 @@ The PM4Sand constitutive model has 24 parameters. Among them, apparent relative 
 
 
 <p align="center"><b>Table 1. - Prior distributions of PM4Sand parameter</b> </p>
-<center>
+
+<p align="center">
 
 | Parameter | Distribution | Range    |
 | :-------: | :---------:  | :------- |
@@ -48,7 +49,7 @@ The PM4Sand constitutive model has 24 parameters. Among them, apparent relative 
 | $G_o$     | Uniform      | 200 - 2000 |
 | $h_{po}$  | Uniform      | 0.01 - 5   |
 
-</center>
+</p>
 
 Accurate quantification of UQ requires well-established workflows that incorporate sophisticated UQ techniques with advanced simulation models and frameworks. The SimCenter quoFEM tool streamlines this process by offering comprehensive workflows in a single tool, which can be accessed locally or remotely through a web browser using  the DCV client on DesignSafe. Furthermore, users can utilize the Jupyter Hub environment on DesignSafe to manage the same, or additional, runs via Python scripts, defining job variables and submitting jobs through the Tapis system. This allows for seamless collaboration and efficient job management, resulting in faster and more effective UQ analysis.
 
