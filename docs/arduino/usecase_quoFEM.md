@@ -77,7 +77,7 @@ Post-processing of results is specific to the problem being solved and can be ac
 Displaying a quoFEM job workflow is useful for understanding the data and steps followed in the workflow. These include: simulation tools, input variables, UQ methods used, and remote directories/folders. An schematic of a typical quoFEM workflow is shown in Figure X. 
 
 <p align="center">
-<img src="./img/UC2-Arduino-02.png" alt="quoFEM workflow" width="500"/>
+<img src="./img/UC2-Arduino-2.png" alt="quoFEM workflow" width="500"/>
 </p>
 <p align="center"> <b>Fig.2 - Elements of quoFEM workflow (only relevant elements for launching notebook from JupyterHub)</b> </p>
 
@@ -106,12 +106,12 @@ where $\theta_i$ is the parameter of interest (i.e., one of the $\{D_r,G_o,h_{po
 contributions of $\theta_i$ and other parameters [10].
 
 <p align="center">
-<img src="./img/UC2-Arduino-00.png" alt="OpenSees models" width="250"/>
+<img src="./img/UC2-Arduino-3.png" alt="OpenSees models" width="250"/>
 </p>
 <p align="center"> <b>Fig.2 - Single element FE model used in sensitivity analysis and Bayesian calibration</b> </p>
 
 <p align="center">
-<img src="./img/UC2-Arduino-01.png" alt="OpenSees models" width="600"/>
+<img src="./img/UC2-Arduino-4.png" alt="OpenSees models" width="600"/>
 </p>
 <p align="center"> <b>Fig.3 - (a) simulated cyclic stress-strain curve; (b)stress path during the simulated cyclic direct simple shear test; (c) evolution of pore water pressure ratio during the simulated CyDSS test</b> </p>
 
@@ -119,7 +119,7 @@ contributions of $\theta_i$ and other parameters [10].
 The sensitivity analysis is performed using the algorithm in Weirs et al. (2012) through the Dakota engine that interfaces with quoFEM [10]. 2500 simulations were performed using the prior distributions in Table 1. The resulting sensitivity is shown in Fig. 4(a) which indicates that $D_r$ is the dominating parameter for the response $Y$. This is also confirmed by inspecting the scatter plot of Fig. 4(b): $D_r$ (horizontal axis) demonstrates a stronger influence on the output (vertical axis) compared to the influence of the other parameters shown in (c) and (d). Based on this, we can expect that the CyDSS observations will help constrain the uncertainty in $D_r$, while the reduction of uncertainty in $h_{po}$ and $G_o$ will be relatively limited. Additionally, different types of experiments would be needed to better characterize those other parameters.
 
 <p align="center">
-<img src="./img/UC2-Arduino-2.png" alt="Probabilistic calibration" width="600"/>
+<img src="./img/UC2-Arduino-5.png" alt="Probabilistic calibration" width="600"/>
 </p>
 <p align="center"> <b>Fig.4 - (a) Sensitivity analysis results for the critical number of cycles given CSR = 0.172; (b)–
 (d) Individual input-output scatter plots</b> </p>
@@ -161,7 +161,7 @@ test experimental data</b> </p>
 </center>
 
 <p align="center">
-<img src="./img/UC2-Arduino-3.png" alt="Calibrated predictions" width="400"/>
+<img src="./img/UC2-Arduino-6.png" alt="Calibrated predictions" width="400"/>
 </p>
 <p align="center"> <b>Fig.5 - Comparison of calibrated model predictions and experimental data </b> </p>
 
@@ -177,7 +177,7 @@ The obtained samples of the soil parameters in Fig. 6 are used to predict the un
 
 
 <p align="center">
-<img src="./img/UC2-Arduino-6.png" alt="Forward propagation" width="150"/>
+<img src="./img/UC2-Arduino-7.png" alt="Forward propagation" width="150"/>
 </p>
 <p align="center"> <b>Fig.6 - Schematic of 1D soil layer with liquefiable soil used in the forward propagation analysis. </b> </p>
 
@@ -185,12 +185,12 @@ The results of 500 simulations are shown in Fig. 7. The mean and standard deviat
 
 
 <p align="center">
-<img src="./img/UC2-Arduino-4.png" alt="Forward propagation" width="400"/>
+<img src="./img/UC2-Arduino-8.png" alt="Forward propagation" width="400"/>
 </p>
 <p align="center"> <b>Fig.6 - PM4Sand model parameters sampled from the joint posterior distribution</b> </p>
     
 <p align="center">
-<img src="./img/UC2-Arduino-5.png" alt="Forward propagation" width="300"/>
+<img src="./img/UC2-Arduino-9.png" alt="Forward propagation" width="300"/>
 </p>
 <p align="center"> <b>Fig.7 - Predicted earthquake
 response of soil column</b> </p>
