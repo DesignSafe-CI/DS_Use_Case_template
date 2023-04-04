@@ -68,7 +68,7 @@ In this context, the notebooks included in this use-case complement input genera
 
 To connect SimCenter applications and Jupyter notebooks in DesignSafe, it's essential to ensure that all required tools are accessible from both frameworks. SimCenter vision is well-aligned with this concept and offers all of the necessary functionality through backend applications installed in DesignSafe that can be accessed via Tapis apps. Additionally, all SimCenter workflows are stored in JSON files that represent all steps in a workflow. This file is readily accesible using any JSON parser.
 
-In quoFEM, the workflow data is stored in a tmp.SimCenter folder that can be accessed from the quoFEM gui, sent to an HPC, or accessed from a notebook. For the examples presented in this document, this information is sufficient to run all the  cases.
+In quoFEM, the workflow data is stored in a tmp.SimCenter folder that can be accessed from the quoFEM desktop, sent to an HPC, or accessed from a notebook. For the examples presented in this document, this information is sufficient to run all the  cases.
 
 In order to facilitate each notebook discussion, it is helpful to first identify common aspects that are present in all of them. These include:
 
@@ -77,16 +77,14 @@ In order to facilitate each notebook discussion, it is helpful to first identify
 3. Run Tapis job
 4. Post-process results 
 
-Descriptions on how to: (1) set up and (2) run Tapis jobs can be found here[]. These two steps are general for launching any Tapis app from a Jupyter Hub notebook in DesignSafe. Postprocessing results is problem specific and can be done in python using output data stored in archived files. For this purpose it is important to identify the location of data files. This is explained here. Displaying a quoFEM job workflow is useful for understanding the data and steps followed in the workflow. These include: simulation tools, input variables, UQ methods used, and remote directories/folders. 
-
-In quoFEM this information is in the file */tmp.SimCenter/templatedir/scInput.json*. An schematic of a typical quoFEM workflow information is shown in Figure X. 
+Instructions for (1) setting up and (2) running Tapis jobs can be found here[]. These steps are generally applicable for launching any Tapis app from a Jupyter Hub notebook in DesignSafe. To perform UQ quantification within SimCenter backend applications, use the *simcenter-uq-frontera-4.0.0u4* Tapis app. Post-processing of results is specific to the problem being solved and can be achieved using Python to access output data stored in archived files. For this purpose it is important to identify the location of data files. This is explained here. Displaying a quoFEM job workflow is useful for understanding the data and steps followed in the workflow. These include: simulation tools, input variables, UQ methods used, and remote directories/folders. An schematic of a typical quoFEM workflow is shown in Figure X. 
 
 <p align="center">
 <img src="./img/UC2-Arduino-02.png" alt="quoFEM workflow" width="500"/>
 </p>
 <p align="center"> <b>Fig.2 - Elements of quoFEM workflow (only relevant elements for launching notebook from JupyterHub)</b> </p>
 
-To display the JSON file the IPython display module can be used:
+To display the JSON file the IPython.display module can be used:
  
  ```python
  # Display Workflow in JSON file
@@ -97,16 +95,7 @@ with open(jsonPath) as f:
     jsonInfo = json.load(f)
 IPython.display.JSON(jsonInfo)
 ```
-Modification of the workflow is possible by changing the files ..
-or going back to quoFEm to regenerate the workflow.
-
-Notice all the three notebooks use the same tapis app
-
-For launching a quoFEM workflow from a Jupyter Hub notebook it is required to:a JSON parser 
-
-
-In such a Jupyter notebook, the remote UQ analysis through quoFEM can be treated as one function in a larger routine, e.g., reliability-based optimizations. Details on how to run this application examples using the quoFEM desktop can be found here [].
-
+To modify the workflow, the user can either manually change the workflow files within the tmp.SimCenter folder or regenerate the workflow using quoFEM. Regenerating the workflow using quoFEM is the preferred approach, as the quoFEM desktop is specifically designed to facilitate workflow creation. On the other hand, Jupyter notebooks offer more flexibility in terms of post-processing, generating plots, and manipulating data.
 
 ## Step 1 – Global Sensitivity Analysis
 
@@ -134,7 +123,7 @@ The sensitivity analysis is performed using the algorithm in Weirs et al. (2012)
 shown in Fig. 4(a) which indicates that $D_r$ is the dominating parameter for the response $Y$. This is also confirmed by inspecting the scatter plot of Fig. 4(b): $D_r$ (horizontal axis) demonstrates a stronger influence on the output (vertical axis) compared to the influence of the other parameters shown in (c) and (d). Based on this, we can expect that the CyDSS observations will help constrain the uncertainty in $D_r$, while the reduction of uncertainty in $h_{po}$ and $G_o$ will be relatively limited. Additionally, different types of experiments would be needed to better characterize those other parameters.
 
 <p align="center">
-<img src="./img/UC2-Arduino-2.PNG" alt="Probabilistic calibration" width="600"/>
+<img src="./img/UC2-Arduino-2.png" alt="Probabilistic calibration" width="600"/>
 </p>
 <p align="center"> <b>Fig.4 - (a) Sensitivity analysis results for the critical number of cycles given CSR = 0.172; (b)–
 (d) Individual input-output scatter plots</b> </p>
@@ -176,7 +165,7 @@ test experimental data</b> </p>
 </center>
 
 <p align="center">
-<img src="./img/UC2-Arduino-3.PNG" alt="Calibrated predictions" width="400"/>
+<img src="./img/UC2-Arduino-3.png" alt="Calibrated predictions" width="400"/>
 </p>
 <p align="center"> <b>Fig.5 - Comparison of calibrated model predictions and experimental data </b> </p>
 
@@ -201,12 +190,12 @@ The results of 500 simulations are shown in Fig. 7. The mean and standard deviat
 
 
 <p align="center">
-<img src="./img/UC2-Arduino-4.PNG" alt="Forward propagation" width="400"/>
+<img src="./img/UC2-Arduino-4.png" alt="Forward propagation" width="400"/>
 </p>
 <p align="center"> <b>Fig.6 - PM4Sand model parameters sampled from the joint posterior distribution</b> </p>
     
 <p align="center">
-<img src="./img/UC2-Arduino-5.PNG" alt="Forward propagation" width="300"/>
+<img src="./img/UC2-Arduino-5.png" alt="Forward propagation" width="300"/>
 </p>
 <p align="center"> <b>Fig.7 - Predicted earthquake
 response of soil column</b> </p>
