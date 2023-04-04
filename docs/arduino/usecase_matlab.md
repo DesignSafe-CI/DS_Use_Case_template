@@ -238,7 +238,7 @@ axs2[0].grid(True)
 ```
 
 <p align="center">
-<img src="./img/UC3-Arduino-2-1.png" alt="Response spectra" width="400"/>
+<img src="./img/UC3-Arduino-2.png" alt="Response spectra" width="400"/>
 </p>
 <p align="center"> <b>Fig.3 - Response spectra</b> </p>
 
