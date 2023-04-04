@@ -9,7 +9,7 @@ This document presents a Jupyter Notebook published in DesignSafe that navigate 
 ## Background 
 ### Citation and Licensing
 
-* Please cite [Chen, L. et al. (2021)](https://peer.berkeley.edu/sites/default/files/2021_chen_final.pdf){target=_blank} to acknowledge the use of resources from this use case.
+* Please cite [Arduino, P. (2023)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246){target=_blank} to acknowledge the use of resources from this use case.
 
 * Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246){target=_blank} to acknowledge the use of DesignSafe resources.  
 
@@ -34,7 +34,7 @@ A schematic workflow for this example is presented in Fig. 1
 The notebook, and required scripts, are available in the [DesignSafe/community](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Jupyter%20Notebooks%20for%20Civil%20Engineering%20Courses/University_of_Washington/freeFieldJupyterPM4Sand){target=_blank} folder and can be executed without any modification.
 Users are invited to try this notebook and use any parts of it.
 
-The notebook can be broken down into four main components:
+The notebook can be broken down into three main components:
 
 <ol type="a">
   <li>Setup TAPIS/AGAVE APP and run matlab script</li>
@@ -57,7 +57,9 @@ A few commands are required to setup a TAPIS OpenSees job in DesignSafe. This re
 3. defining control variables, parameters and inputs, and
 4. encapsulating all data in a job_description array 
 
-The python code shown below exemplifies these steps. The complete set of commands is available in the notebook. The job_description array includes all the information required to submit the job.
+The python code shown below exemplifies these steps. The complete set of commands is available in the notebook. The job_description array includes all the information required to submit the job. 
+
+To receive an alert once a job is complete, users can add their email address to the notification field. This will ensure that they are promptly informed when the job has finished executing.
 
 ```python
 # Import Agave
@@ -107,11 +109,23 @@ job_description["maxRunTime"]        = control_maxRunTime
 job_description["archive"]           = True
 job_description["inputs"]            = inputs
 job_description["parameters"]        = parameters
+
+# Setting job_description to send an email when job is finished
+notification_email = "parduino@uw.edu"
+job_description["notifications"]      = [
+    {
+      "url":notification_email,
+      "event":"FINISHED", 
+      "persistent":True
+    },
+]
 ```
 
 #### Run Matlab script
 
-Submitting a job using DesignSafe HPC resources requires the use of agave job.submit(); and passing the job_description array as argument. Checking the status of a job can be done using jobs.getStatus(). The python code shown below exemplifies these commands.  When submitting a job, agave copies all the files present in the input folder to a temporary location that is used during execution. After completion agave copies all the results to an archived folder. 
+Submitting a job using DesignSafe HPC resources requires the use of agave job.submit(); and passing the job_description array as argument. Checking the status of a job can be done using jobs.getStatus(). The python code shown below exemplifies these commands.  In the notebook a simple python function is included in *DS_GenFunctions.py* that encapsulates the GetStatus process. When submitting a job, agave copies all the files present in the input folder to a temporary location that is used during execution. After completion agave copies all the results to an archived folder. 
+
+
 
 ```python
 import time
@@ -152,13 +166,13 @@ Once in the archived folder (cur_dir_name), postprocessing can be done using pyt
 1. Time histories of acceleartion, velocity and displacement for any selected motion.  
 2. Response spectra for all motions. 
 
-The python code and figures shown below exemplify these steps. All python code is available in the notebook. 
+The python code and figures shown below exemplify these steps. All python codes are available in the notebook. 
 
 Plot acceleration, velocity, and displacement time histories for any selected motion (out of 7 provided). 
 ``` python
 # Read motion displacement, velocity and acceleration and concatenate
 
-idx = 4  # selected motion
+idx = 2  # selected motion
 motionFN = "./motion"+ str(idx)
 
 motionTime = np.loadtxt(motionFN + '.time')
@@ -190,7 +204,7 @@ for ii in range(3):
 ```
 
 <p align="center">
-<img src="./img/UC3-Arduino-1.PNG" alt="Time histories" width="400"/>
+<img src="./img/UC3-Arduino-1-1.PNG" alt="Time histories" width="400"/>
 </p>
 <p align="center"> <b>Fig.2 - Acceleration, velocity and displacement time history for selected motion</b> </p>
 
@@ -222,7 +236,7 @@ axs2[0].grid(True)
 ```
 
 <p align="center">
-<img src="./img/UC3-Arduino-2.PNG" alt="Response spectra" width="400"/>
+<img src="./img/UC3-Arduino-2-1.png" alt="Response spectra" width="400"/>
 </p>
 <p align="center"> <b>Fig.3 - Response spectra</b> </p>
 
