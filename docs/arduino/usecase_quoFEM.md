@@ -77,7 +77,11 @@ In order to facilitate each notebook discussion, it is helpful to first identify
 3. Run Tapis job
 4. Post-process results 
 
-Instructions for (1) setting up and (2) running Tapis jobs can be found here[]. These steps are generally applicable for launching any Tapis app from a Jupyter Hub notebook in DesignSafe. To perform UQ quantification within SimCenter backend applications, use the *simcenter-uq-frontera-4.0.0u4* Tapis app. Post-processing of results is specific to the problem being solved and can be achieved using Python to access output data stored in archived files. For this purpose it is important to identify the location of data files. This is explained here. Displaying a quoFEM job workflow is useful for understanding the data and steps followed in the workflow. These include: simulation tools, input variables, UQ methods used, and remote directories/folders. An schematic of a typical quoFEM workflow is shown in Figure X. 
+Instructions for (1) setting up and (2) running Tapis jobs can be found here[]. These steps are generally applicable for launching any Tapis app from a Jupyter Hub notebook in DesignSafe. To perform UQ quantification within SimCenter backend applications, use the *simcenter-uq-frontera-4.0.0u4* Tapis app. 
+
+Post-processing of results is specific to the problem being solved and can be achieved using Python to access output data stored in archived files. For this purpose it is important to identify the location of data files. This is explained here. 
+
+Displaying a quoFEM job workflow is useful for understanding the data and steps followed in the workflow. These include: simulation tools, input variables, UQ methods used, and remote directories/folders. An schematic of a typical quoFEM workflow is shown in Figure X. 
 
 <p align="center">
 <img src="./img/UC2-Arduino-02.png" alt="quoFEM workflow" width="500"/>
@@ -119,8 +123,7 @@ contributions of $\theta_i$ and other parameters [10].
 <p align="center"> <b>Fig.3 - (a) simulated cyclic stress-strain curve; (b)stress path during the simulated cyclic direct simple shear test; (c) evolution of pore water pressure ratio during the simulated CyDSS test</b> </p>
 
 
-The sensitivity analysis is performed using the algorithm in Weirs et al. (2012) through the Dakota engine that interfaces with quoFEM [10]. 2500 simulations were performed using the prior distributions in Table 1. The resulting sensitivity is
-shown in Fig. 4(a) which indicates that $D_r$ is the dominating parameter for the response $Y$. This is also confirmed by inspecting the scatter plot of Fig. 4(b): $D_r$ (horizontal axis) demonstrates a stronger influence on the output (vertical axis) compared to the influence of the other parameters shown in (c) and (d). Based on this, we can expect that the CyDSS observations will help constrain the uncertainty in $D_r$, while the reduction of uncertainty in $h_{po}$ and $G_o$ will be relatively limited. Additionally, different types of experiments would be needed to better characterize those other parameters.
+The sensitivity analysis is performed using the algorithm in Weirs et al. (2012) through the Dakota engine that interfaces with quoFEM [10]. 2500 simulations were performed using the prior distributions in Table 1. The resulting sensitivity is shown in Fig. 4(a) which indicates that $D_r$ is the dominating parameter for the response $Y$. This is also confirmed by inspecting the scatter plot of Fig. 4(b): $D_r$ (horizontal axis) demonstrates a stronger influence on the output (vertical axis) compared to the influence of the other parameters shown in (c) and (d). Based on this, we can expect that the CyDSS observations will help constrain the uncertainty in $D_r$, while the reduction of uncertainty in $h_{po}$ and $G_o$ will be relatively limited. Additionally, different types of experiments would be needed to better characterize those other parameters.
 
 <p align="center">
 <img src="./img/UC2-Arduino-2.png" alt="Probabilistic calibration" width="600"/>
