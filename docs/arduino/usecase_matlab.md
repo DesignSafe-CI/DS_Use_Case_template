@@ -6,6 +6,8 @@ This document presents a Jupyter Notebook published in DesignSafe that navigate 
 
 [Jupyter notebooks on DS Juypterhub](https://www.designsafe-ci.org/rw/workspace/#!/Jupyter::Analysis){target=_blank}<br/>
 
+Accompanying jupyter notebooks for this use case can be found in the ADCIRC folder in [Community Data](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/ADCIRC){target=_blank}.
+
 ## Background 
 ### Citation and Licensing
 
@@ -26,9 +28,9 @@ FInally a simple report is generated using rst2pdf.
 A schematic workflow for this example is presented in Fig. 1
 
 <p align="center">
-<img src="./img/UC3-Arduino-00.png" alt="Propagation of vertical waves in site response analysis" width="500"/>
+<img src="./img/UC3-Arduino-0.png" alt="Schematic of Matlab workflow" width="500"/>
 </p>
-<p align="center"> <b>Fig.1 - Site response problem</b> </p>
+<p align="center"> <b>Fig.1 - Schematic of Matlab workflow</b> </p>
     
 
 The notebook, and required scripts, are available in the [DesignSafe/community](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Jupyter%20Notebooks%20for%20Civil%20Engineering%20Courses/University_of_Washington/freeFieldJupyterPM4Sand){target=_blank} folder and can be executed without any modification.
@@ -204,9 +206,9 @@ for ii in range(3):
 ```
 
 <p align="center">
-<img src="./img/UC3-Arduino-1-1.PNG" alt="Time histories" width="400"/>
+<img src="./img/UC3-Arduino-1.png" alt="Time histories" width="400"/>
 </p>
-<p align="center"> <b>Fig.2 - Acceleration, velocity and displacement time history for selected motion</b> </p>
+<p align="center"> <b>Fig.2 - Displacement, velocity and acceleration time history for selected motion</b> </p>
 
 
 Plot response spectra for all motions (7 provided). 
