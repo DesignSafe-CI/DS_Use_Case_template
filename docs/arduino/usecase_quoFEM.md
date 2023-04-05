@@ -38,7 +38,7 @@ In this use case, the amount of reduction in the uncertainty in PM4Sand paramete
 </p>
 <p align="center"> <b>Fig.1 - Probabilistic calibration of soil model (step 2) with sensitivity analysis (step 1) and prediction of uncertainty in seismic liquefaction (step 3)</b> </p>
 
-## Solution Strategy Using quoFEM
+## Uncertainty Quantification Using quoFEM
 
 Accurate quantification of UQ requires well-established workflows that incorporate sophisticated UQ techniques with advanced simulation models and frameworks. The SimCenter quoFEM tool streamlines this process by offering comprehensive workflows in a single tool, which can be accessed locally or remotely through a web browser using  the DCV client on DesignSafe. Furthermore, users can utilize the Jupyter Hub environment on DesignSafe to manage the same, or additional, runs via Python scripts, defining job variables and submitting jobs through the Tapis system. This allows for seamless collaboration and efficient job management, resulting in faster and more effective UQ analysis.
 
