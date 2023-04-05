@@ -59,7 +59,7 @@ Instructions for (1) setting up and (2) running Tapis jobs can be found here[]. 
 
 Post-processing of results is specific to the problem being solved and can be achieved using Python to access output data stored in archived files. For this purpose it is important to identify the location of data files. This is explained here. 
 
-Displaying a quoFEM job workflow is useful for understanding the data and steps followed in the workflow. These include: simulation tools, input variables, UQ methods used, and remote directories/folders. An schematic of a typical quoFEM workflow is shown in Figure 2. 
+Displaying a quoFEM job workflow is useful for understanding the data and steps followed in the workflow. These include: simulation tools, input variables, UQ methods used, and remote directories/folders. An schematic of a typical quoFEM workflow is shown in Fig. 2. 
 
 <p align="center">
 <img src="./img/UC2-Arduino-2.png" alt="quoFEM workflow" width="500"/>
@@ -98,7 +98,7 @@ The PM4Sand constitutive model has 24 parameters. Among them, apparent relative 
 
 </p>
 
-The sensitivity analysis is performed for a simulation model that reproduces the CyDSS test shown in Fig. 2. The output quantity of interest is the number of cycles until the onset of liquefaction (denoted as Y). The onset of liquefaction is defined as the time step when the shear strain shown in Fig. 3 exceeds 3.5%. Liquefaction capacity is affected by the initial shear stress typically characterized by the cyclic shear stress ratio ($CSR$; i.e., ratio of horizontal cyclic shear stress to vertical consolidation stress). In this sensitivity analysis, a $CSR$ of 0.175 is considered. Two variance-based global sensitivity indices are evaluated:
+The sensitivity analysis is performed for a simulation model that reproduces the CyDSS test shown in Figs. 3 and 4. The output quantity of interest is the number of cycles until the onset of liquefaction (denoted as Y). The onset of liquefaction is defined as the time step when the shear strain shown in Fig. 3 exceeds 3.5%. Liquefaction capacity is affected by the initial shear stress typically characterized by the cyclic shear stress ratio ($CSR$; i.e., ratio of horizontal cyclic shear stress to vertical consolidation stress). In this sensitivity analysis, a $CSR$ of 0.175 is considered. Two variance-based global sensitivity indices are evaluated:
 
 ADD EQUATIONS!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -107,22 +107,21 @@ where $\theta_i$ is the parameter of interest (i.e., one of the $\{D_r,G_o,h_{po
 <p align="center">
 <img src="./img/UC2-Arduino-3.png" alt="OpenSees models" width="250"/>
 </p>
-<p align="center"> <b>Fig.2 - Single element FE model used in sensitivity analysis and Bayesian calibration</b> </p>
+<p align="center"> <b>Fig.3 - Single element FE model used in sensitivity analysis and Bayesian calibration</b> </p>
 
 <p align="center">
 <img src="./img/UC2-Arduino-4.png" alt="OpenSees models" width="600"/>
 </p>
-<p align="center"> <b>Fig.3 - (a) simulated cyclic stress-strain curve; (b)stress path during the simulated cyclic direct simple shear test; (c) evolution of pore water pressure ratio during the simulated CyDSS test</b> </p>
+<p align="center"> <b>Fig.4 - (a) simulated cyclic stress-strain curve; (b)stress path during the simulated cyclic direct simple shear test; (c) evolution of pore water pressure ratio during the simulated CyDSS test</b> </p>
 
-The sensitivity analysis is performed using the algorithm in Weirs et al. (2012) through the Dakota engine that interfaces with quoFEM [10]. 2500 simulations were performed using the prior distributions in Table 1. The resulting sensitivity is shown in Fig. 4(a) which indicates that $D_r$ is the dominating parameter for the response $Y$. This is also confirmed by inspecting the scatter plot of Fig. 4(b): $D_r$ (horizontal axis) demonstrates a stronger influence on the output (vertical axis) compared to the influence of the other parameters shown in (c) and (d). Based on this, we can expect that the CyDSS observations will help constrain the uncertainty in $D_r$, while the reduction of uncertainty in $h_{po}$ and $G_o$ will be relatively limited. Additionally, different types of experiments would be needed to better characterize those other parameters.
+The sensitivity analysis is performed using the algorithm in Weirs et al. (2012) through the Dakota engine that interfaces with quoFEM [10]. 2500 simulations were performed using the prior distributions in Table 1. The resulting sensitivity is shown in Fig. 5(a) which indicates that $D_r$ is the dominating parameter for the response $Y$. This is also confirmed by inspecting the scatter plot of Fig. 5(b): $D_r$ (horizontal axis) demonstrates a stronger influence on the output (vertical axis) compared to the influence of the other parameters shown in (c) and (d). Based on this, we can expect that the CyDSS observations will help constrain the uncertainty in $D_r$, while the reduction of uncertainty in $h_{po}$ and $G_o$ will be relatively limited. Additionally, different types of experiments would be needed to better characterize those other parameters.
 
 <p align="center">
 <img src="./img/UC2-Arduino-5.png" alt="Probabilistic calibration" width="600"/>
 </p>
-<p align="center"> <b>Fig.4 - (a) Sensitivity analysis results for the critical number of cycles given CSR = 0.172; (b)–
+<p align="center"> <b>Fig.5 - (a) Sensitivity analysis results for the critical number of cycles given CSR = 0.172; (b)–
 (d) Individual input-output scatter plots</b> </p>
 
-The notebook in [] helps
 
 ## Step 2 – Bayesian Parameter Calibration
 
@@ -159,10 +158,14 @@ test experimental data</b> </p>
 <p align="center">
 <img src="./img/UC2-Arduino-6.png" alt="Calibrated predictions" width="400"/>
 </p>
-<p align="center"> <b>Fig.5 - Comparison of calibrated model predictions and experimental data </b> </p>
+<p align="center"> <b>Fig.6 - Comparison of calibrated model predictions and experimental data </b> </p>
 
-Figure 5 compares the experimental data with the calibrated model predictions of the load-cycle counts, while Fig. 6 shows the calibrated parameter sample from the joint posterior distribution. Figure 6 shows that uncertainty in all variables is reduced by calibrating to the observed data, but the reduction was most apparent in $D_r$. This is in line with our expectations from the earlier sensitivity analysis. The results also highlight a strong dependency between $D_r$ and $h_{po}$, indicating that multiple combinations of $D_r$ and $h_{po}$ produce near-optimal solutions. None of these features are captured by a deterministic estimator that results from a conventional error-minimizing optimization approach (e.g., red diamond marker shown in the same figure). It is also important to recognize that a non-negligible amount of uncertainty remains in the parameter estimates, and this produces substantial uncertainty in the model predictions. The dark blue bounds in Fig. 5 show the level of uncertainty in the estimated number of cycles to liquefaction, but this simulation model was prepared to reproduce the experimental setup. When the calibrated constitutive model is applied in another simulation, the responses can exhibit different scales of uncertainties. A forward propagation analysis is helpful to characterize such uncertainties in a simulation model. It is good practice to run such an analysis and characterize the effect of uncertainties on
-application-specific quantities of interest before practically applying these parameter values in a simulation for decision making.
+Figure 6 compares the experimental data with the calibrated model predictions of the load-cycle counts, while Fig. 7 shows the calibrated parameter sample from the joint posterior distribution. Figure 7 shows that uncertainty in all variables is reduced by calibrating to the observed data, but the reduction was most apparent in $D_r$. This is in line with our expectations from the earlier sensitivity analysis. The results also highlight a strong dependency between $D_r$ and $h_{po}$, indicating that multiple combinations of $D_r$ and $h_{po}$ produce near-optimal solutions. None of these features are captured by a deterministic estimator that results from a conventional error-minimizing optimization approach (e.g., red diamond marker shown in the same figure). It is also important to recognize that a non-negligible amount of uncertainty remains in the parameter estimates, and this produces substantial uncertainty in the model predictions. The dark blue bounds in Fig. 6 show the level of uncertainty in the estimated number of cycles to liquefaction, but this simulation model was prepared to reproduce the experimental setup. When the calibrated constitutive model is applied in another simulation, the responses can exhibit different scales of uncertainties. 
+
+<p align="center">
+<img src="./img/UC2-Arduino-7.png" alt="Forward propagation" width="400"/>
+</p>
+<p align="center"> <b>Fig.7 - PM4Sand model parameters sampled from the joint posterior distribution</b> </p>
 
 ## Step 3 – Forward Propagation
 
@@ -170,26 +173,20 @@ application-specific quantities of interest before practically applying these pa
 
 A forward propagation analysis is helpful to characterize uncertainties in a simulation model. For this purpose it is good practice to run such an analysis and characterize the effect of uncertainties on application-specific quantities of interest before practically applying these parameter values in a simulation for decision making.
 
-
-The obtained samples of the soil parameters in Fig. 6 are used to predict the uncertainty in the lateral spreading response of a site subjected to an earthquake (Loma Prieta Gilroy Array #2) with peak ground acceleration of 0.37 g. The soil column model shown in Fig. 7 is introduced in which the liquefiable layer in the middle is modeled using PM4Sand and the other parts are assumed to remain elastic throughout the shaking. 
-
-
-<p align="center">
-<img src="./img/UC2-Arduino-7.png" alt="Forward propagation" width="150"/>
-</p>
-<p align="center"> <b>Fig.6 - Schematic of 1D soil layer with liquefiable soil used in the forward propagation analysis. </b> </p>
-
-The results of 500 simulations are shown in Fig. 7. The mean and standard deviation of the residual displacement at the surface level (6 m) are 0.24 m and 0.02 m, respectively. Depending on the application, the uncertainty in these results can be considered reasonably low. The sample of the predictive distribution shown on the top of the vertical profile can further be utilized in reliability and risk assessment workflows
+The obtained samples of the soil parameters in Fig. 7 are used to predict the uncertainty in the lateral spreading response of a site subjected to an earthquake (Loma Prieta Gilroy Array #2) with peak ground acceleration of 0.37 g. The soil column model shown in Fig. 8 is introduced in which the liquefiable layer in the middle is modeled using PM4Sand and the other parts are assumed to remain elastic throughout the shaking. 
 
 
 <p align="center">
-<img src="./img/UC2-Arduino-8.png" alt="Forward propagation" width="400"/>
+<img src="./img/UC2-Arduino-8.png" alt="Forward propagation" width="150"/>
 </p>
-<p align="center"> <b>Fig.6 - PM4Sand model parameters sampled from the joint posterior distribution</b> </p>
+<p align="center"> <b>Fig.8 - Schematic of 1D soil layer with liquefiable soil used in the forward propagation analysis. </b> </p>
+
+The results of 500 simulations are shown in Fig. 9. The mean and standard deviation of the residual displacement at the surface level (6 m) are 0.24 m and 0.02 m, respectively. Depending on the application, the uncertainty in these results can be considered reasonably low. The sample of the predictive distribution shown on the top of the vertical profile can further be utilized in reliability and risk assessment workflows
+
     
 <p align="center">
 <img src="./img/UC2-Arduino-9.png" alt="Forward propagation" width="300"/>
 </p>
-<p align="center"> <b>Fig.7 - Predicted earthquake
+<p align="center"> <b>Fig.9 - Predicted earthquake
 response of soil column</b> </p>
 
