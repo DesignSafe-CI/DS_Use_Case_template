@@ -38,7 +38,7 @@ In this use case, the amount of reduction in the uncertainty in PM4Sand paramete
 </p>
 <p align="center"> <b>Fig.1 - Probabilistic calibration of soil model (step 2) with sensitivity analysis (step 1) and prediction of uncertainty in seismic liquefaction (step 3)</b> </p>
 
-## Solution strategy using quoFEM functionality
+## Solution Strategy Using quoFEM
 
 Accurate quantification of UQ requires well-established workflows that incorporate sophisticated UQ techniques with advanced simulation models and frameworks. The SimCenter quoFEM tool streamlines this process by offering comprehensive workflows in a single tool, which can be accessed locally or remotely through a web browser using  the DCV client on DesignSafe. Furthermore, users can utilize the Jupyter Hub environment on DesignSafe to manage the same, or additional, runs via Python scripts, defining job variables and submitting jobs through the Tapis system. This allows for seamless collaboration and efficient job management, resulting in faster and more effective UQ analysis.
 
@@ -100,7 +100,16 @@ The PM4Sand constitutive model has 24 parameters. Among them, apparent relative 
 
 The sensitivity analysis is performed for a simulation model that reproduces the CyDSS test shown in Figs. 3 and 4. The output quantity of interest is the number of cycles until the onset of liquefaction (denoted as Y). The onset of liquefaction is defined as the time step when the shear strain shown in Fig. 3 exceeds 3.5%. Liquefaction capacity is affected by the initial shear stress typically characterized by the cyclic shear stress ratio ($CSR$; i.e., ratio of horizontal cyclic shear stress to vertical consolidation stress). In this sensitivity analysis, a $CSR$ of 0.175 is considered. Two variance-based global sensitivity indices are evaluated:
 
-ADD EQUATIONS!!!!!!!!!!!!!!!!!!!!!!!!
+<p align="center">
+<img src="./img/UC2-Arduino-Eq1.png" alt="OpenSees models" width="150"/>
+(1)
+</p>
+
+<p align="center">
+<img src="./img/UC2-Arduino-Eq2.png" alt="OpenSees models" width="150"/>
+(2)
+</p>
+
 
 where $\theta_i$ is the parameter of interest (i.e., one of the $\{D_r,G_o,h_{po}\}$ ) , $\theta_{\\~i}$ denotes the other two parameters, EX½ and VarX½ denotes mean and variance of function over $X$, respectively, and the vertical bar denotes ‘conditional on’. The former index, called the main-effect index, quantifies how much of the variance of $Y$ is attributed to the parameter $\theta_i$, while the latter index, called the total-effect index, also considers the joint contributions of $\theta_i$ and other parameters [10].
 
@@ -129,12 +138,18 @@ The sensitivity analysis is performed using the algorithm in Weirs et al. (2012)
 
 Consider now the observations of the CyDSS experiment in Table 2, that are publicly available on the DesignSafe data depot [8, 9]. We assume that the observed count of cycles at different CSR values, denoted as $Y_i^m$ $(i = 1,…,6)$, is given by the simulation model predictions and an added Gaussian noise. The latter captures various inaccuracies such as inherent uncertainty in the phenomenon, the imperfection of our simulation model, and measurement error. Given the above assumptions, we can denote the relationship between the data and model prediction, $Y_i(\theta)$, as
 
-ADD EQUATION(3) !!!!!!!!!!!!!!!!!!!!!!!!
+<p align="center">
+<img src="./img/UC2-Arduino-Eq3.png" alt="OpenSees models" width="150"/>
+(3)
+</p>
 
 where noise $\epsilon_i$ is assumed to have zero-mean and unknown variance $\sigma^2_{\epsilon,i}$. Given the six
 measurement values, we can use a Bayesian approach to evaluate the posterior distribution of the parameters of PM4Sand and the unknown noise variances:
 
-ADD EQUATION 4 !!!!!!!!!!!!!!!!!!!!!!!!!!
+<p align="center">
+<img src="./img/UC2-Arduino-Eq4.png" alt="OpenSees models" width="300"/>
+(4)
+</p>
 
 where $p(∙)$ denotes the (joint) probability distribution, and $c$ is the normalization constant that ensures the area under the posterior distribution is one. From Eq. (3),
 
