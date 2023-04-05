@@ -4,7 +4,7 @@
 **Sang-Ri Yi and** <br/>
 **Aakash Bangalore Satish - SimCenter, UC Berkeley**
 
-This use-case outlines a Bayesian updating framework that integrates probabilistic calibration of a soil constitutive model and probabilistic prediction of lateral spreading due to seismic liquefaction. To accomplish this, the SimCenter **quoFEM** tool and SimCenter UQ backend applications are utilized alongside a collection of jupyter notebooks that enhance the functionality of quoFEM within the DesignSafe infrastructure.
+This use-case outlines a Bayesian updating framework that integrates probabilistic calibration of a soil constitutive model and probabilistic prediction of lateral spreading due to seismic liquefaction. To accomplish this, the SimCenter **quoFEM** tool and SimCenter UQ backend applications are utilized alongside a collection of jupyter notebooks that enhance the functionality of quoFEM within the DesignSafe infrastructure [1].
 
 [Simulation on DS - OpenSees](https://www.designsafe-ci.org/rw/workspace/#!/OpenSees::Simulation){target=_blank}<br/>
 [Jupyter notebooks on DS Juypterhub](https://www.designsafe-ci.org/rw/workspace/#!/Jupyter::Analysis){target=_blank}<br/>
@@ -99,7 +99,7 @@ To modify the workflow, the user can either manually change the workflow files w
  [quoFEM-Sensitivity.ipynb](https://jupyter.designsafe-ci.org/user/name/tree/CommunityData/XXX/quoFEM-Sensitivity.ipynb){target=_blank}.
 
 
-The PM4Sand constitutive model has 24 parameters. Among them, apparent relative density $D_r$, shear modulus coefficient $G_o$, and contraction rate parameter $h_{po}$, are known to be important for predicting liquefaction responses [6]. Therefore, these three parameters $\theta = \{D_r,G_o,h_{po}\}$ are considered in the UQ analyses and their prior distributions are assumed to be uniform distributions with the ranges shown in Table 1. These prior distributions shall capture a plausible wide range that includes all possible parameter values for the target soils. The experimental data will be used to constrain this wide range to the domain that best describes the behavior exhibited by the specimen during the experiments. 
+The PM4Sand constitutive model has 24 parameters. Among them, apparent relative density $D_r$, shear modulus coefficient $G_o$, and contraction rate parameter $h_{po}$, are known to be important for predicting liquefaction responses [2]. Therefore, these three parameters $\theta = \{D_r,G_o,h_{po}\}$ are considered in the UQ analyses and their prior distributions are assumed to be uniform distributions with the ranges shown in Table 1. These prior distributions shall capture a plausible wide range that includes all possible parameter values for the target soils. The experimental data will be used to constrain this wide range to the domain that best describes the behavior exhibited by the specimen during the experiments. 
 
 <p align="center"><b>Table 1. - Prior distributions of PM4Sand parameter</b> </p>
 
@@ -137,7 +137,7 @@ S_i^T=\frac{\mathbb{E}_{\boldsymbol{\theta}_{\sim i}}\left[\operatorname{Var}_{\
 \qquad(2)
 $$
 
-where $\theta_i$ is the parameter of interest (i.e., one of the $\{D_r,G_o,h_{po}\}$ ) , $\boldsymbol{\theta}_{\sim i}$ denotes the other two parameters, $\mathbb{E}_{\boldsymbol{X}}[.]$ and $\operatorname{Var}_{\boldsymbol{X}}[.]$ denote mean and variance of function over $\boldsymbol{X}$, respectively, and the vertical bar denotes ‘conditional on’. The former index, called the main-effect index, quantifies how much of the variance of $Y$ is attributed to the parameter $\theta_i$, while the latter index, called the total-effect index, also considers the joint contributions of $\theta_i$ and other parameters [10].
+where $\theta_i$ is the parameter of interest (i.e., one of the $\{D_r,G_o,h_{po}\}$ ) , $\boldsymbol{\theta}_{\sim i}$ denotes the other two parameters, $\mathbb{E}_{\boldsymbol{X}}[.]$ and $\operatorname{Var}_{\boldsymbol{X}}[.]$ denote mean and variance of function over $\boldsymbol{X}$, respectively, and the vertical bar denotes ‘conditional on’. The former index, called the main-effect index, quantifies how much of the variance of $Y$ is attributed to the parameter $\theta_i$, while the latter index, called the total-effect index, also considers the joint contributions of $\theta_i$ and other parameters [3].
 
 <p align="center">
 <img src="./img/UC2-Arduino-4.png" alt="OpenSees models" width="250"/>
@@ -149,7 +149,7 @@ where $\theta_i$ is the parameter of interest (i.e., one of the $\{D_r,G_o,h_{po
 </p>
 <p align="center"> <b>Fig.5 - (a) simulated cyclic stress-strain curve; (b)stress path during the simulated cyclic direct simple shear test; (c) evolution of pore water pressure ratio during the simulated CyDSS test</b> </p>
 
-The sensitivity analysis is performed using the algorithm in Weirs et al. (2012) through the Dakota engine that interfaces with quoFEM [10]. 2500 simulations were performed using the prior distributions in Table 1. The resulting sensitivity is shown in Fig. 6(a) which indicates that $D_r$ is the dominating parameter for the response $Y$. This is also confirmed by inspecting the scatter plot of Fig. 6(b): $D_r$ (horizontal axis) demonstrates a stronger influence on the output (vertical axis) compared to the influence of the other parameters shown in (c) and (d). Based on this, we can expect that the CyDSS observations will help constrain the uncertainty in $D_r$, while the reduction of uncertainty in $h_{po}$ and $G_o$ will be relatively limited. Additionally, different types of experiments would be needed to better characterize those other parameters.
+The sensitivity analysis is performed using the algorithm in Weirs et al. (2012) through the Dakota engine that interfaces with quoFEM [3]. 2500 simulations were performed using the prior distributions in Table 1. The resulting sensitivity is shown in Fig. 6(a) which indicates that $D_r$ is the dominating parameter for the response $Y$. This is also confirmed by inspecting the scatter plot of Fig. 6(b): $D_r$ (horizontal axis) demonstrates a stronger influence on the output (vertical axis) compared to the influence of the other parameters shown in (c) and (d). Based on this, we can expect that the CyDSS observations will help constrain the uncertainty in $D_r$, while the reduction of uncertainty in $h_{po}$ and $G_o$ will be relatively limited. Additionally, different types of experiments would be needed to better characterize those other parameters.
 
 <p align="center">
 <img src="./img/UC2-Arduino-6.png" alt="Probabilistic calibration" width="600"/>
@@ -162,7 +162,7 @@ The sensitivity analysis is performed using the algorithm in Weirs et al. (2012)
 
 [quoFEM-Bayesian.ipynb](https://jupyter.designsafe-ci.org/user/name/tree/CommunityData/XXX/quoFEM-Bayesian.ipynb){target=_blank}
 
-Consider now the observations of the CyDSS experiment in Table 2, that are publicly available on the DesignSafe data depot [8, 9]. We assume that the observed count of cycles at different CSR values, denoted as $Y_i^m$ $(i = 1,…,6)$, is given by the simulation model predictions and an added Gaussian noise. The latter captures various inaccuracies such as inherent uncertainty in the phenomenon, the imperfection of our simulation model, and measurement error. Given the above assumptions, we can denote the relationship between the data and model prediction, $Y_i(\theta)$, as
+Consider now the observations of the CyDSS experiment in Table 2, that are publicly available on the DesignSafe data depot [4]. We assume that the observed count of cycles at different CSR values, denoted as $Y_i^m$ $(i = 1,…,6)$, is given by the simulation model predictions and an added Gaussian noise. The latter captures various inaccuracies such as inherent uncertainty in the phenomenon, the imperfection of our simulation model, and measurement error. Given the above assumptions, we can denote the relationship between the data and model prediction, $Y_i(\theta)$, as
 
 <!--
 <p align="center">
@@ -193,7 +193,7 @@ $$
 
 where $p(∙)$ denotes the (joint) probability distribution, and $c$ is the normalization constant that ensures the area under the posterior distribution is one. From Eq. (3),
 
-$p(Y^m_i | \theta, \sigma^2_i)$ is a Gaussian distribution with mean $Y_i(\theta)$ and variance of $\sigma^2_i$. The prior distribution of $\theta$ is in Table 1. Following best practices, inverse Gamma priors with the shape parameter $\alpha = 3$ and scale parameter $\beta = 2$ are introduced for the $\sigma_i^2$ measurement variances [15]. The posterior sample of $\theta$ in this example is obtained using the transitional Markov chain Monte Carlo (TMCMC) sampling technique [11] that is available in quoFEM through the UCSD-UQ engine. This is an expensive calculation that greatly benefits from the available HPC resources at DesignSafe.
+$p(Y^m_i | \theta, \sigma^2_i)$ is a Gaussian distribution with mean $Y_i(\theta)$ and variance of $\sigma^2_i$. The prior distribution of $\theta$ is in Table 1. Following best practices, inverse Gamma priors with the shape parameter $\alpha = 3$ and scale parameter $\beta = 2$ are introduced for the $\sigma_i^2$ measurement variances [5]. The posterior sample of $\theta$ in this example is obtained using the transitional Markov chain Monte Carlo (TMCMC) sampling technique [6] that is available in quoFEM through the UCSD-UQ engine. This is an expensive calculation that greatly benefits from the available HPC resources at DesignSafe.
 
 <p align="center"><b>Table 2. -Cyclic direct simple shear (CyDSS)
 test experimental data</b> </p>
@@ -249,19 +249,16 @@ response of soil column</b> </p>
 
 ## References
 
-1. Smith, R.C.: Uncertainty Quantification: Theory, Implementation, and Applications, vol. 12. Siam (2013).
-2. Deierlein, G.G., Zsarnóczay, A.: State of the Art in Computational Simulation for Natural Hazards Engineering. Version v2. Zenodo (2021).
-3. Deierlein, G.G., et al.: A cloud-enabled application framework for simulating regional-scale impacts of natural hazards on the built environment. Front. Built Environ. 6, 558706 (2020).
-4. McKenna, F.: OpenSees: a framework for earthquake engineering simulation. Comput. Sci. Eng. 13(4), 58–66 (2011).
-5. McKenna, F., et al.: NHERI-SimCenter/quoFEM: Version 3.0.0. Zenodo (2022).
-6. Boulanger, R.W., Ziotopoulou, K.: PM4Sand (Version 3.1): A sand plasticity model for earthquake engineering applications. Department of Civil and Environmental Engineering, University of California, Davis, Davis, CA, Report UCD/CGM-17/01 (2017).
-7. Chen, L., Arduino, P.: Implementation, verification, and validation of the PM4Sand model in OpenSees. Pacific Earthquake Engineering Research (PEER) Center, University of California, Berkeley, Berkeley, USA, Report 2021/02 (2021).
-8. Morales, B., Humire, F., Ziotopoulou, K.: Data from: Cyclic Direct Simple Shear Testing of Ottawa F50 and F65 Sands, 1 February 2021. Distributed by Design Safe-CI Data Depot.
+1. McKenna, F., et al.: NHERI-SimCenter/quoFEM: Version 3.0.0. Zenodo (2022).
+
+2. Boulanger, R.W., Ziotopoulou, K.: PM4Sand (Version 3.1): A sand plasticity model for earthquake engineering applications. Department of Civil and Environmental Engineering, University of California, Davis, Davis, CA, Report UCD/CGM-17/01 (2017).
+
+3. Weirs, V.G., et al.: Sensitivity analysis techniques applied to a system of hyperbolic conservation laws. Reliab. Eng. Syst. Saf. 107, 157–170 (2012).
+
+4. Morales, B., Humire, F., Ziotopoulou, K.: Data from: Cyclic Direct Simple Shear Testing of Ottawa F50 and F65 Sands, 1 February 2021. Distributed by Design Safe-CI Data Depot.
 https://doi.org/10.17603/ds2-eahz-9466. Accessed 28 June 2021.
-9. Ziotopoulou, K., Boulanger, R.W.: Calibration and implementation of a sand plasticity plane strain model for earthquake engineering applications. Soil Dyn. Earthq. Eng. 53, 268–280 (2013).
-10. Weirs, V.G., et al.: Sensitivity analysis techniques applied to a system of hyperbolic conservation laws. Reliab. Eng. Syst. Saf. 107, 157–170 (2012).
-11. Ching, J., Chen, Y.C.: Transitional Markov chain Monte Carlo method for Bayesian model updating, model class selection, and model averaging. J. Eng. Mech. 133(7), 816–832 (2007).
-12. Moehle, J.P., Deierlein, G.G.: A Framework methodology for performance-based earthquake engineering. In: 13th World Conference of Earthquake Engineering, Vancouver (2004).
-13. Zhu, M., McKenna, F., Scott, M.H.: OpenSeesPy: python library for the OpenSees finite element framework. SoftwareX 7, 6–11 (2018).
-14. Taylor, R.L.: FEAP-a finite element analysis program, UC Berkeley (2013).
-15. Carlin, J.B., Vehtari, A., Stern, H.S., Rubin, D.B., Gelman, A., Dunson, D.B.: Bayesian Data Analysis, 3rd edn. Taylor & Francis, United Kingdom (2014).
+
+
+5. Ching, J., Chen, Y.C.: Transitional Markov chain Monte Carlo method for Bayesian model updating, model class selection, and model averaging. J. Eng. Mech. 133(7), 816–832 (2007).
+
+6. Carlin, J.B., Vehtari, A., Stern, H.S., Rubin, D.B., Gelman, A., Dunson, D.B.: Bayesian Data Analysis, 3rd edn. Taylor & Francis, United Kingdom (2014).
