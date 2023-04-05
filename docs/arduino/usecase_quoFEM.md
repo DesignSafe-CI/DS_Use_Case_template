@@ -55,7 +55,17 @@ In order to facilitate each notebook discussion, it is helpful to first identify
 3. Run Tapis job
 4. Post-process results 
 
-Instructions for (1) setting up and (2) running Tapis jobs can be found here[]. These steps are generally applicable for launching any Tapis app from a Jupyter notebook in DesignSafe. The most significant step in this process is determining the appropriate Tapis app to utilize.  To perform UQ quantification within SimCenter backend applications, the *simcenter-uq-frontera-4.0.0u4* Tapis app must be used. 
+Instructions for (1) setting up and (2) running Tapis jobs can be found here[]. These steps are generally applicable for launching any Tapis app from a Jupyter notebook in DesignSafe. The most significant step in this process is determining the appropriate Tapis app to utilize.  To perform UQ quantification within SimCenter backend applications, the following Tapis app must be used:
+
+``` python
+#Select tapis-app
+app_name   = 'simcenter-uq-frontera'
+app_id     = 'simcenter-uq-frontera-4.0.0u4'
+storage_id = 'designsafe.storage.default'
+
+# Get Tapis app
+app = ag.apps.get(appId=app_id)
+```
 
 Post-processing of results is specific to the problem being solved and can be achieved using Python to access output data stored in archived files. For this purpose it is important to identify the location of data files. This is explained here. 
 
