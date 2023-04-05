@@ -1,4 +1,4 @@
-# Sensitivity Analysis and Bayesian Calibration of a Constitutive Soil Model Using quoFEM
+# Sensitivity Analysis, Bayesian Calibration and FOrward Propagation of Uncertainties Using quoFEM
 
 **Pedro Arduino - University of Washington** <br/>
 **Sang-Ri Yi and** <br/>
