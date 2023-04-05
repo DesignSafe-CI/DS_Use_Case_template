@@ -184,7 +184,7 @@ Figure 6 compares the experimental data with the calibrated model predictions of
 
 ## Step 3 – Forward Propagation
 
-[quoFEM-Propagation](https://jupyter.designsafe-ci.org/user/name/tree/CommunityData/XXX/quoFEM-Propagation){target=_blank}
+[quoFEM-Propagation.ipynb](https://jupyter.designsafe-ci.org/user/name/tree/CommunityData/XXX/quoFEM-Propagation){target=_blank}
 
 A forward propagation analysis is helpful to characterize uncertainties in a simulation model. For this purpose it is good practice to run such an analysis and characterize the effect of uncertainties on application-specific quantities of interest before practically applying these parameter values in a simulation for decision making.
 
