@@ -147,7 +147,7 @@ where noise $\epsilon_i$ is assumed to have zero-mean and unknown variance $\sig
 measurement values, we can use a Bayesian approach to evaluate the posterior distribution of the parameters of PM4Sand and the unknown noise variances:
 
 <p align="center">
-<img src="./img/UC2-Arduino-Eq4.png" alt="OpenSees models" width="300"/>
+<img src="./img/UC2-Arduino-Eq4.png" alt="OpenSees models" width="350"/>
 (4)
 </p>
 
