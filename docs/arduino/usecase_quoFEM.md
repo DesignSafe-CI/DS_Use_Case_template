@@ -178,7 +178,7 @@ test experimental data</b> </p>
 Figure 6 compares the experimental data with the calibrated model predictions of the load-cycle counts, while Fig. 7 shows the calibrated parameter sample from the joint posterior distribution. Figure 7 shows that uncertainty in all variables is reduced by calibrating to the observed data, but the reduction was most apparent in $D_r$. This is in line with our expectations from the earlier sensitivity analysis. The results also highlight a strong dependency between $D_r$ and $h_{po}$, indicating that multiple combinations of $D_r$ and $h_{po}$ produce near-optimal solutions. None of these features are captured by a deterministic estimator that results from a conventional error-minimizing optimization approach (e.g., red diamond marker shown in the same figure). It is also important to recognize that a non-negligible amount of uncertainty remains in the parameter estimates, and this produces substantial uncertainty in the model predictions. The dark blue bounds in Fig. 6 show the level of uncertainty in the estimated number of cycles to liquefaction, but this simulation model was prepared to reproduce the experimental setup. When the calibrated constitutive model is applied in another simulation, the responses can exhibit different scales of uncertainties. 
 
 <p align="center">
-<img src="./img/UC2-Arduino-7.png" alt="Forward propagation" width="400"/>
+<img src="./img/UC2-Arduino-7.png" alt="Forward propagation" width="500"/>
 </p>
 <p align="center"> <b>Fig.7 - PM4Sand model parameters sampled from the joint posterior distribution</b> </p>
 
