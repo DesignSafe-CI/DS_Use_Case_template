@@ -137,7 +137,7 @@ S_i^T=\frac{\mathbb{E}_{\boldsymbol{\theta}_{\sim i}}\left[\operatorname{Var}_{\
 \qquad(2)
 $$
 
-where $\theta_i$ is the parameter of interest (i.e., one of the $\{D_r,G_o,h_{po}\}$ ) , $\boldsymbol{\theta}_{i}$ denotes the other two parameters, $\mathbb{E}_{\boldsymbol{X}}[.]$ and $\operatorname{Var}_{\boldsymbol{X}}[.]$ denote mean and variance of function over $\boldsymbol{X}$, respectively, and the vertical bar denotes ‘conditional on’. The former index, called the main-effect index, quantifies how much of the variance of $Y$ is attributed to the parameter $\theta_i$, while the latter index, called the total-effect index, also considers the joint contributions of $\theta_i$ and other parameters [10].
+where $\theta_i$ is the parameter of interest (i.e., one of the $\{D_r,G_o,h_{po}\}$ ) , $\boldsymbol{\theta}_{\sim i}$ denotes the other two parameters, $\mathbb{E}_{\boldsymbol{X}}[.]$ and $\operatorname{Var}_{\boldsymbol{X}}[.]$ denote mean and variance of function over $\boldsymbol{X}$, respectively, and the vertical bar denotes ‘conditional on’. The former index, called the main-effect index, quantifies how much of the variance of $Y$ is attributed to the parameter $\theta_i$, while the latter index, called the total-effect index, also considers the joint contributions of $\theta_i$ and other parameters [10].
 
 <p align="center">
 <img src="./img/UC2-Arduino-4.png" alt="OpenSees models" width="250"/>
@@ -245,3 +245,23 @@ The results of 500 simulations are shown in Fig. 10. The mean and standard devia
 <p align="center"> <b>Fig.10 - Predicted earthquake
 response of soil column</b> </p>
 
+
+
+## References
+
+1. Smith, R.C.: Uncertainty Quantification: Theory, Implementation, and Applications, vol. 12. Siam (2013).
+2. Deierlein, G.G., Zsarnóczay, A.: State of the Art in Computational Simulation for Natural Hazards Engineering. Version v2. Zenodo (2021).
+3. Deierlein, G.G., et al.: A cloud-enabled application framework for simulating regional-scale impacts of natural hazards on the built environment. Front. Built Environ. 6, 558706 (2020).
+4. McKenna, F.: OpenSees: a framework for earthquake engineering simulation. Comput. Sci. Eng. 13(4), 58–66 (2011).
+5. McKenna, F., et al.: NHERI-SimCenter/quoFEM: Version 3.0.0. Zenodo (2022).
+6. Boulanger, R.W., Ziotopoulou, K.: PM4Sand (Version 3.1): A sand plasticity model for earthquake engineering applications. Department of Civil and Environmental Engineering, University of California, Davis, Davis, CA, Report UCD/CGM-17/01 (2017).
+7. Chen, L., Arduino, P.: Implementation, verification, and validation of the PM4Sand model in OpenSees. Pacific Earthquake Engineering Research (PEER) Center, University of California, Berkeley, Berkeley, USA, Report 2021/02 (2021).
+8. Morales, B., Humire, F., Ziotopoulou, K.: Data from: Cyclic Direct Simple Shear Testing of Ottawa F50 and F65 Sands, 1 February 2021. Distributed by Design Safe-CI Data Depot.
+https://doi.org/10.17603/ds2-eahz-9466. Accessed 28 June 2021.
+9. Ziotopoulou, K., Boulanger, R.W.: Calibration and implementation of a sand plasticity plane strain model for earthquake engineering applications. Soil Dyn. Earthq. Eng. 53, 268–280 (2013).
+10. Weirs, V.G., et al.: Sensitivity analysis techniques applied to a system of hyperbolic conservation laws. Reliab. Eng. Syst. Saf. 107, 157–170 (2012).
+11. Ching, J., Chen, Y.C.: Transitional Markov chain Monte Carlo method for Bayesian model updating, model class selection, and model averaging. J. Eng. Mech. 133(7), 816–832 (2007).
+12. Moehle, J.P., Deierlein, G.G.: A Framework methodology for performance-based earthquake engineering. In: 13th World Conference of Earthquake Engineering, Vancouver (2004).
+13. Zhu, M., McKenna, F., Scott, M.H.: OpenSeesPy: python library for the OpenSees finite element framework. SoftwareX 7, 6–11 (2018).
+14. Taylor, R.L.: FEAP-a finite element analysis program, UC Berkeley (2013).
+15. Carlin, J.B., Vehtari, A., Stern, H.S., Rubin, D.B., Gelman, A., Dunson, D.B.: Bayesian Data Analysis, 3rd edn. Taylor & Francis, United Kingdom (2014).
