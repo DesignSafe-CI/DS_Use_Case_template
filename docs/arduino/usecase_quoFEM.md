@@ -53,7 +53,7 @@ To connect SimCenter applications and Jupyter notebooks in DesignSafe, it's esse
 
 In quoFEM, the workflow data is stored in a tmp.SimCenter folder that can be accessed from the quoFEM desktop, sent to an HPC, or accessed from a notebook. For the examples presented in this document, the  information included in this folder is sufficient to run all cases.
 
-In order to facilitate each notebook discussion, it is helpful to first identify common aspects that are present in all of them. These include:
+In order to facilitate each notebook discussion, it is helpful to first identify common aspects that are present in all workflow run from Jupyter. These include:
 
 1. Setup Tapis App job 
 2. Display job workflow
