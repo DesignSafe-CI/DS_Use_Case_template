@@ -96,7 +96,8 @@ To modify the workflow, the user can either manually change the workflow files w
 
 ## Step 1 – Global Sensitivity Analysis
 
- [quoFEM-Sensitivity.ipynb](https://jupyter.designsafe-ci.org/user/name/tree/CommunityData/XXX/quoFEM-Sensitivity.ipynb){target=_blank}.
+ [quoFEM-Sensitivity.ipynb](https://jupyter.designsafe-ci.org/user/name/tree/CommunityData/Jupyter%20Notebooks%20for%20Civil%20Engineering%20Courses/University_of_Washington/quoFEM_Example1/GlobalSensitivity/quoFEM-Sensitivity.ipynb){target=_blank}.
+
 
 
 The PM4Sand constitutive model has 24 parameters. Among them, apparent relative density $D_r$, shear modulus coefficient $G_o$, and contraction rate parameter $h_{po}$, are known to be important for predicting liquefaction responses [2]. Therefore, these three parameters $\theta = \{D_r,G_o,h_{po}\}$ are considered in the UQ analyses and their prior distributions are assumed to be uniform distributions with the ranges shown in Table 1. These prior distributions shall capture a plausible wide range that includes all possible parameter values for the target soils. The experimental data will be used to constrain this wide range to the domain that best describes the behavior exhibited by the specimen during the experiments. 
@@ -137,7 +138,7 @@ S_i^T=\frac{\mathbb{E}_{\boldsymbol{\theta}_{\sim i}}\left[\operatorname{Var}_{\
 \qquad(2)
 $$
 
-where $\theta_i$ is the parameter of interest (i.e., one of the $\{D_r,G_o,h_{po}\}$ ) , $\boldsymbol{\theta}_{\sim i}$ denotes the other two parameters, $\mathbb{E}_{\boldsymbol{X}}[.]$ and $\operatorname{Var}_{\boldsymbol{X}}[.]$ denote mean and variance of function over $\boldsymbol{X}$, respectively, and the vertical bar denotes ‘conditional on’. The former index, called the main-effect index, quantifies how much of the variance of $Y$ is attributed to the parameter $\theta_i$, while the latter index, called the total-effect index, also considers the joint contributions of $\theta_i$ and other parameters [3].
+where $\theta_i$ is the parameter of interest (i.e., one of the $\{D_r,G_o,h_{po}\}$ ) , $\boldsymbol{\theta}_{\sim i}$ denotes the other two parameters, $\boldsymbol{E}_{\boldsymbol{X}}[.]$ and $\operatorname{Var}_{\boldsymbol{X}}[.]$ denote mean and variance of function over $\boldsymbol{X}$, respectively, and the vertical bar denotes ‘conditional on’. The former index, called the main-effect index, quantifies how much of the variance of $Y$ is attributed to the parameter $\theta_i$, while the latter index, called the total-effect index, also considers the joint contributions of $\theta_i$ and other parameters [3].
 
 <p align="center">
 <img src="./img/UC2-Arduino-4.png" alt="OpenSees models" width="250"/>
@@ -160,7 +161,7 @@ The sensitivity analysis is performed using the algorithm in Weirs et al. (2012)
 
 ## Step 2 – Bayesian Parameter Calibration
 
-[quoFEM-Bayesian.ipynb](https://jupyter.designsafe-ci.org/user/name/tree/CommunityData/XXX/quoFEM-Bayesian.ipynb){target=_blank}
+[quoFEM-Bayesian.ipynb](https://jupyter.designsafe-ci.org/user/name/tree/CommunityData/Jupyter%20Notebooks%20for%20Civil%20Engineering%20Courses/University_of_Washington/quoFEM_Example1/BayesianCalibration/quoFEM-Bayesian.ipynb){target=_blank}
 
 Consider now the observations of the CyDSS experiment in Table 2, that are publicly available on the DesignSafe data depot [4]. We assume that the observed count of cycles at different CSR values, denoted as $Y_i^m$ $(i = 1,…,6)$, is given by the simulation model predictions and an added Gaussian noise. The latter captures various inaccuracies such as inherent uncertainty in the phenomenon, the imperfection of our simulation model, and measurement error. Given the above assumptions, we can denote the relationship between the data and model prediction, $Y_i(\theta)$, as
 
@@ -224,7 +225,7 @@ Figure 7 compares the experimental data with the calibrated model predictions of
 
 ## Step 3 – Forward Propagation
 
-[quoFEM-Propagation.ipynb](https://jupyter.designsafe-ci.org/user/name/tree/CommunityData/XXX/quoFEM-Propagation){target=_blank}
+[quoFEM-Propagation.ipynb](https://jupyter.designsafe-ci.org/user/name/tree/CommunityData/Jupyter%20Notebooks%20for%20Civil%20Engineering%20Courses/University_of_Washington/quoFEM_Example1/ForwardPropagation/quoFEM-Propagation){target=_blank}
 
 A forward propagation analysis is helpful to characterize uncertainties in a simulation model. For this purpose it is good practice to run such an analysis and characterize the effect of uncertainties on application-specific quantities of interest before practically applying these parameter values in a simulation for decision making.
 
