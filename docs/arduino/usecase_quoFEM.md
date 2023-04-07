@@ -34,7 +34,7 @@ In this use case, the amount of reduction in the uncertainty in PM4Sand paramete
 
 
 <p align="center">
-<img src="../img/UC2-Arduino-1.png" alt="Probabilistic calibration" width="600"/>
+<img src="./img/UC2-Arduino-1.png" alt="Probabilistic calibration" width="600"/>
 </p>
 <p align="center"> <b>Fig.1 - Probabilistic calibration of soil model (step 2) with sensitivity analysis (step 1) and prediction of uncertainty in estimation of lateral sperading (step 3)</b> </p>
 
@@ -48,7 +48,7 @@ In this context, the notebooks included in this use-case complement input genera
 To connect SimCenter applications and Jupyter notebooks in DesignSafe, it's essential to ensure that all required tools are accessible from both frameworks. SimCenter vision is well-aligned with this concept and offers all of the necessary functionality through backend applications installed in DesignSafe that can be accessed via Tapis apps. This is schematically shown in Fig 2. Additionally, all SimCenter workflows are stored in JSON files that represent all steps in a workflow. This file is readily accesible using a JSON parser.
 
 <p align="center">
-<img src="../img/UC2-Arduino-2.png" alt="quoFEm in DesignSafe" width="600"/>
+<img src="./img/UC2-Arduino-2.png" alt="quoFEm in DesignSafe" width="600"/>
 </p>
 <p align="center"> <b>Fig.2 - Running quoFEM analysis using remote computing resources at DesignSafe</b> </p>
 
@@ -78,7 +78,7 @@ Post-processing of results is specific to the problem being solved and can be ac
 Displaying a quoFEM job workflow is useful for understanding the data and steps followed in the workflow. These include: simulation tools, input variables, UQ methods used, and remote directories/folders. An schematic of a typical quoFEM workflow is shown in Fig. 3. 
 
 <p align="center">
-<img src="../img/UC2-Arduino-3.png" alt="quoFEM workflow" width="500"/>
+<img src="./img/UC2-Arduino-3.png" alt="quoFEM workflow" width="500"/>
 </p>
 <p align="center"> <b>Fig.3 - Elements of quoFEM workflow (only relevant elements for launching notebook from JupyterHub)</b> </p>
 
@@ -119,12 +119,12 @@ The sensitivity analysis is performed for a simulation model that reproduces the
 
 <!--
 <p align="center">
-<img src="../img/UC2-Arduino-Eq1.png" alt="OpenSees models" width="150"/>
+<img src="./img/UC2-Arduino-Eq1.png" alt="OpenSees models" width="150"/>
 (1)
 </p>
 
 <p align="center">
-<img src="../img/UC2-Arduino-Eq2.png" alt="OpenSees models" width="150"/>
+<img src="./img/UC2-Arduino-Eq2.png" alt="OpenSees models" width="150"/>
 (2)
 </p>
 -->
@@ -142,19 +142,19 @@ $$
 where $\theta_i$ is the parameter of interest (i.e., one of the $\{D_r,G_o,h_{po}\}$ ) , $\boldsymbol{\theta}_{\sim i}$ denotes the other two parameters, $\mathbb{E}_{\boldsymbol{X}}[.]$ and $\operatorname{Var}_{\boldsymbol{X}}[.]$ denote mean and variance of function over $\boldsymbol{X}$, respectively, and the vertical bar denotes ‘conditional on’. The former index, called the main-effect index, quantifies how much of the variance of $Y$ is attributed to the parameter $\theta_i$, while the latter index, called the total-effect index, also considers the joint contributions of $\theta_i$ and other parameters [3].
 
 <p align="center">
-<img src="../img/UC2-Arduino-4.png" alt="OpenSees models" width="250"/>
+<img src="./img/UC2-Arduino-4.png" alt="OpenSees models" width="250"/>
 </p>
 <p align="center"> <b>Fig.4 - Single element FE model used in sensitivity analysis and Bayesian calibration</b> </p>
 
 <p align="center">
-<img src="../img/UC2-Arduino-5.png" alt="OpenSees models" width="600"/>
+<img src="./img/UC2-Arduino-5.png" alt="OpenSees models" width="600"/>
 </p>
 <p align="center"> <b>Fig.5 - (a) simulated cyclic stress-strain curve; (b)stress path during the simulated cyclic direct simple shear test; (c) evolution of pore water pressure ratio during the simulated CyDSS test</b> </p>
 
 The sensitivity analysis is performed using the algorithm in Weirs et al. (2012) through the Dakota engine that interfaces with quoFEM [3]. 2500 simulations were performed using the prior distributions in Table 1. The resulting sensitivity is shown in Fig. 6(a) which indicates that $D_r$ is the dominating parameter for the response $Y$. This is also confirmed by inspecting the scatter plot of Fig. 6(b): $D_r$ (horizontal axis) demonstrates a stronger influence on the output (vertical axis) compared to the influence of the other parameters shown in (c) and (d). Based on this, we can expect that the CyDSS observations will help constrain the uncertainty in $D_r$, while the reduction of uncertainty in $h_{po}$ and $G_o$ will be relatively limited. Additionally, different types of experiments would be needed to better characterize those other parameters.
 
 <p align="center">
-<img src="../img/UC2-Arduino-6.png" alt="Probabilistic calibration" width="600"/>
+<img src="./img/UC2-Arduino-6.png" alt="Probabilistic calibration" width="600"/>
 </p>
 <p align="center"> <b>Fig.6 - (a) Sensitivity analysis results for the critical number of cycles given CSR = 0.172; (b)–
 (d) Individual input-output scatter plots</b> </p>
@@ -168,7 +168,7 @@ Consider now the observations of the CyDSS experiment in Table 2, that are publi
 
 <!--
 <p align="center">
-<img src="../img/UC2-Arduino-Eq3.png" alt="OpenSees models" width="150"/>
+<img src="./img/UC2-Arduino-Eq3.png" alt="OpenSees models" width="150"/>
 (3)
 </p>
 -->
@@ -183,7 +183,7 @@ measurement values, we can use a Bayesian approach to evaluate the posterior dis
 
 <!--
 <p align="center">
-<img src="../img/UC2-Arduino-Eq4.png" alt="OpenSees models" width="350"/>
+<img src="./img/UC2-Arduino-Eq4.png" alt="OpenSees models" width="350"/>
 (4)
 </p>
 -->
@@ -213,14 +213,14 @@ test experimental data</b> </p>
 </center>
 
 <p align="center">
-<img src="../img/UC2-Arduino-7.png" alt="Calibrated predictions" width="400"/>
+<img src="./img/UC2-Arduino-7.png" alt="Calibrated predictions" width="400"/>
 </p>
 <p align="center"> <b>Fig.7 - Comparison of calibrated model predictions and experimental data </b> </p>
 
 Figure 7 compares the experimental data with the calibrated model predictions of the load-cycle counts, while Fig. 8 shows the calibrated parameter sample from the joint posterior distribution. Figure 8 shows that uncertainty in all variables is reduced by calibrating to the observed data, but the reduction was most apparent in $D_r$. This is in line with our expectations from the earlier sensitivity analysis. The results also highlight a strong dependency between $D_r$ and $h_{po}$, indicating that multiple combinations of $D_r$ and $h_{po}$ produce near-optimal solutions. None of these features are captured by a deterministic estimator that results from a conventional error-minimizing optimization approach (e.g., red diamond marker shown in the same figure). It is also important to recognize that a non-negligible amount of uncertainty remains in the parameter estimates, and this produces substantial uncertainty in the model predictions. The dark blue bounds in Fig. 7 show the level of uncertainty in the estimated number of cycles to liquefaction, but this simulation model was prepared to reproduce the experimental setup. When the calibrated constitutive model is applied in another simulation, the responses can exhibit different scales of uncertainties. 
 
 <p align="center">
-<img src="../img/UC2-Arduino-8.png" alt="Forward propagation" width="500"/>
+<img src="./img/UC2-Arduino-8.png" alt="Forward propagation" width="500"/>
 </p>
 <p align="center"> <b>Fig.8 - PM4Sand model parameters sampled from the joint posterior distribution</b> </p>
 
@@ -234,7 +234,7 @@ The obtained samples of the soil parameters in Fig. 8 are used to predict the un
 
 
 <p align="center">
-<img src="../img/UC2-Arduino-9.png" alt="Forward propagation" width="150"/>
+<img src="./img/UC2-Arduino-9.png" alt="Forward propagation" width="150"/>
 </p>
 <p align="center"> <b>Fig.9 - Schematic of 1D soil layer with liquefiable soil used in the forward propagation analysis. </b> </p>
 
