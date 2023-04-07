@@ -138,7 +138,7 @@ S_i^T=\frac{\mathbb{E}_{\boldsymbol{\theta}_{\sim i}}\left[\operatorname{Var}_{\
 \qquad(2)
 $$
 
-where $\theta_i$ is the parameter of interest (i.e., one of the $\{D_r,G_o,h_{po}\}$ ) , $\boldsymbol{\theta}_{\sim i}$ denotes the other two parameters, $\boldsymbol{E}_{\boldsymbol{X}}[.]$ and $\operatorname{Var}_{\boldsymbol{X}}[.]$ denote mean and variance of function over $\boldsymbol{X}$, respectively, and the vertical bar denotes ‘conditional on’. The former index, called the main-effect index, quantifies how much of the variance of $Y$ is attributed to the parameter $\theta_i$, while the latter index, called the total-effect index, also considers the joint contributions of $\theta_i$ and other parameters [3].
+where $\theta_i$ is the parameter of interest (i.e., one of the $\{D_r,G_o,h_{po}\}$ ) , $\boldsymbol{\theta}_{\sim i}$ denotes the other two parameters, $\mathbb{E}_{\boldsymbol{X}}[.]$ and $\operatorname{Var}_{\boldsymbol{X}}[.]$ denote mean and variance of function over $\boldsymbol{X}$, respectively, and the vertical bar denotes ‘conditional on’. The former index, called the main-effect index, quantifies how much of the variance of $Y$ is attributed to the parameter $\theta_i$, while the latter index, called the total-effect index, also considers the joint contributions of $\theta_i$ and other parameters [3].
 
 <p align="center">
 <img src="./img/UC2-Arduino-4.png" alt="OpenSees models" width="250"/>
@@ -225,7 +225,7 @@ Figure 7 compares the experimental data with the calibrated model predictions of
 
 ## Step 3 – Forward Propagation
 
-[quoFEM-Propagation.ipynb](https://jupyter.designsafe-ci.org/user/name/tree/CommunityData/Jupyter%20Notebooks%20for%20Civil%20Engineering%20Courses/University_of_Washington/quoFEM_Example1/ForwardPropagation/quoFEM-Propagation){target=_blank}
+[quoFEM-Propagation.ipynb](https://jupyter.designsafe-ci.org/user/name/tree/CommunityData/Jupyter%20Notebooks%20for%20Civil%20Engineering%20Courses/University_of_Washington/quoFEM_Example1/ForwardPropagation/quoFEM-Propagation.ipynb){target=_blank}
 
 A forward propagation analysis is helpful to characterize uncertainties in a simulation model. For this purpose it is good practice to run such an analysis and characterize the effect of uncertainties on application-specific quantities of interest before practically applying these parameter values in a simulation for decision making.
 
