@@ -13,8 +13,6 @@ The accompanying jupyter notebook for this use case can be found in the Communit
 ## Background 
 ### Citation and Licensing
 
-* Please cite [Arduino, P. (2023)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246){target=_blank} to acknowledge the use of resources from this use case.
-
 * Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246){target=_blank} to acknowledge the use of DesignSafe resources.  
 
 * This software is distributed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.html){target=_blank}.  
@@ -31,7 +29,7 @@ FInally a simple report is generated using rst2pdf.
 A schematic workflow for this example is presented in Fig. 1
 
 <p align="center">
-<img src="./img/UC3-Arduino-0.png" alt="Schematic of Matlab workflow" width="500"/>
+<img src="../img/UC3-Arduino-0.png" alt="Schematic of Matlab workflow" width="500"/>
 </p>
 <p align="center"> <b>Fig.1 - Schematic of Matlab workflow</b> </p>
     
@@ -215,7 +213,7 @@ for ii in range(3):
 ```
 
 <p align="center">
-<img src="./img/UC3-Arduino-1.png" alt="Time histories" width="400"/>
+<img src="../img/UC3-Arduino-1.png" alt="Time histories" width="400"/>
 </p>
 <p align="center"> <b>Fig.2 - Displacement, velocity and acceleration time history for selected motion</b> </p>
 
@@ -247,7 +245,7 @@ axs2[0].grid(True)
 ```
 
 <p align="center">
-<img src="./img/UC3-Arduino-2.png" alt="Response spectra" width="400"/>
+<img src="../img/UC3-Arduino-2.png" alt="Response spectra" width="400"/>
 </p>
 <p align="center"> <b>Fig.3 - Response spectra</b> </p>
 
