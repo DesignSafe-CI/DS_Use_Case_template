@@ -171,7 +171,7 @@ The Load-Displacement script compares the experimental cyclic load history to th
 
 ### Failure Mode Graphs
 
-This script outputs stress strain graphs of the extereme points of the concrete and steel to determine if the wall failed as a compression buckling or bar rupture.  Compression bucking is when the conrete crushes and the stress tapers off to zero and steel buckles in compression as the stress goes to zero.  Bar rupture is when the bar reaches the strain rupture point and the stress goes to zero.   This script can be found here: [CrossSectionSteelConcreteProfile.ipynb](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/QUOFEM)   
+This script outputs stress strain graphs of the extereme points of the concrete and steel to determine if the wall failed as a compression buckling or bar rupture.  Compression bucking is when the conrete crushes and the stress tapers off to zero and steel buckles in compression as the stress goes to zero.  Bar rupture is when the bar reaches the strain rupture point and the stress goes to zero.   This script can be found here: [br_or_cb.ipynb](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/QUOFEM)   
 
 ![SchematicView](img/crushing.JPG)  
 
