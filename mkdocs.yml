@@ -18,7 +18,8 @@ markdown_extensions:
  - markdown_katex:
     no_inline_svg: True
     insert_fonts_css: True
- - attr_list    
+ - attr_list  
+ 
 
 ####
 #### Do NOT edit above this line
@@ -37,9 +38,10 @@ nav:
   - Seismic Response of Concrete Walls: lowes/usecase.md
   - Soil Structure Interaction: rathje/usecase.md
   - Experimental Shake Table Testing: mosqueda/usecase.md
-  - API Use Cases: sjbrandenberg/apiusecases/README.md
+  - Application Programming Interfaces: sjbrandenberg/apiusecases/api_background.ipynb
   
- 
+plugins:
+  - mkdocs-jupyter
   
 #### DO NOT MAKE ANY CHANGES TO THE EXAMPLE FOLDER
 #### Find the folder with your name and edit usecase.md
