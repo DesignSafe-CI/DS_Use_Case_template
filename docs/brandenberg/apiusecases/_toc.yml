@@ -3,4 +3,7 @@
 
 root: api_background.ipynb
 chapters:
-- file: Census_tot_population_updated.ipynb
+- file: us_census_api.ipynb
+- file: usgs_recent_earthquakes.ipynb
+- file: usgs_shakemap_api.ipynb
+- file: noaa_api.ipynb
