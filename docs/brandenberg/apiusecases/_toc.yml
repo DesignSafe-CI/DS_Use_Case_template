@@ -1,9 +1,0 @@
-# Table of contents
-# Learn more at https://jupyterbook.org/customize/toc.html
-
-root: api_background.ipynb
-chapters:
-- file: us_census_api.ipynb
-- file: usgs_recent_earthquakes.ipynb
-- file: usgs_shakemap_api.ipynb
-- file: noaa_api.ipynb
