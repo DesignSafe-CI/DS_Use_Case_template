@@ -38,7 +38,7 @@ nav:
   - Seismic Response of Concrete Walls: lowes/usecase.md
   - Soil Structure Interaction: rathje/usecase.md
   - Experimental Shake Table Testing: mosqueda/usecase.md
-  - Application Programming Interfaces: sjbrandenberg/apiusecases/usecase.md
+  - Application Programming Interfaces: brandenberg/apiusecases/usecase.md
   
 #### DO NOT MAKE ANY CHANGES TO THE EXAMPLE FOLDER
 #### Find the folder with your name and edit usecase.md
