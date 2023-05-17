@@ -18,6 +18,7 @@ To help users fully embrace DesignSafe functionalities, we have developed a suit
 <b> Hurricane and Windstorm Use Cases </b>
 
 * [**Large-Scale Ensemble Simulations of Storm Surge**](dawson/usecase.md)  (ADCIRC, pylauncher, Jupyter, HPC)
+* [**Creating an ADCIRC dataset**](dawson/usecase2.md)  (ADCIRC, pylauncher, Jupyter, Dataset)
 * [**Visualization of Storm Surge Impacts**](padgett/usecase.md) (ADCIRC, Jupyter, QGIS)
 * [**Simulation of Wind Flow around Buildings**](kareem/usecase.md) (OpenFOAM, Jupyter, Paraview, HPC)
 * [**Analysis of Field Sensor Data from Wind Events**](pinelli/usecase.md) (Jupyter, Interactive Data Analysis)
