@@ -1,28 +1,30 @@
 # Wind Data Analysis Tools
 
-**Soundarya Sridhar and Jean-Paul Pinelli, Florida Institute of Technology**  
+**Soundarya Sridhar and Jean-Paul Pinelli - Florida Institute of Technology**  
 
-Florida Tech (FIT) teams  deploy networks of wireless sensors on residential houses during high impact wind events or on full scale wind tunnel models. Each team deploys pressure, temperature and humidity sensors alongside anemometry, which includes different anemometers and a conical scanning infrared lidar . The workflow starts with uploading the data to DesignSafe through authentication tokens created in Tapis. Once on DesignSafe, three Jupyter notebooks process and visualize the instruments’ data for analyses. The notebooks provide a user friendly and interactive environment that can adapt to different datasets. For this project, the notebooks perform quasi static real-time analyses, assess sensor performance, study pressure variations for different wind conditions and data correlation. The user interactivity of these notebooks facilitates an easy adaptation to different datasets with little to no-change in code.
+Florida Tech (FIT) teams  deploy networks of wireless sensors on residential houses during high impact wind events or on full scale wind tunnel models. Each team deploys pressure, temperature and humidity sensors alongside anemometry, which includes different anemometers and a conical scanning infrared lidar. The workflow starts with uploading the data to DesignSafe through authentication tokens created in Tapis. Once on DesignSafe, three Jupyter notebooks process and visualize the instruments’ data for analyses. The notebooks provide a user friendly and interactive environment that can adapt to different datasets. For this project, the notebooks perform quasi static real-time analyses, assess sensor performance, study pressure variations for different wind conditions and data correlation. The user interactivity of these notebooks facilitates an easy adaptation to different datasets with little to no-change in code.  The example makes use of the following DesignSafe resources:
+
+[Jupyter notebooks on DS Juypterhub](https://www.designsafe-ci.org/rw/workspace/#!/Jupyter::Analysis){target=_blank}
 
 <img src="../img/Workflow.png"  width="600">
 
-
-### Citation and Licensing
-
-* Please cite [J. Wang et al. (2021)](https://tigerprints.clemson.edu/cgi/viewcontent.cgi?article=1077&context=aawe) and [S. Sridhar et al. (2021)](https://tigerprints.clemson.edu/cgi/viewcontent.cgi?article=1068&context=aawe) to acknowledge the use of any resources from this use case.
-
-* Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246), [Pinelli et al. (2020)](https://link.springer.com/article/10.1007/s13753-020-00320-8) and [Rathje et al. (2020)](https://doi.org/10.3389/fbuil.2020.547706) to acknowledge the use of DesignSafe resources.  
-
-* This software is distributed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.html).  
-
-
 ## Background 
     
+### Citation and Licensing
+
+* Please cite [Subramanian et al. (2022)](https://doi.org/10.17603/ds2-6qnj-tv17){target=_blank}, [Pinelli et al. (2022)](https://doi.org/10.17603/ds2-jv3x-fp80){target=_blank}, [J. Wang et al. (2021)](https://tigerprints.clemson.edu/cgi/viewcontent.cgi?article=1077&context=aawe){target=_blank} and [S. Sridhar et al. (2021)](https://tigerprints.clemson.edu/cgi/viewcontent.cgi?article=1068&context=aawe){target=_blank} to acknowledge the use of any resources from this use case.
+
+* Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246){target=_blank} to acknowledge the use of DesignSafe resources.  
+
+* This software is distributed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.html){target=_blank}.  
+
+
+## Description
 ### Quasi-real time Data Upload with Tapis
 
-The user needs a DesignSafe-CI (DS) account. During deployment, data is uploaded to DS in user defined time interval. Tapis CLI and [Python 3 executable](https://www.python.org/downloads/windows/) enable this feature and must be installed on the local system. The user initiates Tapis before every deployment through Windows PowerShell and Tapis creates a token as described below:
+The user needs a DesignSafe-CI (DS) account. During deployment, data is uploaded to DS in user defined time interval. Tapis CLI and [Python 3 executable](https://www.python.org/downloads/windows/){target=_blank} enable this feature and must be installed on the local system. The user initiates Tapis before every deployment through Windows PowerShell and Tapis creates a token as described below:
 
-Video Tutorial (Timestamps - 28:01 to 35:04): [https://www.youtube.com/watch?v=C2McrpQ8XmI](https://youtu.be/C2McrpQ8XmI?t=1678)
+Video Tutorial (Timestamps - 28:01 to 35:04): [https://www.youtube.com/watch?v=C2McrpQ8XmI](https://youtu.be/C2McrpQ8XmI?t=1678){target=_blank}
 
 **User Guide**
 
@@ -58,7 +60,7 @@ The first notebook is a user interactive guide to input important raw data infor
 
 ### Analyses Notebooks and Examples
 
-The project goal is to measure pressure variation on non-structural components during strong wind events using the network of wireless sensors. The analysis notebooks on DesignSafe are user interactive with markdowns describing the test. They also provide the users with several options to visualize the data. For example, see the analysis notebook for [Isaias](https://doi.org/10.17603/ds2-6qnj-tv17) (tropical storm on August 1-3, 2020). The markdowns have important information and pictures from the deployment, and instructions for the user to easily access data.
+The project goal is to measure pressure variation on non-structural components during strong wind events using the network of wireless sensors. The analysis notebooks on DesignSafe are user interactive with markdowns describing the test. They also provide the users with several options to visualize the data. For example, see the analysis notebook for [Isaias](https://doi.org/10.17603/ds2-6qnj-tv17){target=_blank} (tropical storm on August 1-3, 2020). The markdowns have important information and pictures from the deployment, and instructions for the user to easily access data.
  
 <img src="../img/jupyter.png"  width="520">
 
@@ -84,7 +86,7 @@ The exercise below is an illustration of these plotly features:
     
 Requirements:
     
-Access [Jupyter Notebook on DesignSafe](https://jupyter.designsafe-ci.org/). Once you have your notebook open and you don’t have plotly dash installed, go ahead and use: `!pip install dash==1.14.0 --user`
+Access [Jupyter Notebook on DesignSafe](https://jupyter.designsafe-ci.org/){target=_blank}. Once you have your notebook open and you don’t have plotly dash installed, go ahead and use: `!pip install dash==1.14.0 --user`
     
 Building the Dataframe:
 Consider a box of spheres that change their numbers ranging from 1 to 10 every hour. You want to look at how the number changes for 12 hours.
@@ -151,9 +153,3 @@ fig.show()
 ```
 
 <img src="../img/Picture10.gif"  width="450">
-
-## Published Datasets and Notebooks
-    
-• Subramanian, C. Lazarus, S. Pinelli, J. Sun, J. Wang, J. Splitt, M. Besing, H. Sridhar, S. (2021) "WSN and Lidar Deployment during Hurricane Isaias, Satellite Beach, Melbourne, FL, Aug 2020", in Hurricane ISAIAS Data from Wireless Pressure Sensor Network and LIDAR. DesignSafe-CI. [https://doi.org/10.17603/ds2-6qnj-tv17](https://doi.org/10.17603/ds2-6qnj-tv17).
-
-• Pinelli, J. Subramanian, C. Lazarus, S. Wang, J. Sridhar, S. Zhang, J. Erwin, J. Chen, D. Lebbar, A. (2022) "Sliding Glass Patio Doors with and without Shutter", in Lab Tests with Wireless Sensor Network (WSN) system for the characterization of strong wind loads on non-structural components. DesignSafe-CI. [https://doi.org/10.17603/ds2-jv3x-fp80](https://doi.org/10.17603/ds2-jv3x-fp80).

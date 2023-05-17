@@ -1,11 +1,21 @@
 # From constitutive parameter calibration to site response analysis
+**Pedro Arduino - University of Washington**
 
-**Pedro Arduino, University of Washington**
+A collection of educational notebooks to introduce model parameter calibration and site response analysis using OpenSees in DesignSafe-CI. The example makes use of the following DesignSafe resources:
 
-A collection of educational notebooks to introduce model parameter calibration and site response analysis using OpenSees in DesignSafe-CI
+[Simulation on DS - OpenSees](https://www.designsafe-ci.org/rw/workspace/#!/OpenSees::Simulation){target=_blank}<br/>
+[Jupyter notebooks on DS Juypterhub](https://www.designsafe-ci.org/rw/workspace/#!/Jupyter::Analysis){target=_blank}<br/>
 
 ## Background 
+### Citation and Licensing
 
+* Please cite [Chen, L. et al. (2021)](https://peer.berkeley.edu/sites/default/files/2021_chen_final.pdf){target=_blank} to acknowledge the use of resources from this use case.
+
+* Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246){target=_blank} to acknowledge the use of DesignSafe resources.  
+
+* This software is distributed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.html){target=_blank}.  
+
+## Description
 Site response analysis for liquefiable soils is fundamental in the estimation of demands on civil infrastructure including buildings and lifelines. Current state of the art in numerical methods in geotechnical engineering require the use of advance constitutive models and fully couple nonlinear finite element (FEM) tools. Advanced constitutive models require calibration of material parameters based on experimental tests. These parameters include uncertainties that in turn propagate to uncertenties in the estimation of demands. The products included in this use-case provide simple examples showing how to achieve site response analysis including parameter identification and uncertainty quantification using SimCenter tools and the DesignSafe cyber infrastructure.
 
 <p align="center">
@@ -13,8 +23,6 @@ Site response analysis for liquefiable soils is fundamental in the estimation of
 </p>
 <p align="center"> <b>Fig.1 - Site response problem</b> </p>
     
-> TODO: Link to community data 
-
 This document presents a suite of Jupyter Notebooks published in DesignSafe that navigate the process of  constitutive model parameter calibration and site response analysis for a simple liquefaction case. They also introduce methods useful when using DesignSafe infrastructure in TACC. All notebooks leverage existing SimCenter backend functionality (e.g. Dakota, OpenSees, etc) implemented in quoFEM and run locally and in TACC through DesignSafe. Three notebooks are included for this purpose: 
 
 1. **Site response workflow notebook**: This notebook introduces typical steps used in geotechnical numerical analysis workflows taking advantage of Jupyter and DesignSafe.
@@ -24,14 +32,6 @@ This document presents a suite of Jupyter Notebooks published in DesignSafe that
 3. **Propagation of parameter undertainty in site response analysis notebook**: This notebook introduces methods to propagate material parameter uncertainties in site reponse analysis.
 
 This first version of this use-case page includes details on the site response workflow notebook. The parameter calibration and propagation of uncertainties notebooks will be updated in a second version.
-
-### Citation and Licensing
-
-* Please cite [Arduino, P. et al. (2022)](https://doi.org/10.17603/ds2-3zdj-493) to acknowledge the use of any resources from this use case.
-
-* Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246) to acknowledge the use of DesignSafe resources.  
-
-* This software is distributed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.html).  
 
 
 ## Site response workflow notebook
@@ -49,14 +49,14 @@ The notebook takes advantage of the site response problem to introduce a general
 <p align="center"> <b>Fig.2 - OpenSees numerical simulation workflow</b> </p>
 
 
-The soil profile shown in Figure 3 includes a 5.0m loose sand underlain by a 1.0 m dense soil.The loose sand is modeled using the PM4Sand constitutive model for liquefiable soils available in OpenSees. The dense sand is considered linear elastic. The groundwter table is assumed at 2.0 m making the lower 3.0 m of the loose sand susceptible to liquefaction. The soil profile is subject to a dynamic excitation at its base. The site response of interest includes (i) the surface acceleration, (ii) profiles of lateral displacement, horizontal acceleration, maximum shear strain, and cyclic stress ratio and (iii) stress strain and pore pressure plots for a point in the middle of the soil profile.  The opensees model definition, analysis steps, and recorders are contained in the [N10_T3.tcl](FreeField-JupyterNB/N10_T3.tcl) file, and the input signal is in [velocity.input](FreeField-JupyterNB/velo). The model can be run using OpenSees in any OS framework.
+The soil profile shown in Figure 3 includes a 5.0m loose sand underlain by a 1.0 m dense soil.The loose sand is modeled using the PM4Sand constitutive model for liquefiable soils available in OpenSees. The dense sand is considered linear elastic. The groundwter table is assumed at 2.0 m making the lower 3.0 m of the loose sand susceptible to liquefaction. The soil profile is subject to a dynamic excitation at its base. The site response of interest includes (i) the surface acceleration, (ii) profiles of lateral displacement, horizontal acceleration, maximum shear strain, and cyclic stress ratio and (iii) stress strain and pore pressure plots for a point in the middle of the soil profile.  The opensees model definition, analysis steps, and recorders are contained in the [N10_T3.tcl](FreeField-JupyterNB/N10_T3.tcl) file, and the input signal is in [velocity.input](FreeField-JupyterNB/velocity.input). The model can be run using OpenSees in any OS framework.
 
 <p align="center">
 <img src="../img/SPschematic.png" alt="N10_T3 soil profile with liquefiable layer" width="200"/>
 </p>
 <p align="center"> <b>Fig.3 - N10_T3 soil profile with liquefiable layer</b> </p>
 
-The notebook, and required scripts, are available in the [DesignSafe/community](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Jupyter%20Notebooks%20for%20Civil%20Engineering%20Courses/University_of_Washington/freeFieldJupyterPM4Sand) folder and can be executed without any modification.
+The notebook, and required scripts, are available in the [DesignSafe/community](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Jupyter%20Notebooks%20for%20Civil%20Engineering%20Courses/University_of_Washington/freeFieldJupyterPM4Sand){target=_blank} folder and can be executed without any modification.
 Users are invited to try this notebook and use any parts of it.
 
 The notebook can be broken down into four main components:
@@ -256,7 +256,7 @@ class PDF(object):
 
 Finally, jupyter notebooks offer flexibility to invoke GUI widgets that can help present results in a dynamic and interactive manner. The python scripts shown below create interactive plots for pore water pressure and soil profile lateral displacements. The horizontal bars allow users interrogate each plot for results at any particular time. Complete pyhon scripts are included in the [interactiveplot.py](FreeField-JupyterNB/interactiveplot.py) available in community.   
 
-### Pore water pressure
+#### Pore water pressure
 
 ``` python
 from interactiveplot import createpwpplot, createDispplot
@@ -267,7 +267,7 @@ createpwpplot()
 </p>
 <p align="center"> <b>Fig.7 - Pore pressure interactive plot</b> </p>
 
-### Displacement
+#### Displacement
 
 ``` python
 createDispplot()
@@ -277,13 +277,4 @@ createDispplot()
 <img src="../img/widget-2.PNG" alt="Displacement profile interatvie plot" width="400"/>
 </p>
 <p align="center"> <b>Fig.8 - Displacement proficle interactive plot</b> </p>
-
-
-## Parameter calibration notebook
-
-  In preparation
-
-## Propagation of parameter undertainty in site response analysis notebook
-
-  In preparation
 
