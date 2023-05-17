@@ -31,6 +31,7 @@ nav:
   - NGL Database: brandenberg/usecase.md
   - MPM Landslide: kumar/usecase.md
   - Large-Scale Storm Surge: dawson/usecase.md
+  - Creating an ADCIRC dataset: dawson/usecase2.md
   - Visualizing Surge for Regional Risks: padgett/usecase.md
   - CFD Analysis of Winds on Structures: kareem/usecase.md
   - Field Sensing Wind Events: pinelli/usecase.md
