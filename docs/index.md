@@ -9,6 +9,7 @@ To help users fully embrace DesignSafe functionalities, we have developed a suit
 * [**Damage Tagging of Field Images**](haan/usecase.md) (Taggit, HazMapper)
 * [**Machine Learning and AI Resources**](vantassel_and_zhang/usecase.md) (Jupyter, Interactive Data Analytics, HPC)
 * [**Application Programming Interfaces**](brandenberg/apiusecases/api_background.ipynb) (Jupyter, API, requests)
+* [**Visualization of spatially distributed data in risk and resilience analysis**](padgett/visualization_JN_usecase/usecase.md) (Jupyter, Interactive Data Visualization)
 
 <b> Geohazard Use Cases </b>
 
