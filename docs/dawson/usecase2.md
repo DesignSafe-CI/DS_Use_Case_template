@@ -7,7 +7,7 @@
 - Carlos del-Castillo-Negrete, University of Texas at Austin  
 - Benjamin Pachev, University of Texas at Austin
 
-Key Words: ADCIRC, Storm Surge, Hind-casts, Data Curation, Data Publishing
+Key Words: ADCIRC,  Storm Surge, Hind-casts, Data Curation, Data Publishing
 
 ## Resources
 
@@ -177,6 +177,7 @@ Example data relation diagram or an ADCIRC Simulation DataSet
 
 ## Citations and Licensing
 
-- Please cite 
+- Please cite [Dawson et al. (2021)](https://doi.org/10.17603/DS2-68A9-0S64) when using the TEXAS FEMA Storms data.
+- Please cite [del-Castillo-Negrete et al. (2023)](https://doi.org/10.17603/ds2-4rnb-j321) when using the Alaska Storm Surge Events data. 
 - Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246) to acknowledge the use of DesignSafe resources.
 - This software is distributed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.html).
