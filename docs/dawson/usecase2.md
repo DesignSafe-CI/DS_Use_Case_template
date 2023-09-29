@@ -16,8 +16,8 @@ Key Words: ADCIRC,  Storm Surge, Hind-casts, Data Curation, Data Publishing
 - [ADCIRC Wiki](https://wiki.adcirc.org/Main_Page)
 - [ADCIRC Web Page](https://adcirc.org/)
 - [pyADCIRC GitHub Repository](https://github.com/UT-CHG/pyadcirc) - pyADCIRC documentation.
-- [Creating an ADCIRC DataSet.ipynb](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/ADCIRC)
-- [DesignSafe: Running Ensemble Simulations](https://www.designsafe-ci.org/ds-use-case/dawson/usecase/)
+- [Creating an ADCIRC DataSet.ipynb](https://jupyter.designsafe-ci.org/hub/user-redirect/notebooks/CommunityData/Use%20Case%20Products/ADCIRC/Creating%20an%20ADCIRC%20Dataset.ipynb)
+- [ADCIRC Ensemble Simulations.ipynb](https://jupyter.designsafe-ci.org/hub/user-redirect/notebooks/CommunityData/Use%20Case%20Products/ADCIRC/ADCIRC%20Ensemble%20Simulations.ipynb)
 
 ## Description
 
