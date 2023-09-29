@@ -30,6 +30,7 @@ nav:
   - ML and AI: vantassel_and_zhang/usecase.md
   - NGL Database: brandenberg/usecase.md
   - MPM Landslide: kumar/usecase.md
+  - Learn MPM: kumar/learnmpm/usecase.md
   - Large-Scale Storm Surge: dawson/usecase.md
   - Creating an ADCIRC dataset: dawson/usecase2.md
   - Visualizing Surge for Regional Risks: padgett/usecase.md
