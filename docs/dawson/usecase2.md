@@ -1,12 +1,31 @@
-# ADCIRC Use Case - Creating an ADCIRC DataSets on DesignSafe
+# ADCIRC DataSets
 
-**Clint Dawson, University of Texas at Austin**
+## Creating and Publishing ADCIRC datasets on DesignSafe
 
-**Carlos del-Castillo-Negrete, University of Texas at Austin**
+**Authors**  
+- Clint Dawson, University of Texas at Austin  
+- Carlos del-Castillo-Negrete, University of Texas at Austin  
+- Benjamin Pachev, University of Texas at Austin
 
-**Benjamin Pachev, University of Texas at Austin**
+Key Words: ADCIRC, Storm Surge, Hind-casts, Data Curation, Data Publishing
 
-## Overview
+## Resources
+
+- [DesignSafe ADCIRC Application](https://www.designsafe-ci.org/rw/workspace/#!/ADCIRC::Simulation).
+- [Jupyter nebooks on DS Juypterhub](https://www.designsafe-ci.org/rw/workspace/#!/Jupyter::Analysis).
+- [ADCIRC Wiki](https://wiki.adcirc.org/Main_Page)
+- [ADCIRC Web Page](https://adcirc.org/)
+- [pyADCIRC GitHub Repository](https://github.com/UT-CHG/pyadcirc) - pyADCIRC documentation.
+- [Creating an ADCIRC DataSet.ipynb](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/ADCIRC)
+- [DesignSafe: Running Ensemble Simulations](https://www.designsafe-ci.org/ds-use-case/dawson/usecase/)
+
+## Description
+
+This use case demonstrates the compilation of ADCIRC data-sets of storm-surge hind-casts on DesignSafe.
+The workflow includes finding storm-surge events, gathering meteorological forcing, running ADCIRC hind-casts, and organizing and publishing data.
+This documentation is designed for applications ranging from Uncertainty Quantification to training Surrogate Models in ADCIRC.
+
+## Implementation
 
 The following use case demonstrates how to compile an ADCIRC data-set of hind-casts on DesignSafe. This workflow involves the following steps:
 
@@ -27,25 +46,7 @@ To see a couple of Example data-sets, and associated published research using th
 - [Texas FEMA Storms](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published/PRJ-2968) - Synthetic storms for assessing storm surge risk. Used recently in [Pachev et. al 2023](https://arxiv.org/abs/2204.13168) to train a surrogate model for ADCIRC for the coast of Texas.
 - [Alaska Storm Surge Events](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published/PRJ-3887) - Major storm surge events for the coast of Alaska. Also used in [Pachev et. al 2023](https://arxiv.org/abs/2204.13168) for creating a surrogate model for the coast of Alaska.
 
-An accompanying jupyter notebook for this use case can be found in the ADCIRC folder in [Community Data](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/ADCIRC) under the name `Creating an ADCIRC DataSet.ipynb`.
-
-Learn more: [Jupyter notebooks on DS Juypterhub](https://www.designsafe-ci.org/rw/workspace/#!/Jupyter::Analysis).
-
-## Background
-
-### Citation and Licensing
-
-- Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246) to acknowledge the use of DesignSafe resources.
-- This software is distributed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.html).
-
-## ADCIRC Overview
-
-For more information on running ADCIRC and documentation, see the following links:
-
-- [ADCIRC Wiki](https://wiki.adcirc.org/Main_Page)
-- [ADCIRC Web Page](https://adcirc.org/)
-
-ADCIRC is available as a standalone app accessible via the [DesignSafe front-end](https://www.designsafe-ci.org/rw/workspace/#!/ADCIRC::Simulation).
+For a step-by-step guide to executing this use case, refer to the accompanying Jupyter notebook, `Creating an ADCIRC DataSet.ipynb`, found in the ADCIRC folder under [Community Data](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/ADCIRC).
 
 ### ADCIRC Inputs
 
@@ -87,12 +88,6 @@ For example the file may look like:
 {"email": "user@gmail.com", "pw": "pass12345"}
 ```
 
-## Example Notebook: Creating ADCIRC DataSet
-
-The example within this use case comprises of 4 main steps to create a data-set starting from a set of ADCIRC control input files. The notebook can be found at in the [ADCIRC Use Case’s](https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Use%20Case%20Products/ADCIRC) folder with the name `Creating an ADCIRC DataSet.ipynb` . Note that the notebook should be copied to the users `~/MyData` directory before being able to use it (these steps are covered in the notebook). 
-
-The notebook covers the first two steps of this use case, namely identifying storm surge events and creating base input data sets to run using ADCIRC. We briefly overview the notebook’s results below. 
-
 ### Identifying storm surge events
 
 The first stage of the notebook involves using the NOAA API wrapper provided by pyADCIRC to find storm surge events by looking at tidal gauge data in a region of interest. An example of an identified storm surge event, corresponding to Typhoon Merbok that hit the coast of Alaska in September 2022, is shown below.
@@ -107,7 +102,7 @@ The algorithm presented is run on the storms that see the most frequent storm-su
 
 Having identified dates of interest, the notebook then uses the `ncar` library endpoint to pull meteorological forcing for the identified potential storm surge events. These are then merged with ADCIRC base input files (available at the published data set), to create input runs for an ensemble of ADCIRC simulations, as covered in the use case documentation on [running ADCIRC ensembles in DesignSafe](https://www.designsafe-ci.org/ds-use-case/dawson/usecase/).
 
-## Organizing Data for publishing
+### Organizing Data for publishing
 
 Having a set of simulated ADCIRC hind-casts for one or more events, along with any additional analysis performed on the hind-cast data, the true power of DesignSafe as a platform can be realized by publishing your data. Publishing your data allows you and other researchers to reference its usage with a DOI. For ADCIRC, this is increasingly useful as more Machine Learning models are being built using ADCIRC simulation data.
 
@@ -178,4 +173,10 @@ Next we want to move ADCIRC inputs/outputs from your Jupyter instance where they
 
 ![Example data relation diagram for an ADCIRC Simulation DataSet](img/curation.png)
 
-Example data relation diagram for an ADCIRC Simulation DataSet
+Example data relation diagram or an ADCIRC Simulation DataSet
+
+## Citations and Licensing
+
+- Please cite 
+- Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246) to acknowledge the use of DesignSafe resources.
+- This software is distributed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.html).
