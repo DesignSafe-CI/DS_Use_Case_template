@@ -41,6 +41,7 @@ nav:
   - Soil Structure Interaction: rathje/usecase.md
   - Experimental Shake Table Testing: mosqueda/usecase.md
   - Application Programming Interfaces: brandenberg/apiusecases/usecase.md
+  - Visualization of spatially distributed data: padgett/visualization_JN_usecase/usecase.md
   
 #### DO NOT MAKE ANY CHANGES TO THE EXAMPLE FOLDER
 #### Find the folder with your name and edit usecase.md
