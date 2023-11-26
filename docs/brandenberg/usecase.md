@@ -45,10 +45,10 @@ The example makes use of the following DesignSafe resources:
   </tr>
   <tr>
     <td>
-      Direct Simple Shear Viewer
+      Laboratory Test Viewer
     </td>
     <td>
-      <a href="https://jupyter.designsafe-ci.org/hub/user-redirect/lab/tree/CommunityData/NGL/DSS_Viewer.ipynb" target="_blank"><img src="https://raw.githubusercontent.com/geoelements/LearnMPM/main/DesignSafe-Badge.svg"></a>
+      <a href="https://jupyter.designsafe-ci.org/hub/user-redirect/lab/tree/CommunityData/NGL/LabTestViewer.ipynb" target="_blank"><img src="https://raw.githubusercontent.com/geoelements/LearnMPM/main/DesignSafe-Badge.svg"></a>
     </td>
   </tr>
 </table>
@@ -109,11 +109,18 @@ This documentation first demonstrates how to install the database connection scr
 ## Installing Database Connection Script
  
 Connecting to a relational database requires credentials, like username, password, database name, and hostname. 
-Rather than requiring users to know these credentials and create their own database connections, we have created a Python package that allows users to
-query the database. This code installs the package containing the database connection script for NGL:
+Rather than requiring users to know these credentials and create their own database connections, we have created a Python package that allows users to query the database. This code installs the package containing the database connection script for NGL:
 
 ```python
-!pip install git+https://github.com/sjbrandenberg/designsafe_db
+!pip install dsdatabase
+```
+
+The connection script can then be invoked by creating an object from the DSDatabase class corresponding to the "ngl" connection, and submitting a query using the ngl.read_sql(sql) function.
+
+```python
+from dsdatabase.db import DSDatabase
+ngl = DSDatabase("ngl")
+df = ngl.read_sql(sql)
 ```
 
 ## Example Queries
