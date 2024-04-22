@@ -155,7 +155,7 @@ The last section of this notebook creates a reference file that holds variables 
   
 ## Running Opensees through HPC
 
-(Script needs to be established on design safe. I have a working notebook, just need to connect it with modeling script)
+Once the script is created, it can be be ran on an HPC (high powered computer) node through  tapis. The tapis app name is called "OpenseesSP-Stockley" which contains the concrete model defined above. The code requires the filename, filepath, and the desired name of the job that will be submitted. The output files from the simulation will be placed in the filepath location.
 
 
 ## Post Processing
