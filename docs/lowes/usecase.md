@@ -10,14 +10,17 @@ The purpose of this use case is to be able to model, simulate, and post process 
 
 ## Background
 ### Citation and Licensing
+* Lowes LN, Stokley J (2023). “Calibration and Validation of an OpenSees Model for Reinforced Concrete Walls Using NHERI SimCenter and DesignSafe Resources.” Proceedings of the fib Symposium: 5-7 June 2023, Istanbul, Turkey. 10 p.
+  
+* Stokely J, Lowes LN (2024).  [“DesignSafe Use Cases: Seismic Response of Concrete Walls.”](https://www.designsafe-ci.org/user-guide/usecases/seismicusecases/#seismic-response-of-concrete-walls)
+  
+* Please cite [Shegay et al. (2021)](https://doi.org/10.17603/ds2-r12q-t415) to acknowledge the use of any data from this use case.
 
-* Please cite [Shegay et al. (2021)](https://doi.org/10.17603/ds2-r12q-t415){target=_blank} to acknowledge the use of any data from this use case.
+* Please cite [Lu XZ et al. (2015)](http://www.luxinzheng.net/download/OpenSEES/En_THUShell_OpenSEES.htm) to acknowledge the use of the modeling strategy from this use case.
 
-* Please cite [Lu XZ et al. (2015)](http://www.luxinzheng.net/download/OpenSEES/En_THUShell_OpenSEES.htm){target=_blank} to acknowledge the use of the modeling strategy from this use case.
+* Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246) to acknowledge the use of DesignSafe resources.  
 
-* Please cite [Rathje et al. (2017)](https://doi.org/10.1061/(ASCE)NH.1527-6996.0000246){target=_blank} to acknowledge the use of DesignSafe resources.  
-
-* This software is distributed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.html){target=_blank}.  
+* This software is distributed under the [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.html).  
 
 ## Description
 ### Data  
@@ -155,7 +158,7 @@ The last section of this notebook creates a reference file that holds variables 
   
 ## Running Opensees through HPC
 
-(Script needs to be established on design safe. I have a working notebook, just need to connect it with modeling script)
+Once the script is created, it can be be ran on an HPC (high powered computer) node through tapis. The tapis app name is called "OpenseesSP-Stockley" which contains the concrete model defined above. The code requires the filename, filepath, and the desired name of the job that will be submitted. The output files from the simulation will be placed in the filepath location.
 
 
 ## Post Processing
